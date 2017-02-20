@@ -8,6 +8,10 @@
 
 import Foundation
 
+class B {
+  var b = 10
+}
+
 class A {
   var a: Int = 0
 }
