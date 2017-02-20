@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+class A {
+  var a: Int = 0
+}
