@@ -7,8 +7,3 @@
 //
 
 import Foundation
-
-// TODO: - Remove it
-class GitFlowTestClass {
-  
-}
