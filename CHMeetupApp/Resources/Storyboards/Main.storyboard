@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ifu-eV-gt1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,140 +9,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Archieve-->
-        <scene sceneID="xXe-KA-haW">
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="oCD-k4-2hk" customClass="PastEventsViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="r8x-qg-1h8"/>
-                        <viewControllerLayoutGuide type="bottom" id="CHE-FF-RQ5"/>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FtC-VP-iXQ">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09l-qR-0Ck">
-                                <rect key="frame" x="143" y="318.5" width="89" height="30"/>
-                                <state key="normal" title="Show Evenet"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u21-hb-Fl6">
+                                <rect key="frame" x="132" y="318" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add to Calendar"/>
                                 <connections>
-                                    <action selector="showEventAction:" destination="oCD-k4-2hk" eventType="touchUpInside" id="WrT-Hy-LKo"/>
+                                    <action selector="AddToCalendar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0SC-pS-Za1"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="09l-qR-0Ck" firstAttribute="centerY" secondItem="FtC-VP-iXQ" secondAttribute="centerY" id="KcE-Gh-uQJ"/>
-                            <constraint firstItem="09l-qR-0Ck" firstAttribute="centerX" secondItem="FtC-VP-iXQ" secondAttribute="centerX" id="eCD-yd-5kx"/>
-                        </constraints>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Archieve" id="9sk-IA-XNi"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q6y-Pz-UlF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1273" y="456"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="4bP-a4-tJZ">
-            <objects>
-                <viewController id="du5-Fr-4Vf" customClass="MainViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Cs5-Lo-L5S"/>
-                        <viewControllerLayoutGuide type="bottom" id="1oQ-s9-qQE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yfu-ai-uDa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlt-FB-hRB">
-                                <rect key="frame" x="142.5" y="318" width="89" height="30"/>
-                                <state key="normal" title="Show Evenet"/>
-                                <connections>
-                                    <action selector="showEventAction:" destination="du5-Fr-4Vf" eventType="touchUpInside" id="XHm-YB-6JF"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Jlt-FB-hRB" firstAttribute="centerY" secondItem="yfu-ai-uDa" secondAttribute="centerY" id="Hgu-ds-SAq"/>
-                            <constraint firstItem="Jlt-FB-hRB" firstAttribute="centerX" secondItem="yfu-ai-uDa" secondAttribute="centerX" id="p58-JK-whA"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Main" id="EB5-Bt-KNQ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uFV-Aw-nEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1273" y="-199"/>
-        </scene>
-        <!--Tab Bar View Controller-->
-        <scene sceneID="NPf-JB-NGd">
-            <objects>
-                <tabBarController id="ifu-eV-gt1" customClass="TabBarViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="ZHN-fJ-flQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="OrX-Cc-xgJ" kind="relationship" relationship="viewControllers" id="ogv-G9-Tza"/>
-                        <segue destination="b7I-I3-rgg" kind="relationship" relationship="viewControllers" id="XyW-Pd-jfy"/>
-                        <segue destination="b0P-Mq-rOD" kind="relationship" relationship="viewControllers" id="Cjt-ju-PRJ"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mUn-Qt-UaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-500" y="128"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Xhb-Jd-qWS">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OrX-Cc-xgJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="EYz-le-H70"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N3A-KA-XJg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="du5-Fr-4Vf" kind="relationship" relationship="rootViewController" id="wvY-Lf-utm"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zvi-7O-Lqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="452" y="-199.25037481259372"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="njY-UF-XnW">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b7I-I3-rgg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="nq2-nd-hlH"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QMh-77-fMm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="oCD-k4-2hk" kind="relationship" relationship="rootViewController" id="8Vt-5w-Xkm"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4sA-k4-d1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="452" y="455.62218890554726"/>
-        </scene>
-        <!--Profile Navigation View Controller-->
-        <scene sceneID="nzB-PK-SUB">
-            <objects>
-                <navigationController id="b0P-Mq-rOD" customClass="ProfileNavigationViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="pqo-Bx-yIv"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2v7-Da-U4X">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dde-Ua-rjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="452" y="1178"/>
         </scene>
     </scenes>
 </document>
