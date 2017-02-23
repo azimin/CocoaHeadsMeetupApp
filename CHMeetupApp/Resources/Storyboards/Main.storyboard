@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+<?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ifu-eV-gt1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
@@ -12,6 +17,7 @@
         <!--Archieve-->
         <scene sceneID="xXe-KA-haW">
             <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                 <viewController id="oCD-k4-2hk" customClass="PastEventsViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r8x-qg-1h8"/>
@@ -34,6 +40,17 @@
                             <constraint firstItem="09l-qR-0Ck" firstAttribute="centerY" secondItem="FtC-VP-iXQ" secondAttribute="centerY" id="KcE-Gh-uQJ"/>
                             <constraint firstItem="09l-qR-0Ck" firstAttribute="centerX" secondItem="FtC-VP-iXQ" secondAttribute="centerX" id="eCD-yd-5kx"/>
                         </constraints>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u21-hb-Fl6">
+                                <rect key="frame" x="132" y="318" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add to Calendar"/>
+                                <connections>
+                                    <action selector="AddToCalendar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0SC-pS-Za1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Archieve" id="9sk-IA-XNi"/>
                 </viewController>
