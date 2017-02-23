@@ -1,5 +1,5 @@
 //
-//  importToCalendar.swift
+//  ExtensionString.swift
 //  CHMeetupApp
 //
 //  Created by Егор Петров on 23/02/2017.
@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+extension String {
+  var dateFromString: Date? {
+    return Date.formatterFromString.date(from: self)
+  }
+}
