@@ -12,7 +12,8 @@
 		221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */; };
 		221F4F9F1E5C0B6C0009FD07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */; };
 		221F4FA01E5C0B6C0009FD07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F4F9B1E5C0B6C0009FD07 /* ViewController.swift */; };
-		4D3529831E5EE830006DEF0C /* importToCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3529821E5EE830006DEF0C /* importToCalendar.swift */; };
+		4D890B541E5EEB640038CCC9 /* ExtensionForDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B531E5EEB640038CCC9 /* ExtensionForDate.swift */; };
+		4D890B561E5EEDE80038CCC9 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B551E5EEDE80038CCC9 /* ExtensionString.swift */; };
 		9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */; };
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
@@ -41,7 +42,8 @@
 		221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		221F4F9B1E5C0B6C0009FD07 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4D3529821E5EE830006DEF0C /* importToCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = importToCalendar.swift; sourceTree = "<group>"; };
+		4D890B531E5EEB640038CCC9 /* ExtensionForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionForDate.swift; sourceTree = "<group>"; };
+		4D890B551E5EEDE80038CCC9 /* ExtensionString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
@@ -153,7 +155,6 @@
 		221F4F911E5C0B6C0009FD07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4D3529821E5EE830006DEF0C /* importToCalendar.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -161,6 +162,7 @@
 		221F4F921E5C0B6C0009FD07 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4D890B571E5EEDEE0038CCC9 /* ExtensionForString */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,6 +231,15 @@
 				9FD58FBB1E5E309900207199 /* Profile */,
 			);
 			path = "ViewControllers+Cells";
+			sourceTree = "<group>";
+		};
+		4D890B571E5EEDEE0038CCC9 /* ExtensionForString */ = {
+			isa = PBXGroup;
+			children = (
+				4D890B531E5EEB640038CCC9 /* ExtensionForDate.swift */,
+				4D890B551E5EEDE80038CCC9 /* ExtensionString.swift */,
+			);
+			name = ExtensionForString;
 			sourceTree = "<group>";
 		};
 		9F60488C1E5B3CCB00C414C3 = {
@@ -533,7 +544,9 @@
 				9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */,
 				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
 				4D3529831E5EE830006DEF0C /* importToCalendar.swift in Sources */,
+				4D890B561E5EEDE80038CCC9 /* ExtensionString.swift in Sources */,
 				221F4FA01E5C0B6C0009FD07 /* ViewController.swift in Sources */,
+				4D890B541E5EEB640038CCC9 /* ExtensionForDate.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
 				9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */,
 			);
