@@ -9,16 +9,28 @@
 import EventKit
 import UIKit
 
+struct InfoAboutEvent {
+  var title = "CocoaHeadsRule"
+  var startTime = "2017-02-24 6:00"
+  var endTime = "2017-02-24 7:00"
+  var location = CLLocation(latitude: 59.9386, longitude: 30.3141)
+  var locationTitle = "Saint-Petersburg"
+  var notes = "Take your MacBook for coding!"
+}
+
 class ImportController {
 
-  func toCalendar(eventStore: EKEventStore, title: String, location: String, startTime: String, endTime: String) {
+  func toCalendar(eventStore: EKEventStore, infoAboutQuest: InfoAboutEvent) {
     eventStore.requestAccess(to: .event, completion: { granted, error in
       if granted {
         let event = EKEvent(eventStore: eventStore)
-        event.title = title
-        event.location = location
-        event.startDate = Date(timeIntervalSince1970: startTime.timeIntervalFrom1970)
-        event.endDate = Date(timeIntervalSince1970: endTime.timeIntervalFrom1970)
+        let structuredLocation = EKStructuredLocation(title: infoAboutQuest.locationTitle)
+        structuredLocation.geoLocation = infoAboutQuest.location
+
+        event.title = infoAboutQuest.title
+        event.startDate = Date(timeIntervalSince1970: infoAboutQuest.startTime.timeIntervalFrom1970)
+        event.endDate = Date(timeIntervalSince1970: infoAboutQuest.endTime.timeIntervalFrom1970)
+        event.notes = infoAboutQuest.notes
         event.calendar = eventStore.defaultCalendarForNewEvents
         do {
           try eventStore.save(event, span: .thisEvent)
