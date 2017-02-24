@@ -15,10 +15,9 @@ extension String {
 
   var timeIntervalFrom1970: Double {
     let dateFormatter = DateFormatter()
-    let dateString = self
     dateFormatter.locale = Locale.current
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-    let dat = dateFormatter.date(from: dateString)!
-    return Double(dat.timeIntervalSince1970)
+    let date = dateFormatter.date(from: self)!
+    return Double(date.timeIntervalSince1970)
   }
 }
