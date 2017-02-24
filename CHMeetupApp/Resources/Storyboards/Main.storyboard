@@ -60,6 +60,14 @@
                                     <action selector="showEventAction:" destination="du5-Fr-4Vf" eventType="touchUpInside" id="XHm-YB-6JF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlB-uj-Cga">
+                                <rect key="frame" x="140" y="401" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Test reminder"/>
+                                <connections>
+                                    <action selector="testReminder:" destination="du5-Fr-4Vf" eventType="touchUpInside" id="Vyg-Sm-42O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
