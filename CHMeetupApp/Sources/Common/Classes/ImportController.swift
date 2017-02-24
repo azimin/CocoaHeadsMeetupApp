@@ -43,7 +43,8 @@ class ImportController {
     eventStore.requestAccess(to: .reminder, completion: { granted, error in
       if granted {
         let reminder = EKReminder(eventStore: self.eventStore)
-        let alarm = EKAlarm(absoluteDate: Date(timeIntervalSince1970: infoAboutEvent.startTime.timeIntervalFrom1970 - 18000))
+        let intervalSince1970 = infoAboutEvent.startTime.timeIntervalFrom1970
+        let alarm = EKAlarm(absoluteDate: Date(timeIntervalSince1970:  intervalSince1970 - (5*60*60)))
         reminder.title = infoAboutEvent.title
         reminder.addAlarm(alarm)
         reminder.calendar = self.eventStore.defaultCalendarForNewReminders()
