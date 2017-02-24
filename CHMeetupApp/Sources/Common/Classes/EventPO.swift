@@ -6,7 +6,6 @@
 //  Copyright © 2017 CocoaHeads Comunity. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
 
 struct EventPO {
