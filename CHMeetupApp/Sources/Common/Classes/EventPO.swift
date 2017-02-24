@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-struct InfoAboutEvent {
+struct EventPO {
   var title = "CocoaHeadsRule"
   var startTime = "2017-02-24 18:15"
   var endTime = "2017-02-24 19:00"

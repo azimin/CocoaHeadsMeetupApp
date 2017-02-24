@@ -11,24 +11,20 @@ import UIKit
 
 class ImportController {
 
-  static let addTo: ImportController = {
-    let add = ImportController()
-    return add
-  }()
-  let eventStore = EKEventStore()
+  static let eventStore = EKEventStore()
 
-  func toCalendar(infoAboutEvent: InfoAboutEvent) {
+   static func toCalendar(infoAboutEvent: EventPO) {
     eventStore.requestAccess(to: .event, completion: { granted, error in
       if granted {
         let event = EKEvent(eventStore: self.eventStore)
-        let structuredLocation = EKStructuredLocation(title: infoAboutEventt.locationTitle)
+        let structuredLocation = EKStructuredLocation(title: infoAboutEvent.locationTitle)
         let alarm = EKAlarm(relativeOffset:-18000)
-        structuredLocation.geoLocation = infoAboutEventt.location
+        structuredLocation.geoLocation = infoAboutEvent.location
 
-        event.title = infoAboutEventt.title
-        event.startDate = Date(timeIntervalSince1970: infoAboutEventt.startTime.timeIntervalFrom1970)
-        event.endDate = Date(timeIntervalSince1970: infoAboutEventt.endTime.timeIntervalFrom1970)
-        event.notes = infoAboutEventt.notes
+        event.title = infoAboutEvent.title
+        event.startDate = Date(timeIntervalSince1970: infoAboutEvent.startTime.timeIntervalFrom1970)
+        event.endDate = Date(timeIntervalSince1970: infoAboutEvent.endTime.timeIntervalFrom1970)
+        event.notes = infoAboutEvent.notes
         event.addAlarm(alarm)
         event.calendar = self.eventStore.defaultCalendarForNewEvents
         do {
@@ -42,7 +38,7 @@ class ImportController {
     })
   }
 
-  func toReminder(infoAboutEvent: InfoAboutEvent) {
+  static func toReminder(infoAboutEvent: EventPO) {
     eventStore.requestAccess(to: .reminder, completion: { granted, error in
       if granted {
         let reminder = EKReminder(eventStore: self.eventStore)
