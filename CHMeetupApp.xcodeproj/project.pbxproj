@@ -11,7 +11,6 @@
 		221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F871E5C0B6C0009FD07 /* Assets.xcassets */; };
 		221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */; };
 		221F4F9F1E5C0B6C0009FD07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */; };
-		221F4FA01E5C0B6C0009FD07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F4F9B1E5C0B6C0009FD07 /* ViewController.swift */; };
 		4D663E3A1E5F24E600A7EA23 /* DateComponents+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D663E391E5F24E600A7EA23 /* DateComponents+Init.swift */; };
 		4D663E3D1E5F25A500A7EA23 /* Date+DateFromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D663E3C1E5F25A500A7EA23 /* Date+DateFromString.swift */; };
 		4D890B561E5EEDE80038CCC9 /* String+TimeIntervalFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B551E5EEDE80038CCC9 /* String+TimeIntervalFrom.swift */; };
@@ -43,7 +42,6 @@
 		221F4F8A1E5C0B6C0009FD07 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		221F4F9B1E5C0B6C0009FD07 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D663E391E5F24E600A7EA23 /* DateComponents+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateComponents+Init.swift"; sourceTree = "<group>"; };
 		4D663E3C1E5F25A500A7EA23 /* Date+DateFromString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+DateFromString.swift"; sourceTree = "<group>"; };
 		4D890B551E5EEDE80038CCC9 /* String+TimeIntervalFrom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+TimeIntervalFrom.swift"; sourceTree = "<group>"; };
@@ -565,13 +563,11 @@
 				9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */,
 				9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */,
 				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
-				4D3529831E5EE830006DEF0C /* importToCalendar.swift in Sources */,
-				4D890B561E5EEDE80038CCC9 /* ExtensionString.swift in Sources */,
+				4D890B561E5EEDE80038CCC9 /* String+TimeIntervalFrom.swift in Sources */,
 				4D663E3A1E5F24E600A7EA23 /* DateComponents+Init.swift in Sources */,
 				4D890B591E5EEFE00038CCC9 /* ImportToCalendarAndReminder.swift in Sources */,
 				4D663E3D1E5F25A500A7EA23 /* Date+DateFromString.swift in Sources */,
 				4D890B561E5EEDE80038CCC9 /* String+TimeIntervalFrom.swift in Sources */,
-				221F4FA01E5C0B6C0009FD07 /* ViewController.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
 				9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */,
 			);
