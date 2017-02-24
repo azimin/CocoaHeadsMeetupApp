@@ -11,7 +11,7 @@ import UIKit
 
 class ImportController {
 
-  static let eventStore = EKEventStore()
+  private static let eventStore = EKEventStore()
 
    static func toCalendar(infoAboutEvent: EventPO) {
     eventStore.requestAccess(to: .event, completion: { granted, error in
@@ -43,7 +43,9 @@ class ImportController {
     eventStore.requestAccess(to: .reminder, completion: { granted, error in
       if granted {
         let reminder = EKReminder(eventStore: self.eventStore)
+        let alarm = EKAlarm(absoluteDate: Date(timeIntervalSince1970: infoAboutEvent.startTime.timeIntervalFrom1970 - 18000))
         reminder.title = infoAboutEvent.title
+        reminder.addAlarm(alarm)
         reminder.calendar = self.eventStore.defaultCalendarForNewReminders()
         do {
           try self.eventStore.save(reminder, commit: true)
