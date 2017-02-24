@@ -17,7 +17,7 @@ class ImportController {
   }()
   let eventStore = EKEventStore()
 
-  func toCalendar(infoAboutEventt: InfoAboutEvent) {
+  func toCalendar(infoAboutEvent: InfoAboutEvent) {
     eventStore.requestAccess(to: .event, completion: { granted, error in
       if granted {
         let event = EKEvent(eventStore: self.eventStore)
