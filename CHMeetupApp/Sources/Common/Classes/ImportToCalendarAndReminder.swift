@@ -14,8 +14,8 @@ class ImportTo {
     let event = EKEvent(eventStore: eventStore)
     event.title = title
     event.location = location
-    event.startDate = Date(timeIntervalSince1970: startTime.dateSince)
-    event.endDate = Date(timeIntervalSince1970: endTime.dateSince)
+    event.startDate = Date(timeIntervalSince1970: 0)
+    event.endDate = Date(timeIntervalSince1970: 0)
     event.calendar = eventStore.defaultCalendarForNewEvents
     do {
       try eventStore.save(event, span: .thisEvent)

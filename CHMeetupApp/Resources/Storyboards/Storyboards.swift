@@ -4,337 +4,321 @@
 //
 import UIKit
 
-// MARK: - Storyboards
+//MARK: - Storyboards
 
 extension UIStoryboard {
-  func instantiateViewController<T: UIViewController>(ofType type: T.Type) -> T? where T: IdentifiableProtocol {
-    let instance = type.init()
-    if let identifier = instance.storyboardIdentifier {
-      return self.instantiateViewController(withIdentifier: identifier) as? T
+    func instantiateViewController<T: UIViewController>(ofType type: T.Type) -> T? where T: IdentifiableProtocol {
+        let instance = type.init()
+        if let identifier = instance.storyboardIdentifier {
+            return self.instantiateViewController(withIdentifier: identifier) as? T
+        }
+        return nil
     }
-    return nil
-  }
 
 }
 
 protocol Storyboard {
-  static var storyboard: UIStoryboard { get }
-  static var identifier: String { get }
+    static var storyboard: UIStoryboard { get }
+    static var identifier: String { get }
 }
 
 struct Storyboards {
 
-  struct EventPreview: Storyboard {
+    struct EventPreview: Storyboard {
 
-    static let identifier = "EventPreview"
+        static let identifier = "EventPreview"
 
-    static var storyboard: UIStoryboard {
-      return UIStoryboard(name: self.identifier, bundle: nil)
+        static var storyboard: UIStoryboard {
+            return UIStoryboard(name: self.identifier, bundle: nil)
+        }
+
+        static func instantiateViewController(withIdentifier: String) -> UIViewController {
+            return self.storyboard.instantiateViewController(withIdentifier: identifier)
+        }
+
+        static func instantiateViewController<T: UIViewController>(ofType type: T.Type) -> T? where T: IdentifiableProtocol {
+            return self.storyboard.instantiateViewController(ofType: type)
+        }
+
+        static func instantiateEventPreviewViewController() -> EventPreviewViewController {
+            return self.storyboard.instantiateViewController(withIdentifier: "EventPreviewViewController") as! EventPreviewViewController
+        }
+
+        static func instantiateEventPreviewViewControllerNavigation() -> UINavigationController {
+            return self.storyboard.instantiateViewController(withIdentifier: "EventPreviewViewControllerNavigation") as! UINavigationController
+        }
     }
 
-    static func instantiateViewController(withIdentifier: String) -> UIViewController {
-      return self.storyboard.instantiateViewController(withIdentifier: identifier)
+    struct LaunchScreen: Storyboard {
+
+        static let identifier = "LaunchScreen"
+
+        static var storyboard: UIStoryboard {
+            return UIStoryboard(name: self.identifier, bundle: nil)
+        }
+
+        static func instantiateInitialViewController() -> UIViewController {
+            return self.storyboard.instantiateInitialViewController()!
+        }
+
+        static func instantiateViewController(withIdentifier: String) -> UIViewController {
+            return self.storyboard.instantiateViewController(withIdentifier: identifier)
+        }
+
+        static func instantiateViewController<T: UIViewController>(ofType type: T.Type) -> T? where T: IdentifiableProtocol {
+            return self.storyboard.instantiateViewController(ofType: type)
+        }
     }
 
-    static func instantiateViewController<T: UIViewController>(ofType type: T.Type) ->
-      T? where T: IdentifiableProtocol {
-        return self.storyboard.instantiateViewController(ofType: type)
+    struct Main: Storyboard {
+
+        static let identifier = "Main"
+
+        static var storyboard: UIStoryboard {
+            return UIStoryboard(name: self.identifier, bundle: nil)
+        }
+
+        static func instantiateInitialViewController() -> TabBarViewController {
+            return self.storyboard.instantiateInitialViewController() as! TabBarViewController
+        }
+
+        static func instantiateViewController(withIdentifier: String) -> UIViewController {
+            return self.storyboard.instantiateViewController(withIdentifier: identifier)
+        }
+
+        static func instantiateViewController<T: UIViewController>(ofType type: T.Type) -> T? where T: IdentifiableProtocol {
+            return self.storyboard.instantiateViewController(ofType: type)
+        }
     }
 
-    static func instantiateEventPreviewViewController() -> EventPreviewViewController {
-      return (self.storyboard.instantiateViewController(withIdentifier: "EventPreviewViewController") as?
-        EventPreviewViewController)!
+    struct Profile: Storyboard {
+
+        static let identifier = "Profile"
+
+        static var storyboard: UIStoryboard {
+            return UIStoryboard(name: self.identifier, bundle: nil)
+        }
+
+        static func instantiateViewController(withIdentifier: String) -> UIViewController {
+            return self.storyboard.instantiateViewController(withIdentifier: identifier)
+        }
+
+        static func instantiateViewController<T: UIViewController>(ofType type: T.Type) -> T? where T: IdentifiableProtocol {
+            return self.storyboard.instantiateViewController(ofType: type)
+        }
+
+        static func instantiateProfileCreateViewController() -> ProfileCreateViewController {
+            return self.storyboard.instantiateViewController(withIdentifier: "ProfileCreateViewController") as! ProfileCreateViewController
+        }
+
+        static func instantiateProfileViewController() -> ProfileViewController {
+            return self.storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        }
+
+        static func instantiateProfileCreateViewControllerNavigation() -> UINavigationController {
+            return self.storyboard.instantiateViewController(withIdentifier: "ProfileCreateViewControllerNavigation") as! UINavigationController
+        }
+
+        static func instantiateProfileViewControllerNavigation() -> UINavigationController {
+            return self.storyboard.instantiateViewController(withIdentifier: "ProfileViewControllerNavigation") as! UINavigationController
+        }
     }
-
-    static func instantiateEventPreviewViewControllerNavigation() -> UINavigationController {
-      return (self.storyboard.instantiateViewController(withIdentifier: "EventPreviewViewControllerNavigation") as?
-        UINavigationController)!
-    }
-  }
-
-  struct LaunchScreen: Storyboard {
-
-    static let identifier = "LaunchScreen"
-
-    static var storyboard: UIStoryboard {
-      return UIStoryboard(name: self.identifier, bundle: nil)
-    }
-
-    static func instantiateInitialViewController() -> UIViewController {
-      return self.storyboard.instantiateInitialViewController()!
-    }
-
-    static func instantiateViewController(withIdentifier: String) -> UIViewController {
-      return self.storyboard.instantiateViewController(withIdentifier: identifier)
-    }
-
-    static func instantiateViewController<T: UIViewController>(ofType type: T.Type) ->
-      T? where T: IdentifiableProtocol {
-        return self.storyboard.instantiateViewController(ofType: type)
-    }
-  }
-
-  struct Main: Storyboard {
-
-    static let identifier = "Main"
-
-    static var storyboard: UIStoryboard {
-      return UIStoryboard(name: self.identifier, bundle: nil)
-    }
-
-    static func instantiateInitialViewController() -> TabBarViewController {
-      return (self.storyboard.instantiateInitialViewController() as? TabBarViewController)!
-    }
-
-    static func instantiateViewController(withIdentifier: String) -> UIViewController {
-      return self.storyboard.instantiateViewController(withIdentifier: identifier)
-    }
-
-    static func instantiateViewController<T: UIViewController>(ofType type: T.Type) ->
-      T? where T: IdentifiableProtocol {
-        return self.storyboard.instantiateViewController(ofType: type)
-    }
-  }
-
-  struct Profile: Storyboard {
-
-    static let identifier = "Profile"
-
-    static var storyboard: UIStoryboard {
-      return UIStoryboard(name: self.identifier, bundle: nil)
-    }
-
-    static func instantiateViewController(withIdentifier: String) -> UIViewController {
-      return self.storyboard.instantiateViewController(withIdentifier: identifier)
-    }
-
-    static func instantiateViewController<T: UIViewController>(ofType type: T.Type) ->
-      T? where T: IdentifiableProtocol {
-        return self.storyboard.instantiateViewController(ofType: type)
-    }
-
-    static func instantiateProfileCreateViewController() -> ProfileCreateViewController {
-      return (self.storyboard.instantiateViewController(withIdentifier: "ProfileCreateViewController") as?
-        ProfileCreateViewController)!
-    }
-
-    static func instantiateProfileViewController() -> ProfileViewController {
-      return (self.storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as?
-        ProfileViewController)!
-    }
-
-    static func instantiateProfileCreateViewControllerNavigation() -> UINavigationController {
-      return (self.storyboard.instantiateViewController(withIdentifier: "ProfileCreateViewControllerNavigation") as?
-        UINavigationController)!
-    }
-
-    static func instantiateProfileViewControllerNavigation() -> UINavigationController {
-      return (self.storyboard.instantiateViewController(withIdentifier: "ProfileViewControllerNavigation") as?
-        UINavigationController)!
-    }
-  }
 }
 
-// MARK: - ReusableKind
-
+//MARK: - ReusableKind
 enum ReusableKind: String, CustomStringConvertible {
-  case TableViewCell = "tableViewCell"
-  case CollectionViewCell = "collectionViewCell"
+    case TableViewCell = "tableViewCell"
+    case CollectionViewCell = "collectionViewCell"
 
-  var description: String { return self.rawValue }
+    var description: String { return self.rawValue }
 }
 
-// MARK: - SegueKind
+//MARK: - SegueKind
+enum SegueKind: String, CustomStringConvertible {    
+    case Relationship = "relationship" 
+    case Show = "show"                 
+    case Presentation = "presentation" 
+    case Embed = "embed"               
+    case Unwind = "unwind"             
+    case Push = "push"                 
+    case Modal = "modal"               
+    case Popover = "popover"           
+    case Replace = "replace"           
+    case Custom = "custom"             
 
-enum SegueKind: String, CustomStringConvertible {
-  case Relationship = "relationship"
-  case Show = "show"
-  case Presentation = "presentation"
-  case Embed = "embed"
-  case Unwind = "unwind"
-  case Push = "push"
-  case Modal = "modal"
-  case Popover = "popover"
-  case Replace = "replace"
-  case Custom = "custom"
-
-  var description: String { return self.rawValue }
+    var description: String { return self.rawValue } 
 }
 
-// MARK: - IdentifiableProtocol
+//MARK: - IdentifiableProtocol
 
 public protocol IdentifiableProtocol: Equatable {
-  var storyboardIdentifier: String? { get }
+    var storyboardIdentifier: String? { get }
 }
 
-// MARK: - SegueProtocol
+//MARK: - SegueProtocol
 
 public protocol SegueProtocol {
-  var identifier: String? { get }
+    var identifier: String? { get }
 }
 
 public func ==<T: SegueProtocol, U: SegueProtocol>(lhs: T, rhs: U) -> Bool {
-  return lhs.identifier == rhs.identifier
+    return lhs.identifier == rhs.identifier
 }
 
 public func ~=<T: SegueProtocol, U: SegueProtocol>(lhs: T, rhs: U) -> Bool {
-  return lhs.identifier == rhs.identifier
+    return lhs.identifier == rhs.identifier
 }
 
 public func ==<T: SegueProtocol>(lhs: T, rhs: String) -> Bool {
-  return lhs.identifier == rhs
+    return lhs.identifier == rhs
 }
 
 public func ~=<T: SegueProtocol>(lhs: T, rhs: String) -> Bool {
-  return lhs.identifier == rhs
+    return lhs.identifier == rhs
 }
 
 public func ==<T: SegueProtocol>(lhs: String, rhs: T) -> Bool {
-  return lhs == rhs.identifier
+    return lhs == rhs.identifier
 }
 
 public func ~=<T: SegueProtocol>(lhs: String, rhs: T) -> Bool {
-  return lhs == rhs.identifier
+    return lhs == rhs.identifier
 }
 
-// MARK: - ReusableViewProtocol
-
+//MARK: - ReusableViewProtocol
 public protocol ReusableViewProtocol: IdentifiableProtocol {
-  var viewType: UIView.Type? { get }
+    var viewType: UIView.Type? { get }
 }
 
 public func ==<T: ReusableViewProtocol, U: ReusableViewProtocol>(lhs: T, rhs: U) -> Bool {
-  return lhs.storyboardIdentifier == rhs.storyboardIdentifier
+    return lhs.storyboardIdentifier == rhs.storyboardIdentifier
 }
 
-// MARK: - Protocol Implementation
-
+//MARK: - Protocol Implementation
 extension UIStoryboardSegue: SegueProtocol {
 }
 
 extension UICollectionReusableView: ReusableViewProtocol {
-  public var viewType: UIView.Type? { return type(of: self) }
-  public var storyboardIdentifier: String? { return self.reuseIdentifier }
+    public var viewType: UIView.Type? { return type(of: self) }
+    public var storyboardIdentifier: String? { return self.reuseIdentifier }
 }
 
 extension UITableViewCell: ReusableViewProtocol {
-  public var viewType: UIView.Type? { return type(of: self) }
-  public var storyboardIdentifier: String? { return self.reuseIdentifier }
+    public var viewType: UIView.Type? { return type(of: self) }
+    public var storyboardIdentifier: String? { return self.reuseIdentifier }
 }
 
-// MARK: - UIViewController extension
-
+//MARK: - UIViewController extension
 extension UIViewController {
-  func perform<T: SegueProtocol>(segue: T, sender: AnyObject?) {
-    if let identifier = segue.identifier {
-      performSegue(withIdentifier: identifier, sender: sender)
+    func perform<T: SegueProtocol>(segue: T, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            performSegue(withIdentifier: identifier, sender: sender)
+        }
     }
-  }
 
-  func perform<T: SegueProtocol>(segue: T) {
-    perform(segue: segue, sender: nil)
-  }
+    func perform<T: SegueProtocol>(segue: T) {
+        perform(segue: segue, sender: nil)
+    }
 }
 
-// MARK: - UICollectionView
+//MARK: - UICollectionView
 
 extension UICollectionView {
 
-  func dequeue<T: ReusableViewProtocol>(reusable: T, for: IndexPath) -> UICollectionViewCell? {
-    if let identifier = reusable.storyboardIdentifier {
-      return dequeueReusableCell(withReuseIdentifier: identifier, for: `for`)
+    func dequeue<T: ReusableViewProtocol>(reusable: T, for: IndexPath) -> UICollectionViewCell? {
+        if let identifier = reusable.storyboardIdentifier {
+            return dequeueReusableCell(withReuseIdentifier: identifier, for: `for`)
+        }
+        return nil
     }
-    return nil
-  }
 
-  func register<T: ReusableViewProtocol>(reusable: T) {
-    if let type = reusable.viewType, let identifier = reusable.storyboardIdentifier {
-      register(type, forCellWithReuseIdentifier: identifier)
+    func register<T: ReusableViewProtocol>(reusable: T) {
+        if let type = reusable.viewType, let identifier = reusable.storyboardIdentifier {
+            register(type, forCellWithReuseIdentifier: identifier)
+        }
     }
-  }
 
-  func dequeueReusableSupplementaryViewOfKind<T: ReusableViewProtocol>(elementKind: String,
-                                                                       withReusable reusable: T,
-                                                                       for: IndexPath) -> UICollectionReusableView? {
-    if let identifier = reusable.storyboardIdentifier {
-      return dequeueReusableSupplementaryView(ofKind: elementKind, withReuseIdentifier: identifier, for: `for`)
+    func dequeueReusableSupplementaryViewOfKind<T: ReusableViewProtocol>(elementKind: String, withReusable reusable: T, for: IndexPath) -> UICollectionReusableView? {
+        if let identifier = reusable.storyboardIdentifier {
+            return dequeueReusableSupplementaryView(ofKind: elementKind, withReuseIdentifier: identifier, for: `for`)
+        }
+        return nil
     }
-    return nil
-  }
 
-  func register<T: ReusableViewProtocol>(reusable: T, forSupplementaryViewOfKind elementKind: String) {
-    if let type = reusable.viewType, let identifier = reusable.storyboardIdentifier {
-      register(type, forSupplementaryViewOfKind: elementKind, withReuseIdentifier: identifier)
+    func register<T: ReusableViewProtocol>(reusable: T, forSupplementaryViewOfKind elementKind: String) {
+        if let type = reusable.viewType, let identifier = reusable.storyboardIdentifier {
+            register(type, forSupplementaryViewOfKind: elementKind, withReuseIdentifier: identifier)
+        }
     }
-  }
 }
-
-// MARK: - UITableView
+//MARK: - UITableView
 
 extension UITableView {
 
-  func dequeue<T: ReusableViewProtocol>(reusable: T, for: IndexPath) -> UITableViewCell? {
-    if let identifier = reusable.storyboardIdentifier {
-      return dequeueReusableCell(withIdentifier: identifier, for: `for`)
+    func dequeue<T: ReusableViewProtocol>(reusable: T, for: IndexPath) -> UITableViewCell? {
+        if let identifier = reusable.storyboardIdentifier {
+            return dequeueReusableCell(withIdentifier: identifier, for: `for`)
+        }
+        return nil
     }
-    return nil
-  }
 
-  func register<T: ReusableViewProtocol>(reusable: T) {
-    if let type = reusable.viewType, let identifier = reusable.storyboardIdentifier {
-      register(type, forCellReuseIdentifier: identifier)
+    func register<T: ReusableViewProtocol>(reusable: T) {
+        if let type = reusable.viewType, let identifier = reusable.storyboardIdentifier {
+            register(type, forCellReuseIdentifier: identifier)
+        }
     }
-  }
 
-  func dequeueReusableHeaderFooter<T: ReusableViewProtocol>(_ reusable: T) -> UITableViewHeaderFooterView? {
-    if let identifier = reusable.storyboardIdentifier {
-      return dequeueReusableHeaderFooterView(withIdentifier: identifier)
+    func dequeueReusableHeaderFooter<T: ReusableViewProtocol>(_ reusable: T) -> UITableViewHeaderFooterView? {
+        if let identifier = reusable.storyboardIdentifier {
+            return dequeueReusableHeaderFooterView(withIdentifier: identifier)
+        }
+        return nil
     }
-    return nil
-  }
 
-  func registerReusableHeaderFooter<T: ReusableViewProtocol>(_ reusable: T) {
-    if let type = reusable.viewType, let identifier = reusable.storyboardIdentifier {
-      register(type, forHeaderFooterViewReuseIdentifier: identifier)
+    func registerReusableHeaderFooter<T: ReusableViewProtocol>(_ reusable: T) {
+        if let type = reusable.viewType, let identifier = reusable.storyboardIdentifier {
+             register(type, forHeaderFooterViewReuseIdentifier: identifier)
+        }
     }
-  }
 }
 
-// MARK: - EventPreviewViewController
 
-extension EventPreviewViewController: IdentifiableProtocol {
-  var storyboardIdentifier: String? { return "EventPreviewViewController" }
-  static var storyboardIdentifier: String? { return "EventPreviewViewController" }
+//MARK: - EventPreviewViewController
+extension EventPreviewViewController: IdentifiableProtocol { 
+    var storyboardIdentifier: String? { return "EventPreviewViewController" }
+    static var storyboardIdentifier: String? { return "EventPreviewViewController" }
 }
 
-// MARK: - RegistrationPreviewViewController
 
-// MARK: - RegistrationConfirmViewController
+//MARK: - RegistrationPreviewViewController
 
-// MARK: - SpeechViewController
+//MARK: - RegistrationConfirmViewController
 
-// MARK: - PastEventsViewController
+//MARK: - SpeechViewController
 
-// MARK: - MainViewController
+//MARK: - PastEventsViewController
 
-// MARK: - TabBarViewController
+//MARK: - MainViewController
 
-// MARK: - ProfileNavigationViewController
+//MARK: - TabBarViewController
 
-// MARK: - ProfileCreateViewController
+//MARK: - ProfileNavigationViewController
 
-extension ProfileCreateViewController: IdentifiableProtocol {
-  var storyboardIdentifier: String? { return "ProfileCreateViewController" }
-  static var storyboardIdentifier: String? { return "ProfileCreateViewController" }
+//MARK: - ProfileCreateViewController
+extension ProfileCreateViewController: IdentifiableProtocol { 
+    var storyboardIdentifier: String? { return "ProfileCreateViewController" }
+    static var storyboardIdentifier: String? { return "ProfileCreateViewController" }
 }
 
-// MARK: - ProfileViewController
 
-extension ProfileViewController: IdentifiableProtocol {
-  var storyboardIdentifier: String? { return "ProfileViewController" }
-  static var storyboardIdentifier: String? { return "ProfileViewController" }
+//MARK: - ProfileViewController
+extension ProfileViewController: IdentifiableProtocol { 
+    var storyboardIdentifier: String? { return "ProfileViewController" }
+    static var storyboardIdentifier: String? { return "ProfileViewController" }
 }
 
-// MARK: - ProfileEditViewController
 
-// MARK: - GiveSpeechViewController
+//MARK: - ProfileEditViewController
+
+//MARK: - GiveSpeechViewController
+
