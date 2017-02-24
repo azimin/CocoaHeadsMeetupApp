@@ -19,5 +19,4 @@ class MainViewController: UIViewController {
   @IBAction func showEventAction(_ sender: UIButton) {
     navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController, animated: true)
   }
-
 }
