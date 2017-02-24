@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSRemindersUsageDescription</key>
-	<string>Go to</string>
+	<string>Это поможет нам добавлять встречи в список ваших дел и напоминать вам о них ;)</string>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Go to</string>
+	<string>Это поможет нам добавлять встречи в ваш календарь и напоминать вам о них ;)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

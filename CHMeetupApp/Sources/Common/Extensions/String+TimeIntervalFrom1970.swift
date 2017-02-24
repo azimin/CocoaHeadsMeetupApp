@@ -8,16 +8,17 @@
 
 import Foundation
 
+/* Helper extension for ImportController.swift
+ put the number of seconds from 1970 to date
+ */
 extension String {
-  var dateSince: Double {
+
+  var timeIntervalFrom1970: Double {
     let dateFormatter = DateFormatter()
     let dateString = self
     dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
     let dat = dateFormatter.date(from: dateString)!
     return Double(dat.timeIntervalSince1970)
-  }
-  var dateFromString: Date? {
-    return Date.stringDate.date(from: self)
   }
 }
