@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09l-qR-0Ck">
-                                <rect key="frame" x="143" y="318.5" width="89" height="30"/>
+                                <rect key="frame" x="143" y="319" width="89" height="30"/>
                                 <state key="normal" title="Show Evenet"/>
                                 <connections>
                                     <action selector="showEventAction:" destination="oCD-k4-2hk" eventType="touchUpInside" id="WrT-Hy-LKo"/>
@@ -54,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlt-FB-hRB">
-                                <rect key="frame" x="142.5" y="318" width="89" height="30"/>
+                                <rect key="frame" x="143" y="318" width="89" height="30"/>
                                 <state key="normal" title="Show Evenet"/>
                                 <connections>
                                     <action selector="showEventAction:" destination="du5-Fr-4Vf" eventType="touchUpInside" id="XHm-YB-6JF"/>
