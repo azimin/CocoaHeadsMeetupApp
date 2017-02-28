@@ -4,7 +4,7 @@
 //
 import UIKit
 
-//MARK: - Storyboards
+// MARK: - Storyboards
 
 extension UIStoryboard {
     func instantiateViewController<T: UIViewController>(ofType type: T.Type) -> T? where T: IdentifiableProtocol {
@@ -42,6 +42,14 @@ struct Storyboards {
 
         static func instantiateEventPreviewViewController() -> EventPreviewViewController {
             return self.storyboard.instantiateViewController(withIdentifier: "EventPreviewViewController") as! EventPreviewViewController
+        }
+
+        static func instantiateRegistrationPreviewViewController() -> RegistrationPreviewViewController {
+            return self.storyboard.instantiateViewController(withIdentifier: "RegistrationPreviewViewController") as! RegistrationPreviewViewController
+        }
+
+        static func instantiateSpeechViewController() -> SpeechViewController {
+            return self.storyboard.instantiateViewController(withIdentifier: "SpeechViewController") as! SpeechViewController
         }
 
         static func instantiateEventPreviewViewControllerNavigation() -> UINavigationController {
@@ -125,7 +133,7 @@ struct Storyboards {
     }
 }
 
-//MARK: - ReusableKind
+// MARK: - ReusableKind
 enum ReusableKind: String, CustomStringConvertible {
     case TableViewCell = "tableViewCell"
     case CollectionViewCell = "collectionViewCell"
@@ -133,7 +141,7 @@ enum ReusableKind: String, CustomStringConvertible {
     var description: String { return self.rawValue }
 }
 
-//MARK: - SegueKind
+// MARK: - SegueKind
 enum SegueKind: String, CustomStringConvertible {    
     case Relationship = "relationship" 
     case Show = "show"                 
@@ -149,13 +157,13 @@ enum SegueKind: String, CustomStringConvertible {
     var description: String { return self.rawValue } 
 }
 
-//MARK: - IdentifiableProtocol
+// MARK: - IdentifiableProtocol
 
 public protocol IdentifiableProtocol: Equatable {
     var storyboardIdentifier: String? { get }
 }
 
-//MARK: - SegueProtocol
+// MARK: - SegueProtocol
 
 public protocol SegueProtocol {
     var identifier: String? { get }
@@ -185,7 +193,7 @@ public func ~=<T: SegueProtocol>(lhs: String, rhs: T) -> Bool {
     return lhs == rhs.identifier
 }
 
-//MARK: - ReusableViewProtocol
+// MARK: - ReusableViewProtocol
 public protocol ReusableViewProtocol: IdentifiableProtocol {
     var viewType: UIView.Type? { get }
 }
@@ -194,7 +202,7 @@ public func ==<T: ReusableViewProtocol, U: ReusableViewProtocol>(lhs: T, rhs: U)
     return lhs.storyboardIdentifier == rhs.storyboardIdentifier
 }
 
-//MARK: - Protocol Implementation
+// MARK: - Protocol Implementation
 extension UIStoryboardSegue: SegueProtocol {
 }
 
@@ -208,7 +216,7 @@ extension UITableViewCell: ReusableViewProtocol {
     public var storyboardIdentifier: String? { return self.reuseIdentifier }
 }
 
-//MARK: - UIViewController extension
+// MARK: - UIViewController extension
 extension UIViewController {
     func perform<T: SegueProtocol>(segue: T, sender: AnyObject?) {
         if let identifier = segue.identifier {
@@ -221,7 +229,7 @@ extension UIViewController {
     }
 }
 
-//MARK: - UICollectionView
+// MARK: - UICollectionView
 
 extension UICollectionView {
 
@@ -251,7 +259,7 @@ extension UICollectionView {
         }
     }
 }
-//MARK: - UITableView
+// MARK: - UITableView
 
 extension UITableView {
 
@@ -283,42 +291,52 @@ extension UITableView {
 }
 
 
-//MARK: - EventPreviewViewController
+// MARK: - EventPreviewViewController
 extension EventPreviewViewController: IdentifiableProtocol { 
     var storyboardIdentifier: String? { return "EventPreviewViewController" }
     static var storyboardIdentifier: String? { return "EventPreviewViewController" }
 }
 
 
-//MARK: - RegistrationPreviewViewController
+// MARK: - RegistrationPreviewViewController
+extension RegistrationPreviewViewController: IdentifiableProtocol { 
+    var storyboardIdentifier: String? { return "RegistrationPreviewViewController" }
+    static var storyboardIdentifier: String? { return "RegistrationPreviewViewController" }
+}
 
-//MARK: - RegistrationConfirmViewController
 
-//MARK: - SpeechViewController
+// MARK: - RegistrationConfirmViewController
 
-//MARK: - PastEventsViewController
+// MARK: - SpeechViewController
+extension SpeechViewController: IdentifiableProtocol { 
+    var storyboardIdentifier: String? { return "SpeechViewController" }
+    static var storyboardIdentifier: String? { return "SpeechViewController" }
+}
 
-//MARK: - MainViewController
 
-//MARK: - TabBarViewController
+// MARK: - PastEventsViewController
 
-//MARK: - ProfileNavigationViewController
+// MARK: - MainViewController
 
-//MARK: - ProfileCreateViewController
+// MARK: - TabBarViewController
+
+// MARK: - ProfileNavigationViewController
+
+// MARK: - ProfileCreateViewController
 extension ProfileCreateViewController: IdentifiableProtocol { 
     var storyboardIdentifier: String? { return "ProfileCreateViewController" }
     static var storyboardIdentifier: String? { return "ProfileCreateViewController" }
 }
 
 
-//MARK: - ProfileViewController
+// MARK: - ProfileViewController
 extension ProfileViewController: IdentifiableProtocol { 
     var storyboardIdentifier: String? { return "ProfileViewController" }
     static var storyboardIdentifier: String? { return "ProfileViewController" }
 }
 
 
-//MARK: - ProfileEditViewController
+// MARK: - ProfileEditViewController
 
-//MARK: - GiveSpeechViewController
+// MARK: - GiveSpeechViewController
 

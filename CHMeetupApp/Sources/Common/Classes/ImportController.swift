@@ -42,7 +42,6 @@ class Importer {
         completion(.permissionError)
         return
       }
-
       let event = EKEvent(eventStore: self.calendarEventStore)
       let structuredLocation = EKStructuredLocation(title: infoAboutEvent.locationTitle)
       //warn the user for five hours before event 5 hours = 18000 seconds

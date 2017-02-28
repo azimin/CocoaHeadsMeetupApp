@@ -10,7 +10,16 @@
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
 		221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F871E5C0B6C0009FD07 /* Assets.xcassets */; };
 		221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */; };
+		4D0385331E65E06A00514D0A /* InfoAboutLectureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0385321E65E06A00514D0A /* InfoAboutLectureCell.xib */; };
+		4D03853A1E66010A00514D0A /* ImportResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0385391E66010A00514D0A /* ImportResultHandler.swift */; };
+		4D03853E1E6611A100514D0A /* JoinButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03853C1E6611A100514D0A /* JoinButtonCell.swift */; };
+		4D03853F1E6611A100514D0A /* JoinButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D03853D1E6611A100514D0A /* JoinButtonCell.xib */; };
+		4D0385461E6637FF00514D0A /* AddressAndAddButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0385441E6637FF00514D0A /* AddressAndAddButtonsCell.swift */; };
+		4D0385471E6637FF00514D0A /* AddressAndAddButtonsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0385451E6637FF00514D0A /* AddressAndAddButtonsCell.xib */; };
 		4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08815A1E64200B004812E5 /* DateComponents+Init.swift */; };
+		4D4ACDAF1E65DC8900F90D43 /* TitleEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4ACDAD1E65DC8900F90D43 /* TitleEventCell.swift */; };
+		4D4ACDB01E65DC8900F90D43 /* TitleEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4ACDAE1E65DC8900F90D43 /* TitleEventCell.xib */; };
+		4D4ACDB31E65DE3600F90D43 /* InfoAboutLectureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4ACDB11E65DE3600F90D43 /* InfoAboutLectureCell.swift */; };
 		4D890B591E5EEFE00038CCC9 /* ImportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* ImportController.swift */; };
 		4D99A5441E61E398009E3E0E /* EventPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D99A5431E61E398009E3E0E /* EventPO.swift */; };
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
@@ -47,7 +56,16 @@
 		221F4F871E5C0B6C0009FD07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		221F4F8A1E5C0B6C0009FD07 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4D0385321E65E06A00514D0A /* InfoAboutLectureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoAboutLectureCell.xib; path = EventPreview/Subviews/Cells/InfoAboutLectureCell/InfoAboutLectureCell.xib; sourceTree = "<group>"; };
+		4D0385391E66010A00514D0A /* ImportResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportResultHandler.swift; sourceTree = "<group>"; };
+		4D03853C1E6611A100514D0A /* JoinButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinButtonCell.swift; path = EventPreview/Subviews/Cells/JoinButtonCell/JoinButtonCell.swift; sourceTree = "<group>"; };
+		4D03853D1E6611A100514D0A /* JoinButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JoinButtonCell.xib; path = EventPreview/Subviews/Cells/JoinButtonCell/JoinButtonCell.xib; sourceTree = "<group>"; };
+		4D0385441E6637FF00514D0A /* AddressAndAddButtonsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressAndAddButtonsCell.swift; path = EventPreview/Subviews/Cells/AddressAndAddButtonsCell/AddressAndAddButtonsCell.swift; sourceTree = "<group>"; };
+		4D0385451E6637FF00514D0A /* AddressAndAddButtonsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddressAndAddButtonsCell.xib; path = EventPreview/Subviews/Cells/AddressAndAddButtonsCell/AddressAndAddButtonsCell.xib; sourceTree = "<group>"; };
 		4D08815A1E64200B004812E5 /* DateComponents+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateComponents+Init.swift"; path = "DateComponents/DateComponents+Init.swift"; sourceTree = "<group>"; };
+		4D4ACDAD1E65DC8900F90D43 /* TitleEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleEventCell.swift; path = EventPreview/Subviews/Cells/TitleEventCell/TitleEventCell.swift; sourceTree = "<group>"; };
+		4D4ACDAE1E65DC8900F90D43 /* TitleEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TitleEventCell.xib; path = EventPreview/Subviews/Cells/TitleEventCell/TitleEventCell.xib; sourceTree = "<group>"; };
+		4D4ACDB11E65DE3600F90D43 /* InfoAboutLectureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoAboutLectureCell.swift; path = EventPreview/Subviews/Cells/InfoAboutLectureCell/InfoAboutLectureCell.swift; sourceTree = "<group>"; };
 		4D890B581E5EEFE00038CCC9 /* ImportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportController.swift; sourceTree = "<group>"; };
 		4D99A5431E61E398009E3E0E /* EventPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPO.swift; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -173,6 +191,7 @@
 			children = (
 				4D890B581E5EEFE00038CCC9 /* ImportController.swift */,
 				C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */,
+				4D0385391E66010A00514D0A /* ImportResultHandler.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -255,12 +274,67 @@
 			path = "ViewControllers+Cells";
 			sourceTree = "<group>";
 		};
+		4D0385341E65E5B300514D0A /* AddressAndAddButtonsCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D0385441E6637FF00514D0A /* AddressAndAddButtonsCell.swift */,
+				4D0385451E6637FF00514D0A /* AddressAndAddButtonsCell.xib */,
+			);
+			name = AddressAndAddButtonsCell;
+			sourceTree = "<group>";
+		};
+		4D03853B1E66110400514D0A /* JoinButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D03853C1E6611A100514D0A /* JoinButtonCell.swift */,
+				4D03853D1E6611A100514D0A /* JoinButtonCell.xib */,
+			);
+			name = JoinButtonCell;
+			sourceTree = "<group>";
+		};
 		4D0881591E641FE3004812E5 /* DateComponents */ = {
 			isa = PBXGroup;
 			children = (
 				4D08815A1E64200B004812E5 /* DateComponents+Init.swift */,
 			);
 			name = DateComponents;
+			sourceTree = "<group>";
+		};
+		4D4ACDAA1E65DC3200F90D43 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				4D4ACDAB1E65DC3F00F90D43 /* Cells */,
+			);
+			name = Subviews;
+			sourceTree = "<group>";
+		};
+		4D4ACDAB1E65DC3F00F90D43 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4D03853B1E66110400514D0A /* JoinButtonCell */,
+				4D0385341E65E5B300514D0A /* AddressAndAddButtonsCell */,
+				4D4ACDAC1E65DC4900F90D43 /* TitleEventCell */,
+				4D4ACDB51E65DE3E00F90D43 /* InfoAboutLectureCell */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		4D4ACDAC1E65DC4900F90D43 /* TitleEventCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D4ACDAD1E65DC8900F90D43 /* TitleEventCell.swift */,
+				4D4ACDAE1E65DC8900F90D43 /* TitleEventCell.xib */,
+			);
+			name = TitleEventCell;
+			sourceTree = "<group>";
+		};
+		4D4ACDB51E65DE3E00F90D43 /* InfoAboutLectureCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D4ACDB11E65DE3600F90D43 /* InfoAboutLectureCell.swift */,
+				4D0385321E65E06A00514D0A /* InfoAboutLectureCell.xib */,
+			);
+			name = InfoAboutLectureCell;
 			sourceTree = "<group>";
 		};
 		8A6268271E60742B00D51BEB /* Frameworks */ = {
@@ -399,6 +473,7 @@
 		9FD58FD41E5E337100207199 /* EventPreview */ = {
 			isa = PBXGroup;
 			children = (
+				4D4ACDAA1E65DC3200F90D43 /* Subviews */,
 				9FD58FD21E5E336E00207199 /* EventPreviewViewController.swift */,
 			);
 			name = EventPreview;
@@ -506,6 +581,7 @@
 					9F6048941E5B3CCB00C414C3 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = KH2KDZEEE3;
+						DevelopmentTeam = MEH36U69XD;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -533,9 +609,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D03853F1E6611A100514D0A /* JoinButtonCell.xib in Resources */,
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
+				4D0385331E65E06A00514D0A /* InfoAboutLectureCell.xib in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
+				4D0385471E6637FF00514D0A /* AddressAndAddButtonsCell.xib in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
+				4D4ACDB01E65DC8900F90D43 /* TitleEventCell.xib in Resources */,
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
 				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
 			);
@@ -597,21 +677,26 @@
 			files = (
 				4D890B591E5EEFE00038CCC9 /* ImportController.swift in Sources */,
 				C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */,
+				4D0385461E6637FF00514D0A /* AddressAndAddButtonsCell.swift in Sources */,
 				C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */,
 				9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */,
 				9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */,
 				9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */,
+				4D4ACDB31E65DE3600F90D43 /* InfoAboutLectureCell.swift in Sources */,
 				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
 				4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */,
+				4D03853E1E6611A100514D0A /* JoinButtonCell.swift in Sources */,
 				4D99A5441E61E398009E3E0E /* EventPO.swift in Sources */,
 				9FD58FC91E5E331600207199 /* ProfileCreateViewController.swift in Sources */,
 				9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */,
+				4D03853A1E66010A00514D0A /* ImportResultHandler.swift in Sources */,
 				9FD58FCE1E5E334400207199 /* PastEventsViewController.swift in Sources */,
 				8A6268541E64638500D51BEB /* LoginType.swift in Sources */,
+				4D4ACDAF1E65DC8900F90D43 /* TitleEventCell.swift in Sources */,
 				9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */,
 				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
 				9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */,
@@ -724,6 +809,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KH2KDZEEE3;
+				DEVELOPMENT_TEAM = MEH36U69XD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -741,6 +827,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KH2KDZEEE3;
+				DEVELOPMENT_TEAM = MEH36U69XD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

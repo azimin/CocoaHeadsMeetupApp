@@ -13,55 +13,19 @@
         <scene sceneID="9Ra-2g-CmF">
             <objects>
                 <viewController storyboardIdentifier="EventPreviewViewController" hidesBottomBarWhenPushed="YES" id="let-Rh-7mo" customClass="EventPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="W69-Ef-5Xe"/>
-                        <viewControllerLayoutGuide type="bottom" id="0Nx-GU-Cyr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="AK6-Xh-59r">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VWe-LG-F3k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tNQ-k1-i4K">
-                                <rect key="frame" x="132" y="273.5" width="110" height="120"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMo-tp-KiO">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
-                                        <state key="normal" title="Speach Preview"/>
-                                        <connections>
-                                            <segue destination="p6n-SL-zh4" kind="show" id="q4A-mS-NSZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EQ-sc-AgV">
-                                        <rect key="frame" x="0.0" y="30" width="110" height="30"/>
-                                        <state key="normal" title="Register"/>
-                                        <connections>
-                                            <segue destination="CGY-Eq-4dK" kind="show" id="yex-9Q-uEJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vv-q1-0bd">
-                                        <rect key="frame" x="0.0" y="60" width="110" height="30"/>
-                                        <state key="normal" title="Cal"/>
-                                        <connections>
-                                            <action selector="addToCalendarWithSender:" destination="let-Rh-7mo" eventType="touchUpInside" id="NQ7-v1-uFS"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvw-5Z-9Mc">
-                                        <rect key="frame" x="0.0" y="90" width="110" height="30"/>
-                                        <state key="normal" title="Rem"/>
-                                        <connections>
-                                            <action selector="addToReminderWithSender:" destination="let-Rh-7mo" eventType="touchUpInside" id="dHZ-Ud-AEk"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tNQ-k1-i4K" firstAttribute="centerX" secondItem="AK6-Xh-59r" secondAttribute="centerX" id="aDk-Cz-7t8"/>
-                            <constraint firstItem="tNQ-k1-i4K" firstAttribute="centerY" secondItem="AK6-Xh-59r" secondAttribute="centerY" id="zwd-Sk-3J1"/>
-                        </constraints>
-                    </view>
+                        <connections>
+                            <outlet property="dataSource" destination="let-Rh-7mo" id="Cvb-BV-bhY"/>
+                            <outlet property="delegate" destination="let-Rh-7mo" id="c9l-Kf-ZGl"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" title="Event Preview" id="3ZJ-CZ-Ntl"/>
+                    <connections>
+                        <outlet property="EventPreviewTableView" destination="VWe-LG-F3k" id="ylj-ZY-SSv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKm-n1-Xfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,7 +34,7 @@
         <!--Registration Preview-->
         <scene sceneID="4rC-ay-iGN">
             <objects>
-                <viewController id="CGY-Eq-4dK" customClass="RegistrationPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationPreviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CGY-Eq-4dK" customClass="RegistrationPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yA2-hd-xVz"/>
                         <viewControllerLayoutGuide type="bottom" id="YKx-vm-lWp"/>
@@ -97,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hl-4s-KwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="673" y="827"/>
+            <point key="canvasLocation" x="681" y="848"/>
         </scene>
         <!--Registration Confirm-->
         <scene sceneID="Lj6-GD-Guj">
@@ -116,12 +80,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOf-N3-Dzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="826"/>
+            <point key="canvasLocation" x="1540" y="848"/>
         </scene>
         <!--Speech-->
         <scene sceneID="gb4-so-DQv">
             <objects>
-                <viewController id="p6n-SL-zh4" customClass="SpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpeechViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p6n-SL-zh4" customClass="SpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="plA-aw-c5G"/>
                         <viewControllerLayoutGuide type="bottom" id="cEU-l5-eac"/>
@@ -135,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfW-Ii-abk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="125"/>
+            <point key="canvasLocation" x="1540" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Slm-sm-lRM">

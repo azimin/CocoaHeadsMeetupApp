@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="KGk-i7-Jjw" customClass="AddressAndAddButtonsCell" customModule="CHMeetupApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="123"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ds-rx-ZRE">
+                        <rect key="frame" x="50" y="8" width="220" height="30"/>
+                        <state key="normal" title="Address"/>
+                        <connections>
+                            <action selector="showAdressWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="M0B-8a-IVN"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgs-kL-mbX">
+                        <rect key="frame" x="50" y="46" width="220" height="30"/>
+                        <state key="normal" title="Add to Calendar"/>
+                        <connections>
+                            <action selector="addToCalendarWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rhM-N3-Efk"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgC-Jz-dmr">
+                        <rect key="frame" x="50" y="84" width="220" height="30"/>
+                        <state key="normal" title="Add to Reminder"/>
+                        <connections>
+                            <action selector="addToReminderWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="feI-9T-rgI"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dgC-Jz-dmr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="78N-JD-sqk"/>
+                    <constraint firstAttribute="trailing" secondItem="3Ds-rx-ZRE" secondAttribute="trailing" constant="50" id="9jd-KB-uBB"/>
+                    <constraint firstItem="3Ds-rx-ZRE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="C6X-lf-DjW"/>
+                    <constraint firstAttribute="bottom" secondItem="dgC-Jz-dmr" secondAttribute="bottom" constant="8" id="Mmw-0a-4P8"/>
+                    <constraint firstItem="3Ds-rx-ZRE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="TZ8-Eb-DBv"/>
+                    <constraint firstItem="Rgs-kL-mbX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="TiU-vH-Yld"/>
+                    <constraint firstItem="dgC-Jz-dmr" firstAttribute="top" secondItem="Rgs-kL-mbX" secondAttribute="bottom" constant="8" id="bbQ-qs-3VQ"/>
+                    <constraint firstAttribute="trailing" secondItem="Rgs-kL-mbX" secondAttribute="trailing" constant="50" id="blk-EG-RTA"/>
+                    <constraint firstAttribute="trailing" secondItem="dgC-Jz-dmr" secondAttribute="trailing" constant="50" id="gtU-FK-th9"/>
+                    <constraint firstItem="Rgs-kL-mbX" firstAttribute="top" secondItem="3Ds-rx-ZRE" secondAttribute="bottom" constant="8" id="zrd-n4-sR5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="34" y="84.5"/>
+        </tableViewCell>
+    </objects>
+</document>
