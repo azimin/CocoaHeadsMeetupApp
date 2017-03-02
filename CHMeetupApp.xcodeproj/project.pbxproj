@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
+		0389AF621E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */; };
 		221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F871E5C0B6C0009FD07 /* Assets.xcassets */; };
 		221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */; };
 		4D0385331E65E06A00514D0A /* InfoAboutLectureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0385321E65E06A00514D0A /* InfoAboutLectureCell.xib */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
 		221F4F871E5C0B6C0009FD07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		221F4F8A1E5C0B6C0009FD07 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		221F4F931E5C0B6C0009FD07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -552,11 +555,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F6048A71E5B3CCB00C414C3 /* Build configuration list for PBXNativeTarget "CHMeetupApp" */;
 			buildPhases = (
+				035A76421E5EF46000B87501 /* Run Script Natalie */,
 				9F6048911E5B3CCB00C414C3 /* Sources */,
 				9F6048921E5B3CCB00C414C3 /* Frameworks */,
 				9F6048931E5B3CCB00C414C3 /* Resources */,
 				8A3B15DB1E5E37BE008DD430 /* Run Script Swiftlint */,
-				035A76421E5EF46000B87501 /* Run Script Natalie */,
 				8A62682A1E60744D00D51BEB /* Run Script Carthage */,
 			);
 			buildRules = (
@@ -626,7 +629,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		035A76421E5EF46000B87501 /* Run Script Natalie */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -683,6 +686,7 @@
 				9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */,
 				9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */,
 				4D4ACDB31E65DE3600F90D43 /* InfoAboutLectureCell.swift in Sources */,
+				0389AF621E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift in Sources */,
 				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
