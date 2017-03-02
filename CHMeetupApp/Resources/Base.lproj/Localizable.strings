@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  CHMeetupApp
+
+  Created by Sam Mejlumyan on 02/03/2017.
+  Copyright © 2017 CocoaHeads Comunity. All rights reserved.
+*/
+
+"ServerError.requestFailed" = "Неверно сформированный запрос";
+"ServerError.noConnection" = "Отстутствует подключение к сети";
+"ServerError.emptyResponse" = "Пустой ответ сервера";
+"ServerError.wrongResponse" = "Неверный ответ от сервера";

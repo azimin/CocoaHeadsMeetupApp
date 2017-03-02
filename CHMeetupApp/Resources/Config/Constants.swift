@@ -11,6 +11,8 @@ import Foundation
 // MARK: - Constants for project
 final class Constants {
 
+  static let apiBase = "http://upapi.ru/method/"
+
   struct Vkontakte {
     static let clientId = "5895589"
     static let scope = "wall,email,offline,nohttps"
