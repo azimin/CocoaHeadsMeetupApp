@@ -30,7 +30,7 @@ class ImportResultHandler {
   }
 
   private static func success(in viewController: UIViewController) {
-    let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+    let action = UIAlertAction(title: "OК", style: .default, handler: nil)
 
     let alert = UIAlertController(title: "Added", message: "", preferredStyle: .alert)
     alert.addAction(action)
@@ -54,7 +54,7 @@ class ImportResultHandler {
   }
 
   private static func saveError(in viewController: UIViewController) {
-    let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+    let action = UIAlertAction(title: "OК", style: .cancel, handler: nil)
 
     let alert = UIAlertController(title: "Упс! Что-то пошло не так :(",
                                   message: "Ошибка сохранения",
