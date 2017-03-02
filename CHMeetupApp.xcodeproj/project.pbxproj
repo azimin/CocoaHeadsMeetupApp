@@ -36,6 +36,12 @@
 		9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */; };
 		9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590131E5F1AE700207199 /* MapAppType.swift */; };
 		9FD590161E5F1AE700207199 /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590141E5F1AE700207199 /* MapsController.swift */; };
+		C33E3B1F1E68A1E3000F053D /* UIViewController+permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E3B1E1E68A1E3000F053D /* UIViewController+permissions.swift */; };
+		C3A5F3951E6561AA006423D9 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A5F3941E6561AA006423D9 /* PermissionsManager.swift */; };
+		C3A5F3971E658498006423D9 /* CHImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A5F3961E658498006423D9 /* CHImagePicker.swift */; };
+		C3A5F39B1E65886A006423D9 /* UIView+anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A5F39A1E65886A006423D9 /* UIView+anchor.swift */; };
+		C3A5F39D1E66AE3B006423D9 /* CHAlbumPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A5F39C1E66AE3B006423D9 /* CHAlbumPicker.swift */; };
+		C3A5F3A01E66C0BB006423D9 /* PhotosHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A5F39F1E66C0BB006423D9 /* PhotosHelper.swift */; };
 		C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */; };
 		C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +78,12 @@
 		9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHierarhyViewControllerType.swift; sourceTree = "<group>"; };
 		9FD590131E5F1AE700207199 /* MapAppType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAppType.swift; sourceTree = "<group>"; };
 		9FD590141E5F1AE700207199 /* MapsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
+		C33E3B1E1E68A1E3000F053D /* UIViewController+permissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+permissions.swift"; sourceTree = "<group>"; };
+		C3A5F3941E6561AA006423D9 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
+		C3A5F3961E658498006423D9 /* CHImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHImagePicker.swift; sourceTree = "<group>"; };
+		C3A5F39A1E65886A006423D9 /* UIView+anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+anchor.swift"; sourceTree = "<group>"; };
+		C3A5F39C1E66AE3B006423D9 /* CHAlbumPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHAlbumPicker.swift; sourceTree = "<group>"; };
+		C3A5F39F1E66C0BB006423D9 /* PhotosHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosHelper.swift; sourceTree = "<group>"; };
 		C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+keyboardDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +180,8 @@
 			children = (
 				4D890B581E5EEFE00038CCC9 /* ImportController.swift */,
 				C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */,
+				C3A5F3941E6561AA006423D9 /* PermissionsManager.swift */,
+				C3A5F39E1E66BDD6006423D9 /* CHImagePicker */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -176,7 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				4D0881591E641FE3004812E5 /* DateComponents */,
-				C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */,
+				C3A5F3981E658847006423D9 /* UIViewController */,
+				C3A5F3991E65884F006423D9 /* UIView */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -455,6 +470,33 @@
 			name = Maps;
 			sourceTree = "<group>";
 		};
+		C3A5F3981E658847006423D9 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */,
+				C33E3B1E1E68A1E3000F053D /* UIViewController+permissions.swift */,
+			);
+			name = UIViewController;
+			sourceTree = "<group>";
+		};
+		C3A5F3991E65884F006423D9 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				C3A5F39A1E65886A006423D9 /* UIView+anchor.swift */,
+			);
+			name = UIView;
+			sourceTree = "<group>";
+		};
+		C3A5F39E1E66BDD6006423D9 /* CHImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				C3A5F39F1E66C0BB006423D9 /* PhotosHelper.swift */,
+				C3A5F3961E658498006423D9 /* CHImagePicker.swift */,
+				C3A5F39C1E66AE3B006423D9 /* CHAlbumPicker.swift */,
+			);
+			name = CHImagePicker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,7 +532,8 @@
 				TargetAttributes = {
 					9F6048941E5B3CCB00C414C3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -583,7 +626,9 @@
 				C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */,
 				C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */,
 				9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */,
+				C3A5F3951E6561AA006423D9 /* PermissionsManager.swift in Sources */,
 				9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */,
+				C3A5F39D1E66AE3B006423D9 /* CHAlbumPicker.swift in Sources */,
 				9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */,
 				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
@@ -593,6 +638,8 @@
 				4D99A5441E61E398009E3E0E /* EventPO.swift in Sources */,
 				9FD58FC91E5E331600207199 /* ProfileCreateViewController.swift in Sources */,
 				9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */,
+				C33E3B1F1E68A1E3000F053D /* UIViewController+permissions.swift in Sources */,
+				C3A5F3971E658498006423D9 /* CHImagePicker.swift in Sources */,
 				9FD58FCE1E5E334400207199 /* PastEventsViewController.swift in Sources */,
 				9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */,
 				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
@@ -602,8 +649,10 @@
 				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
 				9FD590161E5F1AE700207199 /* MapsController.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
+				C3A5F3A01E66C0BB006423D9 /* PhotosHelper.swift in Sources */,
 				9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */,
 				9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */,
+				C3A5F39B1E65886A006423D9 /* UIView+anchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +754,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -721,6 +771,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

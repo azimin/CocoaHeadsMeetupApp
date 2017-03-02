@@ -2,12 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>api</key>
+			<string>http://upapi.ru</string>
+		</dict>
+	</dict>
 	<key>NSRemindersUsageDescription</key>
 	<string>Это поможет нам добавлять встречи в список ваших дел и напоминать вам о них ;)</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Это поможет нам добавлять встречи в ваш календарь и напоминать вам о них ;)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Возможность выбора фотографии</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Осуществление снимков</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>ru</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
