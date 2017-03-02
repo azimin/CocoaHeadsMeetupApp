@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
+		0389AF621E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */; };
 		221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F871E5C0B6C0009FD07 /* Assets.xcassets */; };
 		221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */; };
 		4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08815A1E64200B004812E5 /* DateComponents+Init.swift */; };
@@ -15,6 +16,8 @@
 		4D99A5441E61E398009E3E0E /* EventPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D99A5431E61E398009E3E0E /* EventPO.swift */; };
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
+		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
+		8A6268541E64638500D51BEB /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268531E64638500D51BEB /* LoginType.swift */; };
 		9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */; };
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
@@ -48,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
 		221F4F871E5C0B6C0009FD07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		221F4F8A1E5C0B6C0009FD07 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 		4D99A5431E61E398009E3E0E /* EventPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPO.swift; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8A6268531E64638500D51BEB /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginType.swift; path = Controllers/LoginType.swift; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 		221F4F891E5C0B6C0009FD07 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				8A6268511E64568C00D51BEB /* Constants.swift */,
 				221F4F8A1E5C0B6C0009FD07 /* Info.plist */,
 			);
 			path = Config;
@@ -199,6 +206,7 @@
 		221F4F931E5C0B6C0009FD07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +216,7 @@
 			children = (
 				9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */,
 				9FD58FE71E5E3F4100207199 /* LoginProcessViewController.swift */,
+				8A6268551E64639700D51BEB /* Login */,
 				9FD590121E5F1ADD00207199 /* Maps */,
 			);
 			path = Controllers;
@@ -278,6 +287,15 @@
 				8A6268281E60742B00D51BEB /* RealmSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A6268551E64639700D51BEB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8A6268531E64638500D51BEB /* LoginType.swift */,
+			);
+			name = Login;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		9F60488C1E5B3CCB00C414C3 = {
@@ -504,11 +522,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F6048A71E5B3CCB00C414C3 /* Build configuration list for PBXNativeTarget "CHMeetupApp" */;
 			buildPhases = (
+				035A76421E5EF46000B87501 /* Run Script Natalie */,
 				9F6048911E5B3CCB00C414C3 /* Sources */,
 				9F6048921E5B3CCB00C414C3 /* Frameworks */,
 				9F6048931E5B3CCB00C414C3 /* Resources */,
 				8A3B15DB1E5E37BE008DD430 /* Run Script Swiftlint */,
-				035A76421E5EF46000B87501 /* Run Script Natalie */,
 				8A62682A1E60744D00D51BEB /* Run Script Carthage */,
 			);
 			buildRules = (
@@ -573,7 +591,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		035A76421E5EF46000B87501 /* Run Script Natalie */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -630,7 +648,9 @@
 				9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */,
 				C3A5F39D1E66AE3B006423D9 /* CHAlbumPicker.swift in Sources */,
 				9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */,
+				0389AF621E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift in Sources */,
 				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
+				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
@@ -641,6 +661,7 @@
 				C33E3B1F1E68A1E3000F053D /* UIViewController+permissions.swift in Sources */,
 				C3A5F3971E658498006423D9 /* CHImagePicker.swift in Sources */,
 				9FD58FCE1E5E334400207199 /* PastEventsViewController.swift in Sources */,
+				8A6268541E64638500D51BEB /* LoginType.swift in Sources */,
 				9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */,
 				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
 				9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */,

@@ -22,3 +22,8 @@ class LoginProcessViewController {
     }
   }
 }
+
+extension Notification.Name {
+  static let CloseSafariViewControllerNotification: Notification.Name =
+    Notification.Name(rawValue: "CloseSafariViewControllerNotification")
+}
