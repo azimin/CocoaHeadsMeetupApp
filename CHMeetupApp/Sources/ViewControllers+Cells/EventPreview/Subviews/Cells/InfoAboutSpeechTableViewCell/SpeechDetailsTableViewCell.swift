@@ -8,15 +8,13 @@
 
 import UIKit
 
-class InfoAboutLectureCell: UITableViewCell {
+class SpeechDetailsTableViewCell: UITableViewCell {
 
-  @IBOutlet weak var infoAboutLectureLabel: UILabel!
-  @IBOutlet weak var avatarLectureView: UIImageView!
+  @IBOutlet var speechDetailsLabel: UILabel!
 
-  func configure(with: InfoAboutEvent, index: Int) {
-    infoAboutLectureLabel.text = with.speechThemes[index - 2] + "\n" + with.namesOfLecture[index - 2]
+  func configure(with item: EventPreviewPO) {
+    speechDetailsLabel.text = item.speechDetails
   }
-
   static var nib: UINib {
     return UINib(nibName: String(describing: self), bundle: nil)
   }

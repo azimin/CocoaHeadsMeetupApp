@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="InfoAboutLectureCell" customModule="CHMeetupApp" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SpeechDetailsTableViewCell" customModule="CHMeetupApp">
             <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="57d-Aw-AHX">
@@ -43,8 +43,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="avatarLectureView" destination="57d-Aw-AHX" id="AyH-1t-tVl"/>
-                <outlet property="infoAboutLectureLabel" destination="xOC-bB-GG3" id="hvc-3R-tAA"/>
+                <outlet property="speechDetailsLabel" destination="xOC-bB-GG3" id="xZC-FE-FGx"/>
             </connections>
         </tableViewCell>
     </objects>

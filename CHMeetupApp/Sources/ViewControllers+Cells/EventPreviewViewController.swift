@@ -8,42 +8,78 @@
 
 import UIKit
 
-struct InfoAboutEvent {
-  let title = "Очередная встреча CocoaHeads"
-  let namesOfLecture = ["Андрей Юткин", "Вадим Дробинин", "Никита Кортунов"]
-  let speechThemes = ["Media Picker - to infinity and beyond",
-                      "Защищаем себя и пользователей:: руководство по безопасности",
-                      "Как ускорить разработку приложений и есть ли жизнь после Parse"]
-
-}
-
 enum TypeOfCells {
-  case title
-  case addressAndAdd
-  case lectureInfo
-  case join
-}
+  case infoAboutSpeechTableViewCell
+  case infoAboutEventTableViewCell
+  case addressButttonTableViewCell
+  case addToCalendarButtonTableViewCell
+  case addToReminderButtonTableViewCell
+  case joinButtonTableViewCell
 
-class EventPreviewViewController: UIViewController {
-
-  @IBOutlet var eventPreviewTableView: UITableView! {
-    didSet {
-      eventPreviewTableView.register(JoinButtonCell.nib, forCellReuseIdentifier: JoinButtonCell.identifier)
-      eventPreviewTableView.register(AddressAndAddButtonsCell.nib,
-                                     forCellReuseIdentifier: AddressAndAddButtonsCell.identifier)
-      eventPreviewTableView.register(TitleEventCell.nib, forCellReuseIdentifier: TitleEventCell.identifier)
-      eventPreviewTableView.register(InfoAboutLectureCell.nib, forCellReuseIdentifier: InfoAboutLectureCell.identifier)
-
-      eventPreviewTableView.estimatedRowHeight = 44
-      eventPreviewTableView.rowHeight = UITableViewAutomaticDimension
+  var nib: UINib {
+    switch self {
+    case .infoAboutSpeechTableViewCell:
+      return SpeechDetailsTableViewCell.nib
+    case .infoAboutEventTableViewCell:
+      return InfoAboutEventTableViewCell.nib
+    case .addressButttonTableViewCell:
+      return AddressButtonTableViewCell.nib
+    case .addToCalendarButtonTableViewCell:
+      return AddToCalendarButtonTableViewCell.nib
+    case .addToReminderButtonTableViewCell:
+      return AddToReminderButtonTableViewCell.nib
+    case .joinButtonTableViewCell:
+      return JoinButtonTableViewCell.nib
     }
   }
 
-  let groupType: [TypeOfCells] = [.title, .addressAndAdd, .lectureInfo, .lectureInfo, .lectureInfo, .join]
+  var identifier: String {
+    switch self {
+    case .infoAboutEventTableViewCell:
+      return InfoAboutEventTableViewCell.identifier
+    case .infoAboutSpeechTableViewCell:
+      return SpeechDetailsTableViewCell.identifier
+    case .addressButttonTableViewCell:
+      return AddressButtonTableViewCell.identifier
+    case .addToCalendarButtonTableViewCell:
+      return AddToCalendarButtonTableViewCell.identifier
+    case .addToReminderButtonTableViewCell:
+      return AddToReminderButtonTableViewCell.identifier
+    case .joinButtonTableViewCell:
+      return JoinButtonTableViewCell.identifier
+    }
+  }
+}
+
+let groupTypeForRegister: [TypeOfCells] = [ .infoAboutEventTableViewCell,
+                                 .addressButttonTableViewCell,
+                                 .addToCalendarButtonTableViewCell,
+                                 .addToReminderButtonTableViewCell,
+                                 .infoAboutSpeechTableViewCell,
+                                 .joinButtonTableViewCell]
+
+let groupTypeForCreate: [TypeOfCells] = [.infoAboutEventTableViewCell,
+                                         .addressButttonTableViewCell,
+                                         .addToCalendarButtonTableViewCell,
+                                         .addToReminderButtonTableViewCell,
+                                         .infoAboutSpeechTableViewCell,
+                                         .infoAboutSpeechTableViewCell,
+                                         .infoAboutSpeechTableViewCell,
+                                         .joinButtonTableViewCell]
+
+class EventPreviewViewController: UIViewController {
+  static fileprivate let eventPreviewEnitityPO = EventPreviewEntity()
+
+  @IBOutlet var tableView: UITableView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    eventPreviewTableView.separatorColor = UIColor.clear
+    tableView.separatorStyle = .none
+    tableView.estimatedRowHeight = 40
+    tableView.rowHeight = UITableViewAutomaticDimension
+    for typeOfCell in groupTypeForRegister {
+      self.tableView.register(typeOfCell.nib, forCellReuseIdentifier: typeOfCell.identifier)
+    }
   }
 }
 
@@ -54,41 +90,72 @@ extension EventPreviewViewController: UITableViewDataSource, UITableViewDelegate
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return groupType.count
+    return groupTypeForCreate.count
   }
 
   // swiftlint:disable colon:next force_cast
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    switch groupType[indexPath.row] {
-    case .title:
-      let cell = tableView.dequeueReusableCell(withIdentifier: TitleEventCell.identifier,
-                                               for: indexPath) as! TitleEventCell
-      cell.configure(with: InfoAboutEvent())
+    switch groupTypeForCreate[indexPath.row] {
+    case .infoAboutEventTableViewCell:
+      let cell = tableView.dequeueReusableCell(withIdentifier: InfoAboutEventTableViewCell.identifier)
+        as! InfoAboutEventTableViewCell
+      cell.configure(with: EventPO())
       return cell
-    case .addressAndAdd:
-      let cell = tableView.dequeueReusableCell(withIdentifier: AddressAndAddButtonsCell.identifier,
-                                           for: indexPath) as! AddressAndAddButtonsCell
-      cell.controller = self
+
+    case .addressButttonTableViewCell:
+      let cell = tableView.dequeueReusableCell(withIdentifier: AddressButtonTableViewCell.identifier)
+        as! AddressButtonTableViewCell
       return cell
-    case .lectureInfo:
-      let cell = tableView.dequeueReusableCell(withIdentifier: InfoAboutLectureCell.identifier,
-                                               for: indexPath) as! InfoAboutLectureCell
-      cell.configure(with: InfoAboutEvent(), index: indexPath.row)
+
+    case .addToCalendarButtonTableViewCell:
+      let cell = tableView.dequeueReusableCell(withIdentifier: AddToCalendarButtonTableViewCell.identifier)
+        as! AddToCalendarButtonTableViewCell
+      cell.actionByTap = { cell in
+        Importer.import(event: EventPO(), to: .calendar,
+                        completion: { Result in ImportResultHandler.result(type: Result, in: self)})}
       return cell
-    case .join:
-      let cell = tableView.dequeueReusableCell(withIdentifier: JoinButtonCell.identifier,
-                                           for: indexPath) as! JoinButtonCell
-      cell.navigationViewController = navigationController!
+
+    case .addToReminderButtonTableViewCell:
+      let cell = tableView.dequeueReusableCell(withIdentifier: AddToReminderButtonTableViewCell.identifier)
+        as! AddToReminderButtonTableViewCell
+      cell.actionByTap = { cell in
+        Importer.import(event: EventPO(), to: .reminder,
+                        completion: { Result in ImportResultHandler.result(type: Result, in: self)})}
+      return cell
+
+    case .joinButtonTableViewCell:
+      let cell = tableView.dequeueReusableCell(withIdentifier: JoinButtonTableViewCell.identifier)
+        as! JoinButtonTableViewCell
+      cell.actionByTap = { cell in
+        let storyboard = UIStoryboard(name: "EventPreview", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "RegistrationPreviewViewController")
+        self.navigationController?.pushViewController(viewController, animated: true)}
+      return cell
+
+    case .infoAboutSpeechTableViewCell:
+      let cell = tableView.dequeueReusableCell(withIdentifier: SpeechDetailsTableViewCell.identifier)
+        as! SpeechDetailsTableViewCell
+      cell.configure(with: getItem())
       return cell
     }
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if indexPath.row > 1 {
-      let storyboard = UIStoryboard(name: "EventPreview", bundle: nil)
-      let speechViewController = storyboard.instantiateViewController(withIdentifier: "SpeechViewController")
-      navigationController?.pushViewController(speechViewController, animated: true)
+    switch groupTypeForCreate[indexPath.row] {
+    case .infoAboutSpeechTableViewCell:
+      goToSpeechPreview()
+    default: break
     }
     tableView.deselectRow(at: indexPath, animated: true)
+  }
+
+  func  goToSpeechPreview() {
+    let storyboard = UIStoryboard(name: "EventPreview", bundle: nil)
+    let viewController = storyboard.instantiateViewController(withIdentifier: "SpeechViewController")
+    self.navigationController?.pushViewController(viewController, animated: true)
+  }
+
+  private func getItem() -> EventPreviewPO {
+    return EventPreviewViewController.eventPreviewEnitityPO.eventPreviewEntityCollection()
   }
 }

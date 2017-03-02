@@ -24,7 +24,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Event Preview" id="3ZJ-CZ-Ntl"/>
                     <connections>
-                        <outlet property="EventPreviewTableView" destination="VWe-LG-F3k" id="ylj-ZY-SSv"/>
+                        <outlet property="tableView" destination="VWe-LG-F3k" id="0kv-kB-uA0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKm-n1-Xfk" userLabel="First Responder" sceneMemberID="firstResponder"/>

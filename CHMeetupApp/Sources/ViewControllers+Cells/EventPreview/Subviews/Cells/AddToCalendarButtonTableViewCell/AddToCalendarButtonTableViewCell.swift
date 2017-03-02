@@ -1,20 +1,14 @@
 //
-//  TitleEventCell.swift
+//  AddToCalendarTableViewCell.swift
 //  CHMeetupApp
 //
-//  Created by Егор Петров on 28/02/2017.
+//  Created by Егор Петров on 05/03/2017.
 //  Copyright © 2017 CocoaHeads Comunity. All rights reserved.
 //
 
 import UIKit
 
-class TitleEventCell: UITableViewCell {
-
-  @IBOutlet weak var titleEventLabel: UILabel!
-
-  func configure(with: InfoAboutEvent) {
-    titleEventLabel.text = with.title
-  }
+class AddToCalendarButtonTableViewCell: ActionButtonTableViewCell {
 
   static var nib: UINib {
     return UINib(nibName: String(describing: self), bundle: nil)

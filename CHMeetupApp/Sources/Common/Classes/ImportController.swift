@@ -50,7 +50,7 @@ class Importer {
       event.title = infoAboutEvent.title
       event.startDate = infoAboutEvent.startTime
       event.endDate = infoAboutEvent.endTime
-      event.notes = infoAboutEvent.notes
+      event.notes = infoAboutEvent.infoAboutEvent
       event.addAlarm(alarm)
       event.calendar = self.calendarEventStore.defaultCalendarForNewEvents
 
@@ -61,7 +61,7 @@ class Importer {
         try self.calendarEventStore.save(event, span: .thisEvent)
         completion(.success)
       } catch {
-        print("Event Store save error: \(error), event: \(event)")
+        print("Event Store save error: \(error), event: \(event)".localized)
         completion(.saveError(error: error))
       }
 
@@ -89,7 +89,7 @@ class Importer {
         try self.remindersEventStore.save(reminder, commit: true)
         completion(.success)
       } catch {
-        print("Event Store save error: \(error), event: \(reminder)")
+        print("Event Store save error: \(error), event: \(reminder)".localized)
         completion(.saveError(error: error))
       }
     })

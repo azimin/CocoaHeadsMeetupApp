@@ -8,17 +8,9 @@
 
 import UIKit
 
-enum Result {
-  case success
-  case permissionError
-  case saveError
-}
-
 class ImportResultHandler {
 
-  private static let eventPreviewViewController = EventPreviewViewController()
-
-  static func result(type: Result, in viewController: UIViewController) {
+  static func result(type: Importer.Result, in viewController: UIViewController) {
     switch type {
     case .success:
       success(in: viewController)
@@ -30,22 +22,22 @@ class ImportResultHandler {
   }
 
   private static func success(in viewController: UIViewController) {
-    let action = UIAlertAction(title: "OК", style: .default, handler: nil)
+    let action = UIAlertAction(title: "OК".localized, style: .default, handler: nil)
 
-    let alert = UIAlertController(title: "Added", message: "", preferredStyle: .alert)
+    let alert = UIAlertController(title: "Added".localized, message: "", preferredStyle: .alert)
     alert.addAction(action)
 
     viewController.present(alert, animated: true, completion: nil)
   }
 
   private static func permissionError(in viewController: UIViewController) {
-    let openSettingsAction = UIAlertAction(title: "Open settings", style: .default, handler: { _ in
+    let openSettingsAction = UIAlertAction(title: "Open settings".localized, style: .default, handler: { _ in
       openSettings()
     })
-    let closeAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    let closeAction = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
 
-    let alert = UIAlertController(title: "Ошибка доступа",
-                                  message: "Мы не можем добавить потому что вы не дали разрешение :(",
+    let alert = UIAlertController(title: "Ошибка доступа".localized,
+                                  message: "Мы не можем добавить потому что вы не дали разрешение :(".localized,
                                   preferredStyle: .alert)
     alert.addAction(openSettingsAction)
     alert.addAction(closeAction)
@@ -54,10 +46,10 @@ class ImportResultHandler {
   }
 
   private static func saveError(in viewController: UIViewController) {
-    let action = UIAlertAction(title: "OК", style: .cancel, handler: nil)
+    let action = UIAlertAction(title: "OК".localized, style: .cancel, handler: nil)
 
-    let alert = UIAlertController(title: "Упс! Что-то пошло не так :(",
-                                  message: "Ошибка сохранения",
+    let alert = UIAlertController(title: "Упс! Что-то пошло не так :(".localized,
+                                  message: "Ошибка сохранения".localized,
                                   preferredStyle: .alert)
     alert.addAction(action)
 
@@ -67,7 +59,7 @@ class ImportResultHandler {
   private static func openSettings() {
     let settingsURL = URL(string: UIApplicationOpenSettingsURLString)!
     UIApplication.shared.open(settingsURL, options: [:]) { (success) in
-      print("Settings opened: \(success)")
+      print("Settings opened: \(success)".localized)
     }
   }
 }
