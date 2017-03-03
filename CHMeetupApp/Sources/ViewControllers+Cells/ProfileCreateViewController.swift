@@ -11,6 +11,21 @@ import SafariServices
 
 class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControllerType {
 
+  @IBOutlet var authButtons: [UIButton]! {
+    didSet {
+      for button in authButtons {
+        button.layer.cornerRadius = CGFloat(Constants.SystemSizes.cornerRadius)
+        button.layer.masksToBounds = true
+        button.titleLabel?.font = UIFont(name: "ButtonFont", size: CGFloat(Constants.SystemSizes.textSize))
+      }
+    }
+  }
+  @IBOutlet weak var infoTextLabel: UILabel! {
+    didSet {
+      infoTextLabel.font = UIFont(name: "LabelFont", size: CGFloat(Constants.SystemSizes.textSize))
+    }
+  }
+
   var safariViewController: SFSafariViewController?
 
   override func viewDidLoad() {
