@@ -3,7 +3,7 @@
 //  CHMeetupApp
 //
 //  Created by Alexander Zimin on 20/02/2017.
-//  Copyright © 2017 CocoaHeads Comunity. All rights reserved.
+//  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
 import UIKit
@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+    window?.backgroundColor = .white // fixes dirty black on the right side of the screen on push
+
     return true
   }
 
