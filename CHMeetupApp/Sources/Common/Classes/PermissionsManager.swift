@@ -1,0 +1,159 @@
+//
+//  PermissionsManager.swift
+//  CHMeetupApp
+//
+//  Created by Michael Galperin on 28.02.17.
+//  Copyright © 2017 CocoaHeads Community. All rights reserved.
+//
+
+import UIKit
+import Photos
+import AVKit
+import EventKit
+import UserNotifications
+
+enum PermissionType: String {
+  case notifications, calendar, reminder, camera, photosLibrary
+}
+
+/**
+ Allows to check and request different permissions
+ 
+ * Easily check
+ 
+ `if PermissionsManager.isAllowed(type: .camera) { ... }`
+ 
+ * Request needed permission
+ 
+ `PermissionsManager.requestAccess(forType: .camera) { granted in }`
+ 
+ * If permission is not granted but it is required for correct workflow, 
+ suggest user to change his decision and open Settings
+ 
+ `PermissionsManager.openSettings()`
+ * You can also get default-styled `UIAlertController` for presenting while requesting rejected permission
+ 
+ `let alert = PermissionsManager.alertForSettingsWith(type: .camera)`
+ 
+ * It can be enough to use `UIViewController` extensioned function **requireAccess** 
+ cause it contains final value of permission availability
+ 
+ `controller.requireAccess(to: .camera) { granted in }`
+ */
+
+final class PermissionsManager {
+
+  /** 
+   Checks if user has granted access to `PermissionType`
+
+  - parameter type: Type of permission to check. Check out `PermissionType` for possible values
+  - returns: `Bool` describing if access is granted
+  */
+  static func isAllowed(type: PermissionType) -> Bool {
+    switch type {
+      case .photosLibrary:
+        return PHPhotoLibrary.authorizationStatus() == .authorized
+      case .camera:
+        return AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) == .authorized
+      case .reminder:
+        return EKEventStore.authorizationStatus(for: .reminder) == .authorized
+      case .calendar:
+        return EKEventStore.authorizationStatus(for: .event) == .authorized
+      case .notifications:
+        return UIApplication.shared.currentUserNotificationSettings?.types.contains(.alert) ?? false
+    }
+  }
+  /** 
+   Requests access to selected permission type. Also, checks if there are all needed keys inside Info.plist
+
+  - parameter forType: `PermissionType` to request access for
+  - parameter completion: Callback with `Bool` value describing if user has granted access
+  */
+  static func requestAccess(forType: PermissionType, completion: @escaping (Bool) -> Void) {
+    if isAllowed(type: forType) {
+      completion(true)
+      return
+    }
+    checkDescriptionKey(forType: forType)
+    switch forType {
+      case .calendar:
+        EKEventStore().requestAccess(to: .event) { result, _ in
+          completion(result)
+        }
+      case .camera:
+        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { result in
+          completion(result)
+        }
+      case .notifications:
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { result, _ in
+          completion(result)
+       }
+      case .photosLibrary:
+        PHPhotoLibrary.requestAuthorization { status in
+          completion(status == .authorized)
+        }
+      case .reminder:
+        EKEventStore().requestAccess(to: .reminder) { result, _ in
+          completion(result)
+        }
+    }
+  }
+  /**
+   Default alert for requesting rejected permission from user
+   
+   - parameter type: `PermissionType` to request access for
+   - returns: Ready to present instance of `UIAlertController`
+  */
+  static func alertForSettingsWith(type: PermissionType) -> UIAlertController {
+    var phrase = ""
+    switch type {
+      case .calendar: phrase = "к календарю".localized
+      case .camera: phrase = "к камере".localized
+      case .notifications: phrase = "к отправке уведомлений".localized
+      case .photosLibrary: phrase = "к библиотеке фотографий".localized
+      case .reminder: phrase = "к напоминаниям".localized
+    }
+    let messageFirstPart = "Пожалуйста, предоставьте приложению доступ".localized
+    let messageFull = "\(messageFirstPart) \(phrase)"
+    let alert = UIAlertController(title: "Ошибка доступа".localized, message: messageFull, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Отмена".localized, style: .default, handler: nil))
+    alert.addAction(UIAlertAction(title: "Настройки".localized, style: .default) { _ in
+      self.openSettings()
+    })
+    return alert
+  }
+  /**
+    Allows to easily open Settings app for editing granted permissions.
+
+    Make sure to **inform user** before opening Settings, also don't open it without user's confirmation
+  */
+  static func openSettings() {
+    guard let url = URL(string: UIApplicationOpenSettingsURLString),
+          UIApplication.shared.canOpenURL(url) else {
+      return
+    }
+    UIApplication.shared.open(url, options: [:])
+  }
+  /// Self-protection
+  private static func checkDescriptionKey(forType: PermissionType) {
+    let path = Bundle.main.path(forResource: "Info", ofType: "plist")
+    assert(path != nil, "Unable to find Info.plist")
+
+    if var info = NSDictionary(contentsOfFile: path!) as? [String: AnyObject] {
+      switch forType {
+        case .calendar:
+          describedAssert(plist: &info, key: "NSCalendarsUsageDescription")
+        case .camera:
+          describedAssert(plist: &info, key: "NSCameraUsageDescription")
+        case .photosLibrary:
+          describedAssert(plist: &info, key: "NSPhotoLibraryUsageDescription")
+        case .reminder:
+          describedAssert(plist: &info, key: "NSRemindersUsageDescription")
+        default: break
+      }
+    }
+  }
+  private static func describedAssert(plist: UnsafeMutablePointer<[String: AnyObject]>, key: String) {
+    assert(plist.pointee.keys.contains(key), "Key \(key) is required to be described in Info.plist")
+  }
+}

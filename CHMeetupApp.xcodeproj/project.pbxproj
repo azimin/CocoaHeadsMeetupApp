@@ -36,6 +36,16 @@
 		9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */; };
 		9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590131E5F1AE700207199 /* MapAppType.swift */; };
 		9FD590161E5F1AE700207199 /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590141E5F1AE700207199 /* MapsController.swift */; };
+		C3165A331E6B469C004B5939 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A321E6B469C004B5939 /* PermissionsManager.swift */; };
+		C3165A3D1E6B46C1004B5939 /* AlbumInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A361E6B46C1004B5939 /* AlbumInfoTableViewCell.swift */; };
+		C3165A3E1E6B46C1004B5939 /* AlbumPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A371E6B46C1004B5939 /* AlbumPickerViewController.swift */; };
+		C3165A3F1E6B46C1004B5939 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A381E6B46C1004B5939 /* ImagePicker.swift */; };
+		C3165A401E6B46C1004B5939 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A3A1E6B46C1004B5939 /* ImageCollectionViewCell.swift */; };
+		C3165A411E6B46C1004B5939 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A3B1E6B46C1004B5939 /* ImagePickerViewController.swift */; };
+		C3165A421E6B46C1004B5939 /* PhotosHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A3C1E6B46C1004B5939 /* PhotosHelper.swift */; };
+		C3165A461E6B46FB004B5939 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A451E6B46FB004B5939 /* String+Localized.swift */; };
+		C3165A4C1E6B476D004B5939 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A491E6B476D004B5939 /* UIView+Anchor.swift */; };
+		C3165A4D1E6B476D004B5939 /* UIViewController+RequireAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A4B1E6B476D004B5939 /* UIViewController+RequireAccess.swift */; };
 		C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */; };
 		C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +82,16 @@
 		9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHierarhyViewControllerType.swift; sourceTree = "<group>"; };
 		9FD590131E5F1AE700207199 /* MapAppType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAppType.swift; sourceTree = "<group>"; };
 		9FD590141E5F1AE700207199 /* MapsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
+		C3165A321E6B469C004B5939 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
+		C3165A361E6B46C1004B5939 /* AlbumInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumInfoTableViewCell.swift; sourceTree = "<group>"; };
+		C3165A371E6B46C1004B5939 /* AlbumPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumPickerViewController.swift; sourceTree = "<group>"; };
+		C3165A381E6B46C1004B5939 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C3165A3A1E6B46C1004B5939 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C3165A3B1E6B46C1004B5939 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
+		C3165A3C1E6B46C1004B5939 /* PhotosHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosHelper.swift; sourceTree = "<group>"; };
+		C3165A451E6B46FB004B5939 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		C3165A491E6B476D004B5939 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
+		C3165A4B1E6B476D004B5939 /* UIViewController+RequireAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+RequireAccess.swift"; sourceTree = "<group>"; };
 		C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+keyboardDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +188,8 @@
 			children = (
 				4D890B581E5EEFE00038CCC9 /* ImportController.swift */,
 				C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */,
+				C3165A321E6B469C004B5939 /* PermissionsManager.swift */,
+				C3165A341E6B46C1004B5939 /* ImagePicker */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -175,6 +197,8 @@
 		221F4F921E5C0B6C0009FD07 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C3165A471E6B476D004B5939 /* UIKit */,
+				C3165A431E6B46FB004B5939 /* Foundation */,
 				4D0881591E641FE3004812E5 /* DateComponents */,
 				C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */,
 			);
@@ -455,6 +479,76 @@
 			name = Maps;
 			sourceTree = "<group>";
 		};
+		C3165A341E6B46C1004B5939 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				C3165A381E6B46C1004B5939 /* ImagePicker.swift */,
+				C3165A391E6B46C1004B5939 /* ImagePickerViewController */,
+				C3165A351E6B46C1004B5939 /* AlbumPickerViewController */,
+				C3165A3C1E6B46C1004B5939 /* PhotosHelper.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		C3165A351E6B46C1004B5939 /* AlbumPickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C3165A371E6B46C1004B5939 /* AlbumPickerViewController.swift */,
+				C3165A361E6B46C1004B5939 /* AlbumInfoTableViewCell.swift */,
+			);
+			path = AlbumPickerViewController;
+			sourceTree = "<group>";
+		};
+		C3165A391E6B46C1004B5939 /* ImagePickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C3165A3B1E6B46C1004B5939 /* ImagePickerViewController.swift */,
+				C3165A3A1E6B46C1004B5939 /* ImageCollectionViewCell.swift */,
+			);
+			path = ImagePickerViewController;
+			sourceTree = "<group>";
+		};
+		C3165A431E6B46FB004B5939 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				C3165A441E6B46FB004B5939 /* String */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		C3165A441E6B46FB004B5939 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				C3165A451E6B46FB004B5939 /* String+Localized.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		C3165A471E6B476D004B5939 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C3165A481E6B476D004B5939 /* UIView */,
+				C3165A4A1E6B476D004B5939 /* UIViewController */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C3165A481E6B476D004B5939 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				C3165A491E6B476D004B5939 /* UIView+Anchor.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		C3165A4A1E6B476D004B5939 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C3165A4B1E6B476D004B5939 /* UIViewController+RequireAccess.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -585,23 +679,33 @@
 				9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */,
 				9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */,
 				9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */,
+				C3165A401E6B46C1004B5939 /* ImageCollectionViewCell.swift in Sources */,
+				C3165A331E6B469C004B5939 /* PermissionsManager.swift in Sources */,
 				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
+				C3165A461E6B46FB004B5939 /* String+Localized.swift in Sources */,
+				C3165A3E1E6B46C1004B5939 /* AlbumPickerViewController.swift in Sources */,
+				C3165A421E6B46C1004B5939 /* PhotosHelper.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
 				4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */,
 				4D99A5441E61E398009E3E0E /* EventPO.swift in Sources */,
 				9FD58FC91E5E331600207199 /* ProfileCreateViewController.swift in Sources */,
+				C3165A3D1E6B46C1004B5939 /* AlbumInfoTableViewCell.swift in Sources */,
 				9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */,
+				C3165A3F1E6B46C1004B5939 /* ImagePicker.swift in Sources */,
 				9FD58FCE1E5E334400207199 /* PastEventsViewController.swift in Sources */,
+				C3165A4D1E6B476D004B5939 /* UIViewController+RequireAccess.swift in Sources */,
 				9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */,
 				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
 				9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */,
 				9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */,
 				9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */,
+				C3165A411E6B46C1004B5939 /* ImagePickerViewController.swift in Sources */,
 				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
 				9FD590161E5F1AE700207199 /* MapsController.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
+				C3165A4C1E6B476D004B5939 /* UIView+Anchor.swift in Sources */,
 				9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */,
 				9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */,
 			);
