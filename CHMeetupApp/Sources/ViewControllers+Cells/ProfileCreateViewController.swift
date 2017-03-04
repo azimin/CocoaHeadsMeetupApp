@@ -16,13 +16,7 @@ class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControll
       for button in authButtons {
         button.layer.cornerRadius = CGFloat(Constants.SystemSizes.cornerRadius)
         button.layer.masksToBounds = true
-        button.titleLabel?.font = UIFont(name: "ButtonFont", size: CGFloat(Constants.SystemSizes.textSize))
       }
-    }
-  }
-  @IBOutlet weak var infoTextLabel: UILabel! {
-    didSet {
-      infoTextLabel.font = UIFont(name: "LabelFont", size: CGFloat(Constants.SystemSizes.textSize))
     }
   }
 
@@ -40,7 +34,7 @@ class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControll
     login(app: LoginType.vk)
   }
 
-  @IBAction func fbLoginButtonAction(_ sender: Any) {
+  @IBAction func fbLoginButtonAction(_ sender: UIButton) {
     login(app: LoginType.fb)
   }
 

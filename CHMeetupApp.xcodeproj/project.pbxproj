@@ -23,6 +23,7 @@
 		4D890B591E5EEFE00038CCC9 /* ImportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* ImportController.swift */; };
 		4D99A5441E61E398009E3E0E /* EventPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D99A5431E61E398009E3E0E /* EventPO.swift */; };
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
+		8A317A801E6AE8BE00C4798C /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A317A7F1E6AE8BE00C4798C /* AuthButton.swift */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
 		8A6268541E64638500D51BEB /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268531E64638500D51BEB /* LoginType.swift */; };
@@ -75,6 +76,7 @@
 		4D890B581E5EEFE00038CCC9 /* ImportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportController.swift; sourceTree = "<group>"; };
 		4D99A5431E61E398009E3E0E /* EventPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPO.swift; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8A317A7F1E6AE8BE00C4798C /* AuthButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthButton.swift; path = CHMeetupApp/Sources/Common/Buttons/AuthButton.swift; sourceTree = SOURCE_ROOT; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8A6268531E64638500D51BEB /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginType.swift; path = Controllers/LoginType.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				221F4F911E5C0B6C0009FD07 /* Classes */,
 				221F4F921E5C0B6C0009FD07 /* Extensions */,
 				221F4F931E5C0B6C0009FD07 /* Views */,
+				8A317A811E6AE8D300C4798C /* Buttons */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -348,6 +351,15 @@
 				4D08815A1E64200B004812E5 /* DateComponents+Init.swift */,
 			);
 			name = DateComponents;
+			sourceTree = "<group>";
+		};
+		8A317A811E6AE8D300C4798C /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				8A317A7F1E6AE8BE00C4798C /* AuthButton.swift */,
+			);
+			name = Buttons;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		8A6268271E60742B00D51BEB /* Frameworks */ = {
@@ -704,6 +716,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D890B591E5EEFE00038CCC9 /* ImportController.swift in Sources */,
+				8A317A801E6AE8BE00C4798C /* AuthButton.swift in Sources */,
 				C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */,
 				C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */,
 				9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */,

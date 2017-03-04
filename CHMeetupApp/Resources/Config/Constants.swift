@@ -30,7 +30,6 @@ final class Constants {
 
   struct SystemSizes {
     static let cornerRadius = 5
-    static let textSize = 15
   }
 
 }
