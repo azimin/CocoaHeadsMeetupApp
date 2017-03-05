@@ -12,13 +12,14 @@ private let loginName = "UD.key.isLogin"
 
 class LoginProcessViewController {
 
-  // FIXME: - Move to realm
   static var isLogin: Bool {
     set {
-      UserDefaults.standard.set(newValue, forKey: loginName)
+      realmWrite {
+        UserPreferencesEntity.value.isLoggedIn = newValue
+      }
     }
     get {
-      return UserDefaults.standard.bool(forKey: loginName)
+      return UserPreferencesEntity.value.isLoggedIn
     }
   }
 }

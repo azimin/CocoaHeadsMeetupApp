@@ -1,5 +1,5 @@
 //
-//  POType.swift
+//  PlainObjectType.swift
 //  CHMeetupApp
 //
 //  Created by Sam on 28/02/2017.
@@ -7,13 +7,14 @@
 //
 
 import Foundation
+
 typealias JSONDictionary = [String: Any]
 
-protocol POType {
+protocol PlainObjectType {
   init?(json: JSONDictionary)
 }
 
-extension Array where Element: POType {
+extension Array where Element: PlainObjectType {
   init(json: [JSONDictionary]) {
     let value = json.flatMap(Iterator.Element.init)
     self = value

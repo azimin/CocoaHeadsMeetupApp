@@ -63,48 +63,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qok-V4-Kb7">
-                                <rect key="frame" x="144" y="303.5" width="87" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fek-LL-BUo">
-                                        <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
-                                        <state key="normal" title="Edit Profile"/>
-                                        <connections>
-                                            <segue destination="6F4-3B-MvC" kind="show" id="As9-Ay-h2d"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPq-hH-Edx">
-                                        <rect key="frame" x="0.0" y="30" width="87" height="30"/>
-                                        <state key="normal" title="Give Speech"/>
-                                        <connections>
-                                            <segue destination="WaT-qA-jSi" kind="show" id="McA-y9-GOK"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5gD-wy-4Yc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="p5C-xH-cy8" id="ghq-tf-FJm"/>
+                                    <outlet property="delegate" destination="p5C-xH-cy8" id="Ll3-H9-Ptl"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qok-V4-Kb7" firstAttribute="centerY" secondItem="T2c-QD-Zwl" secondAttribute="centerY" id="SMX-fN-J3c"/>
-                            <constraint firstItem="qok-V4-Kb7" firstAttribute="centerX" secondItem="T2c-QD-Zwl" secondAttribute="centerX" id="rb2-IP-qeP"/>
+                            <constraint firstItem="5gD-wy-4Yc" firstAttribute="leading" secondItem="T2c-QD-Zwl" secondAttribute="leading" id="8RX-4j-llF"/>
+                            <constraint firstItem="nwW-pZ-9ia" firstAttribute="top" secondItem="5gD-wy-4Yc" secondAttribute="bottom" id="REW-51-4wE"/>
+                            <constraint firstAttribute="trailing" secondItem="5gD-wy-4Yc" secondAttribute="trailing" id="ewC-a0-0TU"/>
+                            <constraint firstItem="5gD-wy-4Yc" firstAttribute="top" secondItem="T2c-QD-Zwl" secondAttribute="top" id="lqS-Xn-aAh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="SB8-My-djY">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="cT0-sY-VS2">
+                    <navigationItem key="navigationItem" title="Profile" id="5yg-zd-3yO">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="D0b-if-5RI">
                             <connections>
-                                <action selector="logutBarButtonAction:" destination="p5C-xH-cy8" id="doW-3c-ypU"/>
+                                <action selector="logutBarButtonAction:" destination="p5C-xH-cy8" id="eEL-Ld-VBH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="9Vg-65-3KU">
+                            <connections>
+                                <action selector="editBarButtonAction:" destination="p5C-xH-cy8" id="zDC-FV-TEg"/>
+                                <segue destination="6F4-3B-MvC" kind="show" id="Z83-8i-De7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="5gD-wy-4Yc" id="Bs2-sP-fRG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7US-b2-arI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591" y="35"/>
+            <point key="canvasLocation" x="1590" y="35"/>
         </scene>
         <!--Profile Edit-->
         <scene sceneID="6xe-AS-Z5B">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="6F4-3B-MvC" customClass="ProfileEditViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileEditViewController" hidesBottomBarWhenPushed="YES" id="6F4-3B-MvC" customClass="ProfileEditViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2OD-V0-BLJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Zvk-T6-twm"/>
@@ -123,7 +124,7 @@
         <!--Give a Speech-->
         <scene sceneID="UYl-eR-dga">
             <objects>
-                <viewController id="WaT-qA-jSi" customClass="GiveSpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GiveSpeechViewController" id="WaT-qA-jSi" customClass="GiveSpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5m8-NS-nLl"/>
                         <viewControllerLayoutGuide type="bottom" id="ZRv-Xe-9jk"/>
