@@ -9,6 +9,7 @@
 import UIKit
 
 final class ImagePicker {
+
   /// Presents ImagePickerViewController and returns selected image in callback
   ///
   /// - parameter controller: `UIViewController` for picker to be presented on
@@ -18,10 +19,10 @@ final class ImagePicker {
     photoSelectedBlock: @escaping ImagePickerCompletion) {
     controller.requireAccess(to: .photosLibrary) { granted in
       if granted {
-        let vc = ImagePickerViewController(photoSelectedBlock: photoSelectedBlock)
-        let nav = UINavigationController(rootViewController: vc)
+        let pickerViewController = ImagePickerViewController(photoSelectedBlock: photoSelectedBlock)
+        let pickerNavigationController = UINavigationController(rootViewController: pickerViewController)
         DispatchQueue.main.async {
-          controller.present(nav, animated: true, completion: nil)
+          controller.present(pickerNavigationController, animated: true, completion: nil)
         }
       }
     }

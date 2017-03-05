@@ -18,7 +18,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
     addSubview(imageView)
     imageView.anchorToAllSides(of: self)
   }
+
   required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+    fatalError("init(coder:) has not been implemented")
   }
+
 }

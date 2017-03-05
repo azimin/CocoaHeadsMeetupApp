@@ -38,9 +38,9 @@ final class PhotosHelper {
         var size: CGSize?
 
         init() {
-            self.count = 0
-            self.newestFirst = true
-            self.size = nil
+          self.count = 0
+          self.newestFirst = true
+          self.size = nil
         }
     }
 
@@ -62,7 +62,7 @@ final class PhotosHelper {
     return imageView
   }
 
-  static func getLastPhotoFrom(album: PHAssetCollection,
+  static func getLastPhoto(from album: PHAssetCollection,
                                completion: @escaping ImagePickerCompletion) {
     let ops = PHFetchOptions()
     ops.fetchLimit = 1
@@ -85,11 +85,12 @@ final class PhotosHelper {
     }
   }
 
-  static func getImageBy(
-    asset: PHAsset,
+  static func getImage(
+    by asset: PHAsset,
     size: CGFloat? = nil,
     mode: PHImageRequestOptionsDeliveryMode = .opportunistic,
     completion: @escaping ImagePickerCompletion) {
+
       let reqOps = PHImageRequestOptions()
       reqOps.deliveryMode = mode
       let targetSize = (size != nil ? CGSize(width: size!, height: size!) : mainScreenSize)
@@ -102,7 +103,7 @@ final class PhotosHelper {
           if let image = image {
             completion(image)
           }
-    }
+      }
   }
 
   //swiftlint:disable void_return
@@ -113,11 +114,10 @@ final class PhotosHelper {
      - parameter fetchOptions: Define order and amount of assets. Size is ignored.
      - parameter completion:   Called in the background when assets were retrieved or in case of any error.
      */
-  static func getAssetsFromAlbum(
-    album: PHAssetCollection,
+  static func getAssets(
+    from album: PHAssetCollection,
     fetchOptions: FetchOptions = FetchOptions(),
     completion: @escaping (_ result: AssetFetchResult<PHAsset>) -> ()) {
-      DispatchQueue.global().async {
         let assetsFetchOptions = PHFetchOptions()
         assetsFetchOptions.sortDescriptors =
           [
@@ -125,7 +125,6 @@ final class PhotosHelper {
           ]
 
         var assets = [PHAsset]()
-
         let fetchedAssets = PHAsset.fetchAssets(in: album, options: assetsFetchOptions)
 
         let rangeLength = min(fetchedAssets.count, fetchOptions.count)
@@ -136,7 +135,6 @@ final class PhotosHelper {
         }
 
         completion(.Assets(assets))
-      }
   }
 
     /**
@@ -144,15 +142,14 @@ final class PhotosHelper {
      */
   private typealias PhPair = (type: PHAssetCollectionType, subtype: PHAssetCollectionSubtype)
   static func getAlbums(completion: @escaping (_ albums: [PHAssetCollection]) -> ()) {
-    DispatchQueue.main.async {
-      let fetOps = PHFetchOptions()
-      fetOps.sortDescriptors = [
-        NSSortDescriptor(key: "endDate", ascending: true)
-      ]
-      let assetsFetOps = PHFetchOptions()
-      assetsFetOps.fetchLimit = 1
+    let fetOps = PHFetchOptions()
+    fetOps.sortDescriptors = [
+      NSSortDescriptor(key: "endDate", ascending: true)
+    ]
+    let assetsFetOps = PHFetchOptions()
+    assetsFetOps.fetchLimit = 1
 
-      var result = [PHAssetCollection]()
+    var result = [PHAssetCollection]()
       [
         PhPair(.smartAlbum, .smartAlbumUserLibrary),
         PhPair(.smartAlbum, .smartAlbumScreenshots),
@@ -175,5 +172,4 @@ final class PhotosHelper {
       }
       completion(result)
     }
-  }
 }

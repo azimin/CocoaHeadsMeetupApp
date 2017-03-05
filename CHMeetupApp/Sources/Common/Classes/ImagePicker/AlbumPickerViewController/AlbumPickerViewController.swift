@@ -11,19 +11,23 @@ import Photos
 
 class AlbumPickerViewController: UIViewController {
 
+  enum AlbumPickerConstants {
+    static let tableViewCellID = "albumCellIDentifier"
+    static let navigationItemTitle = "Альбомы".localized
+    static let tableViewCellHeight: CGFloat = 100
+  }
+
   var parentPickerController: ImagePickerViewController?
   var selectedAlbum: PHAssetCollection?
 
   fileprivate var albums = [PHAssetCollection]()
-  fileprivate let albumCellID = "albumCellIDentifier"
 
   // --- UI ---
   lazy var tableView: UITableView = {
     let tableView = UITableView()
-    tableView.frame = UIScreen.main.bounds
     tableView.delegate = self
     tableView.dataSource = self
-    tableView.register(AlbumInfoTableViewCell.self, forCellReuseIdentifier: self.albumCellID)
+    tableView.register(AlbumInfoTableViewCell.self, forCellReuseIdentifier: AlbumPickerConstants.tableViewCellID)
     return tableView
   }()
 
@@ -32,22 +36,19 @@ class AlbumPickerViewController: UIViewController {
 
     view.backgroundColor = .white
     view.addSubview(tableView)
+    tableView.anchorToAllSides(of: view)
 
-    navigationItem.title = "Альбомы".localized
+    navigationItem.title = AlbumPickerConstants.navigationItemTitle
     navigationItem.rightBarButtonItem = UIBarButtonItem(
       barButtonSystemItem: .cancel,
       target: self,
       action: #selector(close)
     )
-  }
 
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-
-    PhotosHelper.getAlbums { fetchedAlbums in
-      self.albums = fetchedAlbums
+    PhotosHelper.getAlbums { [weak self] fetchedAlbums in
+      self?.albums = fetchedAlbums
       DispatchQueue.main.async {
-        self.tableView.reloadData()
+        self?.tableView.reloadData()
       }
     }
   }
@@ -75,18 +76,20 @@ extension AlbumPickerViewController: UITableViewDelegate, UITableViewDataSource 
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     //swiftlint:disable force_cast
-    let cell = tableView.dequeueReusableCell(withIdentifier: albumCellID, for: indexPath) as! AlbumInfoTableViewCell
+    let cell = tableView.dequeueReusableCell(
+      withIdentifier: AlbumPickerConstants.tableViewCellID,
+      for: indexPath) as! AlbumInfoTableViewCell
     let album = albums[indexPath.row]
     cell.albumTitleLabel.text = album.localizedTitle
-    PhotosHelper.getLastPhotoFrom(album: album) { image in
-      cell.albumPreview.image = image
+    PhotosHelper.getLastPhoto(from: album) { [weak cell] image in
+      cell?.albumPreview.image = image
     }
     cell.accessoryView = (album == selectedAlbum ? imageViewSelected : nil)
     return cell
   }
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 100
+    return AlbumPickerConstants.tableViewCellHeight
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

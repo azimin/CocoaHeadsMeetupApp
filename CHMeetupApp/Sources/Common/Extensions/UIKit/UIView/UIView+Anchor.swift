@@ -11,6 +11,7 @@ import UIKit
 /// Autolayout helper
 
 extension UIView {
+
   /// By sides with constants
   func anchor(
       left: NSLayoutXAxisAnchor? = nil,
@@ -46,6 +47,7 @@ extension UIView {
       widthAnchor.constraint(equalToConstant: widthConstant).isActive = true
     }
   }
+
   /// By vertical & horizontal alignment
   func anchor(
       centerX: NSLayoutXAxisAnchor? = nil,
@@ -59,6 +61,7 @@ extension UIView {
       centerYAnchor.constraint(equalTo: centerY).isActive = true
     }
   }
+
   /// By its sizes with multipliers
   func anchor(
       widthAnchor: NSLayoutDimension? = nil,
@@ -74,6 +77,7 @@ extension UIView {
       self.heightAnchor.constraint(equalTo: height, multiplier: heightMultiplier).isActive = true
     }
   }
+
   /// Pin to all 4 sides
   func anchorToAllSides(of view: UIView) {
     self.anchor(
@@ -83,4 +87,5 @@ extension UIView {
       bottom: view.bottomAnchor
     )
   }
+
 }

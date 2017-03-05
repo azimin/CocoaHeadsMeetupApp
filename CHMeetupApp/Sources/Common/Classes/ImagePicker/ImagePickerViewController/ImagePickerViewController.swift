@@ -14,6 +14,23 @@ typealias ImagePickerCompletion = (UIImage) -> Void
 // MARK: - UI & Lifecycle
 class ImagePickerViewController: UIViewController {
 
+  enum ImagePickerConstants {
+    static let collectionViewCellID = "CHPhotoCellIdentificator"
+    static let defaultAlbumTitle = "Фотоплёнка".localized
+    static let expandCharacter = "▿"
+    static var navigationItemDefaultTitle: String {
+      return "\(ImagePickerConstants.defaultAlbumTitle) \(ImagePickerConstants.expandCharacter)"
+    }
+    static let collectionViewLayoutInset: CGFloat = 1
+    static let imagesCountInRow: CGFloat = 3
+    static var imageWidth: CGFloat {
+      return mainScreenSize.width / ImagePickerConstants.imagesCountInRow
+    }
+    static let bottomBarHeight: CGFloat = 44
+    static let imageCollectionViewCellSide =
+      ImagePickerConstants.imageWidth - ImagePickerConstants.collectionViewLayoutInset
+  }
+
   override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
     return .portrait
   }
@@ -21,40 +38,30 @@ class ImagePickerViewController: UIViewController {
   var album: PHAssetCollection? = PhotosHelper.cameraRollAlbum {
     didSet {
       if let headerExpandButton = navigationItem.titleView as? UIButton {
-        headerExpandButton.setTitle(
-          "\(album?.localizedTitle ?? defaultAlbumTitle) \(expandChar)",
-          for: .normal
-        )
+        let firstPart = album?.localizedTitle ?? ImagePickerConstants.defaultAlbumTitle
+        let buttonTitle = "\(firstPart) \(ImagePickerConstants.expandCharacter)"
+        headerExpandButton.setTitle(buttonTitle, for: .normal)
       }
       fetchImages()
     }
   }
 
-  fileprivate let phCellId = "CHPhotoCellIdentificator"
   fileprivate var completionBlock: ImagePickerCompletion?
-
-  fileprivate var assets = [PHAsset]() // grid dataSource
-
-  // ----- Displaying settings -----
-  fileprivate let defaultAlbumTitle = "Фотоплёнка".localized
-  fileprivate let expandChar = "▿"
-  fileprivate let layoutInset: CGFloat = 1
-  fileprivate let imagesInRaw: CGFloat = 3
-  fileprivate var imageWidth: CGFloat {
-    return UIScreen.main.bounds.size.width / imagesInRaw
-  }
-  fileprivate let bottomBarHeight: CGFloat = 44
+  fileprivate var assets = [PHAsset]()
 
   // --- UI ---
   lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
-    layout.minimumLineSpacing = self.layoutInset
+    layout.minimumLineSpacing = ImagePickerConstants.collectionViewLayoutInset
     layout.minimumInteritemSpacing = layout.minimumLineSpacing
-    let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.backgroundColor = .white
     collectionView.delegate = self
     collectionView.dataSource = self
-    collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: self.phCellId)
+    collectionView.register(
+      ImageCollectionViewCell.self,
+      forCellWithReuseIdentifier: ImagePickerConstants.collectionViewCellID
+    )
     return collectionView
   }()
 
@@ -68,6 +75,10 @@ class ImagePickerViewController: UIViewController {
   init(photoSelectedBlock: @escaping ImagePickerCompletion) {
     self.completionBlock = photoSelectedBlock
     super.init(nibName: nil, bundle: nil)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 
   override func viewDidLoad() {
@@ -84,7 +95,7 @@ class ImagePickerViewController: UIViewController {
       leftConstant: 0,
       topConstant: 0,
       rightConstant: 0,
-      bottomConstant: -bottomBarHeight
+      bottomConstant: -ImagePickerConstants.bottomBarHeight
     )
 
     // --- Bottom Bar ---
@@ -98,13 +109,13 @@ class ImagePickerViewController: UIViewController {
       topConstant: 0,
       rightConstant: 0,
       bottomConstant: 0,
-      heightConstant: bottomBarHeight
+      heightConstant: ImagePickerConstants.bottomBarHeight
     )
 
     // --- Navigation Bar ---
     let headerExpandButton = UIButton(type: .system)
     headerExpandButton.frame = CGRect(x: 0, y: 0, width: 0, height: 40)
-    headerExpandButton.setTitle("\(defaultAlbumTitle) \(expandChar)", for: .normal)
+    headerExpandButton.setTitle(ImagePickerConstants.navigationItemDefaultTitle, for: .normal)
     headerExpandButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
     headerExpandButton.addTarget(self, action: #selector(selectAlbumTapped), for: .touchUpInside)
     navigationItem.titleView = headerExpandButton
@@ -112,9 +123,6 @@ class ImagePickerViewController: UIViewController {
     fetchImages()
   }
 
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-  }
 }
 
 // MARK: - Functions
@@ -122,7 +130,7 @@ extension ImagePickerViewController {
 
   func fetchImages() {
     if let album = album {
-      PhotosHelper.getAssetsFromAlbum(album: album, completion: { results in
+      PhotosHelper.getAssets(from: album, completion: { results in
         switch results {
           case .Assets(let assets): self.assets = assets
           case .Asset(let asset): self.assets = [asset]
@@ -155,32 +163,40 @@ extension ImagePickerViewController {
 extension ImagePickerViewController: UICollectionViewDelegate,
                          UICollectionViewDataSource,
                          UICollectionViewDelegateFlowLayout {
+
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return assets.count
   }
+
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     //swiftlint:disable force_cast line_length
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: phCellId, for: indexPath) as! ImageCollectionViewCell
-    PhotosHelper.getImageBy(asset: assets[indexPath.row], size: imageWidth) { fetchedImage in
+    let cell = collectionView.dequeueReusableCell(
+      withReuseIdentifier: ImagePickerConstants.collectionViewCellID,
+      for: indexPath) as! ImageCollectionViewCell
+    PhotosHelper.getImage(
+      by: assets[indexPath.row],
+      size: ImagePickerConstants.imageWidth) { fetchedImage in
       cell.imageView.image = fetchedImage
     }
     return cell
   }
+
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    PhotosHelper.getImageBy(asset: assets[indexPath.row], mode: .highQualityFormat) { fetchedImage in
+    PhotosHelper.getImage(by: assets[indexPath.row], mode: .highQualityFormat) { fetchedImage in
       self.completionBlock?(fetchedImage)
       DispatchQueue.main.async {
         self.dismiss(animated: true, completion: nil)
       }
     }
   }
+
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let imageCollectionViewCellSide = imageWidth - layoutInset
     return CGSize(
-      width: imageCollectionViewCellSide,
-      height: imageCollectionViewCellSide
+      width: ImagePickerConstants.imageCollectionViewCellSide,
+      height: ImagePickerConstants.imageCollectionViewCellSide
     )
   }
+
 }

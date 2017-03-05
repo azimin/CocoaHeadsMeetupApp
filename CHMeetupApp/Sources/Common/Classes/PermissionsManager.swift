@@ -13,7 +13,7 @@ import EventKit
 import UserNotifications
 
 enum PermissionType: String {
-  case notifications, calendar, reminder, camera, photosLibrary
+  case notifications, calendar, reminders, camera, photosLibrary
 }
 
 /**
@@ -43,6 +43,19 @@ enum PermissionType: String {
 
 final class PermissionsManager {
 
+  enum PermissionConstants {
+    static let calendar = "к календарю".localized
+    static let camera = "к камере".localized
+    static let notifications = "к отправке уведомлений".localized
+    static let photosLibrary = "к библиотеке фотографий".localized
+    static let reminders = "к напоминаниям".localized
+
+    static let askForAccess = "Пожалуйста, предоставьте приложению доступ".localized
+    static let accessError = "Ошибка доступа".localized
+    static let cancel = "Отмена".localized
+    static let settings = "Настройки".localized
+  }
+
   /** 
    Checks if user has granted access to `PermissionType`
 
@@ -55,7 +68,7 @@ final class PermissionsManager {
         return PHPhotoLibrary.authorizationStatus() == .authorized
       case .camera:
         return AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) == .authorized
-      case .reminder:
+      case .reminders:
         return EKEventStore.authorizationStatus(for: .reminder) == .authorized
       case .calendar:
         return EKEventStore.authorizationStatus(for: .event) == .authorized
@@ -63,6 +76,7 @@ final class PermissionsManager {
         return UIApplication.shared.currentUserNotificationSettings?.types.contains(.alert) ?? false
     }
   }
+
   /** 
    Requests access to selected permission type. Also, checks if there are all needed keys inside Info.plist
 
@@ -92,12 +106,13 @@ final class PermissionsManager {
         PHPhotoLibrary.requestAuthorization { status in
           completion(status == .authorized)
         }
-      case .reminder:
+      case .reminders:
         EKEventStore().requestAccess(to: .reminder) { result, _ in
           completion(result)
         }
     }
   }
+
   /**
    Default alert for requesting rejected permission from user
    
@@ -107,17 +122,16 @@ final class PermissionsManager {
   static func alertForSettingsWith(type: PermissionType) -> UIAlertController {
     var phrase = ""
     switch type {
-      case .calendar: phrase = "к календарю".localized
-      case .camera: phrase = "к камере".localized
-      case .notifications: phrase = "к отправке уведомлений".localized
-      case .photosLibrary: phrase = "к библиотеке фотографий".localized
-      case .reminder: phrase = "к напоминаниям".localized
+      case .calendar: phrase = PermissionConstants.calendar
+      case .camera: phrase = PermissionConstants.camera
+      case .notifications: phrase = PermissionConstants.notifications
+      case .photosLibrary: phrase = PermissionConstants.photosLibrary
+      case .reminders: phrase = PermissionConstants.reminders
     }
-    let messageFirstPart = "Пожалуйста, предоставьте приложению доступ".localized
-    let messageFull = "\(messageFirstPart) \(phrase)"
-    let alert = UIAlertController(title: "Ошибка доступа".localized, message: messageFull, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "Отмена".localized, style: .default, handler: nil))
-    alert.addAction(UIAlertAction(title: "Настройки".localized, style: .default) { _ in
+    let messageFull = "\(PermissionConstants.askForAccess) \(phrase)"
+    let alert = UIAlertController(title: PermissionConstants.accessError, message: messageFull, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: PermissionConstants.cancel, style: .default, handler: nil))
+    alert.addAction(UIAlertAction(title: PermissionConstants.settings, style: .default) { _ in
       self.openSettings()
     })
     return alert
@@ -147,7 +161,7 @@ final class PermissionsManager {
           describedAssert(plist: &info, key: "NSCameraUsageDescription")
         case .photosLibrary:
           describedAssert(plist: &info, key: "NSPhotoLibraryUsageDescription")
-        case .reminder:
+        case .reminders:
           describedAssert(plist: &info, key: "NSRemindersUsageDescription")
         default: break
       }
