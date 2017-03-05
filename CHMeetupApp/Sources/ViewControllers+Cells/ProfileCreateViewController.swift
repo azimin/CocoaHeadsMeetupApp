@@ -14,7 +14,7 @@ class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControll
   @IBOutlet var authButtons: [UIButton]! {
     didSet {
       for button in authButtons {
-        button.layer.cornerRadius = CGFloat(Constants.SystemSizes.cornerRadius)
+        button.layer.cornerRadius = Constants.SystemSizes.cornerRadius
         button.layer.masksToBounds = true
       }
     }

@@ -6,7 +6,7 @@
 //  Copyright © 2017 CocoaHeads Comunity. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - Constants for project
 final class Constants {
@@ -29,7 +29,7 @@ final class Constants {
   }
 
   struct SystemSizes {
-    static let cornerRadius = 5
+    static let cornerRadius: CGFloat = 5
   }
 
 }

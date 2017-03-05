@@ -12,14 +12,21 @@ class AuthButton: UIButton {
 
   let blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.light))
 
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    super.touchesBegan(touches, with: event)
-    blur.frame = self.bounds
-    self.insertSubview(blur, at: 0)
+  override var isHighlighted: Bool {
+    didSet {
+      if oldValue != isHighlighted {
+        updateStateAppearance()
+      }
+    }
   }
 
-  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-    super.touchesEnded(touches, with: event)
-    blur.removeFromSuperview()
+  func updateStateAppearance() {
+    if isHighlighted {
+      blur.frame = self.bounds
+      self.insertSubview(blur, at: 0)
+    } else {
+      blur.removeFromSuperview()
+    }
   }
+
 }
