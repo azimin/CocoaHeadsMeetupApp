@@ -35,13 +35,13 @@ struct RegistrtionPreviewField {
   var uid: String
   var name: String
   var type: RegistrationPreviewFieldType
-  
+
   init(entity: Question) {
     self.uid = UUID().uuidString
     self.name = entity.name
     self.type = entity.type
   }
-  
+
   struct RegistrtionPreviewAnswer {
     var uid: String
     var fieldId: String
