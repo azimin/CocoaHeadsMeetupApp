@@ -10,7 +10,7 @@ import UIKit
 
 class AuthButton: UIButton {
 
-  var beforeColor: UIColor?
+  private var beforeColor: UIColor?
 
   override var isHighlighted: Bool {
     didSet {
@@ -36,7 +36,7 @@ class AuthButton: UIButton {
     }
   }
 
-  func updateStateAppearance() {
+  private func updateStateAppearance() {
     if beforeColor == nil {
       beforeColor = self.backgroundColor!
       self.backgroundColor = self.backgroundColor?.inTapped
