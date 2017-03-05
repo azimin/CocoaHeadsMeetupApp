@@ -79,25 +79,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOB-UE-nDI">
-                                <rect key="frame" x="160" y="318.5" width="55" height="30"/>
-                                <state key="normal" title="Confirm"/>
-                                <connections>
-                                    <segue destination="elZ-XF-SfV" kind="show" id="Jfr-Nr-WbA"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xr5-1I-IRE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="PcZ-nz-Xad">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUC-gG-owX">
+                                            <rect key="frame" x="127" y="2" width="120" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="7qi-Xx-2FT"/>
+                                                <constraint firstAttribute="height" constant="40" id="yDG-tj-VpF"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="registrationButtonPressed:" destination="CGY-Eq-4dK" eventType="touchUpInside" id="Rlf-xh-ykJ"/>
+                                                <segue destination="elZ-XF-SfV" kind="show" id="OSZ-vn-apv"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="pUC-gG-owX" firstAttribute="centerY" secondItem="PcZ-nz-Xad" secondAttribute="centerY" id="VUA-XA-2MM"/>
+                                        <constraint firstItem="pUC-gG-owX" firstAttribute="centerX" secondItem="PcZ-nz-Xad" secondAttribute="centerX" id="iJk-Xv-g7G"/>
+                                    </constraints>
+                                </view>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XOB-UE-nDI" firstAttribute="centerY" secondItem="r5D-Tm-NHY" secondAttribute="centerY" id="XQu-lp-RDb"/>
-                            <constraint firstItem="XOB-UE-nDI" firstAttribute="centerX" secondItem="r5D-Tm-NHY" secondAttribute="centerX" id="cD0-yT-MPp"/>
+                            <constraint firstAttribute="trailing" secondItem="Xr5-1I-IRE" secondAttribute="trailing" id="CLM-yB-nzN"/>
+                            <constraint firstItem="Xr5-1I-IRE" firstAttribute="leading" secondItem="r5D-Tm-NHY" secondAttribute="leading" id="DKf-nK-JBi"/>
+                            <constraint firstItem="Xr5-1I-IRE" firstAttribute="top" secondItem="r5D-Tm-NHY" secondAttribute="top" id="eIi-wG-5zt"/>
+                            <constraint firstAttribute="bottom" secondItem="Xr5-1I-IRE" secondAttribute="bottom" id="hUQ-5q-ZiX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Registration Preview" id="CpT-Wp-dsl"/>
+                    <connections>
+                        <outlet property="footerTableView" destination="PcZ-nz-Xad" id="uZ1-K8-fd0"/>
+                        <outlet property="registrationButton" destination="pUC-gG-owX" id="yRS-hr-1Wq"/>
+                        <outlet property="tableView" destination="Xr5-1I-IRE" id="8Aw-nG-efJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hl-4s-KwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="673" y="827"/>
+            <point key="canvasLocation" x="672.79999999999995" y="826.23688155922048"/>
         </scene>
         <!--Registration Confirm-->
         <scene sceneID="Lj6-GD-Guj">

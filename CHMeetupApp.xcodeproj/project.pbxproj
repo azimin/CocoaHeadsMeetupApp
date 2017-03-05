@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0342EE311E6C75D400DD76FC /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342EE2F1E6C75D400DD76FC /* TextFieldTableViewCell.swift */; };
+		0342EE321E6C75D400DD76FC /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0342EE301E6C75D400DD76FC /* TextFieldTableViewCell.xib */; };
+		0342EE351E6C773000DD76FC /* RegistrationPreviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342EE331E6C773000DD76FC /* RegistrationPreviewModel.swift */; };
+		0342EE361E6C773000DD76FC /* RegistrationPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342EE341E6C773000DD76FC /* RegistrationPreviewViewController.swift */; };
+		0342EE381E6C775800DD76FC /* RegistrationPreviewDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342EE371E6C775800DD76FC /* RegistrationPreviewDataCollection.swift */; };
+		0342EE3A1E6C77D300DD76FC /* RegistrationPreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342EE391E6C77D300DD76FC /* RegistrationPreviewData.swift */; };
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
 		0389AF621E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */; };
 		221A8B841E685C5A004E320D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 221A8B861E685C5A004E320D /* Localizable.strings */; };
@@ -44,7 +50,6 @@
 		9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FD21E5E336E00207199 /* EventPreviewViewController.swift */; };
 		9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FD61E5E338A00207199 /* SpeechViewController.swift */; };
 		9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FD91E5E350300207199 /* GiveSpeechViewController.swift */; };
-		9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FDD1E5E353900207199 /* RegistrationPreviewViewController.swift */; };
 		9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE01E5E359F00207199 /* RegistrationConfirmViewController.swift */; };
 		9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */; };
 		9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE51E5E3EE000207199 /* ProfileNavigationViewController.swift */; };
@@ -57,6 +62,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0342EE2F1E6C75D400DD76FC /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		0342EE301E6C75D400DD76FC /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		0342EE331E6C773000DD76FC /* RegistrationPreviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPreviewModel.swift; sourceTree = "<group>"; };
+		0342EE341E6C773000DD76FC /* RegistrationPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPreviewViewController.swift; sourceTree = "<group>"; };
+		0342EE371E6C775800DD76FC /* RegistrationPreviewDataCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPreviewDataCollection.swift; sourceTree = "<group>"; };
+		0342EE391E6C77D300DD76FC /* RegistrationPreviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPreviewData.swift; sourceTree = "<group>"; };
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
 		221A8B851E685C5A004E320D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -96,7 +107,6 @@
 		9FD58FD21E5E336E00207199 /* EventPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewViewController.swift; sourceTree = "<group>"; };
 		9FD58FD61E5E338A00207199 /* SpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		9FD58FD91E5E350300207199 /* GiveSpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSpeechViewController.swift; sourceTree = "<group>"; };
-		9FD58FDD1E5E353900207199 /* RegistrationPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPreviewViewController.swift; sourceTree = "<group>"; };
 		9FD58FE01E5E359F00207199 /* RegistrationConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmViewController.swift; sourceTree = "<group>"; };
 		9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		9FD58FE51E5E3EE000207199 /* ProfileNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +130,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0342EE1A1E6B1F5200DD76FC /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				0342EE1B1E6B1F5200DD76FC /* Preview */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		0342EE1B1E6B1F5200DD76FC /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				0342EE331E6C773000DD76FC /* RegistrationPreviewModel.swift */,
+				0342EE341E6C773000DD76FC /* RegistrationPreviewViewController.swift */,
+				0342EE371E6C775800DD76FC /* RegistrationPreviewDataCollection.swift */,
+				0342EE391E6C77D300DD76FC /* RegistrationPreviewData.swift */,
+				0342EE2E1E6C75D400DD76FC /* Subviews */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		0342EE2E1E6C75D400DD76FC /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				0342EE2F1E6C75D400DD76FC /* TextFieldTableViewCell.swift */,
+				0342EE301E6C75D400DD76FC /* TextFieldTableViewCell.xib */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		221A8B781E684DB0004E320D /* Localizations */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,7 +577,7 @@
 		9FD58FDC1E5E352500207199 /* Preview */ = {
 			isa = PBXGroup;
 			children = (
-				9FD58FDD1E5E353900207199 /* RegistrationPreviewViewController.swift */,
+				0342EE1A1E6B1F5200DD76FC /* Registration */,
 			);
 			name = Preview;
 			sourceTree = "<group>";
@@ -646,6 +685,7 @@
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
 				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
+				0342EE321E6C75D400DD76FC /* TextFieldTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,12 +746,15 @@
 				4D890B591E5EEFE00038CCC9 /* ImportController.swift in Sources */,
 				C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */,
 				C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */,
+				0342EE381E6C775800DD76FC /* RegistrationPreviewDataCollection.swift in Sources */,
+				0342EE361E6C773000DD76FC /* RegistrationPreviewViewController.swift in Sources */,
 				9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */,
 				9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */,
 				9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */,
 				0389AF621E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift in Sources */,
 				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
+				0342EE311E6C75D400DD76FC /* TextFieldTableViewCell.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
@@ -724,7 +767,6 @@
 				92D6786A1E626CCD0010F3E9 /* PastEventsViewController.swift in Sources */,
 				92D6786E1E626CE80010F3E9 /* PastEventsTableViewCell.swift in Sources */,
 				221A8B891E685EBF004E320D /* String+Localized.swift in Sources */,
-				9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */,
 				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
 				9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */,
 				2231A5351E60BA290069A179 /* Reachability.swift in Sources */,
@@ -734,9 +776,11 @@
 				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
 				224CA9E01E65FC7300CD06D6 /* POType.swift in Sources */,
 				9FD590161E5F1AE700207199 /* MapsController.swift in Sources */,
+				0342EE351E6C773000DD76FC /* RegistrationPreviewModel.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
 				9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */,
 				9F2FFA211E663DE600EBCAEB /* Server.swift in Sources */,
+				0342EE3A1E6C77D300DD76FC /* RegistrationPreviewData.swift in Sources */,
 				923CF19A1E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift in Sources */,
 				9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */,
 				224CA9DC1E65FB8300CD06D6 /* UserPO.swift in Sources */,
