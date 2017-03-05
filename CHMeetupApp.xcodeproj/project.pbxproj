@@ -27,6 +27,7 @@
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
 		8A6268541E64638500D51BEB /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268531E64638500D51BEB /* LoginType.swift */; };
+		8A857CFE1E6CC692002CC4C2 /* UIColor+brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A857CFD1E6CC692002CC4C2 /* UIColor+brightness.swift */; };
 		923CF19A1E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923CF1991E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift */; };
 		92D6786A1E626CCD0010F3E9 /* PastEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D678691E626CCD0010F3E9 /* PastEventsViewController.swift */; };
 		92D6786E1E626CE80010F3E9 /* PastEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D6786C1E626CE80010F3E9 /* PastEventsTableViewCell.swift */; };
@@ -80,6 +81,7 @@
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8A6268531E64638500D51BEB /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginType.swift; path = Controllers/LoginType.swift; sourceTree = "<group>"; };
+		8A857CFD1E6CC692002CC4C2 /* UIColor+brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+brightness.swift"; path = "UIKit/UIColor/UIColor+brightness.swift"; sourceTree = "<group>"; };
 		923CF1991E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsDisplayCollection.swift; sourceTree = "<group>"; };
 		92D678691E626CCD0010F3E9 /* PastEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsViewController.swift; sourceTree = "<group>"; };
 		92D6786C1E626CE80010F3E9 /* PastEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsTableViewCell.swift; sourceTree = "<group>"; };
@@ -231,8 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				4D0881591E641FE3004812E5 /* DateComponents */,
-				C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */,
 				2231A5381E60E5030069A179 /* Foundation */,
+				8A857CFF1E6CC6A5002CC4C2 /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -377,6 +379,23 @@
 			);
 			name = Login;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		8A857CFF1E6CC6A5002CC4C2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */,
+				8A857D001E6CC6B7002CC4C2 /* UIColor */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		8A857D001E6CC6B7002CC4C2 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				8A857CFD1E6CC692002CC4C2 /* UIColor+brightness.swift */,
+			);
+			name = UIColor;
 			sourceTree = "<group>";
 		};
 		923CF1981E68F0CA00EBBE0D /* DisplayModel */ = {
@@ -726,6 +745,7 @@
 				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
+				8A857CFE1E6CC692002CC4C2 /* UIColor+brightness.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
 				4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */,
