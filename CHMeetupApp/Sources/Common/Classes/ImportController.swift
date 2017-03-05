@@ -50,7 +50,8 @@ class Importer {
       event.title = infoAboutEvent.title
       event.startDate = infoAboutEvent.startTime
       event.endDate = infoAboutEvent.endTime
-      event.notes = infoAboutEvent.infoAboutEvent
+      // FIXME: - Right value
+     // event.notes = infoAboutEvent.infoAboutEvent
       event.addAlarm(alarm)
       event.calendar = self.calendarEventStore.defaultCalendarForNewEvents
 

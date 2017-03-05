@@ -156,6 +156,8 @@ extension EventPreviewViewController: UITableViewDataSource, UITableViewDelegate
   }
 
   private func getItem() -> EventPreviewPO {
-    return EventPreviewViewController.eventPreviewEnitityPO.eventPreviewEntityCollection()
+    return EventPreviewPO(speechDetails: "Goood Speech")
+    // FIXME: - Right value
+//    return EventPreviewViewController.eventPreviewEnitityPO.eventPreviewEntityCollection()
   }
 }

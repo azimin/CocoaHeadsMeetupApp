@@ -13,7 +13,8 @@ class InfoAboutEventTableViewCell: UITableViewCell {
   @IBOutlet var infoAboutEventLabel: UILabel!
 
   func configure(with event: EventPO) {
-    infoAboutEventLabel.text = event.infoAboutEvent
+    // FIXME: - Right value
+//    infoAboutEventLabel.text = event.infoAboutEvent
   }
 
   static var nib: UINib {
