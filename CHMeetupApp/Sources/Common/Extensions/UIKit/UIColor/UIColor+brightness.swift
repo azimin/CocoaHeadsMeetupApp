@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
 
-  var darkerTap: UIColor {
+  var tapButtonChangeColor: UIColor {
     var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0
     if self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
       if red == 0 && green == 0 && blue == 0 {
@@ -18,16 +18,6 @@ extension UIColor {
       }
     }
     return darkerColorForColor()
-  }
-
-  var lighterTap: UIColor {
-    var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0
-    if self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-      if red == 255 && green == 255 && blue == 255 {
-        return darkerColorForColor()
-      }
-    }
-    return lighterColorForColor()
   }
 
   private func darkerColorForColor() -> UIColor {
