@@ -8,14 +8,6 @@
 
 import Foundation
 
-// // // // // // // // // // // // // // //
-// FIXME: - Delete after creating real model for question
-struct Question {
-  var name: String
-  var type: RegistrationPreviewFieldType
-}
-// // // // // // // // // // // // // // //
-
 enum RegistrationPreviewFieldType {
   case textField
   case selectOne
@@ -28,24 +20,28 @@ struct RegistrationPreviewData {
 
 struct RegistrtionPreviewSection {
   var title: String?
-  var fields: [RegistrtionPreviewField]
+  var fields: [RegistrtionPreviewItem]
 }
 
-struct RegistrtionPreviewField {
+struct RegistrtionPreviewItem {
   var uid: String
+  var shouldSave: Bool
+  var isRequired: Bool
   var name: String
   var type: RegistrationPreviewFieldType
+  var fieldAnswers: [RegistrtionPreviewFieldAnswer]
 
-  init(entity: Question) {
-    self.uid = UUID().uuidString
-    self.name = entity.name
-    self.type = entity.type
-  }
+  // FIXME: - need init with object
+}
 
-  struct RegistrtionPreviewAnswer {
-    var uid: String
-    var fieldId: String
-    var userId: String
-    var answer: String
-  }
+struct RegistrtionPreviewFieldAnswer {
+  var uid: String
+  var value: String
+}
+
+struct RegistrtionPreviewAnswer {
+  var uid: String
+  var fieldId: String
+  var userId: String
+  var answer: String
 }
