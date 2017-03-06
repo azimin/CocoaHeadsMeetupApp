@@ -9,23 +9,23 @@
 import EventKit
 import UIKit
 
-enum ImportToType {
-  case calendar
-  case reminder
-}
-
 class Importer {
 
-  enum Result {
+  enum `Type` {
     case success
     case permissionError
     case saveError(error: Error)
   }
 
+  enum ImportToType {
+    case calendar
+    case reminder
+  }
+
   private static let calendarEventStore = EKEventStore()
   private static let remindersEventStore = EKEventStore()
 
-  typealias ResultParametr = (_ result: Result) -> Void
+  typealias ResultParametr = (_ result: Type) -> Void
 
   static func `import`(event: EventPO, to type: ImportToType, completion: @escaping ResultParametr) {
     switch type {
