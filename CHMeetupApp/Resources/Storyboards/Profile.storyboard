@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD" customClass="AuthButton" customModule="CHMeetupApp" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD" customClass="AuthButton" customModule="CHMeetupApp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="458.5" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.32803952693939209" green="0.46409446001052856" blue="0.60960102081298828" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -38,7 +38,7 @@
                                     <action selector="vkLoginButtonAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="8np-rV-xBX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-p0-rbw" customClass="AuthButton" customModule="CHMeetupApp" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-p0-rbw" customClass="AuthButton" customModule="CHMeetupApp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="408.5" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.22943970561027527" green="0.34702008962631226" blue="0.59602290391921997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -62,7 +62,7 @@
                                     <constraint firstAttribute="height" constant="80" id="9li-Qu-Sgh"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="AuthButton" customModule="CHMeetupApp" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="AuthButton" customModule="CHMeetupApp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="508.5" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.30612394213676453" green="0.7424468994140625" blue="0.93023401498794556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
