@@ -11,7 +11,7 @@ import Photos
 
 class AlbumPickerViewController: UIViewController {
 
-  enum AlbumPickerConstants {
+  fileprivate enum AlbumPickerConstants {
     static let tableViewCellID = "albumCellIDentifier"
     static let navigationItemTitle = "Альбомы".localized
     static let tableViewCellHeight: CGFloat = 100

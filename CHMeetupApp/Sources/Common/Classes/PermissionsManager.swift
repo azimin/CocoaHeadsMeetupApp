@@ -43,12 +43,14 @@ enum PermissionType: String {
 
 final class PermissionsManager {
 
-  enum PermissionConstants {
-    static let calendar = "к календарю".localized
-    static let camera = "к камере".localized
-    static let notifications = "к отправке уведомлений".localized
-    static let photosLibrary = "к библиотеке фотографий".localized
-    static let reminders = "к напоминаниям".localized
+  private enum PermissionConstants {
+    static let askPhrases = [
+      PermissionType.calendar: "к календарю".localized,
+      .camera: "к камере".localized,
+      .notifications: "к отправке уведомлений".localized,
+      .photosLibrary: "к библиотеке фотографий".localized,
+      .reminders: "к напоминаниям".localized
+    ]
 
     static let askForAccess = "Пожалуйста, предоставьте приложению доступ".localized
     static let accessError = "Ошибка доступа".localized
@@ -88,7 +90,9 @@ final class PermissionsManager {
       completion(true)
       return
     }
+
     checkDescriptionKey(forType: forType)
+
     switch forType {
       case .calendar:
         EKEventStore().requestAccess(to: .event) { result, _ in
@@ -120,15 +124,10 @@ final class PermissionsManager {
    - returns: Ready to present instance of `UIAlertController`
   */
   static func alertForSettingsWith(type: PermissionType) -> UIAlertController {
-    var phrase = ""
-    switch type {
-      case .calendar: phrase = PermissionConstants.calendar
-      case .camera: phrase = PermissionConstants.camera
-      case .notifications: phrase = PermissionConstants.notifications
-      case .photosLibrary: phrase = PermissionConstants.photosLibrary
-      case .reminders: phrase = PermissionConstants.reminders
-    }
-    let messageFull = "\(PermissionConstants.askForAccess) \(phrase)"
+    let phrase = PermissionConstants.askPhrases[type]
+    assert(phrase != nil, "[PermissionsManager] Unknown PermissionType passed")
+
+    let messageFull = "\(PermissionConstants.askForAccess) \(phrase!)"
     let alert = UIAlertController(title: PermissionConstants.accessError, message: messageFull, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: PermissionConstants.cancel, style: .default, handler: nil))
     alert.addAction(UIAlertAction(title: PermissionConstants.settings, style: .default) { _ in
@@ -148,6 +147,7 @@ final class PermissionsManager {
     }
     UIApplication.shared.open(url, options: [:])
   }
+
   /// Self-protection
   private static func checkDescriptionKey(forType: PermissionType) {
     let path = Bundle.main.path(forResource: "Info", ofType: "plist")
@@ -167,7 +167,9 @@ final class PermissionsManager {
       }
     }
   }
+
   private static func describedAssert(plist: UnsafeMutablePointer<[String: AnyObject]>, key: String) {
     assert(plist.pointee.keys.contains(key), "Key \(key) is required to be described in Info.plist")
   }
+
 }

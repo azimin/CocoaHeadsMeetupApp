@@ -14,7 +14,7 @@ typealias ImagePickerCompletion = (UIImage) -> Void
 // MARK: - UI & Lifecycle
 class ImagePickerViewController: UIViewController {
 
-  enum ImagePickerConstants {
+  fileprivate enum ImagePickerConstants {
     static let collectionViewCellID = "CHPhotoCellIdentificator"
     static let defaultAlbumTitle = "Фотоплёнка".localized
     static let expandCharacter = "▿"
