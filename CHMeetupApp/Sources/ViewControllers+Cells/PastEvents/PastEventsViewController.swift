@@ -61,7 +61,7 @@ fileprivate extension PastEventsViewController {
 
   func fetchEvents() {
     //FIXME: Replace with real data
-    var demoEvents = [EventPO]()
+    var demoEvents = [EventEntity]()
     let numberOfDemoEvents = 10
     for eventIndex in 0...numberOfDemoEvents {
       //Create past event
@@ -69,9 +69,9 @@ fileprivate extension PastEventsViewController {
       let eventTime = Date().addingTimeInterval(-TimeInterval(oneDayTimeInterval * eventIndex))
       let eventDuration: TimeInterval = 3600 * 4
 
-      var event = EventPO()
-      event.startTime = eventTime
-      event.endTime = eventTime.addingTimeInterval(eventDuration)
+      let event = EventEntity()
+      event.date = eventTime
+      //event.endTime = eventTime.addingTimeInterval(eventDuration)
       event.title += " \(numberOfDemoEvents - eventIndex)"
       demoEvents.append(event)
     }

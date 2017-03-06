@@ -17,14 +17,3 @@ struct EventPlainObject {
   let endDate: Date
   let photoUrl: String
 }
-
-// FIXME: Remove it
-
-struct EventPO {
-  var title = "Cocoa Heads"
-  var startTime = Date(timeIntervalSince1970: 1488384000)
-  var endTime = Date(timeIntervalSince1970: 1488398400)
-  var location = CLLocation(latitude: 55.7784, longitude: 37.587802)
-  var locationTitle = "Москва, штаб-квартира \"Авито\""
-  var notes = "В программе интересные доклады, в перерывах кофе и снеки, а после автопати"
-}

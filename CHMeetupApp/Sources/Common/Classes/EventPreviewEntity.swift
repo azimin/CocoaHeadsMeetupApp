@@ -10,16 +10,17 @@ import Foundation
 
 class EventPreviewEntity {
 
-  // var speechList = EventPlainObject().listOfSpeechs
-
-//  func eventPreviewEntityCollection() -> EventPreviewPO {
-//    let infoAboutSpeech = speechList[0]
-//    // for each access delete one element from array
-//    speechList.remove(at: 0)
-//    let name = infoAboutSpeech.name ?? ""
-//    let speechTheme = infoAboutSpeech.speechTheme ?? ""
-//    let speechDetails = speechTheme + "\n" + name
-//    let eventPreviewEntityPO = EventPreviewPO(speechDetails: speechDetails)
-//    return eventPreviewEntityPO
-//  }
+  func eventPreviewEntityCollection(get from: EventEntity) -> EventPreviewPO {
+    var title: String
+    var desc: String
+    if from.speeches.count == 0 {
+      title = ""
+      desc = ""
+    } else {
+      title = from.speeches[0].title
+      desc = from.speeches[0].descriptionText
+    }
+    let speechDetails = title + "\n" + desc
+    return EventPreviewPO(speechDetails: speechDetails)
+  }
 }

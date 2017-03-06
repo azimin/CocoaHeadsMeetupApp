@@ -14,14 +14,14 @@ struct PastEventsDisplayCollection {
 
 extension PastEventsDisplayCollection {
   //шFIXME: Need to rewrite this method after adding realm
-  mutating func add(_ events: [EventPO]?) {
+  mutating func add(_ events: [EventEntity]?) {
     guard let events = events else {
       return
     }
 
     for event in events {
-      let sectionTitle = DateFormatter.localizedString(from: event.startTime, dateStyle: .short, timeStyle: .none)
-      let section = Section(title: sectionTitle, items: [Item(event)])
+//      let sectionTitle = DateFormatter.localizedString(from: event.date, dateStyle: .short, timeStyle: .none)
+      let section = Section(title: event.title, items: [Item(event)])
       sections.append(section)
     }
   }
@@ -32,10 +32,14 @@ extension PastEventsDisplayCollection {
     var title: String
     var dateTitle: String
 
-    init(_ event: EventPO) {
+    init(_ event: EventEntity) {
       self.title = event.title
-      let startTime = DateFormatter.localizedString(from: event.startTime, dateStyle: .none, timeStyle: .short)
-      let endTime = DateFormatter.localizedString(from: event.endTime, dateStyle: .none, timeStyle: .short)
+      let startTime = DateFormatter.localizedString(from: Date(timeIntervalSince1970: 1488384000),
+                                                           dateStyle: .none,
+                                                           timeStyle: .short)
+      let endTime = DateFormatter.localizedString(from: Date(timeIntervalSince1970: 1488398400),
+                                                  dateStyle: .none,
+                                                  timeStyle: .short)
 
       self.dateTitle = "Начало: " + startTime + "\n" + "Конец: " + endTime
     }

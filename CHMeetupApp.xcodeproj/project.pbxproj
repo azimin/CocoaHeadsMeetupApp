@@ -37,11 +37,7 @@
 		4D6436F11E6B09A500DC1E7B /* ActionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6436F01E6B09A500DC1E7B /* ActionButtonTableViewCell.swift */; };
 		4D890B591E5EEFE00038CCC9 /* ImportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* ImportController.swift */; };
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
-		4DD327BF1E6C320E0072FECA /* JoinButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD327BE1E6C320E0072FECA /* JoinButtonTableViewCell.swift */; };
-		4DD327C11E6C32FA0072FECA /* AddressButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD327C01E6C32FA0072FECA /* AddressButtonTableViewCell.swift */; };
-		4DD327C41E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD327C21E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.swift */; };
 		4DD327C51E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DD327C31E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.xib */; };
-		4DD327C81E6C35E00072FECA /* AddToReminderButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD327C61E6C35E00072FECA /* AddToReminderButtonTableViewCell.swift */; };
 		4DD327C91E6C35E00072FECA /* AddToReminderButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DD327C71E6C35E00072FECA /* AddToReminderButtonTableViewCell.xib */; };
 		784AA39C1E65BB4F0018336C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784AA39B1E65BB4F0018336C /* Utility.swift */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
@@ -144,11 +140,7 @@
 		4D6436F01E6B09A500DC1E7B /* ActionButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButtonTableViewCell.swift; path = ../Classes/ActionButtonTableViewCell.swift; sourceTree = "<group>"; };
 		4D890B581E5EEFE00038CCC9 /* ImportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportController.swift; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		4DD327BE1E6C320E0072FECA /* JoinButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinButtonTableViewCell.swift; path = EventPreview/Subviews/Cells/JoinButtonTableViewCell/JoinButtonTableViewCell.swift; sourceTree = "<group>"; };
-		4DD327C01E6C32FA0072FECA /* AddressButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressButtonTableViewCell.swift; path = EventPreview/Subviews/Cells/AddressButtonTableViewCell/AddressButtonTableViewCell.swift; sourceTree = "<group>"; };
-		4DD327C21E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddToCalendarButtonTableViewCell.swift; path = EventPreview/Subviews/Cells/AddToCalendarButtonTableViewCell/AddToCalendarButtonTableViewCell.swift; sourceTree = "<group>"; };
 		4DD327C31E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddToCalendarButtonTableViewCell.xib; path = EventPreview/Subviews/Cells/AddToCalendarButtonTableViewCell/AddToCalendarButtonTableViewCell.xib; sourceTree = "<group>"; };
-		4DD327C61E6C35E00072FECA /* AddToReminderButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddToReminderButtonTableViewCell.swift; path = EventPreview/Subviews/Cells/AddToReminderButtonTableViewCell/AddToReminderButtonTableViewCell.swift; sourceTree = "<group>"; };
 		4DD327C71E6C35E00072FECA /* AddToReminderButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddToReminderButtonTableViewCell.xib; path = EventPreview/Subviews/Cells/AddToReminderButtonTableViewCell/AddToReminderButtonTableViewCell.xib; sourceTree = "<group>"; };
 		784AA39B1E65BB4F0018336C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
@@ -479,7 +471,6 @@
 		4D0385341E65E5B300514D0A /* AddressButtonTableVIewCell */ = {
 			isa = PBXGroup;
 			children = (
-				4DD327C01E6C32FA0072FECA /* AddressButtonTableViewCell.swift */,
 				4D6436DB1E6A9B1000DC1E7B /* AddressButtonTableViewCell.xib */,
 			);
 			name = AddressButtonTableVIewCell;
@@ -488,7 +479,6 @@
 		4D03853B1E66110400514D0A /* JoinButtonTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				4DD327BE1E6C320E0072FECA /* JoinButtonTableViewCell.swift */,
 				4D6436E21E6A9B6C00DC1E7B /* JoinButtonTableViewCell.xib */,
 			);
 			name = JoinButtonTableViewCell;
@@ -547,7 +537,6 @@
 		4D6436EA1E6AFFD600DC1E7B /* AddToCalendarButtonTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				4DD327C21E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.swift */,
 				4DD327C31E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.xib */,
 			);
 			name = AddToCalendarButtonTableViewCell;
@@ -556,7 +545,6 @@
 		4D6436EF1E6B04F100DC1E7B /* AddToReminderButtonTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				4DD327C61E6C35E00072FECA /* AddToReminderButtonTableViewCell.swift */,
 				4DD327C71E6C35E00072FECA /* AddToReminderButtonTableViewCell.xib */,
 			);
 			name = AddToReminderButtonTableViewCell;
@@ -983,7 +971,6 @@
 				9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */,
 				9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */,
 				9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */,
-				4DD327BF1E6C320E0072FECA /* JoinButtonTableViewCell.swift in Sources */,
 				0389AF621E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift in Sources */,
 				4D28C9DC1E6B6F030061004A /* EventPreviewPO.swift in Sources */,
 				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
@@ -997,13 +984,11 @@
 				221A8B8E1E69692D004E320D /* EventPlainObject.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
 				4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */,
-				4DD327C11E6C32FA0072FECA /* AddressButtonTableViewCell.swift in Sources */,
 				9FD58FC91E5E331600207199 /* ProfileCreateViewController.swift in Sources */,
 				9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */,
 				4D03853A1E66010A00514D0A /* ImportResultHandler.swift in Sources */,
 				4D6436E11E6A9B4000DC1E7B /* SpeechDetailsTableViewCell.swift in Sources */,
 				9F2FFA201E66353100EBCAEB /* RequestContentParser.swift in Sources */,
-				4DD327C81E6C35E00072FECA /* AddToReminderButtonTableViewCell.swift in Sources */,
 				221A8B931E696D4C004E320D /* EventPlainObject+Requests.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
@@ -1016,7 +1001,6 @@
 				9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */,
 				4D6436D91E6944A900DC1E7B /* LoginType.swift in Sources */,
 				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
-				4DD327C41E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.swift in Sources */,
 				9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */,
 				2231A5351E60BA290069A179 /* Reachability.swift in Sources */,
 				9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */,

@@ -8,16 +8,15 @@
 
 import UIKit
 
-class InfoAboutEventTableViewCell: UITableViewCell {
+class InfoAboutEventTableViewCell: UITableViewCell, ReusableCell {
 
   @IBOutlet var infoAboutEventLabel: UILabel!
 
-  func configure(with event: EventPO) {
-    // FIXME: - Right value
-//    infoAboutEventLabel.text = event.infoAboutEvent
+  func configure(with event: EventEntity) {
+    infoAboutEventLabel.text = event.descriptionText
   }
 
-  static var nib: UINib {
+  static var nib: UINib? {
     return UINib(nibName: String(describing: self), bundle: nil)
   }
 

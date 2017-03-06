@@ -8,14 +8,14 @@
 
 import UIKit
 
-class SpeechDetailsTableViewCell: UITableViewCell {
+class SpeechDetailsTableViewCell: UITableViewCell, ReusableCell {
 
   @IBOutlet var speechDetailsLabel: UILabel!
 
   func configure(with item: EventPreviewPO) {
     speechDetailsLabel.text = item.speechDetails
   }
-  static var nib: UINib {
+  static var nib: UINib? {
     return UINib(nibName: String(describing: self), bundle: nil)
   }
 

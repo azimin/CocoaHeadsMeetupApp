@@ -27,7 +27,7 @@ class Importer {
 
   typealias ResultParametr = (_ result: Result) -> Void
 
-  static func `import`(event: EventPO, to type: ImportToType, completion: @escaping ResultParametr) {
+  static func `import`(event: EventEntity, to type: ImportToType, completion: @escaping ResultParametr) {
     switch type {
     case .calendar:
       importToCalendar(infoAboutEvent: event, completion: completion)
@@ -36,27 +36,30 @@ class Importer {
     }
   }
 
-  private static func importToCalendar(infoAboutEvent: EventPO, completion: @escaping ResultParametr) {
+  private static func importToCalendar(infoAboutEvent: EventEntity, completion: @escaping ResultParametr) {
     calendarEventStore.requestAccess(to: .event, completion: { granted, error in
       guard granted else {
         completion(.permissionError)
         return
       }
+
       let event = EKEvent(eventStore: self.calendarEventStore)
-      let structuredLocation = EKStructuredLocation(title: infoAboutEvent.locationTitle)
+
+      let structuredLocation = EKStructuredLocation(title: infoAboutEvent.place?.city ?? "Bad Location")
+      if let place = infoAboutEvent.place {
+        structuredLocation.geoLocation = CLLocation(latitude: place.latitude,
+                                                    longitude: place.longitude)
+      }
       //warn the user for five hours before event 5 hours = 18000 seconds
       let alarm = EKAlarm(relativeOffset:-(5 * 60 * 60))
 
       event.title = infoAboutEvent.title
-      event.startDate = infoAboutEvent.startTime
-      event.endDate = infoAboutEvent.endTime
-      // FIXME: - Right value
-     // event.notes = infoAboutEvent.infoAboutEvent
+      event.startDate = Date(timeIntervalSince1970: 1491580800)
+      event.endDate = Date(timeIntervalSince1970: 1491595200)
+      event.notes = infoAboutEvent.descriptionText
+      event.structuredLocation = structuredLocation
       event.addAlarm(alarm)
       event.calendar = self.calendarEventStore.defaultCalendarForNewEvents
-
-      structuredLocation.geoLocation = infoAboutEvent.location
-      event.structuredLocation = structuredLocation
 
       do {
         try self.calendarEventStore.save(event, span: .thisEvent)
@@ -69,7 +72,7 @@ class Importer {
     })
   }
 
-  private static func importToReminder(infoAboutEvent: EventPO, completion: @escaping ResultParametr) {
+  private static func importToReminder(infoAboutEvent: EventEntity, completion: @escaping ResultParametr) {
     remindersEventStore.requestAccess(to: .reminder, completion: { granted, error in
       guard granted else {
         completion(.permissionError)
@@ -77,12 +80,12 @@ class Importer {
       }
 
       let reminder = EKReminder(eventStore: self.remindersEventStore)
-      let intervalSince1970 = infoAboutEvent.startTime.timeIntervalSince1970
-      let alarmDate = Date(timeIntervalSince1970:  intervalSince1970 - (5 * 60 * 60))
+      let intervalSince1970 = Date(timeIntervalSince1970: 1491580800)
+      let alarmDate = intervalSince1970 - (5 * 60 * 60)
       let alarm = EKAlarm(absoluteDate: alarmDate)
 
       reminder.title = infoAboutEvent.title
-      reminder.dueDateComponents = DateComponents(date: infoAboutEvent)
+      reminder.dueDateComponents = DateComponents(date: Date(timeIntervalSince1970: 1491595200))
       reminder.calendar = self.remindersEventStore.defaultCalendarForNewReminders()
       reminder.addAlarm(alarm)
 
