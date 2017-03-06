@@ -45,7 +45,9 @@ class Importer {
 
       let event = EKEvent(eventStore: self.calendarEventStore)
 
-      let structuredLocation = EKStructuredLocation(title: infoAboutEvent.place?.city ?? "Bad Location")
+      let location = (infoAboutEvent.place?.title ?? "Bad location").localized
+
+      let structuredLocation = EKStructuredLocation(title: location)
       if let place = infoAboutEvent.place {
         structuredLocation.geoLocation = CLLocation(latitude: place.latitude,
                                                     longitude: place.longitude)
@@ -53,10 +55,10 @@ class Importer {
       //warn the user for five hours before event 5 hours = 18000 seconds
       let alarm = EKAlarm(relativeOffset:-(5 * 60 * 60))
 
-      event.title = infoAboutEvent.title
+      event.title = infoAboutEvent.title.localized
       event.startDate = Date(timeIntervalSince1970: 1491580800)
       event.endDate = Date(timeIntervalSince1970: 1491595200)
-      event.notes = infoAboutEvent.descriptionText
+      event.notes = infoAboutEvent.descriptionText.localized
       event.structuredLocation = structuredLocation
       event.addAlarm(alarm)
       event.calendar = self.calendarEventStore.defaultCalendarForNewEvents
@@ -65,7 +67,7 @@ class Importer {
         try self.calendarEventStore.save(event, span: .thisEvent)
         completion(.success)
       } catch {
-        print("Event Store save error: \(error), event: \(event)".localized)
+        print("Event Store save error: \(error), event: \(event)")
         completion(.saveError(error: error))
       }
 
@@ -84,7 +86,7 @@ class Importer {
       let alarmDate = intervalSince1970 - (5 * 60 * 60)
       let alarm = EKAlarm(absoluteDate: alarmDate)
 
-      reminder.title = infoAboutEvent.title
+      reminder.title = infoAboutEvent.title.localized
       reminder.dueDateComponents = DateComponents(date: Date(timeIntervalSince1970: 1491595200))
       reminder.calendar = self.remindersEventStore.defaultCalendarForNewReminders()
       reminder.addAlarm(alarm)
@@ -93,7 +95,7 @@ class Importer {
         try self.remindersEventStore.save(reminder, commit: true)
         completion(.success)
       } catch {
-        print("Event Store save error: \(error), event: \(reminder)".localized)
+        print("Event Store save error: \(error), event: \(reminder)")
         completion(.saveError(error: error))
       }
     })

@@ -8,13 +8,17 @@
 
 import UIKit
 
-class SpeechDetailsTableViewCell: UITableViewCell, ReusableCell {
+class SpeechDetailsTableViewCell: UITableViewCell {
 
   @IBOutlet var speechDetailsLabel: UILabel!
 
   func configure(with item: EventPreviewPO) {
-    speechDetailsLabel.text = item.speechDetails
+    speechDetailsLabel.text = item.speechDetails?.localized
   }
+}
+
+extension SpeechDetailsTableViewCell: ReusableCell {
+
   static var nib: UINib? {
     return UINib(nibName: String(describing: self), bundle: nil)
   }
@@ -22,5 +26,4 @@ class SpeechDetailsTableViewCell: UITableViewCell, ReusableCell {
   static var identifier: String {
     return String(describing: self)
   }
-
 }

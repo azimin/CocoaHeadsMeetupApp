@@ -23,13 +23,13 @@ enum TypeOfCells {
     case .infoAboutEventTableViewCell:
       return InfoAboutEventTableViewCell.nib
     case .addressButttonTableViewCell:
-      return UINib(nibName: "AddressButtonTableViewCell", bundle: nil)
+      return ActionButtonTableViewCell.nib(for: .address)
     case .addToCalendarButtonTableViewCell:
-      return UINib(nibName: "AddToCalendarButtonTableViewCell", bundle: nil)
+      return ActionButtonTableViewCell.nib(for: .addToCalendar)
     case .addToReminderButtonTableViewCell:
-      return UINib(nibName: "AddToReminderButtonTableViewCell", bundle: nil)
+      return ActionButtonTableViewCell.nib(for: .addToReminder)
     case .joinButtonTableViewCell:
-      return  UINib(nibName: "JoinButtonTableViewCell", bundle: nil)
+      return  ActionButtonTableViewCell.nib(for: .join)
     }
   }
 
@@ -40,13 +40,13 @@ enum TypeOfCells {
     case .infoAboutSpeechTableViewCell:
       return SpeechDetailsTableViewCell.identifier
     case .addressButttonTableViewCell:
-      return "AddressButtonTableViewCell"
+      return ActionButtonTableViewCell.identifier(for: .address)
     case .addToCalendarButtonTableViewCell:
-      return "AddToCalendarButtonTableViewCell"
+      return ActionButtonTableViewCell.identifier(for: .addToCalendar)
     case .addToReminderButtonTableViewCell:
-      return "AddToReminderButtonTableViewCell"
+      return ActionButtonTableViewCell.identifier(for: .addToReminder)
     case .joinButtonTableViewCell:
-      return "JoinButtonTableViewCell"
+      return ActionButtonTableViewCell.identifier(for: .join)
     }
   }
 }

@@ -41,7 +41,7 @@ extension PastEventsDisplayCollection {
                                                   dateStyle: .none,
                                                   timeStyle: .short)
 
-      self.dateTitle = "Начало: " + startTime + "\n" + "Конец: " + endTime
+      self.dateTitle = "Начало: ".localized + startTime + "\n" + "Конец: ".localized + endTime
     }
   }
 

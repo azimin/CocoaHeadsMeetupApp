@@ -22,7 +22,7 @@
                         <rect key="frame" x="50" y="8" width="220" height="27.5"/>
                         <state key="normal" title="Address"/>
                         <connections>
-                            <action selector="showAddress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dFY-Q1-tTx"/>
+                            <action selector="buttonWasTuppedWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yuK-Ep-nFh"/>
                         </connections>
                     </button>
                 </subviews>

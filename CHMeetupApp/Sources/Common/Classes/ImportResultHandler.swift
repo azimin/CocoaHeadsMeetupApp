@@ -22,10 +22,7 @@ class ImportResultHandler {
   }
 
   private static func success(in viewController: UIViewController) {
-    let action = UIAlertAction(title: "OК".localized, style: .default, handler: nil)
-
-    let alert = UIAlertController(title: "Added".localized, message: "", preferredStyle: .alert)
-    alert.addAction(action)
+    let alert = AlertHandler.configure(title: "Added", message: "")
 
     viewController.present(alert, animated: true, completion: nil)
   }
@@ -46,12 +43,8 @@ class ImportResultHandler {
   }
 
   private static func saveError(in viewController: UIViewController) {
-    let action = UIAlertAction(title: "OК".localized, style: .cancel, handler: nil)
-
-    let alert = UIAlertController(title: "Упс! Что-то пошло не так :(".localized,
-                                  message: "Ошибка сохранения".localized,
-                                  preferredStyle: .alert)
-    alert.addAction(action)
+    let alert = AlertHandler.configure(title: "Не удалось сохранить".localized,
+                                            message: "Что-то пошло не так :(".localized)
 
     viewController.present(alert, animated: true, completion: nil)
   }
@@ -59,7 +52,7 @@ class ImportResultHandler {
   private static func openSettings() {
     let settingsURL = URL(string: UIApplicationOpenSettingsURLString)!
     UIApplication.shared.open(settingsURL, options: [:]) { (success) in
-      print("Settings opened: \(success)".localized)
+      print("Settings opened: \(success)")
     }
   }
 }

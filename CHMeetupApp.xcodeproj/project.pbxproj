@@ -39,6 +39,7 @@
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
 		4DD327C51E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DD327C31E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.xib */; };
 		4DD327C91E6C35E00072FECA /* AddToReminderButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DD327C71E6C35E00072FECA /* AddToReminderButtonTableViewCell.xib */; };
+		4DD327CF1E6D5DBB0072FECA /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD327CE1E6D5DBB0072FECA /* AlertHandler.swift */; };
 		784AA39C1E65BB4F0018336C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784AA39B1E65BB4F0018336C /* Utility.swift */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -142,6 +143,7 @@
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DD327C31E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddToCalendarButtonTableViewCell.xib; path = EventPreview/Subviews/Cells/AddToCalendarButtonTableViewCell/AddToCalendarButtonTableViewCell.xib; sourceTree = "<group>"; };
 		4DD327C71E6C35E00072FECA /* AddToReminderButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddToReminderButtonTableViewCell.xib; path = EventPreview/Subviews/Cells/AddToReminderButtonTableViewCell/AddToReminderButtonTableViewCell.xib; sourceTree = "<group>"; };
+		4DD327CE1E6D5DBB0072FECA /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		784AA39B1E65BB4F0018336C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
 		78BBC8FF1E60FBE800DEC122 /* ProfilePictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilePictureCell.swift; path = "../ViewControllers+Cells/ProfileViewController/Subviews/Cells/ProfilePictureCell/ProfilePictureCell.swift"; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				2231A52F1E60B9A50069A179 /* WebService */,
 				2231A5341E60BA290069A179 /* Reachability.swift */,
 				4D28C9D91E6B6E700061004A /* EventPreviewEntity.swift */,
+				4DD327CE1E6D5DBB0072FECA /* AlertHandler.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -995,6 +998,7 @@
 				78BBC9051E60FC0700DEC122 /* ProfileNameCell.swift in Sources */,
 				92D6786A1E626CCD0010F3E9 /* PastEventsViewController.swift in Sources */,
 				92D6786E1E626CE80010F3E9 /* PastEventsTableViewCell.swift in Sources */,
+				4DD327CF1E6D5DBB0072FECA /* AlertHandler.swift in Sources */,
 				9FAFF8051E6AD76300B687CB /* UserEntity.swift in Sources */,
 				221A8B891E685EBF004E320D /* String+Localized.swift in Sources */,
 				221A8B911E696D2F004E320D /* PlacePlainObject.swift in Sources */,
