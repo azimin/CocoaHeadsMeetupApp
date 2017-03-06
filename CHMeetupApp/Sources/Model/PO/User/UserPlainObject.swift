@@ -1,5 +1,5 @@
 //
-//  UserPO.swift
+//  UserPlainObject.swift
 //  CHMeetupApp
 //
 //  Created by Sam on 25/02/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserPO {
+struct UserPlainObject {
   let remoteID: Int
   let name: String
 

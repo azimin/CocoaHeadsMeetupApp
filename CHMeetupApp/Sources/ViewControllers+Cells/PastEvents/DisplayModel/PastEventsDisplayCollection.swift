@@ -13,7 +13,7 @@ struct PastEventsDisplayCollection {
 }
 
 extension PastEventsDisplayCollection {
-  //FIXME: Need to rewrite this method after adding realm
+  //шFIXME: Need to rewrite this method after adding realm
   mutating func add(_ events: [EventPO]?) {
     guard let events = events else {
       return
