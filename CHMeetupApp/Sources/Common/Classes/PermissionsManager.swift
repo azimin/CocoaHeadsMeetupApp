@@ -135,6 +135,7 @@ final class PermissionsManager {
     })
     return alert
   }
+
   /**
     Allows to easily open Settings app for editing granted permissions.
 

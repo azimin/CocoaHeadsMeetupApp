@@ -1,5 +1,5 @@
 //
-//  UIViewController+permissions.swift
+//  UIViewController+RequireAccess.swift
 //  CHMeetupApp
 //
 //  Created by Michael Galperin on 02.03.17.
@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+
   /// Helps to perform any action only if required permission is granted. 
   /// Displays an alert with invitation to the Settings app if first request was rejected by user
   ///
@@ -29,4 +30,5 @@ extension UIViewController {
       completion(true)
     }
   }
+
 }

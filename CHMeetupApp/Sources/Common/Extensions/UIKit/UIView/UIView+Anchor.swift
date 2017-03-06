@@ -1,5 +1,5 @@
 //
-//  CHImagePicker.swift
+//  UIView+Anchor.swift
 //  CHMeetupApp
 //
 //  Created by Michael Galperin on 28.02.17.
