@@ -10,12 +10,12 @@ import UIKit
 
 class AuthButton: UIButton {
 
-  private var beforeColor: UIColor?
-
   override var isHighlighted: Bool {
     didSet {
       if oldValue != isHighlighted {
-        updateStateAppearance()
+        if let color = self.backgroundColor {
+          self.backgroundColor = (isHighlighted ? color.darkerTap : color.lighterTap)
+        }
       }
     }
   }
@@ -23,7 +23,9 @@ class AuthButton: UIButton {
   override var isEnabled: Bool {
     didSet {
       if oldValue != isEnabled {
-        updateStateAppearance()
+        if let color = self.backgroundColor {
+          self.backgroundColor = (isEnabled ? color.lighterTap : color.darkerTap)
+        }
       }
     }
   }
@@ -31,18 +33,10 @@ class AuthButton: UIButton {
   override var isSelected: Bool {
     didSet {
       if oldValue != isSelected {
-        updateStateAppearance()
+        if let color = self.backgroundColor {
+          self.backgroundColor = (isSelected ? color.darkerTap : color.lighterTap)
+        }
       }
-    }
-  }
-
-  private func updateStateAppearance() {
-    if beforeColor == nil {
-      beforeColor = self.backgroundColor!
-      self.backgroundColor = self.backgroundColor?.inTapped
-    } else {
-      self.backgroundColor = beforeColor
-      beforeColor = nil
     }
   }
 
