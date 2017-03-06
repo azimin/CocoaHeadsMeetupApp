@@ -1,5 +1,5 @@
 //
-//  AuthButton.swift
+//  ActionButton.swift
 //  CHMeetupApp
 //
 //  Created by Kirill Averyanov on 04/03/2017.
@@ -10,9 +10,9 @@ import UIKit
 
 class ActionButton: UIButton {
 
-  var nessesaryBackgroundColor: UIColor?
-  var isSetup = false
-  var notChange = false
+  private var nessesaryBackgroundColor: UIColor?
+  private var isSetup = false
+  private var notChange = false
 
   override var backgroundColor: UIColor? {
     didSet {
@@ -31,7 +31,7 @@ class ActionButton: UIButton {
     }
   }
 
-  func updateAppearance() {
+  private func updateAppearance() {
     isSetup = true
     if (isSelected || isHighlighted) && isEnabled {
       backgroundColor = nessesaryBackgroundColor?.tapButtonChangeColor
