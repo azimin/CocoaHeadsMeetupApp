@@ -70,7 +70,7 @@ extension AlbumPickerViewController: UITableViewDelegate, UITableViewDataSource 
     let imageView = UIImageView()
     imageView.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
     imageView.tintColor = UIColor(red: 95 / 255, green: 148 / 255, blue: 238 / 255, alpha: 1)
-    imageView.image = #imageLiteral(resourceName: "Checked_1900a4_75").withRenderingMode(.alwaysTemplate)
+    imageView.image = #imageLiteral(resourceName: "img_picker_checkmark").withRenderingMode(.alwaysTemplate)
     return imageView
   }
 
