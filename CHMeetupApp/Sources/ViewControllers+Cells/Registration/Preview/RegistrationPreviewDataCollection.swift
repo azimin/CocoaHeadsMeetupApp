@@ -12,18 +12,18 @@ class RegistrationPreviewDataCollection {
 
   var dataCollection = RegistrationPreviewData()
 
-  func setupCollection(questions: [Question]) {
+  func setupCollection() {
 
     // Sample section
-    var section = RegistrtionPreviewSection(title: "", fields: [])
-    dataCollection.sections.append(section)
-
-    for question in questions {
-      let field = RegistrtionPreviewField.init(entity: question)
-      section.fields.append(field)
-    }
-
-    dataCollection.sections.append(section)
+//    var section = RegistrtionPreviewSection(title: "", fields: [])
+//    dataCollection.sections.append(section)
+//
+//    for question in questions {
+//      let field = RegistrtionPreviewField.init(entity: question)
+//      section.fields.append(field)
+//    }
+//
+//    dataCollection.sections.append(section)
   }
 
 }

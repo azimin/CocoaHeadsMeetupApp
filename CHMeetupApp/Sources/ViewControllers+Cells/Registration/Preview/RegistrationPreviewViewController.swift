@@ -14,9 +14,18 @@ class RegistrationPreviewViewController: UIViewController {
     didSet {
       tableView.delegate = self
       tableView.dataSource = self
-      let cellNib = TextFieldTableViewCell.nib
-      let cellIdentifier = TextFieldTableViewCell.identifier
-      tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
+      
+      let textFieldCellNib = TextFieldTableViewCell.nib
+      let textFieldCellIdentifier = TextFieldTableViewCell.identifier
+      tableView.register(textFieldCellNib, forCellReuseIdentifier: textFieldCellIdentifier)
+      
+      let selectOneCellNib = SelectOneTableViewCell.nib
+      let selectOneCellIdentifier = SelectOneTableViewCell.identifier
+      tableView.register(selectOneCellNib, forCellReuseIdentifier: selectOneCellIdentifier)
+      
+      let selectMultiplyCellNib = SelectMultiplyTableViewCell.nib
+      let selectMultiplyCellIdentifier = SelectMultiplyTableViewCell.identifier
+      tableView.register(selectMultiplyCellNib, forCellReuseIdentifier: selectMultiplyCellIdentifier)
     }
   }
 
@@ -61,15 +70,15 @@ extension RegistrationPreviewViewController: UITableViewDelegate {
 extension RegistrationPreviewViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return dataCollection.sections[section].title
+    return ""//dataCollection.sections[section].title
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    return dataCollection.sections.count
+    return 1//dataCollection.sections.count
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return dataCollection.sections[section].fields.count
+    return 3//dataCollection.sections[section].fields.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
