@@ -8,6 +8,14 @@
 
 import UIKit
 
+struct Section {
+  var items: [TypeOfCells]
+
+  init(objects: [TypeOfCells]) {
+    items = objects
+  }
+}
+
 enum TypeOfCells {
   case speechDetailsTableViewCell
   case eventDetailsTableViewCell
@@ -21,7 +29,7 @@ enum TypeOfCells {
     case .speechDetailsTableViewCell:
       return SpeechDetailsTableViewCell.nib
     case .eventDetailsTableViewCell:
-      return InfoAboutEventTableViewCell.nib
+      return EventDetailsTableViewCell.nib
     case .addressButttonTableViewCell,
          .addToCalendarButtonTableViewCell,
          .addToReminderButtonTableViewCell,
@@ -33,7 +41,7 @@ enum TypeOfCells {
   var identifier: String {
     switch self {
     case .eventDetailsTableViewCell:
-      return InfoAboutEventTableViewCell.identifier
+      return EventDetailsTableViewCell.identifier
     case .speechDetailsTableViewCell:
       return SpeechDetailsTableViewCell.identifier
     case .addressButttonTableViewCell,
@@ -49,12 +57,14 @@ let groupTypeForRegister: [TypeOfCells] = [ .eventDetailsTableViewCell,
                                             .addressButttonTableViewCell,
                                             .speechDetailsTableViewCell]
 
-let groupTypeForCreate: [TypeOfCells] = [.eventDetailsTableViewCell,
-                                         .addressButttonTableViewCell,
-                                         .addToCalendarButtonTableViewCell,
-                                         .addToReminderButtonTableViewCell,
-                                         .speechDetailsTableViewCell,
-                                         .joinButtonTableViewCell]
+let firstSection: [TypeOfCells] = [ .eventDetailsTableViewCell,
+                                    .addressButttonTableViewCell,
+                                    .addToCalendarButtonTableViewCell,
+                                    .addToReminderButtonTableViewCell]
+
+var secondSection: [TypeOfCells] = [.joinButtonTableViewCell]
+
+let sections: [Section] = [ Section(objects: firstSection), Section(objects: secondSection)]
 
 class EventPreviewViewController: UIViewController {
 
@@ -68,23 +78,31 @@ class EventPreviewViewController: UIViewController {
     for typeOfCell in groupTypeForRegister {
       self.tableView.register(typeOfCell.nib, forCellReuseIdentifier: typeOfCell.identifier)
     }
+
+    configureSecondSection(with: EventEntity())
+  }
+
+  func configureSecondSection(with event: EventEntity) {
+    for speech in event.speeches.enumerated() {
+      secondSection.insert(.speechDetailsTableViewCell, at: speech.offset)
+    }
   }
 }
 
 extension EventPreviewViewController: UITableViewDataSource, UITableViewDelegate {
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return sections.count
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return groupTypeForCreate.count
+    return sections[section].items.count
   }
 
   // swiftlint:disable colon:next force_cast
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    switch groupTypeForCreate[indexPath.row] {
+    switch sections[indexPath.section].items[indexPath.row] {
     case .speechDetailsTableViewCell:
       self.goToSpeechPreview()
     default: break
@@ -96,10 +114,10 @@ extension EventPreviewViewController: UITableViewDataSource, UITableViewDelegate
     let actionButtonCell = tableView.dequeueReusableCell(withIdentifier: "ActionButtonTableViewCell")
       as! ActionButtonTableViewCell
 
-    switch groupTypeForCreate[indexPath.row] {
+    switch sections[indexPath.section].items[indexPath.row] {
     case .eventDetailsTableViewCell:
       let cell = tableView.dequeueReusableCell(withIdentifier: TypeOfCells.eventDetailsTableViewCell.identifier)
-      as! InfoAboutEventTableViewCell
+      as! EventDetailsTableViewCell
       cell.configure(with: EventEntity())
       return cell
 

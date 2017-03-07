@@ -9,7 +9,7 @@
 import Foundation
 
 struct EventPreviewPO {
-  //FIXME: - Add new data when nessaery
+  // FIXME: - Add new data when nessaery
   var speechDetails: String?
 
   init(speechDetails: String) {

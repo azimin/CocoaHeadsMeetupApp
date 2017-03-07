@@ -52,10 +52,11 @@ class Importer {
         structuredLocation.geoLocation = CLLocation(latitude: place.latitude,
                                                     longitude: place.longitude)
       }
-      //warn the user for five hours before event 5 hours = 18000 seconds
+      // warn the user for five hours before event 5 hours = 18000 seconds
       let alarm = EKAlarm(relativeOffset:-(5 * 60 * 60))
 
       calendar.title = event.title.localized
+      // seconds from 1970 to 01.03.2017 19:00 - 23:00
       calendar.startDate = Date(timeIntervalSince1970: 1491580800)
       calendar.endDate = Date(timeIntervalSince1970: 1491595200)
       calendar.notes = event.descriptionText.localized

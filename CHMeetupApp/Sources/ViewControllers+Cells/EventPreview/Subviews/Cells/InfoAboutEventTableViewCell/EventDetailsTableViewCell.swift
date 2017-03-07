@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfoAboutEventTableViewCell: UITableViewCell {
+class EventDetailsTableViewCell: UITableViewCell {
 
   @IBOutlet var infoAboutEventLabel: UILabel!
 
@@ -17,7 +17,7 @@ class InfoAboutEventTableViewCell: UITableViewCell {
   }
 }
 
-extension InfoAboutEventTableViewCell: ReusableCell {
+extension EventDetailsTableViewCell: ReusableCell {
 
   static var nib: UINib? {
     return UINib(nibName: String(describing: self), bundle: nil)
