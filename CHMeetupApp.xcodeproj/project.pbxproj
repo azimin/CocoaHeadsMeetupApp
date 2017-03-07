@@ -25,20 +25,16 @@
 		224CA9E21E65FCA100CD06D6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9E11E65FCA100CD06D6 /* Request.swift */; };
 		4D03853A1E66010A00514D0A /* ImportResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0385391E66010A00514D0A /* ImportResultHandler.swift */; };
 		4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08815A1E64200B004812E5 /* DateComponents+Init.swift */; };
-		4D28C9DA1E6B6E700061004A /* EventPreviewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C9D91E6B6E700061004A /* EventPreviewEntity.swift */; };
 		4D28C9DC1E6B6F030061004A /* EventPreviewPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C9DB1E6B6F030061004A /* EventPreviewPO.swift */; };
 		4D28C9DD1E6C0AA20061004A /* SpeechDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6436DE1E6A9B4000DC1E7B /* SpeechDetailsTableViewCell.xib */; };
 		4D6436D91E6944A900DC1E7B /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6436D81E6944A900DC1E7B /* LoginType.swift */; };
-		4D6436DD1E6A9B1000DC1E7B /* AddressButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6436DB1E6A9B1000DC1E7B /* AddressButtonTableViewCell.xib */; };
 		4D6436E11E6A9B4000DC1E7B /* SpeechDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6436DF1E6A9B4000DC1E7B /* SpeechDetailsTableViewCell.swift */; };
-		4D6436E41E6A9B6C00DC1E7B /* JoinButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6436E21E6A9B6C00DC1E7B /* JoinButtonTableViewCell.xib */; };
 		4D6436E81E6A9B8900DC1E7B /* InfoAboutEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6436E61E6A9B8900DC1E7B /* InfoAboutEventTableViewCell.swift */; };
 		4D6436E91E6A9B8900DC1E7B /* InfoAboutEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6436E71E6A9B8900DC1E7B /* InfoAboutEventTableViewCell.xib */; };
 		4D6436F11E6B09A500DC1E7B /* ActionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6436F01E6B09A500DC1E7B /* ActionButtonTableViewCell.swift */; };
-		4D890B591E5EEFE00038CCC9 /* ImportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* ImportController.swift */; };
+		4D890B591E5EEFE00038CCC9 /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* Importer.swift */; };
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
-		4DD327C51E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DD327C31E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.xib */; };
-		4DD327C91E6C35E00072FECA /* AddToReminderButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DD327C71E6C35E00072FECA /* AddToReminderButtonTableViewCell.xib */; };
+		4DD327C91E6C35E00072FECA /* ActionButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DD327C71E6C35E00072FECA /* ActionButtonTableViewCell.xib */; };
 		4DD327CF1E6D5DBB0072FECA /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD327CE1E6D5DBB0072FECA /* AlertHandler.swift */; };
 		784AA39C1E65BB4F0018336C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784AA39B1E65BB4F0018336C /* Utility.swift */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
@@ -129,20 +125,16 @@
 		224CA9E11E65FCA100CD06D6 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		4D0385391E66010A00514D0A /* ImportResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportResultHandler.swift; sourceTree = "<group>"; };
 		4D08815A1E64200B004812E5 /* DateComponents+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateComponents+Init.swift"; path = "DateComponents/DateComponents+Init.swift"; sourceTree = "<group>"; };
-		4D28C9D91E6B6E700061004A /* EventPreviewEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewEntity.swift; sourceTree = "<group>"; };
 		4D28C9DB1E6B6F030061004A /* EventPreviewPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewPO.swift; sourceTree = "<group>"; };
 		4D6436D81E6944A900DC1E7B /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginType.swift; path = Controllers/LoginType.swift; sourceTree = "<group>"; };
-		4D6436DB1E6A9B1000DC1E7B /* AddressButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddressButtonTableViewCell.xib; path = EventPreview/Subviews/Cells/AddressButtonTableViewCell/AddressButtonTableViewCell.xib; sourceTree = "<group>"; };
 		4D6436DE1E6A9B4000DC1E7B /* SpeechDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpeechDetailsTableViewCell.xib; path = EventPreview/Subviews/Cells/InfoAboutSpeechTableViewCell/SpeechDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		4D6436DF1E6A9B4000DC1E7B /* SpeechDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeechDetailsTableViewCell.swift; path = EventPreview/Subviews/Cells/InfoAboutSpeechTableViewCell/SpeechDetailsTableViewCell.swift; sourceTree = "<group>"; };
-		4D6436E21E6A9B6C00DC1E7B /* JoinButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JoinButtonTableViewCell.xib; path = EventPreview/Subviews/Cells/JoinButtonTableViewCell/JoinButtonTableViewCell.xib; sourceTree = "<group>"; };
 		4D6436E61E6A9B8900DC1E7B /* InfoAboutEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoAboutEventTableViewCell.swift; path = EventPreview/Subviews/Cells/InfoAboutEventTableViewCell/InfoAboutEventTableViewCell.swift; sourceTree = "<group>"; };
 		4D6436E71E6A9B8900DC1E7B /* InfoAboutEventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoAboutEventTableViewCell.xib; path = EventPreview/Subviews/Cells/InfoAboutEventTableViewCell/InfoAboutEventTableViewCell.xib; sourceTree = "<group>"; };
 		4D6436F01E6B09A500DC1E7B /* ActionButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButtonTableViewCell.swift; path = ../Classes/ActionButtonTableViewCell.swift; sourceTree = "<group>"; };
-		4D890B581E5EEFE00038CCC9 /* ImportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportController.swift; sourceTree = "<group>"; };
+		4D890B581E5EEFE00038CCC9 /* Importer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Importer.swift; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		4DD327C31E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddToCalendarButtonTableViewCell.xib; path = EventPreview/Subviews/Cells/AddToCalendarButtonTableViewCell/AddToCalendarButtonTableViewCell.xib; sourceTree = "<group>"; };
-		4DD327C71E6C35E00072FECA /* AddToReminderButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddToReminderButtonTableViewCell.xib; path = EventPreview/Subviews/Cells/AddToReminderButtonTableViewCell/AddToReminderButtonTableViewCell.xib; sourceTree = "<group>"; };
+		4DD327C71E6C35E00072FECA /* ActionButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActionButtonTableViewCell.xib; path = "../../ViewControllers+Cells/EventPreview/Subviews/Cells/AddToReminderButtonTableViewCell/ActionButtonTableViewCell.xib"; sourceTree = "<group>"; };
 		4DD327CE1E6D5DBB0072FECA /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		784AA39B1E65BB4F0018336C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
@@ -324,12 +316,11 @@
 			isa = PBXGroup;
 			children = (
 				784AA39B1E65BB4F0018336C /* Utility.swift */,
-				4D890B581E5EEFE00038CCC9 /* ImportController.swift */,
+				4D890B581E5EEFE00038CCC9 /* Importer.swift */,
 				C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */,
 				4D0385391E66010A00514D0A /* ImportResultHandler.swift */,
 				2231A52F1E60B9A50069A179 /* WebService */,
 				2231A5341E60BA290069A179 /* Reachability.swift */,
-				4D28C9D91E6B6E700061004A /* EventPreviewEntity.swift */,
 				4DD327CE1E6D5DBB0072FECA /* AlertHandler.swift */,
 			);
 			path = Classes;
@@ -348,7 +339,7 @@
 		221F4F931E5C0B6C0009FD07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4D6436F01E6B09A500DC1E7B /* ActionButtonTableViewCell.swift */,
+				4DF43DB41E6F344700F5EE6A /* ActionButtonTableViewCell */,
 				0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */,
 			);
 			path = Views;
@@ -471,22 +462,6 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		4D0385341E65E5B300514D0A /* AddressButtonTableVIewCell */ = {
-			isa = PBXGroup;
-			children = (
-				4D6436DB1E6A9B1000DC1E7B /* AddressButtonTableViewCell.xib */,
-			);
-			name = AddressButtonTableVIewCell;
-			sourceTree = "<group>";
-		};
-		4D03853B1E66110400514D0A /* JoinButtonTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				4D6436E21E6A9B6C00DC1E7B /* JoinButtonTableViewCell.xib */,
-			);
-			name = JoinButtonTableViewCell;
-			sourceTree = "<group>";
-		};
 		4D0881591E641FE3004812E5 /* DateComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,10 +481,6 @@
 		4D4ACDAB1E65DC3F00F90D43 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				4D6436EF1E6B04F100DC1E7B /* AddToReminderButtonTableViewCell */,
-				4D6436EA1E6AFFD600DC1E7B /* AddToCalendarButtonTableViewCell */,
-				4D03853B1E66110400514D0A /* JoinButtonTableViewCell */,
-				4D0385341E65E5B300514D0A /* AddressButtonTableVIewCell */,
 				4D4ACDAC1E65DC4900F90D43 /* InfoAboutEventTableViewCell */,
 				4D4ACDB51E65DE3E00F90D43 /* InfoAboutSpeechTableViewCell */,
 				78BBC8FC1E60FAAD00DEC122 /* ProfilePictureCell */,
@@ -537,20 +508,13 @@
 			name = InfoAboutSpeechTableViewCell;
 			sourceTree = "<group>";
 		};
-		4D6436EA1E6AFFD600DC1E7B /* AddToCalendarButtonTableViewCell */ = {
+		4DF43DB41E6F344700F5EE6A /* ActionButtonTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				4DD327C31E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.xib */,
+				4D6436F01E6B09A500DC1E7B /* ActionButtonTableViewCell.swift */,
+				4DD327C71E6C35E00072FECA /* ActionButtonTableViewCell.xib */,
 			);
-			name = AddToCalendarButtonTableViewCell;
-			sourceTree = "<group>";
-		};
-		4D6436EF1E6B04F100DC1E7B /* AddToReminderButtonTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				4DD327C71E6C35E00072FECA /* AddToReminderButtonTableViewCell.xib */,
-			);
-			name = AddToReminderButtonTableViewCell;
+			name = ActionButtonTableViewCell;
 			sourceTree = "<group>";
 		};
 		78BBC8FA1E60F79A00DEC122 /* Subviews */ = {
@@ -891,19 +855,16 @@
 				4D28C9DD1E6C0AA20061004A /* SpeechDetailsTableViewCell.xib in Resources */,
 				78BBC9061E60FC0700DEC122 /* ProfileNameCell.xib in Resources */,
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
-				4D6436E41E6A9B6C00DC1E7B /* JoinButtonTableViewCell.xib in Resources */,
 				221A8B841E685C5A004E320D /* Localizable.strings in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
 				4D6436E91E6A9B8900DC1E7B /* InfoAboutEventTableViewCell.xib in Resources */,
-				4D6436DD1E6A9B1000DC1E7B /* AddressButtonTableViewCell.xib in Resources */,
 				92D6786F1E626CE80010F3E9 /* PastEventsTableViewCell.xib in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
 				78BBC90A1E60FC2D00DEC122 /* ProfileSpeachCell.xib in Resources */,
 				78BBC9021E60FBE800DEC122 /* ProfilePictureCell.xib in Resources */,
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
 				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
-				4DD327C91E6C35E00072FECA /* AddToReminderButtonTableViewCell.xib in Resources */,
-				4DD327C51E6C35CE0072FECA /* AddToCalendarButtonTableViewCell.xib in Resources */,
+				4DD327C91E6C35E00072FECA /* ActionButtonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,12 +923,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F2638651E6B89670081D23B /* UserPlainObject+DataBase.swift in Sources */,
-				4D890B591E5EEFE00038CCC9 /* ImportController.swift in Sources */,
+				4D890B591E5EEFE00038CCC9 /* Importer.swift in Sources */,
 				9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */,
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
 				C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */,
 				4D6436F11E6B09A500DC1E7B /* ActionButtonTableViewCell.swift in Sources */,
-				4D28C9DA1E6B6E700061004A /* EventPreviewEntity.swift in Sources */,
 				9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */,
 				C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */,
 				78BBC9011E60FBE800DEC122 /* ProfilePictureCell.swift in Sources */,

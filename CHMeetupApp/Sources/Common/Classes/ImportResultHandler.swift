@@ -22,7 +22,8 @@ class ImportResultHandler {
   }
 
   private static func success(in viewController: UIViewController) {
-    let alert = AlertHandler.configure(title: "Added", message: "")
+    //TODO: - think about message add or not
+    let alert = AlertHandler.configure(title: "Added".localized, message: "".localized)
 
     viewController.present(alert, animated: true, completion: nil)
   }

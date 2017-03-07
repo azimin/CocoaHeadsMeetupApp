@@ -10,44 +10,28 @@ import UIKit
 
 class ActionButtonTableViewCell: UITableViewCell {
 
-  @IBAction func buttonWasTupped( sender: UIButton) {
+  @IBAction func buttonDidTap(sender: UIButton) {
     actionByTap?(self)
   }
-  var actionByTap: ((ActionButtonTableViewCell) -> Void)?
-}
 
-extension ActionButtonTableViewCell {
+  @IBOutlet var actionButton: UIButton!
 
-  enum ActionType {
-    case addToCalendar
-    case addToReminder
-    case address
-    case join
-  }
+  private var actionByTap: ((ActionButtonTableViewCell) -> Void)?
 
-  static func identifier(for type: ActionType) -> String {
-    switch type {
-    case .addToCalendar:
-      return String(describing: self) + "AddToCalendar"
-    case .addToReminder:
-      return String(describing: self) + "AddToReminder"
-    case .address:
-      return String(describing: self) + "Address"
-    case .join:
-      return String(describing: self) + "Join"
-    }
-  }
-
-  static func nib(for type: ActionType) -> UINib? {
-    switch type {
-    case .addToCalendar:
-      return UINib(nibName: "AddToCalendarButtonTableViewCell", bundle: nil)
-    case .addToReminder:
-      return UINib(nibName: "AddToReminderButtonTableViewCell", bundle: nil)
-    case .address:
-      return UINib(nibName: "AddressButtonTableViewCell", bundle: nil)
-    case .join:
-      return UINib(nibName: "JoinButtonTableViewCell", bundle: nil)
-    }
+  func addAction(title: String, handler: @escaping(ActionButtonTableViewCell) -> Void ) {
+    actionButton.setTitle(title, for: .normal)
+    actionByTap = handler
   }
 }
+
+extension ActionButtonTableViewCell: ReusableCell {
+
+  static var identifier: String {
+    return String(describing: self)
+  }
+
+  static var nib: UINib? {
+    return UINib(nibName: String(describing: self), bundle: nil)
+  }
+}
+

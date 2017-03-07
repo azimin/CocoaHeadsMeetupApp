@@ -12,8 +12,8 @@ class SpeechDetailsTableViewCell: UITableViewCell {
 
   @IBOutlet var speechDetailsLabel: UILabel!
 
-  func configure(with item: EventPreviewPO) {
-    speechDetailsLabel.text = item.speechDetails?.localized
+  func configure(with item: String) {
+    speechDetailsLabel.text = item
   }
 }
 

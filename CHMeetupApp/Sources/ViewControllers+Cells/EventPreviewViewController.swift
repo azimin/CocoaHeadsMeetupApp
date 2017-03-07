@@ -9,8 +9,8 @@
 import UIKit
 
 enum TypeOfCells {
-  case infoAboutSpeechTableViewCell
-  case infoAboutEventTableViewCell
+  case speechDetailsTableViewCell
+  case eventDetailsTableViewCell
   case addressButttonTableViewCell
   case addToCalendarButtonTableViewCell
   case addToReminderButtonTableViewCell
@@ -18,55 +18,45 @@ enum TypeOfCells {
 
   var nib: UINib? {
     switch self {
-    case .infoAboutSpeechTableViewCell:
+    case .speechDetailsTableViewCell:
       return SpeechDetailsTableViewCell.nib
-    case .infoAboutEventTableViewCell:
+    case .eventDetailsTableViewCell:
       return InfoAboutEventTableViewCell.nib
-    case .addressButttonTableViewCell:
-      return ActionButtonTableViewCell.nib(for: .address)
-    case .addToCalendarButtonTableViewCell:
-      return ActionButtonTableViewCell.nib(for: .addToCalendar)
-    case .addToReminderButtonTableViewCell:
-      return ActionButtonTableViewCell.nib(for: .addToReminder)
-    case .joinButtonTableViewCell:
-      return  ActionButtonTableViewCell.nib(for: .join)
+    case .addressButttonTableViewCell,
+         .addToCalendarButtonTableViewCell,
+         .addToReminderButtonTableViewCell,
+         .joinButtonTableViewCell:
+      return ActionButtonTableViewCell.nib
     }
   }
 
   var identifier: String {
     switch self {
-    case .infoAboutEventTableViewCell:
+    case .eventDetailsTableViewCell:
       return InfoAboutEventTableViewCell.identifier
-    case .infoAboutSpeechTableViewCell:
+    case .speechDetailsTableViewCell:
       return SpeechDetailsTableViewCell.identifier
-    case .addressButttonTableViewCell:
-      return ActionButtonTableViewCell.identifier(for: .address)
-    case .addToCalendarButtonTableViewCell:
-      return ActionButtonTableViewCell.identifier(for: .addToCalendar)
-    case .addToReminderButtonTableViewCell:
-      return ActionButtonTableViewCell.identifier(for: .addToReminder)
-    case .joinButtonTableViewCell:
-      return ActionButtonTableViewCell.identifier(for: .join)
+    case .addressButttonTableViewCell,
+         .addToCalendarButtonTableViewCell,
+         .addToReminderButtonTableViewCell,
+         .joinButtonTableViewCell:
+      return ActionButtonTableViewCell.identifier
     }
   }
 }
 
-let groupTypeForRegister: [TypeOfCells] = [ .infoAboutEventTableViewCell,
-                                 .addressButttonTableViewCell,
-                                 .addToCalendarButtonTableViewCell,
-                                 .addToReminderButtonTableViewCell,
-                                 .infoAboutSpeechTableViewCell,
-                                 .joinButtonTableViewCell]
+let groupTypeForRegister: [TypeOfCells] = [ .eventDetailsTableViewCell,
+                                            .addressButttonTableViewCell,
+                                            .speechDetailsTableViewCell]
 
-let groupTypeForCreate: [TypeOfCells] = [.infoAboutEventTableViewCell,
+let groupTypeForCreate: [TypeOfCells] = [.eventDetailsTableViewCell,
                                          .addressButttonTableViewCell,
                                          .addToCalendarButtonTableViewCell,
                                          .addToReminderButtonTableViewCell,
-                                         .infoAboutSpeechTableViewCell,
+                                         .speechDetailsTableViewCell,
                                          .joinButtonTableViewCell]
 
 class EventPreviewViewController: UIViewController {
-  static fileprivate let eventPreviewEnitityPO = EventPreviewEntity()
 
   @IBOutlet var tableView: UITableView!
 
@@ -92,64 +82,62 @@ extension EventPreviewViewController: UITableViewDataSource, UITableViewDelegate
   }
 
   // swiftlint:disable colon:next force_cast
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    switch groupTypeForCreate[indexPath.row] {
-    case .infoAboutEventTableViewCell:
-      let cell = tableView.dequeueReusableCell(withIdentifier: InfoAboutEventTableViewCell.identifier)
-        as! InfoAboutEventTableViewCell
-      cell.configure(with: EventEntity())
-      return cell
-
-    case .addressButttonTableViewCell:
-      let cell = tableView.dequeueReusableCell(withIdentifier: TypeOfCells.addressButttonTableViewCell.identifier)
-        as! ActionButtonTableViewCell
-      return cell
-
-    case .addToCalendarButtonTableViewCell:
-      let cell = tableView.dequeueReusableCell(withIdentifier: TypeOfCells.addToCalendarButtonTableViewCell.identifier)
-        as! ActionButtonTableViewCell
-      cell.actionByTap = { cell in
-        Importer.import(event: EventEntity(), to: .calendar,
-                        completion: { Result in
-                          ImportResultHandler.result(type: Result, in: self)
-        })
-      }
-      return cell
-
-    case .addToReminderButtonTableViewCell:
-      let cell = tableView.dequeueReusableCell(withIdentifier: TypeOfCells.addToReminderButtonTableViewCell.identifier)
-        as! ActionButtonTableViewCell
-      cell.actionByTap = { cell in
-        Importer.import(event: EventEntity(), to: .reminder,
-                        completion: { Result in
-                          ImportResultHandler.result(type: Result, in: self)
-        })
-      }
-      return cell
-
-    case .joinButtonTableViewCell:
-      let cell = tableView.dequeueReusableCell(withIdentifier: TypeOfCells.joinButtonTableViewCell.identifier)
-        as! ActionButtonTableViewCell
-      cell.actionByTap = { cell in
-        self.goToRegistrationPreview()
-      }
-      return cell
-
-    case .infoAboutSpeechTableViewCell:
-      let cell = tableView.dequeueReusableCell(withIdentifier: SpeechDetailsTableViewCell.identifier)
-        as! SpeechDetailsTableViewCell
-      cell.configure(with: getItem(from: EventEntity()))
-      return cell
-    }
-  }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     switch groupTypeForCreate[indexPath.row] {
-    case .infoAboutSpeechTableViewCell:
+    case .speechDetailsTableViewCell:
       self.goToSpeechPreview()
     default: break
     }
     tableView.deselectRow(at: indexPath, animated: true)
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let actionButtonCell = tableView.dequeueReusableCell(withIdentifier: "ActionButtonTableViewCell")
+      as! ActionButtonTableViewCell
+
+    switch groupTypeForCreate[indexPath.row] {
+    case .eventDetailsTableViewCell:
+      let cell = tableView.dequeueReusableCell(withIdentifier: TypeOfCells.eventDetailsTableViewCell.identifier)
+      as! InfoAboutEventTableViewCell
+      cell.configure(with: EventEntity())
+      return cell
+
+    case .speechDetailsTableViewCell:
+      let cell = tableView.dequeueReusableCell(withIdentifier: TypeOfCells.speechDetailsTableViewCell.identifier)
+      as! SpeechDetailsTableViewCell
+      cell.configure(with: getItem(from: EventEntity(), at: indexPath.row))
+      return cell
+
+    case .addressButttonTableViewCell:
+      actionButtonCell.addAction(title: "Address".localized, handler: { _ in
+      print("showMap")
+      })
+      return actionButtonCell
+
+    case .addToCalendarButtonTableViewCell:
+      actionButtonCell.addAction(title: "Add to calendar".localized, handler: { _ in
+        Importer.import(event: EventEntity(), to: .calendar,
+                        completion: { result in ImportResultHandler.result(type: result, in: self)
+        })
+      })
+      return actionButtonCell
+
+    case .addToReminderButtonTableViewCell:
+      actionButtonCell.addAction(title: "Add to reminder".localized,
+                                 handler: { _ in Importer.import(event: EventEntity(), to: .calendar,
+                                                                    completion: { result in
+                                                                      ImportResultHandler.result(type: result, in: self)
+                                 })
+      })
+      return actionButtonCell
+
+    case .joinButtonTableViewCell:
+      actionButtonCell.addAction(title: "Join".localized, handler: { _ in
+        self.goToRegistrationPreview()
+      })
+      return actionButtonCell
+    }
   }
 
   func  goToSpeechPreview() {
@@ -164,8 +152,16 @@ extension EventPreviewViewController: UITableViewDataSource, UITableViewDelegate
     self.navigationController?.pushViewController(viewController, animated: true)
   }
 
-  private func getItem(from: EventEntity) -> EventPreviewPO {
-    let createPO = EventPreviewEntity()
-    return createPO.eventPreviewEntityCollection(get: from)
+  func getItem(from event: EventEntity, at index: Int) -> String {
+    let speeches = event.speeches
+    var detailsOfSpeech = ""
+
+    if speeches.count > 0 {
+      let speech = speeches[index].title
+      let name = speeches[index].user?.name  ?? ""
+      let descriptionText = speeches[index].descriptionText
+      detailsOfSpeech = speech + "\n" + descriptionText + "\n" + name
+    }
+    return detailsOfSpeech
   }
 }

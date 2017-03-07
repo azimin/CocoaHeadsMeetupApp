@@ -15,15 +15,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UI8-lj-Uu9">
-                        <rect key="frame" x="103" y="6" width="115" height="30"/>
+                        <rect key="frame" x="137" y="6" width="46" height="30"/>
                         <accessibility key="accessibilityConfiguration" identifier="reminder"/>
-                        <state key="normal" title="Add to Reminder"/>
+                        <state key="normal" title="Button"/>
                         <connections>
-                            <action selector="buttonWasTuppedWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pWZ-YO-Eqt"/>
+                            <action selector="buttonDidTapWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="D2f-Fk-EkQ"/>
                         </connections>
                     </button>
                 </subviews>
@@ -32,6 +32,9 @@
                     <constraint firstItem="UI8-lj-Uu9" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="fRN-X4-212"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="actionButton" destination="UI8-lj-Uu9" id="DL1-Hn-gCp"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

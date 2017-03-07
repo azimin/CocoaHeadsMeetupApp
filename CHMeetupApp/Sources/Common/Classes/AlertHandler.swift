@@ -13,7 +13,7 @@ class AlertHandler {
   static func configure(title: String, message: String) -> UIAlertController {
     let action = UIAlertAction(title: "OK", style: .default, handler: nil)
 
-    let alert = UIAlertController(title: title.localized, message: message.localized, preferredStyle: .alert)
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addAction(action)
     return alert
   }
