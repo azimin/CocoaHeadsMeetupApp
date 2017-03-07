@@ -44,8 +44,13 @@
 		78BBC9061E60FC0700DEC122 /* ProfileNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78BBC9041E60FC0700DEC122 /* ProfileNameCell.xib */; };
 		78BBC9091E60FC2D00DEC122 /* ProfileSpeachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BBC9071E60FC2D00DEC122 /* ProfileSpeachCell.swift */; };
 		78BBC90A1E60FC2D00DEC122 /* ProfileSpeachCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78BBC9081E60FC2D00DEC122 /* ProfileSpeachCell.xib */; };
+		8A317A801E6AE8BE00C4798C /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A317A7F1E6AE8BE00C4798C /* ActionButton.swift */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
+		8A6268541E64638500D51BEB /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268531E64638500D51BEB /* LoginType.swift */; };
+		8A7122FC1E6F24BB00F890E2 /* Gotham.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A7122FB1E6F24BB00F890E2 /* Gotham.ttf */; };
+		8A7122FD1E6F2EDA00F890E2 /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* Importer.swift */; };
+		8A857CFE1E6CC692002CC4C2 /* UIColor+Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A857CFD1E6CC692002CC4C2 /* UIColor+Brightness.swift */; };
 		923CF19A1E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923CF1991E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift */; };
 		92D6786A1E626CCD0010F3E9 /* PastEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D678691E626CCD0010F3E9 /* PastEventsViewController.swift */; };
 		92D6786E1E626CE80010F3E9 /* PastEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D6786C1E626CE80010F3E9 /* PastEventsTableViewCell.swift */; };
@@ -142,8 +147,12 @@
 		78BBC9041E60FC0700DEC122 /* ProfileNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileNameCell.xib; path = "../ViewControllers+Cells/ProfileViewController/Subviews/Cells/ProfileNameCell/ProfileNameCell.xib"; sourceTree = "<group>"; };
 		78BBC9071E60FC2D00DEC122 /* ProfileSpeachCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSpeachCell.swift; path = "../ViewControllers+Cells/ProfileViewController/Subviews/Cells/ProfileSpeachCell/ProfileSpeachCell.swift"; sourceTree = "<group>"; };
 		78BBC9081E60FC2D00DEC122 /* ProfileSpeachCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileSpeachCell.xib; path = "../ViewControllers+Cells/ProfileViewController/Subviews/Cells/ProfileSpeachCell/ProfileSpeachCell.xib"; sourceTree = "<group>"; };
+		8A317A7F1E6AE8BE00C4798C /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButton.swift; path = CHMeetupApp/Sources/Common/Buttons/ActionButton.swift; sourceTree = SOURCE_ROOT; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8A6268531E64638500D51BEB /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginType.swift; path = Controllers/LoginType.swift; sourceTree = "<group>"; };
+		8A7122FB1E6F24BB00F890E2 /* Gotham.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gotham.ttf; sourceTree = "<group>"; };
+		8A857CFD1E6CC692002CC4C2 /* UIColor+Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Brightness.swift"; path = "UIKit/UIColor/UIColor+Brightness.swift"; sourceTree = "<group>"; };
 		923CF1991E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsDisplayCollection.swift; sourceTree = "<group>"; };
 		92D678691E626CCD0010F3E9 /* PastEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsViewController.swift; sourceTree = "<group>"; };
 		92D6786C1E626CE80010F3E9 /* PastEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsTableViewCell.swift; sourceTree = "<group>"; };
@@ -273,6 +282,7 @@
 		221F4F8B1E5C0B6C0009FD07 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				8A7122FB1E6F24BB00F890E2 /* Gotham.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -306,6 +316,7 @@
 				221F4F911E5C0B6C0009FD07 /* Classes */,
 				221F4F921E5C0B6C0009FD07 /* Extensions */,
 				221F4F931E5C0B6C0009FD07 /* Views */,
+				8A317A811E6AE8D300C4798C /* Buttons */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -328,8 +339,8 @@
 			isa = PBXGroup;
 			children = (
 				4D0881591E641FE3004812E5 /* DateComponents */,
-				C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */,
 				2231A5381E60E5030069A179 /* Foundation */,
+				8A857CFF1E6CC6A5002CC4C2 /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -549,6 +560,15 @@
 			name = ProfileSpeachCell;
 			sourceTree = "<group>";
 		};
+		8A317A811E6AE8D300C4798C /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				8A317A7F1E6AE8BE00C4798C /* ActionButton.swift */,
+			);
+			name = Buttons;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		8A6268271E60742B00D51BEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +584,23 @@
 			);
 			name = Login;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		8A857CFF1E6CC6A5002CC4C2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */,
+				8A857D001E6CC6B7002CC4C2 /* UIColor */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		8A857D001E6CC6B7002CC4C2 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				8A857CFD1E6CC692002CC4C2 /* UIColor+Brightness.swift */,
+			);
+			name = UIColor;
 			sourceTree = "<group>";
 		};
 		923CF1981E68F0CA00EBBE0D /* DisplayModel */ = {
@@ -861,6 +898,7 @@
 				78BBC90A1E60FC2D00DEC122 /* ProfileSpeachCell.xib in Resources */,
 				78BBC9021E60FBE800DEC122 /* ProfilePictureCell.xib in Resources */,
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
+				8A7122FC1E6F24BB00F890E2 /* Gotham.ttf in Resources */,
 				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -919,6 +957,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A7122FD1E6F2EDA00F890E2 /* Importer.swift in Sources */,
+				8A317A801E6AE8BE00C4798C /* ActionButton.swift in Sources */,
 				9F2638651E6B89670081D23B /* UserPlainObject+DataBase.swift in Sources */,
 				4D890B591E5EEFE00038CCC9 /* Importer.swift in Sources */,
 				9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */,
@@ -938,6 +978,7 @@
 				784AA39C1E65BB4F0018336C /* Utility.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
+				8A857CFE1E6CC692002CC4C2 /* UIColor+Brightness.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
 				221A8B8E1E69692D004E320D /* EventPlainObject.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,

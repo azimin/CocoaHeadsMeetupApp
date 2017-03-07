@@ -11,6 +11,21 @@ import SafariServices
 
 class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControllerType {
 
+  @IBOutlet var authButtons: [UIButton]! {
+    didSet {
+      for button in authButtons {
+        button.layer.cornerRadius = Constants.SystemSizes.cornerRadius
+        button.layer.masksToBounds = true
+        button.titleLabel?.font = UIFont(name: "Gotham Pro", size: Constants.SystemSizes.textSize)
+      }
+    }
+  }
+  @IBOutlet var infoLabel: UILabel! {
+    didSet {
+      infoLabel.font = UIFont.systemFont(ofSize: Constants.SystemSizes.textSize)
+    }
+  }
+
   var safariViewController: SFSafariViewController?
 
   override func viewDidLoad() {
@@ -25,7 +40,7 @@ class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControll
     login(app: LoginType.vk)
   }
 
-  @IBAction func fbLoginButtonAction(_ sender: Any) {
+  @IBAction func fbLoginButtonAction(_ sender: UIButton) {
     login(app: LoginType.fb)
   }
 
