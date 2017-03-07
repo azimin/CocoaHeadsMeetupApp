@@ -57,7 +57,7 @@
 	<string>1</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Gotham.ttf</string>
+		<string>GothamPro-Medium.ttf</string>
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>

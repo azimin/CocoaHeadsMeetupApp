@@ -15,7 +15,6 @@ class Importer {
     case calendar
     case reminder
 }
-    
   enum Result {
     case success
     case permissionError
@@ -27,7 +26,7 @@ class Importer {
 
   typealias ResultParameter = (_ result: Result) -> Void
 
-  static func `import`(event: EventEntity, to type: ImportToType, completion: @escaping ResultParameter) {
+  static func `import`(event: EventEntity, to type: Type, completion: @escaping ResultParameter) {
     switch type {
     case .calendar:
       importToCalendar(event: event, completion: completion)
@@ -42,7 +41,6 @@ class Importer {
         completion(.permissionError)
         return
       }
-
 
       let calendar = EKEvent(eventStore: self.calendarEventStore)
       var location: String
@@ -61,7 +59,6 @@ class Importer {
 
       calendar.title = event.title
       calendar.notes = event.descriptionText
-      
       if let startDate = event.startDate {
         calendar.startDate = startDate
       }
