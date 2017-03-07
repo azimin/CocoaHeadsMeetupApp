@@ -70,8 +70,8 @@ fileprivate extension PastEventsViewController {
       // let eventDuration: TimeInterval = 3600 * 4
 
       let event = EventEntity()
-      event.date = eventTime
-      // FIXME: - add endTime to EventEntity
+      // event.date = eventTime
+
       // event.endTime = eventTime.addingTimeInterval(eventDuration)
       event.title += " \(numberOfDemoEvents - eventIndex)"
       demoEvents.append(event)

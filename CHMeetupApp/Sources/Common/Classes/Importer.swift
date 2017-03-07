@@ -57,10 +57,13 @@ class Importer {
 
       calendar.title = event.title.localized
 
-      // FIXME: -Add end-date to REALM
-      if let startDate = event.date {
+      if let startDate = event.startDate {
         calendar.startDate = startDate
       }
+      if let endDate = event.endDate {
+        calendar.endDate = endDate
+      }
+
       calendar.structuredLocation = structuredLocation
       calendar.addAlarm(alarm)
       calendar.calendar = self.calendarEventStore.defaultCalendarForNewEvents
@@ -85,15 +88,19 @@ class Importer {
 
       let reminder = EKReminder(eventStore: self.remindersEventStore)
 
-        if let date = event.date {
-        let intervalSince1970 = date
-        let alarmDate = intervalSince1970 - (5 * 60 * 60)
-
-        reminder.dueDateComponents = DateComponents(date: date)
+      var intervalSince1970: Date
+      var alarmDate: Date
+      if let startDate = event.startDate {
+        intervalSince1970 = startDate
+        alarmDate = intervalSince1970 - (5 * 60 * 60)
 
         let alarm = EKAlarm(absoluteDate: alarmDate)
         reminder.addAlarm(alarm)
       }
+      if let endDate = event.endDate {
+        reminder.dueDateComponents = DateComponents(date: endDate)
+      }
+
       reminder.title = event.title.localized
       reminder.calendar = self.remindersEventStore.defaultCalendarForNewReminders()
 

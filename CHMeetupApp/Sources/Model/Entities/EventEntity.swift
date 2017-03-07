@@ -15,7 +15,9 @@ class EventEntity: Object {
   dynamic var title: String = ""
   dynamic var descriptionText: String = ""
 
-  dynamic var date: Date?
+  dynamic var startDate: Date?
+  dynamic var endDate: Date?
+  
   dynamic var photoURL: String = ""
 
   dynamic var place: PlaceEntity?
