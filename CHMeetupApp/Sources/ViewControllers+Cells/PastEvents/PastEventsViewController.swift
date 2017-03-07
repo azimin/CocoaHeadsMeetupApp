@@ -60,18 +60,19 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
 fileprivate extension PastEventsViewController {
 
   func fetchEvents() {
-    //FIXME: Replace with real data
-    var demoEvents = [EventPO]()
+    // FIXME: Replace with real data
+    var demoEvents = [EventEntity]()
     let numberOfDemoEvents = 10
     for eventIndex in 0...numberOfDemoEvents {
-      //Create past event
+      // Create past event
       let oneDayTimeInterval = 3600 * 24
-      let eventTime = Date().addingTimeInterval(-TimeInterval(oneDayTimeInterval * eventIndex))
-      let eventDuration: TimeInterval = 3600 * 4
+//      let eventTime = Date().addingTimeInterval(-TimeInterval(oneDayTimeInterval * eventIndex))
+      // let eventDuration: TimeInterval = 3600 * 4
 
-      var event = EventPO()
-      event.startTime = eventTime
-      event.endTime = eventTime.addingTimeInterval(eventDuration)
+      let event = EventEntity()
+      // event.date = eventTime
+
+      // event.endTime = eventTime.addingTimeInterval(eventDuration)
       event.title += " \(numberOfDemoEvents - eventIndex)"
       demoEvents.append(event)
     }
