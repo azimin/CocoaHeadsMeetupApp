@@ -56,10 +56,11 @@ class Importer {
       let alarm = EKAlarm(relativeOffset:-(5 * 60 * 60))
 
       calendar.title = event.title.localized
-      // seconds from 1970 to 01.03.2017 19:00 - 23:00
-      calendar.startDate = Date(timeIntervalSince1970: 1491580800)
-      calendar.endDate = Date(timeIntervalSince1970: 1491595200)
-      calendar.notes = event.descriptionText.localized
+
+      // FIXME: -Add end-date to REALM
+      if let startDate = event.date {
+        calendar.startDate = startDate
+      }
       calendar.structuredLocation = structuredLocation
       calendar.addAlarm(alarm)
       calendar.calendar = self.calendarEventStore.defaultCalendarForNewEvents
@@ -83,14 +84,18 @@ class Importer {
       }
 
       let reminder = EKReminder(eventStore: self.remindersEventStore)
-      let intervalSince1970 = Date(timeIntervalSince1970: 1491580800)
-      let alarmDate = intervalSince1970 - (5 * 60 * 60)
-      let alarm = EKAlarm(absoluteDate: alarmDate)
 
+        if let date = event.date {
+        let intervalSince1970 = date
+        let alarmDate = intervalSince1970 - (5 * 60 * 60)
+
+        reminder.dueDateComponents = DateComponents(date: date)
+
+        let alarm = EKAlarm(absoluteDate: alarmDate)
+        reminder.addAlarm(alarm)
+      }
       reminder.title = event.title.localized
-      reminder.dueDateComponents = DateComponents(date: Date(timeIntervalSince1970: 1491595200))
       reminder.calendar = self.remindersEventStore.defaultCalendarForNewReminders()
-      reminder.addAlarm(alarm)
 
       do {
         try self.remindersEventStore.save(reminder, commit: true)
