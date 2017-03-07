@@ -25,7 +25,6 @@
 		224CA9E21E65FCA100CD06D6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9E11E65FCA100CD06D6 /* Request.swift */; };
 		4D03853A1E66010A00514D0A /* ImportResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0385391E66010A00514D0A /* ImportResultHandler.swift */; };
 		4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08815A1E64200B004812E5 /* DateComponents+Init.swift */; };
-		4D28C9DC1E6B6F030061004A /* EventPreviewPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C9DB1E6B6F030061004A /* EventPreviewPO.swift */; };
 		4D28C9DD1E6C0AA20061004A /* SpeechDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6436DE1E6A9B4000DC1E7B /* SpeechDetailsTableViewCell.xib */; };
 		4D6436D91E6944A900DC1E7B /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6436D81E6944A900DC1E7B /* LoginType.swift */; };
 		4D6436E11E6A9B4000DC1E7B /* SpeechDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6436DF1E6A9B4000DC1E7B /* SpeechDetailsTableViewCell.swift */; };
@@ -125,7 +124,6 @@
 		224CA9E11E65FCA100CD06D6 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		4D0385391E66010A00514D0A /* ImportResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportResultHandler.swift; sourceTree = "<group>"; };
 		4D08815A1E64200B004812E5 /* DateComponents+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateComponents+Init.swift"; path = "DateComponents/DateComponents+Init.swift"; sourceTree = "<group>"; };
-		4D28C9DB1E6B6F030061004A /* EventPreviewPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewPO.swift; sourceTree = "<group>"; };
 		4D6436D81E6944A900DC1E7B /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginType.swift; path = Controllers/LoginType.swift; sourceTree = "<group>"; };
 		4D6436DE1E6A9B4000DC1E7B /* SpeechDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpeechDetailsTableViewCell.xib; path = EventPreview/Subviews/Cells/InfoAboutSpeechTableViewCell/SpeechDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		4D6436DF1E6A9B4000DC1E7B /* SpeechDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeechDetailsTableViewCell.swift; path = EventPreview/Subviews/Cells/InfoAboutSpeechTableViewCell/SpeechDetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -399,7 +397,6 @@
 				221A8B8F1E696D18004E320D /* Place */,
 				221A8B8C1E696918004E320D /* Event */,
 				224CA9DA1E65FB7300CD06D6 /* User */,
-				4D28C9DB1E6B6F030061004A /* EventPreviewPO.swift */,
 				224CA9DF1E65FC7300CD06D6 /* PlainObjectType.swift */,
 				9F2638621E6B88DA0081D23B /* DataBasePlainObjectType.swift */,
 			);
@@ -934,7 +931,6 @@
 				9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */,
 				9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */,
 				0389AF621E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift in Sources */,
-				4D28C9DC1E6B6F030061004A /* EventPreviewPO.swift in Sources */,
 				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
 				9FAFF8071E6AD84000B687CB /* EventEntity.swift in Sources */,
 				9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */,

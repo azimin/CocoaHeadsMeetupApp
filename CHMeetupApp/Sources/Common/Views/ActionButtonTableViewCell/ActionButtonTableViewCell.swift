@@ -18,7 +18,7 @@ class ActionButtonTableViewCell: UITableViewCell {
 
     private var actionByTap: ((ActionButtonTableViewCell) -> Void)?
 
-    func addAction(title: String, handler: @escaping(ActionButtonTableViewCell) -> Void ) {
+    func addAction(title: String, handler: @escaping (ActionButtonTableViewCell) -> Void ) {
       actionButton.setTitle(title, for: .normal)
       actionByTap = handler
     }

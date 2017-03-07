@@ -44,19 +44,23 @@ class Importer {
       }
 
       let calendar = EKEvent(eventStore: self.calendarEventStore)
+      var location: String
+      var structuredLocation: EKStructuredLocation
 
-      let location = (event.place?.title ?? "Bad location")
-
-      let structuredLocation = EKStructuredLocation(title: location)
       if let place = event.place {
+        location = place.title
+        structuredLocation = EKStructuredLocation(title: location)
         structuredLocation.geoLocation = CLLocation(latitude: place.latitude,
                                                     longitude: place.longitude)
+        calendar.structuredLocation = structuredLocation
+
       }
       // warn the user for five hours before event 5 hours = 18000 seconds
       let alarm = EKAlarm(relativeOffset:-(5 * 60 * 60))
 
-      calendar.title = event.title.localized
-
+      calendar.title = event.title
+      calendar.notes = event.descriptionText
+      
       if let startDate = event.startDate {
         calendar.startDate = startDate
       }
@@ -64,7 +68,6 @@ class Importer {
         calendar.endDate = endDate
       }
 
-      calendar.structuredLocation = structuredLocation
       calendar.addAlarm(alarm)
       calendar.calendar = self.calendarEventStore.defaultCalendarForNewEvents
 
@@ -101,7 +104,7 @@ class Importer {
         reminder.dueDateComponents = DateComponents(date: endDate)
       }
 
-      reminder.title = event.title.localized
+      reminder.title = event.title
       reminder.calendar = self.remindersEventStore.defaultCalendarForNewReminders()
 
       do {

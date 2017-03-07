@@ -10,10 +10,10 @@ import UIKit
 
 class EventDetailsTableViewCell: UITableViewCell {
 
-  @IBOutlet var infoAboutEventLabel: UILabel!
+  @IBOutlet var eventDetails: UILabel!
 
   func configure(with event: EventEntity) {
-    infoAboutEventLabel.text = event.descriptionText.localized
+    eventDetails.text = event.descriptionText
   }
 }
 
