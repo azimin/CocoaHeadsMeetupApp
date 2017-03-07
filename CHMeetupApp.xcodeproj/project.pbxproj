@@ -75,6 +75,7 @@
 		9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */; };
 		9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590131E5F1AE700207199 /* MapAppType.swift */; };
 		9FD590161E5F1AE700207199 /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590141E5F1AE700207199 /* MapsController.swift */; };
+		9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */; };
 		C3165A331E6B469C004B5939 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A321E6B469C004B5939 /* PermissionsManager.swift */; };
 		C3165A3D1E6B46C1004B5939 /* AlbumInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A361E6B46C1004B5939 /* AlbumInfoTableViewCell.swift */; };
 		C3165A3E1E6B46C1004B5939 /* AlbumPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A371E6B46C1004B5939 /* AlbumPickerViewController.swift */; };
@@ -84,7 +85,7 @@
 		C3165A421E6B46C1004B5939 /* PhotosHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A3C1E6B46C1004B5939 /* PhotosHelper.swift */; };
 		C3165A4C1E6B476D004B5939 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A491E6B476D004B5939 /* UIView+Anchor.swift */; };
 		C3165A4D1E6B476D004B5939 /* UIViewController+RequireAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A4B1E6B476D004B5939 /* UIViewController+RequireAccess.swift */; };
-		9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */; };
+		C3CC02F41E6EF6E300614415 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FBF1E5E30F400207199 /* NavigationViewController.swift */; };
 		C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */; };
 		C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -174,6 +175,7 @@
 		9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHierarhyViewControllerType.swift; sourceTree = "<group>"; };
 		9FD590131E5F1AE700207199 /* MapAppType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAppType.swift; sourceTree = "<group>"; };
 		9FD590141E5F1AE700207199 /* MapsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
+		9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialEntity.swift; sourceTree = "<group>"; };
 		C3165A321E6B469C004B5939 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C3165A361E6B46C1004B5939 /* AlbumInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumInfoTableViewCell.swift; sourceTree = "<group>"; };
 		C3165A371E6B46C1004B5939 /* AlbumPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumPickerViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +186,6 @@
 		C3165A451E6B46FB004B5939 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		C3165A491E6B476D004B5939 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		C3165A4B1E6B476D004B5939 /* UIViewController+RequireAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+RequireAccess.swift"; sourceTree = "<group>"; };
-		9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialEntity.swift; sourceTree = "<group>"; };
 		C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+keyboardDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -952,6 +953,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3CC02F41E6EF6E300614415 /* NavigationViewController.swift in Sources */,
 				9F2638651E6B89670081D23B /* UserPlainObject+DataBase.swift in Sources */,
 				4D890B591E5EEFE00038CCC9 /* Importer.swift in Sources */,
 				9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */,
@@ -982,13 +984,11 @@
 				C3165A3D1E6B46C1004B5939 /* AlbumInfoTableViewCell.swift in Sources */,
 				9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */,
 				C3165A3F1E6B46C1004B5939 /* ImagePicker.swift in Sources */,
-				9FD58FCE1E5E334400207199 /* PastEventsViewController.swift in Sources */,
 				C3165A4D1E6B476D004B5939 /* UIViewController+RequireAccess.swift in Sources */,
 				221A8B931E696D4C004E320D /* EventPlainObject+Requests.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				78BBC9051E60FC0700DEC122 /* ProfileNameCell.swift in Sources */,
-				9F2FFA201E66353100EBCAEB /* RequestContentParser.swift in Sources */,
 				8A6268541E64638500D51BEB /* LoginType.swift in Sources */,
 				92D6786A1E626CCD0010F3E9 /* PastEventsViewController.swift in Sources */,
 				92D6786E1E626CE80010F3E9 /* PastEventsTableViewCell.swift in Sources */,
