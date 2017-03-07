@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create Profile-->
+        <!--Авторизация-->
         <scene sceneID="amf-l6-QNV">
             <objects>
                 <viewController storyboardIdentifier="ProfileCreateViewController" id="nXW-7Y-Ke7" customClass="ProfileCreateViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,34 +22,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD">
-                                <rect key="frame" x="122.5" y="318" width="30" height="30"/>
-                                <state key="normal" title="VK"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="458.5" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.32803952693939209" green="0.46409446001052856" blue="0.60960102081298828" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5WJ-ID-2dF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Войти через Вконтакте" image="vkIcon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="vkLoginButtonAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="8np-rV-xBX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-p0-rbw">
-                                <rect key="frame" x="222" y="318" width="30" height="30"/>
-                                <state key="normal" title="FB"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-p0-rbw" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="408.5" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.22943970561027527" green="0.34702008962631226" blue="0.59602290391921997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zzw-4h-5Ik"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                                <state key="normal" title="Войти через Facebook" image="fbIcon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="fbLoginButtonAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="3aD-yq-YgF"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man" translatesAutoresizingMaskIntoConstraints="NO" id="pvT-nQ-V1Y">
+                                <rect key="frame" x="147.5" y="173.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="8hv-pQ-wHR"/>
+                                    <constraint firstAttribute="height" constant="80" id="9li-Qu-Sgh"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="508.5" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.30612394213676453" green="0.7424468994140625" blue="0.93023401498794556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WrD-rK-qrf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Войти через Twitter" image="twitterIcon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зарегистрированным пользователям  доступно больше функций!   Авторизируйтесь и регистрируйтесь  на встречи в одно касание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rk-2cD">
+                                <rect key="frame" x="16" y="288.5" width="343" height="90"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.55310022830000005" green="0.67898041009999999" blue="0.67554408310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94817107915878296" green="0.97663992643356323" blue="0.97667163610458374" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gl9-SA-VgD" firstAttribute="centerX" secondItem="22N-8c-n1H" secondAttribute="centerX" constant="-50" id="LZH-p9-jOD"/>
-                            <constraint firstItem="gl9-SA-VgD" firstAttribute="centerY" secondItem="22N-8c-n1H" secondAttribute="centerY" id="O6L-Zg-clw"/>
-                            <constraint firstItem="a2j-p0-rbw" firstAttribute="centerY" secondItem="22N-8c-n1H" secondAttribute="centerY" id="mtJ-gF-1TR"/>
-                            <constraint firstItem="a2j-p0-rbw" firstAttribute="centerX" secondItem="22N-8c-n1H" secondAttribute="centerX" constant="50" id="x2t-TB-mnH"/>
+                            <constraint firstItem="jYh-rk-2cD" firstAttribute="centerY" secondItem="22N-8c-n1H" secondAttribute="centerY" id="1eX-rh-3xs"/>
+                            <constraint firstItem="sxo-Mt-f4Q" firstAttribute="leading" secondItem="22N-8c-n1H" secondAttribute="leadingMargin" id="1mn-HQ-wlu"/>
+                            <constraint firstItem="a2j-p0-rbw" firstAttribute="top" secondItem="jYh-rk-2cD" secondAttribute="bottom" constant="30" id="4MD-GR-Ura"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="a2j-p0-rbw" secondAttribute="leading" id="9gg-eX-g1K"/>
+                            <constraint firstItem="sxo-Mt-f4Q" firstAttribute="top" secondItem="gl9-SA-VgD" secondAttribute="bottom" constant="10" id="AGP-va-qUu"/>
+                            <constraint firstItem="gl9-SA-VgD" firstAttribute="top" secondItem="a2j-p0-rbw" secondAttribute="bottom" constant="10" id="FJf-8N-kRw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sxo-Mt-f4Q" secondAttribute="trailing" id="M7k-Uy-Pa8"/>
+                            <constraint firstItem="pvT-nQ-V1Y" firstAttribute="centerX" secondItem="22N-8c-n1H" secondAttribute="centerX" id="MWG-dr-FlD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gl9-SA-VgD" secondAttribute="trailing" id="Mdb-CU-m0n"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jYh-rk-2cD" secondAttribute="leading" id="YyM-OR-cM0"/>
+                            <constraint firstItem="jYh-rk-2cD" firstAttribute="top" secondItem="pvT-nQ-V1Y" secondAttribute="bottom" constant="35" id="dsv-iE-1Br"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jYh-rk-2cD" secondAttribute="trailing" id="eQH-es-3Cz"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="gl9-SA-VgD" secondAttribute="leading" id="f9J-ER-gja"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a2j-p0-rbw" secondAttribute="trailing" id="ke9-7d-nNF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Profile" id="H6i-Oc-rNL"/>
+                    <navigationItem key="navigationItem" title="Авторизация" id="H6i-Oc-rNL"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="jYh-rk-2cD" id="110-gP-bDD"/>
+                        <outletCollection property="authButtons" destination="a2j-p0-rbw" collectionClass="NSMutableArray" id="yHh-mR-Am8"/>
+                        <outletCollection property="authButtons" destination="gl9-SA-VgD" collectionClass="NSMutableArray" id="MYQ-qY-cB5"/>
+                        <outletCollection property="authButtons" destination="sxo-Mt-f4Q" collectionClass="NSMutableArray" id="Kl0-HC-pMe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwx-63-Jfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="811"/>
+            <point key="canvasLocation" x="1589.5999999999999" y="810.94452773613204"/>
         </scene>
         <!--Profile-->
         <scene sceneID="N1n-QU-yPZ">
@@ -242,7 +303,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ProfileCreateViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="7aJ-hD-rjf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zdg-QD-JoR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zdg-QD-JoR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -260,7 +321,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ProfileViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="8x9-GI-9iQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SkT-lA-HEb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SkT-lA-HEb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -274,4 +335,10 @@
             <point key="canvasLocation" x="776.79999999999995" y="34.632683658170919"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fbIcon" width="25" height="25"/>
+        <image name="man" width="206" height="240"/>
+        <image name="twitterIcon" width="25" height="25"/>
+        <image name="vkIcon" width="25" height="25"/>
+    </resources>
 </document>
