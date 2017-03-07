@@ -60,7 +60,6 @@
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
 		9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */; };
-		9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FBF1E5E30F400207199 /* NavigationViewController.swift */; };
 		9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FC11E5E32E800207199 /* ProfileViewController.swift */; };
 		9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FC51E5E32F900207199 /* ProfileEditViewController.swift */; };
 		9FD58FC91E5E331600207199 /* ProfileCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FC81E5E331600207199 /* ProfileCreateViewController.swift */; };
@@ -83,7 +82,6 @@
 		C3165A401E6B46C1004B5939 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A3A1E6B46C1004B5939 /* ImageCollectionViewCell.swift */; };
 		C3165A411E6B46C1004B5939 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A3B1E6B46C1004B5939 /* ImagePickerViewController.swift */; };
 		C3165A421E6B46C1004B5939 /* PhotosHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A3C1E6B46C1004B5939 /* PhotosHelper.swift */; };
-		C3165A461E6B46FB004B5939 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A451E6B46FB004B5939 /* String+Localized.swift */; };
 		C3165A4C1E6B476D004B5939 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A491E6B476D004B5939 /* UIView+Anchor.swift */; };
 		C3165A4D1E6B476D004B5939 /* UIViewController+RequireAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A4B1E6B476D004B5939 /* UIViewController+RequireAccess.swift */; };
 		9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */; };
@@ -967,12 +965,9 @@
 				9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */,
 				C3165A401E6B46C1004B5939 /* ImageCollectionViewCell.swift in Sources */,
 				C3165A331E6B469C004B5939 /* PermissionsManager.swift in Sources */,
-				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
-				C3165A461E6B46FB004B5939 /* String+Localized.swift in Sources */,
 				C3165A3E1E6B46C1004B5939 /* AlbumPickerViewController.swift in Sources */,
 				C3165A421E6B46C1004B5939 /* PhotosHelper.swift in Sources */,
 				0389AF621E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift in Sources */,
-				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
 				9FAFF8071E6AD84000B687CB /* EventEntity.swift in Sources */,
 				9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */,
 				784EFF931E637EA500F2E31A /* RealmController.swift in Sources */,
