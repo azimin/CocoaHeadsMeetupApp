@@ -14,18 +14,18 @@ class RegistrationPreviewViewController: UIViewController {
     didSet {
       tableView.delegate = self
       tableView.dataSource = self
-      
+
       let textFieldCellNib = TextFieldTableViewCell.nib
       let textFieldCellIdentifier = TextFieldTableViewCell.identifier
       tableView.register(textFieldCellNib, forCellReuseIdentifier: textFieldCellIdentifier)
-      
-      let selectOneCellNib = SelectOneTableViewCell.nib
-      let selectOneCellIdentifier = SelectOneTableViewCell.identifier
-      tableView.register(selectOneCellNib, forCellReuseIdentifier: selectOneCellIdentifier)
-      
-      let selectMultiplyCellNib = SelectMultiplyTableViewCell.nib
-      let selectMultiplyCellIdentifier = SelectMultiplyTableViewCell.identifier
-      tableView.register(selectMultiplyCellNib, forCellReuseIdentifier: selectMultiplyCellIdentifier)
+
+      let radioCellNib = RadioTableViewCell.nib
+      let radioCellIdentifier = RadioTableViewCell.identifier
+      tableView.register(radioCellNib, forCellReuseIdentifier: radioCellIdentifier)
+
+      let checkboxCellNib = CheckboxTableViewCell.nib
+      let checkboxCellIdentifier = CheckboxTableViewCell.identifier
+      tableView.register(checkboxCellNib, forCellReuseIdentifier: checkboxCellIdentifier)
     }
   }
 
@@ -40,15 +40,24 @@ class RegistrationPreviewViewController: UIViewController {
     }
   }
 
-  var dataCollection = RegistrationPreviewDataCollection().dataCollection
+  var dataCollection = RegistrationFieldData()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     keyboardDelegate = self
+
+    //Get test data from server
+    let dataCollectionModel = RegistrationFieldDataCollection()
+    dataCollectionModel.loadFieldsFromServer(complitionBlock: {
+      DispatchQueue.main.async {
+        self.dataCollection = dataCollectionModel.dataCollection
+        self.tableView.reloadData()
+      }
+    })
+
   }
 
   @IBAction func registrationButtonPressed(_ sender: UIButton) {
-    // Do some staff
   }
 }
 
@@ -70,51 +79,26 @@ extension RegistrationPreviewViewController: UITableViewDelegate {
 extension RegistrationPreviewViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return ""//dataCollection.sections[section].title
+    return dataCollection.sections[section].title
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 1//dataCollection.sections.count
+    return dataCollection.sections.count
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3//dataCollection.sections[section].fields.count
+    return dataCollection.sections[section].fields.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cellIdentifier = TextFieldTableViewCell.identifier
-    let cell: TextFieldTableViewCell =
-      (tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? TextFieldTableViewCell)!
 
-    cell.textField.placeholder = "test"
-    // For recognazion in delegate methods
-    cell.textField.tag = indexPath.row
-    cell.textField.delegate = self
-    cell.selectionStyle = .none
+    let item = dataCollection.sections[indexPath.section].fields[indexPath.row]
+    let cell = tableView.dequeueReusableCell(withItem: item, atIndexPath: indexPath)
 
     return cell
   }
 
 }
-
-// MARK: - UITextFieldDelegate
-//extension RegistrationPreviewViewController {
-//  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//
-//    let nextCellIndex = textField.tag + 1
-//    // Ask model if has next cell
-//    // just for example
-//    let hasNextCell = (nextCellIndex <= 6)
-//    if hasNextCell {
-//      let nextCellIndexPath = IndexPath(row: nextCellIndex, section: 0)
-//      let cell: TextFieldTableViewCell =
-//        (tableView.cellForRow(at: nextCellIndexPath) as? TextFieldTableViewCell)!
-//      cell.textField.becomeFirstResponder()
-//      return false
-//    }
-//    return true
-//  }
-//}
 
 // MARK: - KeyboardHandlerDelegate
 extension RegistrationPreviewViewController: KeyboardHandlerDelegate {

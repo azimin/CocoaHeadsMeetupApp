@@ -83,7 +83,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="PcZ-nz-Xad">
-                                    <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUC-gG-owX">
@@ -105,16 +105,6 @@
                                         <constraint firstItem="pUC-gG-owX" firstAttribute="centerX" secondItem="PcZ-nz-Xad" secondAttribute="centerX" id="iJk-Xv-g7G"/>
                                     </constraints>
                                 </view>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="309-Yw-LJe" customClass="TextFieldTableViewCell" customModule="CHMeetupApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="309-Yw-LJe" id="NrV-YB-Y4j">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -134,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hl-4s-KwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="672.79999999999995" y="826.23688155922048"/>
+            <point key="canvasLocation" x="673" y="917"/>
         </scene>
         <!--Registration Confirm-->
         <scene sceneID="Lj6-GD-Guj">
@@ -153,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOf-N3-Dzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="826"/>
+            <point key="canvasLocation" x="1508" y="917"/>
         </scene>
         <!--Speech-->
         <scene sceneID="gb4-so-DQv">
@@ -179,6 +169,7 @@
             <objects>
                 <navigationController storyboardIdentifier="EventPreviewViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="smh-qd-feH" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uvB-MX-NTM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

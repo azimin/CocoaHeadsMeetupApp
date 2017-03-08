@@ -1,16 +1,17 @@
 //
-//  TextFieldTableViewCell.swift
+//  CheckboxTableViewCell.swift
 //  CHMeetupApp
 //
-//  Created by Maxim Globak on 04.03.17.
+//  Created by Maxim Globak on 08.03.17.
 //  Copyright © 2017 CocoaHeads Comunity. All rights reserved.
 //
 
 import UIKit
 
-class TextFieldTableViewCell: UITableViewCell {
+class CheckboxTableViewCell: UITableViewCell {
 
-  @IBOutlet weak var textField: UITextField!
+  @IBOutlet weak var label: UILabel!
+  @IBOutlet weak var button: UIButton!
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -21,10 +22,16 @@ class TextFieldTableViewCell: UITableViewCell {
     super.setSelected(selected, animated: animated)
     // Configure the view for the selected state
   }
+
+  @IBAction func buttonPressed(_ sender: UIButton) {
+  }
 }
 
 // MARK: - RegistrationFieldCellProtocol
-extension TextFieldTableViewCell: RegistrationFieldCellProtocol {
+extension CheckboxTableViewCell: RegistrationFieldCellProtocol {
+  func setup(with item: RegistrationFieldItem) {
+    label.text = item.name
+  }
 
   static var identifier: String {
     return String(describing: self)
@@ -32,9 +39,5 @@ extension TextFieldTableViewCell: RegistrationFieldCellProtocol {
 
   static var nib: UINib? {
     return UINib(nibName: String(describing: self), bundle: nil)
-  }
-
-  func setup(with item: RegistrationFieldItem) {
-    self.textField.placeholder = item.name
   }
 }

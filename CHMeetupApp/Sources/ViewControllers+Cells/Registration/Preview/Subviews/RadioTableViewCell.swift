@@ -1,15 +1,17 @@
 //
-//  SelectMultiplyTableViewCell.swift
+//  RadioTableViewCell.swift
 //  CHMeetupApp
 //
-//  Created by Maxim Globak on 05.03.17.
+//  Created by Maxim Globak on 08.03.17.
 //  Copyright © 2017 CocoaHeads Comunity. All rights reserved.
 //
 
 import UIKit
 
-class SelectMultiplyTableViewCell: UITableViewCell {
+class RadioTableViewCell: UITableViewCell {
 
+  @IBOutlet weak var label: UILabel!
+  @IBOutlet weak var button: UIButton!
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
@@ -21,10 +23,15 @@ class SelectMultiplyTableViewCell: UITableViewCell {
     // Configure the view for the selected state
   }
 
+  @IBAction func buttonPressed(_ sender: UIButton) {
+  }
 }
 
-// MARK: - ReusableCell
-extension SelectMultiplyTableViewCell: ReusableCell {
+// MARK: - RegistrationFieldCellProtocol
+extension RadioTableViewCell: RegistrationFieldCellProtocol {
+  func setup(with item: RegistrationFieldItem) {
+    label.text = item.name
+  }
 
   static var identifier: String {
     return String(describing: self)
