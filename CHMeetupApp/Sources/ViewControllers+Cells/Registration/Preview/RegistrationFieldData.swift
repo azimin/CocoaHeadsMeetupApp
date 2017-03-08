@@ -24,7 +24,7 @@ struct FormFieldItem {
   var id: Int
   var isRequired: Bool
   var name: String
-  var type: EventRegFormFieldPlainObject.EventRegFormFieldType
+  var type: EventRegFormFieldType
   var fieldAnswers: [FormFieldAnswer]
 
   init(with field: EventRegFormFieldPlainObject) {
@@ -39,10 +39,10 @@ struct FormFieldItem {
 struct FormFieldAnswer {
   var id: Int
   var value: String
-  var type: EventRegFormFieldPlainObject.EventRegFormFieldType
+  var type: EventRegFormFieldType
 
   init(with answer: EventRegFormFieldAnswerPlainObject,
-       andType type: EventRegFormFieldPlainObject.EventRegFormFieldType) {
+       andType type: EventRegFormFieldType) {
     self.id = answer.id
     self.value = answer.value
     self.type = type

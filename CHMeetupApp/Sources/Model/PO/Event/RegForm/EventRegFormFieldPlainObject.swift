@@ -8,14 +8,13 @@
 
 import Foundation
 
+enum EventRegFormFieldType: String {
+  case `string`
+  case checkbox
+  case radio
+}
+
 struct EventRegFormFieldPlainObject {
-
-    enum EventRegFormFieldType: String {
-        case `string`
-        case checkbox
-        case radio
-
-    }
 
     let id: Int
     let required: Bool
