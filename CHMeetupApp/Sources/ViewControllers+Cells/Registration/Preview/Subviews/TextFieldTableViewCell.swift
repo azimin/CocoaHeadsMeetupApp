@@ -20,12 +20,4 @@ extension TextFieldTableViewCell: RegistrationFieldCellProtocol {
   func setup(with item: FormFieldAnswer) {
     self.textField.placeholder = item.value
   }
-
-  static var identifier: String {
-    return String(describing: self)
-  }
-
-  static var nib: UINib? {
-    return UINib(nibName: String(describing: self), bundle: nil)
-  }
 }

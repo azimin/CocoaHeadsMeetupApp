@@ -80,51 +80,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xr5-1I-IRE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="PcZ-nz-Xad">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUC-gG-owX">
-                                            <rect key="frame" x="127" y="2" width="120" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="120" id="7qi-Xx-2FT"/>
-                                                <constraint firstAttribute="height" constant="40" id="yDG-tj-VpF"/>
-                                            </constraints>
-                                            <state key="normal" title="Button"/>
-                                            <connections>
-                                                <action selector="registrationButtonPressed:" destination="CGY-Eq-4dK" eventType="touchUpInside" id="Rlf-xh-ykJ"/>
-                                                <segue destination="elZ-XF-SfV" kind="show" id="OSZ-vn-apv"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstItem="pUC-gG-owX" firstAttribute="centerY" secondItem="PcZ-nz-Xad" secondAttribute="centerY" id="VUA-XA-2MM"/>
-                                        <constraint firstItem="pUC-gG-owX" firstAttribute="centerX" secondItem="PcZ-nz-Xad" secondAttribute="centerX" id="iJk-Xv-g7G"/>
-                                    </constraints>
-                                </view>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUC-gG-owX">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="bfR-Vp-TBV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="registrationButtonPressed:" destination="CGY-Eq-4dK" eventType="touchUpInside" id="Rlf-xh-ykJ"/>
+                                    <segue destination="elZ-XF-SfV" kind="show" id="OSZ-vn-apv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pUC-gG-owX" secondAttribute="trailing" id="4Lq-tQ-6ks"/>
+                            <constraint firstItem="YKx-vm-lWp" firstAttribute="top" secondItem="pUC-gG-owX" secondAttribute="bottom" id="84L-gg-E3f"/>
                             <constraint firstAttribute="trailing" secondItem="Xr5-1I-IRE" secondAttribute="trailing" id="CLM-yB-nzN"/>
                             <constraint firstItem="Xr5-1I-IRE" firstAttribute="leading" secondItem="r5D-Tm-NHY" secondAttribute="leading" id="DKf-nK-JBi"/>
+                            <constraint firstItem="pUC-gG-owX" firstAttribute="top" secondItem="Xr5-1I-IRE" secondAttribute="bottom" id="P7a-Fk-97h"/>
+                            <constraint firstItem="pUC-gG-owX" firstAttribute="leading" secondItem="r5D-Tm-NHY" secondAttribute="leading" id="YuP-dw-1hQ"/>
                             <constraint firstItem="Xr5-1I-IRE" firstAttribute="top" secondItem="r5D-Tm-NHY" secondAttribute="top" id="eIi-wG-5zt"/>
-                            <constraint firstAttribute="bottom" secondItem="Xr5-1I-IRE" secondAttribute="bottom" id="hUQ-5q-ZiX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Registration Preview" id="CpT-Wp-dsl"/>
                     <connections>
-                        <outlet property="footerTableView" destination="PcZ-nz-Xad" id="uZ1-K8-fd0"/>
                         <outlet property="registrationButton" destination="pUC-gG-owX" id="yRS-hr-1Wq"/>
                         <outlet property="tableView" destination="Xr5-1I-IRE" id="8Aw-nG-efJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hl-4s-KwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="673" y="917"/>
+            <point key="canvasLocation" x="672.79999999999995" y="916.1919040479761"/>
         </scene>
         <!--Registration Confirm-->
         <scene sceneID="Lj6-GD-Guj">
@@ -170,7 +160,7 @@
                 <navigationController storyboardIdentifier="EventPreviewViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="smh-qd-feH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uvB-MX-NTM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uvB-MX-NTM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

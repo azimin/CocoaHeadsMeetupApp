@@ -29,14 +29,11 @@ class RegistrationPreviewViewController: UIViewController {
     }
   }
 
-  @IBOutlet weak var footerTableView: UIView!
   @IBOutlet weak var registrationButton: UIButton! {
     didSet {
       registrationButton.setTitle("registration".localized, for: .normal)
-      registrationButton.tintColor = UIColor(red: 0.843, green: 0.243, blue: 0.412, alpha: 1.00)
-      registrationButton.layer.cornerRadius = 10
-      registrationButton.layer.borderWidth = 1
-      registrationButton.layer.borderColor = registrationButton.tintColor.cgColor
+      registrationButton.backgroundColor = UIColor(red: 0.843, green: 0.243, blue: 0.412, alpha: 1.00)
+      registrationButton.setTitleColor(UIColor.white, for: .normal)
     }
   }
 
@@ -47,10 +44,9 @@ class RegistrationPreviewViewController: UIViewController {
     keyboardDelegate = self
 
     // FIXME: - Get test data from server
-    let dataCollectionModel = FormDataCollection()
-    dataCollectionModel.loadRegFromServer(withId: "1", complitionBlock: {
+    FormDataCollection.loadRegFromServer(withId: "1", complitionBlock: { (form: EventRegFormPlainObject) in
       DispatchQueue.main.async {
-        self.dataCollection = dataCollectionModel.data
+        self.dataCollection = FormData(with: form)
         self.tableView.reloadData()
       }
     })
@@ -63,14 +59,8 @@ class RegistrationPreviewViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 extension RegistrationPreviewViewController: UITableViewDelegate {
-
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
   }
-
-  func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-    return footerTableView
-  }
-
 }
 
 // MARK: - UITableViewDataSource
