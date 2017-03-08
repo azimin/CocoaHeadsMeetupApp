@@ -9,17 +9,15 @@
 import Foundation
 import UIKit
 
-protocol RegistrationFieldCellProtocol {
-  static var identifier: String { get }
-  static var nib: UINib? { get }
-  func setup(with item: RegistrationFieldItem)
+protocol RegistrationFieldCellProtocol: ReusableCell {
+  func setup(with item: FormFieldAnswer)
 }
 
 class RegistrationFieldModel {
 
-  var item: RegistrationFieldItem
+  var item: FormFieldAnswer
 
-  init(withItem item: RegistrationFieldItem) {
+  init(with item: FormFieldAnswer) {
     self.item = item
   }
 
@@ -41,10 +39,10 @@ class RegistrationFieldModel {
 
 extension UITableView {
 
-  func dequeueReusableCell(withItem item: RegistrationFieldItem,
+  func dequeueReusableCell(with item: FormFieldAnswer,
                            atIndexPath indexPath: IndexPath) -> UITableViewCell {
 
-    let model = RegistrationFieldModel.init(withItem: item)
+    let model = RegistrationFieldModel(with: item)
     let cellClass = model.cellClass()
     let cell = self.dequeueReusableCell(withIdentifier: cellClass.identifier, for: indexPath)
 

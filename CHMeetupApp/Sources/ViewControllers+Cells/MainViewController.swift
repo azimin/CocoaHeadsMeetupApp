@@ -18,4 +18,8 @@ class MainViewController: UIViewController {
   @IBAction func showEventAction(_ sender: UIButton) {
     navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController, animated: true)
   }
+
+  override func customTabBarItemContentView() -> CustomTabBarItemView {
+    return TabBarItemView.create(with: .main)
+  }
 }

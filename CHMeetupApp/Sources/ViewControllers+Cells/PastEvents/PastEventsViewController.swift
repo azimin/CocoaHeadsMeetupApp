@@ -22,6 +22,10 @@ class PastEventsViewController: UIViewController {
     super.viewDidLoad()
     fetchEvents()
   }
+
+  override func customTabBarItemContentView() -> CustomTabBarItemView {
+    return TabBarItemView.create(with: .past)
+  }
 }
 
 extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {

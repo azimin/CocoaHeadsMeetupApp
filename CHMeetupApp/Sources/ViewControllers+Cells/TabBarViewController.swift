@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class TabBarViewController: CustomTabBarController {
 
   // FIXME: - Remove when would not be nesseary
   var collection: DataModelCollection<UserEntity>!

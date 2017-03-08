@@ -40,17 +40,17 @@ class RegistrationPreviewViewController: UIViewController {
     }
   }
 
-  var dataCollection = RegistrationFieldData()
+  var dataCollection: FormData?
 
   override func viewDidLoad() {
     super.viewDidLoad()
     keyboardDelegate = self
 
-    //Get test data from server
-    let dataCollectionModel = RegistrationFieldDataCollection()
-    dataCollectionModel.loadFieldsFromServer(complitionBlock: {
+    // FIXME: - Get test data from server
+    let dataCollectionModel = FormDataCollection()
+    dataCollectionModel.loadRegFromServer(withId: "1", complitionBlock: {
       DispatchQueue.main.async {
-        self.dataCollection = dataCollectionModel.dataCollection
+        self.dataCollection = dataCollectionModel.data
         self.tableView.reloadData()
       }
     })
@@ -65,8 +65,6 @@ class RegistrationPreviewViewController: UIViewController {
 extension RegistrationPreviewViewController: UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let cell: TextFieldTableViewCell = (tableView.cellForRow(at: indexPath) as? TextFieldTableViewCell)!
-    cell.textField.becomeFirstResponder()
   }
 
   func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -79,21 +77,21 @@ extension RegistrationPreviewViewController: UITableViewDelegate {
 extension RegistrationPreviewViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return dataCollection.sections[section].title
+    return dataCollection?.sections[section].name ?? ""
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    return dataCollection.sections.count
+    return dataCollection?.sections.count ?? 0
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return dataCollection.sections[section].fields.count
+    return dataCollection?.sections[section].fieldAnswers.count ?? 0
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-    let item = dataCollection.sections[indexPath.section].fields[indexPath.row]
-    let cell = tableView.dequeueReusableCell(withItem: item, atIndexPath: indexPath)
+    let item = dataCollection?.sections[indexPath.section].fieldAnswers[indexPath.row]
+    let cell = tableView.dequeueReusableCell(with: item!, atIndexPath: indexPath)
 
     return cell
   }
@@ -112,11 +110,9 @@ extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
       tableViewContnetInsets.bottom = info.endFrame.height
       indicatorContentInsets.bottom = info.endFrame.height
     case .opened:
-      tableView.isScrollEnabled = true
       tableViewContnetInsets.bottom = info.endFrame.height
       indicatorContentInsets.bottom = info.endFrame.height
     case .hidden:
-      tableView.isScrollEnabled = false
       tableViewContnetInsets.bottom = 0
       indicatorContentInsets.bottom = 0
     }

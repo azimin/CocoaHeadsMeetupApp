@@ -12,16 +12,6 @@ class RadioTableViewCell: UITableViewCell {
 
   @IBOutlet weak var label: UILabel!
   @IBOutlet weak var button: UIButton!
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    // Initialization code
-  }
-
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-
-    // Configure the view for the selected state
-  }
 
   @IBAction func buttonPressed(_ sender: UIButton) {
   }
@@ -29,8 +19,8 @@ class RadioTableViewCell: UITableViewCell {
 
 // MARK: - RegistrationFieldCellProtocol
 extension RadioTableViewCell: RegistrationFieldCellProtocol {
-  func setup(with item: RegistrationFieldItem) {
-    label.text = item.name
+  func setup(with item: FormFieldAnswer) {
+    label.text = item.value
   }
 
   static var identifier: String {

@@ -8,42 +8,49 @@
 
 import Foundation
 
-struct RegistrationFieldData {
-  var sections = [RegistrationFieldSection]()
+struct FormData {
+  var id: Int
+  var name: String
+  var sections: [FormFieldItem]
+
+  init(with form: EventRegFormPlainObject) {
+    self.id = form.id
+    self.name = form.name
+    self.sections = form.fields.flatMap(FormFieldItem.init)
+  }
 }
 
-struct RegistrationFieldSection {
-  var title: String?
-  var fields: [RegistrationFieldItem]
-}
-
-struct RegistrationFieldItem {
-  var uid: String
+struct FormFieldItem {
+  var id: Int
   var isRequired: Bool
   var name: String
   var type: EventRegFormFieldPlainObject.EventRegFormFieldType
-  var fieldAnswers: [RegistrationFieldFieldAnswer]
+  var fieldAnswers: [FormFieldAnswer]
 
-  init(with eventRegField: EventRegFormFieldPlainObject) {
-    self.uid = "\(eventRegField.id)"
-    self.isRequired = eventRegField.required
-    self.name = eventRegField.name
-    self.type = eventRegField.type
-    self.fieldAnswers = eventRegField.answers.flatMap(RegistrationFieldFieldAnswer.init)
+  init(with field: EventRegFormFieldPlainObject) {
+    self.id = field.id
+    self.isRequired = field.required
+    self.name = field.name
+    self.type = field.type
+    self.fieldAnswers = field.answers.flatMap { FormFieldAnswer(with: $0, andType:field.type) }
   }
 }
 
-struct RegistrationFieldFieldAnswer {
-  var uid: String
+struct FormFieldAnswer {
+  var id: Int
   var value: String
-  init(with answer: EventRegFormFieldAnswerPlainObject) {
-    self.uid = "\(answer.id)"
+  var type: EventRegFormFieldPlainObject.EventRegFormFieldType
+
+  init(with answer: EventRegFormFieldAnswerPlainObject,
+       andType type: EventRegFormFieldPlainObject.EventRegFormFieldType) {
+    self.id = answer.id
     self.value = answer.value
+    self.type = type
   }
 }
 
-struct RegistrationFieldAnswer {
-  var uid: String
+struct FieldAnswer {
+  var id: Int
   var fieldId: String
   var userId: String
   var answer: String

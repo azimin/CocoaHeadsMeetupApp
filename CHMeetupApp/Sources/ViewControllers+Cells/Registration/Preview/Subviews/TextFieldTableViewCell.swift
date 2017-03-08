@@ -12,19 +12,14 @@ class TextFieldTableViewCell: UITableViewCell {
 
   @IBOutlet weak var textField: UITextField!
 
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    // Initialization code
-  }
-
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-    // Configure the view for the selected state
-  }
 }
 
 // MARK: - RegistrationFieldCellProtocol
 extension TextFieldTableViewCell: RegistrationFieldCellProtocol {
+
+  func setup(with item: FormFieldAnswer) {
+    self.textField.placeholder = item.value
+  }
 
   static var identifier: String {
     return String(describing: self)
@@ -32,9 +27,5 @@ extension TextFieldTableViewCell: RegistrationFieldCellProtocol {
 
   static var nib: UINib? {
     return UINib(nibName: String(describing: self), bundle: nil)
-  }
-
-  func setup(with item: RegistrationFieldItem) {
-    self.textField.placeholder = item.name
   }
 }
