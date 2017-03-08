@@ -1,0 +1,7 @@
+1) Выполните команду ‘bash scriptInstall.sh’
+
+—- В процессе запуска должны установится следующие элементы:
+1) Установиться homebrew
+2) Установиться swiftlint, natalie, carthage
+3) Добавится hook
+4) Выполнится команда ‘carthage update’

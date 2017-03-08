@@ -24,7 +24,6 @@
 		224CA9E01E65FC7300CD06D6 /* PlainObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9DF1E65FC7300CD06D6 /* PlainObjectType.swift */; };
 		224CA9E21E65FCA100CD06D6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9E11E65FCA100CD06D6 /* Request.swift */; };
 		4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08815A1E64200B004812E5 /* DateComponents+Init.swift */; };
-		4D890B591E5EEFE00038CCC9 /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* Importer.swift */; };
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
 		784AA39C1E65BB4F0018336C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784AA39B1E65BB4F0018336C /* Utility.swift */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
@@ -35,9 +34,12 @@
 		78BBC9061E60FC0700DEC122 /* ProfileNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78BBC9041E60FC0700DEC122 /* ProfileNameCell.xib */; };
 		78BBC9091E60FC2D00DEC122 /* ProfileSpeachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BBC9071E60FC2D00DEC122 /* ProfileSpeachCell.swift */; };
 		78BBC90A1E60FC2D00DEC122 /* ProfileSpeachCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78BBC9081E60FC2D00DEC122 /* ProfileSpeachCell.xib */; };
+		8A317A801E6AE8BE00C4798C /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A317A7F1E6AE8BE00C4798C /* ActionButton.swift */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
 		8A6268541E64638500D51BEB /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268531E64638500D51BEB /* LoginType.swift */; };
+		8A7122FD1E6F2EDA00F890E2 /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* Importer.swift */; };
+		8A857CFE1E6CC692002CC4C2 /* UIColor+Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A857CFD1E6CC692002CC4C2 /* UIColor+Brightness.swift */; };
 		923CF19A1E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923CF1991E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift */; };
 		92D6786A1E626CCD0010F3E9 /* PastEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D678691E626CCD0010F3E9 /* PastEventsViewController.swift */; };
 		92D6786E1E626CE80010F3E9 /* PastEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D6786C1E626CE80010F3E9 /* PastEventsTableViewCell.swift */; };
@@ -49,6 +51,8 @@
 		9F2FFA211E663DE600EBCAEB /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5301E60B9A50069A179 /* Server.swift */; };
 		9F3057A81E6CB03500B11801 /* RequestContentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FFA1F1E66353100EBCAEB /* RequestContentParser.swift */; };
 		9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */; };
+		9F9BDABC1E6F5CBB000D9603 /* UIView+NibLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9BDABB1E6F5CBB000D9603 /* UIView+NibLoad.swift */; };
+		9F9BDABE1E6F5D36000D9603 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9BDABD1E6F5D36000D9603 /* CustomTabBarController.swift */; };
 		9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */; };
 		9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */; };
 		9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */; };
@@ -57,6 +61,14 @@
 		9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8081E6AD8E700B687CB /* SpeechEntity.swift */; };
 		9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF80A1E6ADA0200B687CB /* SpeechContentEntity.swift */; };
 		9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF80C1E6ADB8200B687CB /* PlaceEntity.swift */; };
+		9FB848861E6F6069002E81ED /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB848851E6F6069002E81ED /* TabBarItemView.swift */; };
+		9FB848881E6F6071002E81ED /* TabBarItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB848871E6F6071002E81ED /* TabBarItemView.xib */; };
+		9FB8488A1E6F632D002E81ED /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB848891E6F632D002E81ED /* UIColor+Hex.swift */; };
+		9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8488B1E6F63EB002E81ED /* String+Range.swift */; };
+		9FB8488E1E6F66AE002E81ED /* UIColor+PaletteColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8488D1E6F66AE002E81ED /* UIColor+PaletteColors.swift */; };
+		9FB848911E6F674D002E81ED /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB848901E6F674D002E81ED /* UIFont+AppFonts.swift */; };
+		9FB848931E6F6848002E81ED /* GothamPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FB848921E6F67C7002E81ED /* GothamPro-Medium.ttf */; };
+		9FB8489A1E6F72CF002E81ED /* UIImage+RenderMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB848991E6F72CF002E81ED /* UIImage+RenderMode.swift */; };
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
 		9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */; };
@@ -135,9 +147,11 @@
 		78BBC9041E60FC0700DEC122 /* ProfileNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileNameCell.xib; path = "../ViewControllers+Cells/ProfileViewController/Subviews/Cells/ProfileNameCell/ProfileNameCell.xib"; sourceTree = "<group>"; };
 		78BBC9071E60FC2D00DEC122 /* ProfileSpeachCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSpeachCell.swift; path = "../ViewControllers+Cells/ProfileViewController/Subviews/Cells/ProfileSpeachCell/ProfileSpeachCell.swift"; sourceTree = "<group>"; };
 		78BBC9081E60FC2D00DEC122 /* ProfileSpeachCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileSpeachCell.xib; path = "../ViewControllers+Cells/ProfileViewController/Subviews/Cells/ProfileSpeachCell/ProfileSpeachCell.xib"; sourceTree = "<group>"; };
+		8A317A7F1E6AE8BE00C4798C /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButton.swift; path = CHMeetupApp/Sources/Common/Buttons/ActionButton.swift; sourceTree = SOURCE_ROOT; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8A6268531E64638500D51BEB /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginType.swift; path = Controllers/LoginType.swift; sourceTree = "<group>"; };
+		8A857CFD1E6CC692002CC4C2 /* UIColor+Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Brightness.swift"; path = "UIKit/UIColor/UIColor+Brightness.swift"; sourceTree = "<group>"; };
 		923CF1991E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsDisplayCollection.swift; sourceTree = "<group>"; };
 		92D678691E626CCD0010F3E9 /* PastEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsViewController.swift; sourceTree = "<group>"; };
 		92D6786C1E626CE80010F3E9 /* PastEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsTableViewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +163,8 @@
 		9F2FFA1F1E66353100EBCAEB /* RequestContentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestContentParser.swift; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9F9BDABB1E6F5CBB000D9603 /* UIView+NibLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+NibLoad.swift"; sourceTree = "<group>"; };
+		9F9BDABD1E6F5D36000D9603 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Object+Singletone.swift"; sourceTree = "<group>"; };
 		9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+WriteFunctions.swift"; sourceTree = "<group>"; };
 		9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Notifications.swift"; sourceTree = "<group>"; };
@@ -157,6 +173,14 @@
 		9FAFF8081E6AD8E700B687CB /* SpeechEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechEntity.swift; sourceTree = "<group>"; };
 		9FAFF80A1E6ADA0200B687CB /* SpeechContentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechContentEntity.swift; sourceTree = "<group>"; };
 		9FAFF80C1E6ADB8200B687CB /* PlaceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceEntity.swift; sourceTree = "<group>"; };
+		9FB848851E6F6069002E81ED /* TabBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
+		9FB848871E6F6071002E81ED /* TabBarItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarItemView.xib; sourceTree = "<group>"; };
+		9FB848891E6F632D002E81ED /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		9FB8488B1E6F63EB002E81ED /* String+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Range.swift"; sourceTree = "<group>"; };
+		9FB8488D1E6F66AE002E81ED /* UIColor+PaletteColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+PaletteColors.swift"; sourceTree = "<group>"; };
+		9FB848901E6F674D002E81ED /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
+		9FB848921E6F67C7002E81ED /* GothamPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamPro-Medium.ttf"; sourceTree = "<group>"; };
+		9FB848991E6F72CF002E81ED /* UIImage+RenderMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+RenderMode.swift"; sourceTree = "<group>"; };
 		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
 		9FD58FB81E5E306800207199 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				221A8B881E685EBF004E320D /* String+Localized.swift */,
+				9FB8488B1E6F63EB002E81ED /* String+Range.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -278,6 +303,7 @@
 		221F4F8B1E5C0B6C0009FD07 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				9FB848921E6F67C7002E81ED /* GothamPro-Medium.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -311,6 +337,7 @@
 				221F4F911E5C0B6C0009FD07 /* Classes */,
 				221F4F921E5C0B6C0009FD07 /* Extensions */,
 				221F4F931E5C0B6C0009FD07 /* Views */,
+				8A317A811E6AE8D300C4798C /* Buttons */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -335,8 +362,8 @@
 				C3165A471E6B476D004B5939 /* UIKit */,
 				C3165A431E6B46FB004B5939 /* Foundation */,
 				4D0881591E641FE3004812E5 /* DateComponents */,
-				C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */,
 				2231A5381E60E5030069A179 /* Foundation */,
+				8A857CFF1E6CC6A5002CC4C2 /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -344,6 +371,7 @@
 		221F4F931E5C0B6C0009FD07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9FB848841E6F6033002E81ED /* CustomTabBarItemView */,
 				0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */,
 			);
 			path = Views;
@@ -519,6 +547,15 @@
 			name = ProfileSpeachCell;
 			sourceTree = "<group>";
 		};
+		8A317A811E6AE8D300C4798C /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				8A317A7F1E6AE8BE00C4798C /* ActionButton.swift */,
+			);
+			name = Buttons;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		8A6268271E60742B00D51BEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +571,28 @@
 			);
 			name = Login;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		8A857CFF1E6CC6A5002CC4C2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				9F9BDABB1E6F5CBB000D9603 /* UIView+NibLoad.swift */,
+				C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */,
+				9FB848981E6F72C6002E81ED /* Image */,
+				9FB8488F1E6F672B002E81ED /* Font */,
+				8A857D001E6CC6B7002CC4C2 /* UIColor */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		8A857D001E6CC6B7002CC4C2 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				9FB848891E6F632D002E81ED /* UIColor+Hex.swift */,
+				9FB8488D1E6F66AE002E81ED /* UIColor+PaletteColors.swift */,
+				8A857CFD1E6CC692002CC4C2 /* UIColor+Brightness.swift */,
+			);
+			name = UIColor;
 			sourceTree = "<group>";
 		};
 		923CF1981E68F0CA00EBBE0D /* DisplayModel */ = {
@@ -598,6 +657,31 @@
 			path = CHMeetupApp;
 			sourceTree = "<group>";
 		};
+		9FB848841E6F6033002E81ED /* CustomTabBarItemView */ = {
+			isa = PBXGroup;
+			children = (
+				9FB848851E6F6069002E81ED /* TabBarItemView.swift */,
+				9FB848871E6F6071002E81ED /* TabBarItemView.xib */,
+			);
+			name = CustomTabBarItemView;
+			sourceTree = "<group>";
+		};
+		9FB8488F1E6F672B002E81ED /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				9FB848901E6F674D002E81ED /* UIFont+AppFonts.swift */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		9FB848981E6F72C6002E81ED /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				9FB848991E6F72CF002E81ED /* UIImage+RenderMode.swift */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
 		9FD58FBA1E5E307800207199 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,6 +706,7 @@
 		9FD58FBC1E5E309C00207199 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				9F9BDABD1E6F5D36000D9603 /* CustomTabBarController.swift */,
 				9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */,
 				9FD58FBF1E5E30F400207199 /* NavigationViewController.swift */,
 			);
@@ -905,6 +990,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB848931E6F6848002E81ED /* GothamPro-Medium.ttf in Resources */,
 				78BBC9061E60FC0700DEC122 /* ProfileNameCell.xib in Resources */,
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
 				221A8B841E685C5A004E320D /* Localizable.strings in Resources */,
@@ -915,6 +1001,7 @@
 				78BBC90A1E60FC2D00DEC122 /* ProfileSpeachCell.xib in Resources */,
 				78BBC9021E60FBE800DEC122 /* ProfilePictureCell.xib in Resources */,
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
+				9FB848881E6F6071002E81ED /* TabBarItemView.xib in Resources */,
 				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -974,8 +1061,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3CC02F41E6EF6E300614415 /* NavigationViewController.swift in Sources */,
+				8A7122FD1E6F2EDA00F890E2 /* Importer.swift in Sources */,
+				8A317A801E6AE8BE00C4798C /* ActionButton.swift in Sources */,
+				9FB8489A1E6F72CF002E81ED /* UIImage+RenderMode.swift in Sources */,
 				9F2638651E6B89670081D23B /* UserPlainObject+DataBase.swift in Sources */,
-				4D890B591E5EEFE00038CCC9 /* Importer.swift in Sources */,
 				9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */,
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
 				C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */,
@@ -996,6 +1085,9 @@
 				784AA39C1E65BB4F0018336C /* Utility.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
+				9FB8488A1E6F632D002E81ED /* UIColor+Hex.swift in Sources */,
+				8A857CFE1E6CC692002CC4C2 /* UIColor+Brightness.swift in Sources */,
+				9F9BDABC1E6F5CBB000D9603 /* UIView+NibLoad.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
 				221A8B8E1E69692D004E320D /* EventPlainObject.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
@@ -1007,7 +1099,9 @@
 				221A8B931E696D4C004E320D /* EventPlainObject+Requests.swift in Sources */,
 				C3365E501E70051B00931CAD /* AlbumInfoTableViewCell.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
+				9F9BDABE1E6F5D36000D9603 /* CustomTabBarController.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
+				9FB848911E6F674D002E81ED /* UIFont+AppFonts.swift in Sources */,
 				78BBC9051E60FC0700DEC122 /* ProfileNameCell.swift in Sources */,
 				8A6268541E64638500D51BEB /* LoginType.swift in Sources */,
 				92D6786A1E626CCD0010F3E9 /* PastEventsViewController.swift in Sources */,
@@ -1025,10 +1119,12 @@
 				9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */,
 				C3165A411E6B46C1004B5939 /* ImagePickerViewController.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
+				9FB848861E6F6069002E81ED /* TabBarItemView.swift in Sources */,
 				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
 				224CA9E01E65FC7300CD06D6 /* PlainObjectType.swift in Sources */,
 				78BBC9091E60FC2D00DEC122 /* ProfileSpeachCell.swift in Sources */,
 				9FD590161E5F1AE700207199 /* MapsController.swift in Sources */,
+				9FB8488E1E6F66AE002E81ED /* UIColor+PaletteColors.swift in Sources */,
 				9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
 				C3165A4C1E6B476D004B5939 /* UIView+Anchor.swift in Sources */,
@@ -1039,6 +1135,7 @@
 				923CF19A1E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift in Sources */,
 				9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */,
 				9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */,
+				9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */,
 				224CA9DC1E65FB8300CD06D6 /* UserPlainObject.swift in Sources */,
 				224CA9E21E65FCA100CD06D6 /* Request.swift in Sources */,
 				224CA9DE1E65FBA100CD06D6 /* UserPlainObject+Requests.swift in Sources */,

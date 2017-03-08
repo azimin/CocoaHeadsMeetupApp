@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ifu-eV-gt1">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ifu-eV-gt1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -83,7 +83,7 @@
         <scene sceneID="NPf-JB-NGd">
             <objects>
                 <tabBarController id="ifu-eV-gt1" customClass="TabBarViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="ZHN-fJ-flQ">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ZHN-fJ-flQ" customClass="CustomTabBar" customModule="CHMeetupApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -102,9 +102,9 @@
         <scene sceneID="Xhb-Jd-qWS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OrX-Cc-xgJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="EYz-le-H70"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="EYz-le-H70" customClass="CustomTabBarItem" customModule="CHMeetupApp" customModuleProvider="target"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N3A-KA-XJg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="N3A-KA-XJg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -121,9 +121,9 @@
         <scene sceneID="njY-UF-XnW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b7I-I3-rgg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="nq2-nd-hlH"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="nq2-nd-hlH" customClass="CustomTabBarItem" customModule="CHMeetupApp" customModuleProvider="target"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QMh-77-fMm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QMh-77-fMm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -140,8 +140,8 @@
         <scene sceneID="nzB-PK-SUB">
             <objects>
                 <navigationController id="b0P-Mq-rOD" customClass="ProfileNavigationViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="pqo-Bx-yIv"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2v7-Da-U4X">
+                    <tabBarItem key="tabBarItem" systemItem="history" id="pqo-Bx-yIv" customClass="CustomTabBarItem" customModule="CHMeetupApp" customModuleProvider="target"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2v7-Da-U4X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
