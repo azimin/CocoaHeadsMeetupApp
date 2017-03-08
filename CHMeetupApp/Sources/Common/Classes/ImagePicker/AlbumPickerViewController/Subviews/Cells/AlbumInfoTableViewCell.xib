@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlbumInfoTableViewCell" rowHeight="100" id="pHU-R7-s0m" customClass="AlbumInfoTableViewCell" customModule="CHMeetupApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pHU-R7-s0m" id="oxr-tU-4Kg">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b40-fe-HAH">
+                        <rect key="frame" x="8" y="8" width="80" height="83.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="aNE-1L-cld"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQh-p5-VLJ">
+                        <rect key="frame" x="96" y="38" width="263" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="kQh-p5-VLJ" secondAttribute="trailing" constant="8" id="cDR-Qa-5j8"/>
+                    <constraint firstAttribute="bottom" secondItem="b40-fe-HAH" secondAttribute="bottom" constant="8" id="dqC-tK-Ner"/>
+                    <constraint firstItem="kQh-p5-VLJ" firstAttribute="leading" secondItem="b40-fe-HAH" secondAttribute="trailing" constant="8" id="gmb-uy-Ysx"/>
+                    <constraint firstItem="kQh-p5-VLJ" firstAttribute="centerY" secondItem="oxr-tU-4Kg" secondAttribute="centerY" id="mpY-h1-6pw"/>
+                    <constraint firstItem="b40-fe-HAH" firstAttribute="top" secondItem="oxr-tU-4Kg" secondAttribute="top" constant="8" id="oUk-nn-zea"/>
+                    <constraint firstItem="b40-fe-HAH" firstAttribute="leading" secondItem="oxr-tU-4Kg" secondAttribute="leading" constant="8" id="vuj-SA-NfY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="albumPreview" destination="b40-fe-HAH" id="1bD-al-z4T"/>
+                <outlet property="albumTitleLabel" destination="kQh-p5-VLJ" id="x9d-5S-y99"/>
+            </connections>
+            <point key="canvasLocation" x="-42.5" y="133"/>
+        </tableViewCell>
+    </objects>
+</document>
