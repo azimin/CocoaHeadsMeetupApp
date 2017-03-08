@@ -62,8 +62,9 @@ final class PhotosHelper {
     return imageView
   }
 
-  static func getLastPhoto(from album: PHAssetCollection,
-                               completion: @escaping ImagePickerCompletion) {
+  static func getLastPhoto(
+    from album: PHAssetCollection,
+    completion: @escaping ImagePickerCompletion) {
     let ops = PHFetchOptions()
     ops.fetchLimit = 1
     ops.sortDescriptors = [
@@ -71,6 +72,7 @@ final class PhotosHelper {
     ]
     if let first = PHAsset.fetchAssets(in: album, options: ops).firstObject {
       let reqOps = PHImageRequestOptions()
+      reqOps.isSynchronous = true
       reqOps.deliveryMode = .highQualityFormat
       PHImageManager.default().requestImage(
         for: first,
@@ -91,13 +93,15 @@ final class PhotosHelper {
     mode: PHImageRequestOptionsDeliveryMode = .opportunistic,
     completion: @escaping ImagePickerCompletion) {
 
-      let reqOps = PHImageRequestOptions()
-      reqOps.deliveryMode = mode
-      let targetSize = (size != nil ? CGSize(width: size!, height: size!) : mainScreenSize)
+    let reqOps = PHImageRequestOptions()
+    reqOps.deliveryMode = mode
+    let scale = UIScreen.main.scale
+    let targetSize = CGSize(width: (size ?? mainScreenSize.width) * scale,
+                            height: (size ?? mainScreenSize.height) * scale)
       PHImageManager.default().requestImage(
         for: asset,
         targetSize: targetSize,
-        contentMode: .aspectFit,
+        contentMode: .aspectFill,
         options: reqOps
       ) { image, _ in
           if let image = image {
