@@ -160,7 +160,7 @@
                 <navigationController storyboardIdentifier="EventPreviewViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="smh-qd-feH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uvB-MX-NTM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uvB-MX-NTM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
