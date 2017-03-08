@@ -22,6 +22,16 @@ class TabBarViewController: CustomTabBarController {
 //    let value = collection.objectAtIndex(index: 2)
 
     // Query example
+    Server.request(EventRegFormPlainObject.Requests.one(id: "1")) { (form, error) in
+        if let error = error {
+            print(error)
+        }
+        if let formFields = form?.fields {
+            for field in formFields {
+                print(field)
+            }
+        }
+    }
     Server.request(UserPlainObject.Requests.list) { (users, error) in
       if let error = error {
         print(error)

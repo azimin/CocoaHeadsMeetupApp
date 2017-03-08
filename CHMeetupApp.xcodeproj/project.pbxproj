@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0342EE311E6C75D400DD76FC /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342EE2F1E6C75D400DD76FC /* TextFieldTableViewCell.swift */; };
+		0342EE321E6C75D400DD76FC /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0342EE301E6C75D400DD76FC /* TextFieldTableViewCell.xib */; };
+		0342EE351E6C773000DD76FC /* RegistrationPreviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342EE331E6C773000DD76FC /* RegistrationPreviewModel.swift */; };
+		0342EE361E6C773000DD76FC /* RegistrationPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342EE341E6C773000DD76FC /* RegistrationPreviewViewController.swift */; };
+		0342EE3A1E6C77D300DD76FC /* RegistrationFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342EE391E6C77D300DD76FC /* RegistrationFieldData.swift */; };
+		0342EE451E6F9B8A00DD76FC /* CheckboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342EE431E6F9B8A00DD76FC /* CheckboxTableViewCell.swift */; };
+		0342EE461E6F9B8A00DD76FC /* CheckboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0342EE441E6F9B8A00DD76FC /* CheckboxTableViewCell.xib */; };
+		0342EE491E6F9C5400DD76FC /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342EE471E6F9C5400DD76FC /* RadioTableViewCell.swift */; };
+		0342EE4A1E6F9C5400DD76FC /* RadioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0342EE481E6F9C5400DD76FC /* RadioTableViewCell.xib */; };
+		0342EE4E1E7077C600DD76FC /* RegistrationFormDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342EE4D1E7077C600DD76FC /* RegistrationFormDataCollection.swift */; };
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
 		0389AF621E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */; };
 		221A8B841E685C5A004E320D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 221A8B861E685C5A004E320D /* Localizable.strings */; };
@@ -15,6 +25,10 @@
 		221A8B911E696D2F004E320D /* PlacePlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B901E696D2E004E320D /* PlacePlainObject.swift */; };
 		221A8B931E696D4C004E320D /* EventPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B921E696D4C004E320D /* EventPlainObject+Requests.swift */; };
 		221A8B951E697007004E320D /* PlacePlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B941E697007004E320D /* PlacePlainObject+Requests.swift */; };
+		221C29461E6F3BCF00960C1F /* EventRegForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C29451E6F3BCF00960C1F /* EventRegForm.swift */; };
+		221C29481E6F3C1200960C1F /* EventRegForm+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C29471E6F3C1200960C1F /* EventRegForm+Requests.swift */; };
+		221C294A1E6F3D9900960C1F /* EventRegFormFieldPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C29491E6F3D9900960C1F /* EventRegFormFieldPlainObject.swift */; };
+		221C294E1E6F401100960C1F /* EventRegFormFieldAnswerPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C294D1E6F401100960C1F /* EventRegFormFieldAnswerPlainObject.swift */; };
 		221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F871E5C0B6C0009FD07 /* Assets.xcassets */; };
 		221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */; };
 		2231A5351E60BA290069A179 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5341E60BA290069A179 /* Reachability.swift */; };
@@ -80,7 +94,6 @@
 		9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FD21E5E336E00207199 /* EventPreviewViewController.swift */; };
 		9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FD61E5E338A00207199 /* SpeechViewController.swift */; };
 		9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FD91E5E350300207199 /* GiveSpeechViewController.swift */; };
-		9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FDD1E5E353900207199 /* RegistrationPreviewViewController.swift */; };
 		9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE01E5E359F00207199 /* RegistrationConfirmViewController.swift */; };
 		9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */; };
 		9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE51E5E3EE000207199 /* ProfileNavigationViewController.swift */; };
@@ -108,6 +121,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0342EE2F1E6C75D400DD76FC /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		0342EE301E6C75D400DD76FC /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		0342EE331E6C773000DD76FC /* RegistrationPreviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPreviewModel.swift; sourceTree = "<group>"; };
+		0342EE341E6C773000DD76FC /* RegistrationPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPreviewViewController.swift; sourceTree = "<group>"; };
+		0342EE391E6C77D300DD76FC /* RegistrationFieldData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFieldData.swift; sourceTree = "<group>"; };
+		0342EE431E6F9B8A00DD76FC /* CheckboxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxTableViewCell.swift; sourceTree = "<group>"; };
+		0342EE441E6F9B8A00DD76FC /* CheckboxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckboxTableViewCell.xib; sourceTree = "<group>"; };
+		0342EE471E6F9C5400DD76FC /* RadioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioTableViewCell.swift; sourceTree = "<group>"; };
+		0342EE481E6F9C5400DD76FC /* RadioTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioTableViewCell.xib; sourceTree = "<group>"; };
+		0342EE4D1E7077C600DD76FC /* RegistrationFormDataCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFormDataCollection.swift; sourceTree = "<group>"; };
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
 		221A8B851E685C5A004E320D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -116,6 +139,10 @@
 		221A8B901E696D2E004E320D /* PlacePlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacePlainObject.swift; sourceTree = "<group>"; };
 		221A8B921E696D4C004E320D /* EventPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventPlainObject+Requests.swift"; sourceTree = "<group>"; };
 		221A8B941E697007004E320D /* PlacePlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlacePlainObject+Requests.swift"; sourceTree = "<group>"; };
+		221C29451E6F3BCF00960C1F /* EventRegForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRegForm.swift; sourceTree = "<group>"; };
+		221C29471E6F3C1200960C1F /* EventRegForm+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventRegForm+Requests.swift"; sourceTree = "<group>"; };
+		221C29491E6F3D9900960C1F /* EventRegFormFieldPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRegFormFieldPlainObject.swift; sourceTree = "<group>"; };
+		221C294D1E6F401100960C1F /* EventRegFormFieldAnswerPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRegFormFieldAnswerPlainObject.swift; sourceTree = "<group>"; };
 		221F4F871E5C0B6C0009FD07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		221F4F8A1E5C0B6C0009FD07 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -182,7 +209,6 @@
 		9FD58FD21E5E336E00207199 /* EventPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewViewController.swift; sourceTree = "<group>"; };
 		9FD58FD61E5E338A00207199 /* SpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		9FD58FD91E5E350300207199 /* GiveSpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSpeechViewController.swift; sourceTree = "<group>"; };
-		9FD58FDD1E5E353900207199 /* RegistrationPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPreviewViewController.swift; sourceTree = "<group>"; };
 		9FD58FE01E5E359F00207199 /* RegistrationConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmViewController.swift; sourceTree = "<group>"; };
 		9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		9FD58FE51E5E3EE000207199 /* ProfileNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +233,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0342EE1A1E6B1F5200DD76FC /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				0342EE1B1E6B1F5200DD76FC /* Preview */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		0342EE1B1E6B1F5200DD76FC /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				0342EE4D1E7077C600DD76FC /* RegistrationFormDataCollection.swift */,
+				0342EE331E6C773000DD76FC /* RegistrationPreviewModel.swift */,
+				0342EE341E6C773000DD76FC /* RegistrationPreviewViewController.swift */,
+				0342EE391E6C77D300DD76FC /* RegistrationFieldData.swift */,
+				0342EE2E1E6C75D400DD76FC /* Subviews */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		0342EE2E1E6C75D400DD76FC /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				0342EE2F1E6C75D400DD76FC /* TextFieldTableViewCell.swift */,
+				0342EE301E6C75D400DD76FC /* TextFieldTableViewCell.xib */,
+				0342EE431E6F9B8A00DD76FC /* CheckboxTableViewCell.swift */,
+				0342EE441E6F9B8A00DD76FC /* CheckboxTableViewCell.xib */,
+				0342EE471E6F9C5400DD76FC /* RadioTableViewCell.swift */,
+				0342EE481E6F9C5400DD76FC /* RadioTableViewCell.xib */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		221A8B781E684DB0004E320D /* Localizations */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +285,7 @@
 		221A8B8C1E696918004E320D /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				221C29441E6F3BB000960C1F /* RegForm */,
 				221A8B8D1E69692C004E320D /* EventPlainObject.swift */,
 				221A8B921E696D4C004E320D /* EventPlainObject+Requests.swift */,
 			);
@@ -239,6 +299,17 @@
 				221A8B941E697007004E320D /* PlacePlainObject+Requests.swift */,
 			);
 			path = Place;
+			sourceTree = "<group>";
+		};
+		221C29441E6F3BB000960C1F /* RegForm */ = {
+			isa = PBXGroup;
+			children = (
+				221C29451E6F3BCF00960C1F /* EventRegForm.swift */,
+				221C29471E6F3C1200960C1F /* EventRegForm+Requests.swift */,
+				221C29491E6F3D9900960C1F /* EventRegFormFieldPlainObject.swift */,
+				221C294D1E6F401100960C1F /* EventRegFormFieldAnswerPlainObject.swift */,
+			);
+			path = RegForm;
 			sourceTree = "<group>";
 		};
 		221F4F851E5C0B6C0009FD07 /* Resources */ = {
@@ -776,7 +847,7 @@
 		9FD58FDC1E5E352500207199 /* Preview */ = {
 			isa = PBXGroup;
 			children = (
-				9FD58FDD1E5E353900207199 /* RegistrationPreviewViewController.swift */,
+				0342EE1A1E6B1F5200DD76FC /* Registration */,
 			);
 			name = Preview;
 			sourceTree = "<group>";
@@ -883,6 +954,8 @@
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
 				221A8B841E685C5A004E320D /* Localizable.strings in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
+				0342EE461E6F9B8A00DD76FC /* CheckboxTableViewCell.xib in Resources */,
+				0342EE4A1E6F9C5400DD76FC /* RadioTableViewCell.xib in Resources */,
 				92D6786F1E626CE80010F3E9 /* PastEventsTableViewCell.xib in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
 				78BBC90A1E60FC2D00DEC122 /* ProfileSpeachCell.xib in Resources */,
@@ -890,6 +963,7 @@
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
 				9FB848881E6F6071002E81ED /* TabBarItemView.xib in Resources */,
 				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
+				0342EE321E6C75D400DD76FC /* TextFieldTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -952,10 +1026,12 @@
 				9FB8489A1E6F72CF002E81ED /* UIImage+RenderMode.swift in Sources */,
 				9F2638651E6B89670081D23B /* UserPlainObject+DataBase.swift in Sources */,
 				9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */,
+				0342EE451E6F9B8A00DD76FC /* CheckboxTableViewCell.swift in Sources */,
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
 				C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */,
 				9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */,
 				C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */,
+				0342EE361E6C773000DD76FC /* RegistrationPreviewViewController.swift in Sources */,
 				78BBC9011E60FBE800DEC122 /* ProfilePictureCell.swift in Sources */,
 				9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */,
 				9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */,
@@ -967,6 +1043,7 @@
 				784EFF931E637EA500F2E31A /* RealmController.swift in Sources */,
 				784AA39C1E65BB4F0018336C /* Utility.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
+				0342EE311E6C75D400DD76FC /* TextFieldTableViewCell.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
 				9FB8488A1E6F632D002E81ED /* UIColor+Hex.swift in Sources */,
 				8A857CFE1E6CC692002CC4C2 /* UIColor+Brightness.swift in Sources */,
@@ -974,6 +1051,7 @@
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
 				221A8B8E1E69692D004E320D /* EventPlainObject.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
+				221C29461E6F3BCF00960C1F /* EventRegForm.swift in Sources */,
 				4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */,
 				9FD58FC91E5E331600207199 /* ProfileCreateViewController.swift in Sources */,
 				9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */,
@@ -983,15 +1061,16 @@
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				9FB848911E6F674D002E81ED /* UIFont+AppFonts.swift in Sources */,
 				78BBC9051E60FC0700DEC122 /* ProfileNameCell.swift in Sources */,
+				221C294A1E6F3D9900960C1F /* EventRegFormFieldPlainObject.swift in Sources */,
 				8A6268541E64638500D51BEB /* LoginType.swift in Sources */,
 				92D6786A1E626CCD0010F3E9 /* PastEventsViewController.swift in Sources */,
 				92D6786E1E626CE80010F3E9 /* PastEventsTableViewCell.swift in Sources */,
 				9FAFF8051E6AD76300B687CB /* UserEntity.swift in Sources */,
 				221A8B891E685EBF004E320D /* String+Localized.swift in Sources */,
 				221A8B911E696D2F004E320D /* PlacePlainObject.swift in Sources */,
-				9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */,
 				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
 				9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */,
+				0342EE491E6F9C5400DD76FC /* RadioTableViewCell.swift in Sources */,
 				9F3057A81E6CB03500B11801 /* RequestContentParser.swift in Sources */,
 				2231A5351E60BA290069A179 /* Reachability.swift in Sources */,
 				9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */,
@@ -1001,14 +1080,18 @@
 				9FB848861E6F6069002E81ED /* TabBarItemView.swift in Sources */,
 				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
 				224CA9E01E65FC7300CD06D6 /* PlainObjectType.swift in Sources */,
+				221C29481E6F3C1200960C1F /* EventRegForm+Requests.swift in Sources */,
 				78BBC9091E60FC2D00DEC122 /* ProfileSpeachCell.swift in Sources */,
 				9FD590161E5F1AE700207199 /* MapsController.swift in Sources */,
+				0342EE351E6C773000DD76FC /* RegistrationPreviewModel.swift in Sources */,
 				9FB8488E1E6F66AE002E81ED /* UIColor+PaletteColors.swift in Sources */,
 				9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
 				9F2638631E6B88DA0081D23B /* DataBasePlainObjectType.swift in Sources */,
 				9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */,
+				0342EE4E1E7077C600DD76FC /* RegistrationFormDataCollection.swift in Sources */,
 				9F2FFA211E663DE600EBCAEB /* Server.swift in Sources */,
+				0342EE3A1E6C77D300DD76FC /* RegistrationFieldData.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				923CF19A1E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift in Sources */,
 				9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */,
@@ -1016,6 +1099,7 @@
 				9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */,
 				224CA9DC1E65FB8300CD06D6 /* UserPlainObject.swift in Sources */,
 				224CA9E21E65FCA100CD06D6 /* Request.swift in Sources */,
+				221C294E1E6F401100960C1F /* EventRegFormFieldAnswerPlainObject.swift in Sources */,
 				224CA9DE1E65FBA100CD06D6 /* UserPlainObject+Requests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
