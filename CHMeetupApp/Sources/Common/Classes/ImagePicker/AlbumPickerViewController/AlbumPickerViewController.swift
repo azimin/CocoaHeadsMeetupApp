@@ -12,7 +12,6 @@ import Photos
 class AlbumPickerViewController: UIViewController {
 
   fileprivate enum AlbumPickerConstants {
-    static let tableViewCellID = "albumCellIDentifier"
     static let navigationItemTitle = "Альбомы".localized
     static let tableViewCellHeight: CGFloat = 100
   }
@@ -27,7 +26,7 @@ class AlbumPickerViewController: UIViewController {
     let tableView = UITableView()
     tableView.delegate = self
     tableView.dataSource = self
-    tableView.register(AlbumInfoTableViewCell.self, forCellReuseIdentifier: AlbumPickerConstants.tableViewCellID)
+    tableView.register(AlbumInfoTableViewCell.nib, forCellReuseIdentifier: AlbumInfoTableViewCell.identifier)
     return tableView
   }()
 
@@ -75,15 +74,11 @@ extension AlbumPickerViewController: UITableViewDelegate, UITableViewDataSource 
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let id = AlbumInfoTableViewCell.identifier
     //swiftlint:disable force_cast
-    let cell = tableView.dequeueReusableCell(
-      withIdentifier: AlbumPickerConstants.tableViewCellID,
-      for: indexPath) as! AlbumInfoTableViewCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! AlbumInfoTableViewCell
     let album = albums[indexPath.row]
-    cell.albumTitleLabel.text = album.localizedTitle
-    PhotosHelper.getLastPhoto(from: album) { [weak cell] image in
-      cell?.albumPreview.image = image
-    }
+    cell.album = album
     cell.accessoryView = (album == selectedAlbum ? imageViewSelected : nil)
     return cell
   }

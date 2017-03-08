@@ -77,7 +77,6 @@
 		9FD590161E5F1AE700207199 /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590141E5F1AE700207199 /* MapsController.swift */; };
 		9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */; };
 		C3165A331E6B469C004B5939 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A321E6B469C004B5939 /* PermissionsManager.swift */; };
-		C3165A3D1E6B46C1004B5939 /* AlbumInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A361E6B46C1004B5939 /* AlbumInfoTableViewCell.swift */; };
 		C3165A3E1E6B46C1004B5939 /* AlbumPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A371E6B46C1004B5939 /* AlbumPickerViewController.swift */; };
 		C3165A3F1E6B46C1004B5939 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A381E6B46C1004B5939 /* ImagePicker.swift */; };
 		C3165A401E6B46C1004B5939 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A3A1E6B46C1004B5939 /* ImageCollectionViewCell.swift */; };
@@ -85,6 +84,8 @@
 		C3165A421E6B46C1004B5939 /* PhotosHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A3C1E6B46C1004B5939 /* PhotosHelper.swift */; };
 		C3165A4C1E6B476D004B5939 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A491E6B476D004B5939 /* UIView+Anchor.swift */; };
 		C3165A4D1E6B476D004B5939 /* UIViewController+RequireAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3165A4B1E6B476D004B5939 /* UIViewController+RequireAccess.swift */; };
+		C3365E501E70051B00931CAD /* AlbumInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3365E4E1E70051B00931CAD /* AlbumInfoTableViewCell.swift */; };
+		C3365E511E70051B00931CAD /* AlbumInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3365E4F1E70051B00931CAD /* AlbumInfoTableViewCell.xib */; };
 		C3CC02F41E6EF6E300614415 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FBF1E5E30F400207199 /* NavigationViewController.swift */; };
 		C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */; };
 		C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */; };
@@ -177,7 +178,6 @@
 		9FD590141E5F1AE700207199 /* MapsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
 		9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialEntity.swift; sourceTree = "<group>"; };
 		C3165A321E6B469C004B5939 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
-		C3165A361E6B46C1004B5939 /* AlbumInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumInfoTableViewCell.swift; sourceTree = "<group>"; };
 		C3165A371E6B46C1004B5939 /* AlbumPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumPickerViewController.swift; sourceTree = "<group>"; };
 		C3165A381E6B46C1004B5939 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C3165A3A1E6B46C1004B5939 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +186,8 @@
 		C3165A451E6B46FB004B5939 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		C3165A491E6B476D004B5939 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		C3165A4B1E6B476D004B5939 /* UIViewController+RequireAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+RequireAccess.swift"; sourceTree = "<group>"; };
+		C3365E4E1E70051B00931CAD /* AlbumInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumInfoTableViewCell.swift; sourceTree = "<group>"; };
+		C3365E4F1E70051B00931CAD /* AlbumInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumInfoTableViewCell.xib; sourceTree = "<group>"; };
 		C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+keyboardDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -767,7 +769,7 @@
 			isa = PBXGroup;
 			children = (
 				C3165A371E6B46C1004B5939 /* AlbumPickerViewController.swift */,
-				C3165A361E6B46C1004B5939 /* AlbumInfoTableViewCell.swift */,
+				C3365E4C1E70051B00931CAD /* Subviews */,
 			);
 			path = AlbumPickerViewController;
 			sourceTree = "<group>";
@@ -820,6 +822,23 @@
 				C3165A4B1E6B476D004B5939 /* UIViewController+RequireAccess.swift */,
 			);
 			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		C3365E4C1E70051B00931CAD /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				C3365E4D1E70051B00931CAD /* Cells */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		C3365E4D1E70051B00931CAD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C3365E4E1E70051B00931CAD /* AlbumInfoTableViewCell.swift */,
+				C3365E4F1E70051B00931CAD /* AlbumInfoTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -890,6 +909,7 @@
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
 				221A8B841E685C5A004E320D /* Localizable.strings in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
+				C3365E511E70051B00931CAD /* AlbumInfoTableViewCell.xib in Resources */,
 				92D6786F1E626CE80010F3E9 /* PastEventsTableViewCell.xib in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
 				78BBC90A1E60FC2D00DEC122 /* ProfileSpeachCell.xib in Resources */,
@@ -981,11 +1001,11 @@
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
 				4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */,
 				9FD58FC91E5E331600207199 /* ProfileCreateViewController.swift in Sources */,
-				C3165A3D1E6B46C1004B5939 /* AlbumInfoTableViewCell.swift in Sources */,
 				9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */,
 				C3165A3F1E6B46C1004B5939 /* ImagePicker.swift in Sources */,
 				C3165A4D1E6B476D004B5939 /* UIViewController+RequireAccess.swift in Sources */,
 				221A8B931E696D4C004E320D /* EventPlainObject+Requests.swift in Sources */,
+				C3365E501E70051B00931CAD /* AlbumInfoTableViewCell.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				78BBC9051E60FC0700DEC122 /* ProfileNameCell.swift in Sources */,

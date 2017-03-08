@@ -80,18 +80,16 @@ final class PermissionsManager {
   }
 
   /** 
-   Requests access to selected permission type. Also, checks if there are all needed keys inside Info.plist
+   Requests access to selected permission type.
 
   - parameter forType: `PermissionType` to request access for
-  - parameter completion: Callback with `Bool` value describing if user has granted access
-  */
+  - parameter completion: Callback with `Bool` value describing if acess is granted by user
+   */
   static func requestAccess(forType: PermissionType, completion: @escaping (Bool) -> Void) {
     if isAllowed(type: forType) {
       completion(true)
       return
     }
-
-    checkDescriptionKey(forType: forType)
 
     switch forType {
       case .calendar:
@@ -147,30 +145,6 @@ final class PermissionsManager {
       return
     }
     UIApplication.shared.open(url, options: [:])
-  }
-
-  /// Self-protection
-  private static func checkDescriptionKey(forType: PermissionType) {
-    let path = Bundle.main.path(forResource: "Info", ofType: "plist")
-    assert(path != nil, "Unable to find Info.plist")
-
-    if var info = NSDictionary(contentsOfFile: path!) as? [String: AnyObject] {
-      switch forType {
-        case .calendar:
-          describedAssert(plist: &info, key: "NSCalendarsUsageDescription")
-        case .camera:
-          describedAssert(plist: &info, key: "NSCameraUsageDescription")
-        case .photosLibrary:
-          describedAssert(plist: &info, key: "NSPhotoLibraryUsageDescription")
-        case .reminders:
-          describedAssert(plist: &info, key: "NSRemindersUsageDescription")
-        default: break
-      }
-    }
-  }
-
-  private static func describedAssert(plist: UnsafeMutablePointer<[String: AnyObject]>, key: String) {
-    assert(plist.pointee.keys.contains(key), "Key \(key) is required to be described in Info.plist")
   }
 
 }
