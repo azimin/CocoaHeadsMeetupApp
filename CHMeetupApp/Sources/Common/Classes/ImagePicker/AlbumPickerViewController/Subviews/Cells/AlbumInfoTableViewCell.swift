@@ -21,7 +21,7 @@ class AlbumInfoTableViewCell: UITableViewCell {
 
   var album: PHAssetCollection! {
     didSet {
-      PhotosHelper.getLastPhoto(from: album) { [weak self] image in
+      PhotosHelper.getLastPhoto(from: album, size: albumPreview.frame.size) { [weak self] image in
         self?.albumPreview.image = image
       }
       albumTitleLabel.text = album.localizedTitle

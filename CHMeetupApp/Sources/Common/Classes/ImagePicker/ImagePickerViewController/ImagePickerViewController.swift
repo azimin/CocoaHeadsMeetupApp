@@ -173,16 +173,28 @@ extension ImagePickerViewController: UICollectionViewDelegate,
     let cell = collectionView.dequeueReusableCell(
       withReuseIdentifier: ImagePickerConstants.collectionViewCellID,
       for: indexPath) as! ImageCollectionViewCell
+    let tag = indexPath.row + 1
+    cell.tag = tag
     PhotosHelper.getImage(
       by: assets[indexPath.row],
-      size: ImagePickerConstants.imageWidth) { fetchedImage in
-      cell.imageView.image = fetchedImage
+      size: cell.frame.size,
+      fetchRequestID: { requestID in
+      if cell.tag == tag {
+        cell.requestID = requestID
+      }
+    }) { [weak cell] image in
+      if let cellTag = cell?.tag, cellTag == tag {
+        cell?.imageView.image = image
+      }
     }
     return cell
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    PhotosHelper.getImage(by: assets[indexPath.row], mode: .highQualityFormat) { fetchedImage in
+    PhotosHelper.getImage(
+      by: assets[indexPath.row],
+      mode: .highQualityFormat,
+      fetchRequestID: {_ in }) { fetchedImage in
       self.completionBlock?(fetchedImage)
       DispatchQueue.main.async {
         self.dismiss(animated: true, completion: nil)

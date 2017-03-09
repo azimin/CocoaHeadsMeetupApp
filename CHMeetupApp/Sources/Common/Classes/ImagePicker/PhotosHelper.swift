@@ -62,22 +62,32 @@ final class PhotosHelper {
     return imageView
   }
 
+  private static func correct(_ size: CGSize) -> CGSize {
+    var result = size
+    let scale = UIScreen.main.scale
+    result.width *= scale
+    result.height *= scale
+    return result
+  }
+
   static func getLastPhoto(
     from album: PHAssetCollection,
+    size: CGSize,
     completion: @escaping ImagePickerCompletion) {
     let ops = PHFetchOptions()
     ops.fetchLimit = 1
     ops.sortDescriptors = [
       NSSortDescriptor(key: "creationDate", ascending: false)
     ]
+
     if let first = PHAsset.fetchAssets(in: album, options: ops).firstObject {
       let reqOps = PHImageRequestOptions()
       reqOps.isSynchronous = true
       reqOps.deliveryMode = .highQualityFormat
       PHImageManager.default().requestImage(
         for: first,
-        targetSize: mainScreenSize,
-        contentMode: .default,
+        targetSize: correct(size),
+        contentMode: .aspectFill,
         options: reqOps
       ) { image, _ in
           if let image = image {
@@ -89,25 +99,32 @@ final class PhotosHelper {
 
   static func getImage(
     by asset: PHAsset,
-    size: CGFloat? = nil,
+    size: CGSize? = nil,
     mode: PHImageRequestOptionsDeliveryMode = .opportunistic,
+    fetchRequestID: @escaping (PHImageRequestID) -> Void,
     completion: @escaping ImagePickerCompletion) {
 
-    let reqOps = PHImageRequestOptions()
-    reqOps.deliveryMode = mode
-    let scale = UIScreen.main.scale
-    let targetSize = CGSize(width: (size ?? mainScreenSize.width) * scale,
-                            height: (size ?? mainScreenSize.height) * scale)
+    let requestOptions = PHImageRequestOptions()
+    requestOptions.deliveryMode = mode
+    requestOptions.resizeMode = mode == .highQualityFormat ? .exact : .fast
+    requestOptions.isNetworkAccessAllowed = false
+
+    let targetSize = correct(size ?? mainScreenSize)
+
+    fetchRequestID(
       PHImageManager.default().requestImage(
         for: asset,
         targetSize: targetSize,
         contentMode: .aspectFill,
-        options: reqOps
-      ) { image, _ in
-          if let image = image {
-            completion(image)
-          }
+        options: requestOptions
+      ) { image, info in
+        //swiftlint:disable line_length
+        let isCancelled = (info?[PHImageCancelledKey] as? NSNumber)?.boolValue ?? false
+        if !isCancelled, let image = image {
+          completion(image)
+        }
       }
+    )
   }
 
   //swiftlint:disable void_return
@@ -122,23 +139,16 @@ final class PhotosHelper {
     from album: PHAssetCollection,
     fetchOptions: FetchOptions = FetchOptions(),
     completion: @escaping (_ result: AssetFetchResult<PHAsset>) -> ()) {
-        let assetsFetchOptions = PHFetchOptions()
-        assetsFetchOptions.sortDescriptors =
-          [
-            NSSortDescriptor(key: "creationDate", ascending: !fetchOptions.newestFirst)
-          ]
 
         var assets = [PHAsset]()
-        let fetchedAssets = PHAsset.fetchAssets(in: album, options: assetsFetchOptions)
-
-        let rangeLength = min(fetchedAssets.count, fetchOptions.count)
-        let range = NSRange(location: 0, length: fetchOptions.count != 0 ? rangeLength : fetchedAssets.count)
+        let fetchedAssets = PHAsset.fetchAssets(in: album, options: nil)
+        let range = NSRange(location: 0, length: fetchedAssets.count)
         let indexes = NSIndexSet(indexesIn: range) as IndexSet
         fetchedAssets.enumerateObjects(at: indexes, options: []) { asset, _, _ in
           assets.append(asset)
         }
 
-        completion(.Assets(assets))
+        completion(.Assets(assets.reversed()))
   }
 
     /**
@@ -158,7 +168,8 @@ final class PhotosHelper {
         PhPair(.smartAlbum, .smartAlbumUserLibrary),
         PhPair(.smartAlbum, .smartAlbumScreenshots),
         PhPair(.album, .albumRegular),
-        PhPair(.smartAlbum, .smartAlbumFavorites)
+        PhPair(.smartAlbum, .smartAlbumFavorites),
+        PhPair(.smartAlbum, .smartAlbumSelfPortraits)
         // possibly something can be added here
       ].map {
         return PHAssetCollection.fetchAssetCollections(

@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import Photos
 
 class ImageCollectionViewCell: UICollectionViewCell {
 
   let imageView = PhotosHelper.configuredImageView
+  var requestID: PHImageRequestID?
+
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    if let imageRequestID = requestID {
+      PHImageManager.default().cancelImageRequest(imageRequestID)
+    }
+  }
 
   override init(frame: CGRect) {
     super.init(frame: frame)
