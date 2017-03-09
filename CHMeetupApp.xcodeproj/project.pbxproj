@@ -91,6 +91,16 @@
 		9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A1DBA4F51E71ED1200E3F1E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F60488D1E5B3CCB00C414C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F6048941E5B3CCB00C414C3;
+			remoteInfo = CHMeetupApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		784EFF961E637EAE00F2E31A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -189,6 +199,8 @@
 		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
 		9FD58FB81E5E306800207199 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SocialEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +209,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1DBA4ED1E71ED1200E3F1E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +841,7 @@
 			isa = PBXGroup;
 			children = (
 				9F6048971E5B3CCB00C414C3 /* CHMeetupApp */,
+				A1DBA4F11E71ED1200E3F1E5 /* CHMeetupAppTests */,
 				9F6048961E5B3CCB00C414C3 /* Products */,
 				8A6268271E60742B00D51BEB /* Frameworks */,
 			);
@@ -831,6 +851,7 @@
 			isa = PBXGroup;
 			children = (
 				9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */,
+				A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -850,6 +871,14 @@
 				221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */,
 			);
 			name = Launch;
+			sourceTree = "<group>";
+		};
+		A1DBA4F11E71ED1200E3F1E5 /* CHMeetupAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1DBA4F41E71ED1200E3F1E5 /* Info.plist */,
+			);
+			path = CHMeetupAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -876,6 +905,24 @@
 			productReference = 9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A1DBA4EF1E71ED1200E3F1E5 /* CHMeetupAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1DBA4F91E71ED1200E3F1E5 /* Build configuration list for PBXNativeTarget "CHMeetupAppTests" */;
+			buildPhases = (
+				A1DBA4EC1E71ED1200E3F1E5 /* Sources */,
+				A1DBA4ED1E71ED1200E3F1E5 /* Frameworks */,
+				A1DBA4EE1E71ED1200E3F1E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1DBA4F61E71ED1200E3F1E5 /* PBXTargetDependency */,
+			);
+			name = CHMeetupAppTests;
+			productName = CHMeetupAppTests;
+			productReference = A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -890,6 +937,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = KH2KDZEEE3;
 						ProvisioningStyle = Automatic;
+					};
+					A1DBA4EF1E71ED1200E3F1E5 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9F6048941E5B3CCB00C414C3;
 					};
 				};
 			};
@@ -907,6 +959,7 @@
 			projectRoot = "";
 			targets = (
 				9F6048941E5B3CCB00C414C3 /* CHMeetupApp */,
+				A1DBA4EF1E71ED1200E3F1E5 /* CHMeetupAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -928,6 +981,13 @@
 				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
 				22323F921E70C2BE00522E5C /* PastEventsTableViewCell.xib in Resources */,
 				22323F9F1E70C2BE00522E5C /* ProfileSpeachCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1DBA4EE1E71ED1200E3F1E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,7 +1116,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1DBA4EC1E71ED1200E3F1E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1DBA4F61E71ED1200E3F1E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F6048941E5B3CCB00C414C3 /* CHMeetupApp */;
+			targetProxy = A1DBA4F51E71ED1200E3F1E5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9F6048A51E5B3CCB00C414C3 /* Debug */ = {
@@ -1186,6 +1261,32 @@
 			};
 			name = Release;
 		};
+		A1DBA4F71E71ED1200E3F1E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CHMeetupAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CHMeetupApp.app/CHMeetupApp";
+			};
+			name = Debug;
+		};
+		A1DBA4F81E71ED1200E3F1E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CHMeetupAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CHMeetupApp.app/CHMeetupApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1206,6 +1307,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A1DBA4F91E71ED1200E3F1E5 /* Build configuration list for PBXNativeTarget "CHMeetupAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1DBA4F71E71ED1200E3F1E5 /* Debug */,
+				A1DBA4F81E71ED1200E3F1E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
