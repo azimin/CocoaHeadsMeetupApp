@@ -11,7 +11,7 @@ import UIKit
 class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDelegate {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      tableView.registerNib(for: PastEventsTableViewCell.self)
+      tableView.registerNib(for: EventPreviewTableViewCell.self)
       tableView.estimatedRowHeight = 100
       tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -51,11 +51,6 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
     return cell
   }
 
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    let title = dataCollection.headerTitle(for: section)
-    return title
-  }
-
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     dataCollection.didSelect(indexPath: indexPath)
@@ -75,11 +70,21 @@ fileprivate extension PastEventsViewController {
 
       let event = EventEntity()
       event.id = eventIndex
+      event.title = "CocoaHeads в апреле"
       event.startDate = eventTime
       event.endDate = eventTime.addingTimeInterval(eventDuration)
       event.title += " \(numberOfDemoEvents - eventIndex)"
 
+      let place = PlaceEntity()
+      place.id = eventIndex
+      place.title = "Офис Avito"
+      place.address = "ул. Лесная, д. 7 (БЦ Белые Сады, здание «А», 15 этаж)"
+      place.city = "Москва"
+
+      event.place = place
+
       realmWrite {
+        mainRealm.add(place, update: true)
         mainRealm.add(event, update: true)
       }
     }
