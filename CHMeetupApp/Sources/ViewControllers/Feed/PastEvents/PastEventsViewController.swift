@@ -39,6 +39,10 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
     return section.items.count
   }
 
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    cell.drawCorner(in: tableView, indexPath: indexPath)
+  }
+
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(for: indexPath) as PastEventsTableViewCell
     let item = dataCollection.sections[indexPath.section].items[indexPath.row]
