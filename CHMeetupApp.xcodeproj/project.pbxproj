@@ -69,6 +69,7 @@
 		22323FA01E70C2BE00522E5C /* ProfileHierarhyViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F881E70C2BE00522E5C /* ProfileHierarhyViewControllerType.swift */; };
 		22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323FA11E70C43800522E5C /* AppDelegate.swift */; };
 		22323FA51E70C51A00522E5C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22323FA41E70C51A00522E5C /* Localizable.strings */; };
+		22BFB2B31E743DE100792F41 /* UITableViewCell+Roundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BFB2B21E743DE100792F41 /* UITableViewCell+Roundable.swift */; };
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -188,6 +189,7 @@
 		22323F881E70C2BE00522E5C /* ProfileHierarhyViewControllerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHierarhyViewControllerType.swift; sourceTree = "<group>"; };
 		22323FA11E70C43800522E5C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22323FA41E70C51A00522E5C /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		22BFB2B21E743DE100792F41 /* UITableViewCell+Roundable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Roundable.swift"; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -892,6 +894,7 @@
 			isa = PBXGroup;
 			children = (
 				9F30FFC91E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift */,
+				22BFB2B21E743DE100792F41 /* UITableViewCell+Roundable.swift */,
 			);
 			name = UITableViewCell;
 			sourceTree = "<group>";
@@ -1188,6 +1191,7 @@
 				9F30FFD11E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift in Sources */,
 				9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */,
 				9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */,
+				22BFB2B31E743DE100792F41 /* UITableViewCell+Roundable.swift in Sources */,
 				22323F8D1E70C2BE00522E5C /* RegistrationConfirmViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1391,6 +1395,7 @@
 				A1DBA4F81E71ED1200E3F1E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
