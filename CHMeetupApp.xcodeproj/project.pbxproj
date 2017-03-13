@@ -109,6 +109,9 @@
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
 		9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */; };
+		A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
+		A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
+		A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 /* End PBXBuildFile section */
@@ -241,6 +244,8 @@
 		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
 		9FD58FB81E5E306800207199 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SocialEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidation.swift; path = Validation/StringValidation.swift; sourceTree = "<group>"; };
+		A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidationTests.swift; path = Validation/StringValidationTests.swift; sourceTree = "<group>"; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
@@ -492,6 +497,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A1495AE51E76CD0B003D8BE3 /* Validation */,
 				C30485AF1E740FC20052D632 /* PermissionsManager */,
 				9F30FFD61E71FECF00EF85F5 /* DisplayCollection */,
 				9F30FFBC1E71DFE400EF85F5 /* CellViewModel */,
@@ -1036,9 +1042,26 @@
 			name = Launch;
 			sourceTree = "<group>";
 		};
+		A1495AE51E76CD0B003D8BE3 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */,
+			);
+			name = Validation;
+			sourceTree = "<group>";
+		};
+		A1495AE61E76CD12003D8BE3 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */,
+			);
+			name = Validation;
+			sourceTree = "<group>";
+		};
 		A1DBA4F11E71ED1200E3F1E5 /* CHMeetupAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				A1495AE61E76CD12003D8BE3 /* Validation */,
 				A1DBA4F41E71ED1200E3F1E5 /* Info.plist */,
 			);
 			path = CHMeetupAppTests;
@@ -1111,6 +1134,7 @@
 					};
 					A1DBA4EF1E71ED1200E3F1E5 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9F6048941E5B3CCB00C414C3;
 					};
@@ -1285,6 +1309,7 @@
 				22323F531E70C18700522E5C /* PlacePlainObject+Requests.swift in Sources */,
 				22323F9C1E70C2BE00522E5C /* ProfilePictureCell.swift in Sources */,
 				22323F331E70C0E500522E5C /* ActionButton.swift in Sources */,
+				A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
 				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,
 				22323F121E70C0D500522E5C /* DateComponents+Init.swift in Sources */,
 				22323F311E70C0E500522E5C /* Server.swift in Sources */,
@@ -1313,6 +1338,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
+				A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1458,10 +1485,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CHMeetupAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CHMeetupApp.app/CHMeetupApp";
 			};
@@ -1471,6 +1500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CHMeetupAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupAppTests;
