@@ -2,20 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSRemindersUsageDescription</key>
-	<string>Это поможет нам добавлять встречи в список ваших дел и напоминать вам о них ;)</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>Это поможет нам добавлять встречи в ваш календарь и напоминать вам о них ;)</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>api</key>
-			<string>http://upapi.ru</string>
-		</dict>
-	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -52,14 +38,19 @@
 				<string>fb1863830253895861</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>tw319871078148574</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>tw319871078148574</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>GothamPro-Medium.ttf</string>
-		<string>GothamPro.ttf</string>
-	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbshareextension</string>
@@ -74,6 +65,25 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>api</key>
+			<string>http://upapi.ru</string>
+		</dict>
+	</dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Это поможет нам добавлять встречи в ваш календарь и напоминать вам о них ;)</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Это поможет нам добавлять встречи в список ваших дел и напоминать вам о них ;)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>GothamPro-Medium.ttf</string>
+		<string>GothamPro.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
