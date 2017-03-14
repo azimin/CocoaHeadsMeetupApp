@@ -84,16 +84,16 @@
 		9F30FFD11E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFD01E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift */; };
 		9F30FFD31E71EB2100EF85F5 /* UITableView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFD21E71EB2100EF85F5 /* UITableView+Reuse.swift */; };
 		9F30FFD81E71FEDB00EF85F5 /* DisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFD71E71FEDB00EF85F5 /* DisplayCollection.swift */; };
-		9F487A7A1E740DC00016CE0B /* EventPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */; };
-		9F487A7B1E740DC00016CE0B /* EventPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */; };
-		9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */; };
-		9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F487A7E1E7415A10016CE0B /* GothamPro.ttf */; };
-		9F487A821E7417F50016CE0B /* LightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A811E7417F50016CE0B /* LightButton.swift */; };
 		9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */; };
 		9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A671E73E9530016CE0B /* ShadowView.swift */; };
 		9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */; };
 		9F487A6F1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */; };
 		9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A711E73F2C60016CE0B /* AppearanceController.swift */; };
+		9F487A7A1E740DC00016CE0B /* EventPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */; };
+		9F487A7B1E740DC00016CE0B /* EventPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */; };
+		9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */; };
+		9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F487A7E1E7415A10016CE0B /* GothamPro.ttf */; };
+		9F487A821E7417F50016CE0B /* LightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A811E7417F50016CE0B /* LightButton.swift */; };
 		9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D62D1E749B94006323FA /* PlateTableViewCell.swift */; };
 		9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D62F1E749FB9006323FA /* PlateTableViewCellAppearance.swift */; };
 		9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D6311E74A7EA006323FA /* ShadowViewAppearance.swift */; };
@@ -114,6 +114,21 @@
 		A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */; };
+		AD3E7DCE1E77BF1C003C5AD4 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DC11E77BF1C003C5AD4 /* HMAC.swift */; };
+		AD3E7DCF1E77BF1C003C5AD4 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DC21E77BF1C003C5AD4 /* SHA1.swift */; };
+		AD3E7DD01E77BF1C003C5AD4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DC31E77BF1C003C5AD4 /* Utils.swift */; };
+		AD3E7DD11E77BF1C003C5AD4 /* SocialNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DC51E77BF1C003C5AD4 /* SocialNetwork.swift */; };
+		AD3E7DD21E77BF1C003C5AD4 /* SocialRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DC61E77BF1C003C5AD4 /* SocialRequest.swift */; };
+		AD3E7DD31E77BF1C003C5AD4 /* SocialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DC71E77BF1C003C5AD4 /* SocialResponse.swift */; };
+		AD3E7DD41E77BF1C003C5AD4 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DC91E77BF1C003C5AD4 /* Credential.swift */; };
+		AD3E7DD51E77BF1C003C5AD4 /* TwitterOAuthAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DCB1E77BF1C003C5AD4 /* TwitterOAuthAccessToken.swift */; };
+		AD3E7DD61E77BF1C003C5AD4 /* TwitterOAuthRequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DCC1E77BF1C003C5AD4 /* TwitterOAuthRequestToken.swift */; };
+		AD3E7DD71E77BF1C003C5AD4 /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DCD1E77BF1C003C5AD4 /* Twitter.swift */; };
+		AD3E7DDA1E77BF53003C5AD4 /* Data+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DD91E77BF53003C5AD4 /* Data+Crypto.swift */; };
+		AD3E7DDC1E77BF6D003C5AD4 /* Dictionary+Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DDB1E77BF6D003C5AD4 /* Dictionary+Twitter.swift */; };
+		AD3E7DDF1E77BF78003C5AD4 /* Int+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DDE1E77BF78003C5AD4 /* Int+Crypto.swift */; };
+		AD3E7DE21E77BF80003C5AD4 /* Operator+Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DE11E77BF80003C5AD4 /* Operator+Twitter.swift */; };
+		AD3E7DE41E77BF91003C5AD4 /* String+Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E7DE31E77BF91003C5AD4 /* String+Twitter.swift */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 /* End PBXBuildFile section */
@@ -220,16 +235,16 @@
 		9F30FFD01E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateCollectionCellViewModel.swift; sourceTree = "<group>"; };
 		9F30FFD21E71EB2100EF85F5 /* UITableView+Reuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reuse.swift"; sourceTree = "<group>"; };
 		9F30FFD71E71FEDB00EF85F5 /* DisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollection.swift; sourceTree = "<group>"; };
-		9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewTableViewCell.swift; path = EventCell/EventPreviewTableViewCell.swift; sourceTree = "<group>"; };
-		9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventPreviewTableViewCell.xib; path = EventCell/EventPreviewTableViewCell.xib; sourceTree = "<group>"; };
-		9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
-		9F487A7E1E7415A10016CE0B /* GothamPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamPro.ttf; sourceTree = "<group>"; };
-		9F487A811E7417F50016CE0B /* LightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightButton.swift; sourceTree = "<group>"; };
 		9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBarItems.swift"; sourceTree = "<group>"; };
 		9F487A671E73E9530016CE0B /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSwizzler.swift; sourceTree = "<group>"; };
 		9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+TitleConfiguration.swift"; sourceTree = "<group>"; };
 		9F487A711E73F2C60016CE0B /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
+		9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewTableViewCell.swift; path = EventCell/EventPreviewTableViewCell.swift; sourceTree = "<group>"; };
+		9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventPreviewTableViewCell.xib; path = EventCell/EventPreviewTableViewCell.xib; sourceTree = "<group>"; };
+		9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
+		9F487A7E1E7415A10016CE0B /* GothamPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamPro.ttf; sourceTree = "<group>"; };
+		9F487A811E7417F50016CE0B /* LightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightButton.swift; sourceTree = "<group>"; };
 		9F57D62D1E749B94006323FA /* PlateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlateTableViewCell.swift; sourceTree = "<group>"; };
 		9F57D62F1E749FB9006323FA /* PlateTableViewCellAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlateTableViewCellAppearance.swift; sourceTree = "<group>"; };
 		9F57D6311E74A7EA006323FA /* ShadowViewAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowViewAppearance.swift; sourceTree = "<group>"; };
@@ -252,6 +267,21 @@
 		A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidationTests.swift; path = Validation/StringValidationTests.swift; sourceTree = "<group>"; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD3E7DC11E77BF1C003C5AD4 /* HMAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
+		AD3E7DC21E77BF1C003C5AD4 /* SHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
+		AD3E7DC31E77BF1C003C5AD4 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		AD3E7DC51E77BF1C003C5AD4 /* SocialNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetwork.swift; sourceTree = "<group>"; };
+		AD3E7DC61E77BF1C003C5AD4 /* SocialRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialRequest.swift; sourceTree = "<group>"; };
+		AD3E7DC71E77BF1C003C5AD4 /* SocialResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialResponse.swift; sourceTree = "<group>"; };
+		AD3E7DC91E77BF1C003C5AD4 /* Credential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		AD3E7DCB1E77BF1C003C5AD4 /* TwitterOAuthAccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterOAuthAccessToken.swift; sourceTree = "<group>"; };
+		AD3E7DCC1E77BF1C003C5AD4 /* TwitterOAuthRequestToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterOAuthRequestToken.swift; sourceTree = "<group>"; };
+		AD3E7DCD1E77BF1C003C5AD4 /* Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
+		AD3E7DD91E77BF53003C5AD4 /* Data+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Crypto.swift"; sourceTree = "<group>"; };
+		AD3E7DDB1E77BF6D003C5AD4 /* Dictionary+Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Twitter.swift"; sourceTree = "<group>"; };
+		AD3E7DDE1E77BF78003C5AD4 /* Int+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Crypto.swift"; sourceTree = "<group>"; };
+		AD3E7DE11E77BF80003C5AD4 /* Operator+Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Operator+Twitter.swift"; sourceTree = "<group>"; };
+		AD3E7DE31E77BF91003C5AD4 /* String+Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Twitter.swift"; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -280,6 +310,7 @@
 			children = (
 				221A8B881E685EBF004E320D /* String+Localized.swift */,
 				9FB8488B1E6F63EB002E81ED /* String+Range.swift */,
+				AD3E7DE31E77BF91003C5AD4 /* String+Twitter.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -349,6 +380,7 @@
 		221F4F901E5C0B6C0009FD07 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AD3E7DBF1E77BF1C003C5AD4 /* Classes */,
 				22323F131E70C0E500522E5C /* Helpers */,
 				22323F211E70C0E500522E5C /* Views */,
 				221F4F921E5C0B6C0009FD07 /* Extensions */,
@@ -415,6 +447,9 @@
 		2231A5381E60E5030069A179 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				AD3E7DE01E77BF80003C5AD4 /* Operator */,
+				AD3E7DDD1E77BF78003C5AD4 /* Int */,
+				AD3E7DD81E77BF53003C5AD4 /* Data */,
 				22323F101E70C0D500522E5C /* Date */,
 				221A8B871E685E72004E320D /* String */,
 				2231A5391E60E5030069A179 /* Dictionary */,
@@ -426,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */,
+				AD3E7DDB1E77BF6D003C5AD4 /* Dictionary+Twitter.swift */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -951,24 +987,6 @@
 			name = DisplayCollection;
 			sourceTree = "<group>";
 		};
-		9F487A731E740D940016CE0B /* EventCell */ = {
-			isa = PBXGroup;
-			children = (
-				9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */,
-				9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */,
-				9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */,
-			);
-			name = EventCell;
-			sourceTree = "<group>";
-		};
-		9F487A801E7417E50016CE0B /* LightButton */ = {
-			isa = PBXGroup;
-			children = (
-				9F487A811E7417F50016CE0B /* LightButton.swift */,
-			);
-			name = LightButton;
-			sourceTree = "<group>";
-		};
 		9F487A661E73E94B0016CE0B /* Shadow */ = {
 			isa = PBXGroup;
 			children = (
@@ -1001,6 +1019,24 @@
 				9F487A711E73F2C60016CE0B /* AppearanceController.swift */,
 			);
 			name = Appearance;
+			sourceTree = "<group>";
+		};
+		9F487A731E740D940016CE0B /* EventCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */,
+				9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */,
+				9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */,
+			);
+			name = EventCell;
+			sourceTree = "<group>";
+		};
+		9F487A801E7417E50016CE0B /* LightButton */ = {
+			isa = PBXGroup;
+			children = (
+				9F487A811E7417F50016CE0B /* LightButton.swift */,
+			);
+			name = LightButton;
 			sourceTree = "<group>";
 		};
 		9F57D62C1E749B85006323FA /* PlateCell */ = {
@@ -1079,6 +1115,79 @@
 				A1DBA4F41E71ED1200E3F1E5 /* Info.plist */,
 			);
 			path = CHMeetupAppTests;
+			sourceTree = "<group>";
+		};
+		AD3E7DBF1E77BF1C003C5AD4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E7DC01E77BF1C003C5AD4 /* Encription */,
+				AD3E7DC41E77BF1C003C5AD4 /* SocialNetworks */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AD3E7DC01E77BF1C003C5AD4 /* Encription */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E7DC11E77BF1C003C5AD4 /* HMAC.swift */,
+				AD3E7DC21E77BF1C003C5AD4 /* SHA1.swift */,
+				AD3E7DC31E77BF1C003C5AD4 /* Utils.swift */,
+			);
+			path = Encription;
+			sourceTree = "<group>";
+		};
+		AD3E7DC41E77BF1C003C5AD4 /* SocialNetworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E7DC51E77BF1C003C5AD4 /* SocialNetwork.swift */,
+				AD3E7DC61E77BF1C003C5AD4 /* SocialRequest.swift */,
+				AD3E7DC71E77BF1C003C5AD4 /* SocialResponse.swift */,
+				AD3E7DC81E77BF1C003C5AD4 /* Twitter */,
+			);
+			path = SocialNetworks;
+			sourceTree = "<group>";
+		};
+		AD3E7DC81E77BF1C003C5AD4 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E7DCD1E77BF1C003C5AD4 /* Twitter.swift */,
+				AD3E7DC91E77BF1C003C5AD4 /* Credential.swift */,
+				AD3E7DCA1E77BF1C003C5AD4 /* Requests */,
+			);
+			path = Twitter;
+			sourceTree = "<group>";
+		};
+		AD3E7DCA1E77BF1C003C5AD4 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E7DCB1E77BF1C003C5AD4 /* TwitterOAuthAccessToken.swift */,
+				AD3E7DCC1E77BF1C003C5AD4 /* TwitterOAuthRequestToken.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		AD3E7DD81E77BF53003C5AD4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E7DD91E77BF53003C5AD4 /* Data+Crypto.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AD3E7DDD1E77BF78003C5AD4 /* Int */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E7DDE1E77BF78003C5AD4 /* Int+Crypto.swift */,
+			);
+			path = Int;
+			sourceTree = "<group>";
+		};
+		AD3E7DE01E77BF80003C5AD4 /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E7DE11E77BF80003C5AD4 /* Operator+Twitter.swift */,
+			);
+			path = Operator;
 			sourceTree = "<group>";
 		};
 		C30485AF1E740FC20052D632 /* PermissionsManager */ = {
@@ -1256,7 +1365,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				22323FA01E70C2BE00522E5C /* ProfileHierarhyViewControllerType.swift in Sources */,
+				AD3E7DD61E77BF1C003C5AD4 /* TwitterOAuthRequestToken.swift in Sources */,
+				AD3E7DD21E77BF1C003C5AD4 /* SocialRequest.swift in Sources */,
 				22323F431E70C14300522E5C /* MapsController.swift in Sources */,
+				AD3E7DCE1E77BF1C003C5AD4 /* HMAC.swift in Sources */,
 				9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */,
 				22323F3F1E70C14300522E5C /* ViewControllersFactory.swift in Sources */,
 				9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */,
@@ -1265,6 +1377,7 @@
 				9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */,
 				9F30FFD31E71EB2100EF85F5 /* UITableView+Reuse.swift in Sources */,
 				22323F991E70C2BE00522E5C /* ProfileViewController.swift in Sources */,
+				AD3E7DD71E77BF1C003C5AD4 /* Twitter.swift in Sources */,
 				9F30FFC71E71E6FE00EF85F5 /* ReusableCell.swift in Sources */,
 				C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */,
 				22323F551E70C18700522E5C /* PlainObjectType.swift in Sources */,
@@ -1274,8 +1387,11 @@
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
+				AD3E7DD31E77BF1C003C5AD4 /* SocialResponse.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				22323F2B1E70C0E500522E5C /* Importer.swift in Sources */,
+				AD3E7DDA1E77BF53003C5AD4 /* Data+Crypto.swift in Sources */,
+				AD3E7DCF1E77BF1C003C5AD4 /* SHA1.swift in Sources */,
 				9F30FFC11E71E36F00EF85F5 /* UITableView+CellViewModel.swift in Sources */,
 				9FAFF8071E6AD84000B687CB /* EventEntity.swift in Sources */,
 				9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */,
@@ -1292,7 +1408,6 @@
 				22323F571E70C18700522E5C /* UserPlainObject.swift in Sources */,
 				22323F2F1E70C0E500522E5C /* Request.swift in Sources */,
 				22323F891E70C2BE00522E5C /* CustomTabBarController.swift in Sources */,
-				22323F911E70C2BE00522E5C /* PastEventsTableViewCell.swift in Sources */,
 				9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */,
 				9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
@@ -1303,12 +1418,17 @@
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				22323F8A1E70C2BE00522E5C /* NavigationViewController.swift in Sources */,
 				9F30FFCA1E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift in Sources */,
+				AD3E7DD51E77BF1C003C5AD4 /* TwitterOAuthAccessToken.swift in Sources */,
 				9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */,
 				22323F411E70C14300522E5C /* LoginType.swift in Sources */,
+				AD3E7DD11E77BF1C003C5AD4 /* SocialNetwork.swift in Sources */,
 				22323F9A1E70C2BE00522E5C /* ProfileNameCell.swift in Sources */,
 				22323F341E70C0E500522E5C /* TabBarItemView.swift in Sources */,
 				9FAFF8051E6AD76300B687CB /* UserEntity.swift in Sources */,
+				AD3E7DE41E77BF91003C5AD4 /* String+Twitter.swift in Sources */,
 				9F30FFCD1E71E77700EF85F5 /* UITableView+Registration.swift in Sources */,
+				AD3E7DD01E77BF1C003C5AD4 /* Utils.swift in Sources */,
+				AD3E7DDC1E77BF6D003C5AD4 /* Dictionary+Twitter.swift in Sources */,
 				9F487A821E7417F50016CE0B /* LightButton.swift in Sources */,
 				22323F9E1E70C2BE00522E5C /* ProfileSpeachCell.swift in Sources */,
 				9F487A7A1E740DC00016CE0B /* EventPreviewTableViewCell.swift in Sources */,
@@ -1326,12 +1446,15 @@
 				9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */,
 				22323F531E70C18700522E5C /* PlacePlainObject+Requests.swift in Sources */,
 				22323F9C1E70C2BE00522E5C /* ProfilePictureCell.swift in Sources */,
+				AD3E7DE21E77BF80003C5AD4 /* Operator+Twitter.swift in Sources */,
 				22323F331E70C0E500522E5C /* ActionButton.swift in Sources */,
 				A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
+				AD3E7DDF1E77BF78003C5AD4 /* Int+Crypto.swift in Sources */,
 				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,
 				22323F121E70C0D500522E5C /* DateComponents+Init.swift in Sources */,
 				22323F311E70C0E500522E5C /* Server.swift in Sources */,
 				9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */,
+				AD3E7DD41E77BF1C003C5AD4 /* Credential.swift in Sources */,
 				22323F8B1E70C2BE00522E5C /* TabBarViewController.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				22323F0D1E70C0CE00522E5C /* UIImage+RenderMode.swift in Sources */,

@@ -25,7 +25,9 @@ final class Constants {
   }
 
   struct Twitter {
-
+    static let clientId = "319871078148574"
+    static let key = "8tH84hNpnfVUi1GH5zQYMA"
+    static let secret = "Y641ZyNF3A9rNXfTEV4Uy4QxI8cSBsbkwghVl2FcqA"
   }
 
   struct SystemSizes {
