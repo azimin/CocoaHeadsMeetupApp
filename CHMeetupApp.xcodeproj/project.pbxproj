@@ -115,6 +115,10 @@
 		A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */; };
+		A1A072F51E79F01F00FB83F1 /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A072F31E79F01F00FB83F1 /* RadioTableViewCell.swift */; };
+		A1A072F61E79F01F00FB83F1 /* RadioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A072F41E79F01F00FB83F1 /* RadioTableViewCell.xib */; };
+		A1A072F91E79F1E100FB83F1 /* RadioTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A072F81E79F1E100FB83F1 /* RadioTableViewCellTests.swift */; };
+		A1A072FA1E79F1FA00FB83F1 /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A072F31E79F01F00FB83F1 /* RadioTableViewCell.swift */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 /* End PBXBuildFile section */
@@ -252,6 +256,9 @@
 		9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SocialEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidation.swift; path = Validation/StringValidation.swift; sourceTree = "<group>"; };
 		A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidationTests.swift; path = Validation/StringValidationTests.swift; sourceTree = "<group>"; };
+		A1A072F31E79F01F00FB83F1 /* RadioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadioTableViewCell.swift; path = RadioCell/RadioTableViewCell.swift; sourceTree = "<group>"; };
+		A1A072F41E79F01F00FB83F1 /* RadioTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RadioTableViewCell.xib; path = RadioCell/RadioTableViewCell.xib; sourceTree = "<group>"; };
+		A1A072F81E79F1E100FB83F1 /* RadioTableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadioTableViewCellTests.swift; path = Views/RadioTableViewCellTests.swift; sourceTree = "<group>"; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
@@ -564,6 +571,7 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1A072F21E79EF6800FB83F1 /* RadioCell */,
 				9F487A801E7417E50016CE0B /* LightButton */,
 				9F487A731E740D940016CE0B /* EventCell */,
 				9F487A661E73E94B0016CE0B /* Shadow */,
@@ -1083,10 +1091,28 @@
 			name = Validation;
 			sourceTree = "<group>";
 		};
+		A1A072F21E79EF6800FB83F1 /* RadioCell */ = {
+			isa = PBXGroup;
+			children = (
+				A1A072F31E79F01F00FB83F1 /* RadioTableViewCell.swift */,
+				A1A072F41E79F01F00FB83F1 /* RadioTableViewCell.xib */,
+			);
+			name = RadioCell;
+			sourceTree = "<group>";
+		};
+		A1A072F71E79F1BC00FB83F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1A072F81E79F1E100FB83F1 /* RadioTableViewCellTests.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		A1DBA4F11E71ED1200E3F1E5 /* CHMeetupAppTests */ = {
 			isa = PBXGroup;
 			children = (
 				A1495AE61E76CD12003D8BE3 /* Validation */,
+				A1A072F71E79F1BC00FB83F1 /* Views */,
 				A1DBA4F41E71ED1200E3F1E5 /* Info.plist */,
 			);
 			path = CHMeetupAppTests;
@@ -1194,6 +1220,7 @@
 				22323F9B1E70C2BE00522E5C /* ProfileNameCell.xib in Resources */,
 				9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */,
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
+				A1A072F61E79F01F00FB83F1 /* RadioTableViewCell.xib in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
 				9F487A7B1E740DC00016CE0B /* EventPreviewTableViewCell.xib in Resources */,
@@ -1331,6 +1358,7 @@
 				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
+				A1A072F51E79F01F00FB83F1 /* RadioTableViewCell.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
 				22323F0B1E70C0CE00522E5C /* UIColor+PaletteColors.swift in Sources */,
@@ -1367,6 +1395,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
+				A1A072FA1E79F1FA00FB83F1 /* RadioTableViewCell.swift in Sources */,
+				A1A072F91E79F1E100FB83F1 /* RadioTableViewCellTests.swift in Sources */,
 				A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
