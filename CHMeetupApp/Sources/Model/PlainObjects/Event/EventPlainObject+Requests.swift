@@ -15,6 +15,11 @@ extension EventPlainObject: PlainObjectType {
     static var list: Request<[EventPlainObject]> {
       return Request(query: "events")
     }
+    
+    // Past events list
+    static var pastList: Request<[EventPlainObject]> {
+      return Request(query: "events/past")
+    }
   }
 
   init?(json: JSONDictionary) {

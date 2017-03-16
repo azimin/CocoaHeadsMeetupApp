@@ -42,35 +42,11 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
   }
 
   func fetchPastEvents() {
-    Server.request(EventPlainObject.Requests.list, completion: { list, error in
-      guard let events = list,
+    Server.standard.request(EventPlainObject.Requests.list, completion: { list, error in
+      guard let _ = list,
       error == nil else { return }
-      for event in events {
-        let newEvent = EventEntity()
-        newEvent.id = event.id
-        newEvent.title = event.title
-        newEvent.startDate = event.startDate
-        newEvent.endDate = event.endDate
-        newEvent.photoURL = event.photoUrl
-        newEvent.descriptionText = event.description
-
-        let place = PlaceEntity()
-        place.id = event.place.placeID
-        place.title = event.place.title
-        place.address = event.place.address
-        // FIXME: - add city
-//        place.city = event.place.cityID
-        place.latitude = event.place.latitude
-        place.longitude = event.place.longitude
-
-        newEvent.place = place
-
-        realmWrite {
-          mainRealm.add(place, update: true)
-          mainRealm.add(newEvent, update: true)
-        }
-      }
-//      self.tableView.reloadData()
+      // TODO: Create realm objects from plainobjects array
+      // let entities = list.flatMap(EventEntity.init)
     })
   }
 }
