@@ -30,7 +30,7 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
 
     title = "Past".localized
 
-    fetchEvents()
+    fetchPastEvents()
   }
 
   override func customTabBarItemContentView() -> CustomTabBarItemView {
@@ -39,6 +39,39 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
 
   func shouldPresent(viewController: UIViewController) {
     navigationController?.pushViewController(viewController, animated: true)
+  }
+
+  func fetchPastEvents() {
+    Server.request(EventPlainObject.Requests.list, completion: { list, error in
+      guard let events = list,
+      error == nil else { return }
+      for event in events {
+        let newEvent = EventEntity()
+        newEvent.id = event.id
+        newEvent.title = event.title
+        newEvent.startDate = event.startDate
+        newEvent.endDate = event.endDate
+        newEvent.photoURL = event.photoUrl
+        newEvent.descriptionText = event.description
+
+        let place = PlaceEntity()
+        place.id = event.place.placeID
+        place.title = event.place.title
+        place.address = event.place.address
+        // FIXME: - add city
+//        place.city = event.place.cityID
+        place.latitude = event.place.latitude
+        place.longitude = event.place.longitude
+
+        newEvent.place = place
+
+        realmWrite {
+          mainRealm.add(place, update: true)
+          mainRealm.add(newEvent, update: true)
+        }
+      }
+//      self.tableView.reloadData()
+    })
   }
 }
 
@@ -61,41 +94,5 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     dataCollection.didSelect(indexPath: indexPath)
-  }
-}
-
-// FIXME: - Remove this
-fileprivate extension PastEventsViewController {
-
-  func fetchEvents() {
-    let numberOfDemoEvents = 10
-    for eventIndex in 1...numberOfDemoEvents {
-      //Create past event
-      let oneDayTimeInterval = 3600 * 24
-      let eventTime = Date().addingTimeInterval(-TimeInterval(oneDayTimeInterval * eventIndex))
-      let eventDuration: TimeInterval = 3600 * 4
-
-      let event = EventEntity()
-      event.id = eventIndex
-      event.title = "CocoaHeads в апреле"
-      event.startDate = eventTime
-      event.endDate = eventTime.addingTimeInterval(eventDuration)
-      event.title += " \(numberOfDemoEvents - eventIndex)"
-
-      let place = PlaceEntity()
-      place.id = eventIndex
-      place.title = "Офис Avito"
-      place.address = "ул. Лесная, д. 7 (БЦ Белые Сады, здание «А», 15 этаж)"
-      place.city = "Москва"
-
-      event.place = place
-
-      realmWrite {
-        mainRealm.add(place, update: true)
-        mainRealm.add(event, update: true)
-      }
-    }
-
-    tableView.reloadData()
   }
 }
