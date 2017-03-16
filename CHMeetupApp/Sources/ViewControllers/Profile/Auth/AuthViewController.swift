@@ -32,11 +32,6 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(loggedIn(_:)),
-                                           name: .CloseSafariViewControllerNotification,
-                                           object: nil)
-
     title = "Auth".localized
   }
 
@@ -56,9 +51,17 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 // MARK: - Login actions
 extension AuthViewController {
 
+  func setupNotification() {
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(loggedIn(_:)),
+                                           name: .CloseSafariViewControllerNotification,
+                                           object: nil)
+  }
+  
   func loginApp(at type: LoginType) {
     loggingApp = type
     if type == .twitter {
+      
       let url = URL(string: "tw\(Constants.Twitter.clientId)://success")!
       let twitter = Twitter(consumerKey: Constants.Twitter.key, consumerSecret: Constants.Twitter.secret)
       twitter.authorize(with: url, presentFrom: self, success: {[unowned self] token in
@@ -73,6 +76,7 @@ extension AuthViewController {
       })
     } else {
       if !type.isAppExists {
+        setupNotification()
         let url = type.urlAuth
         showSafariViewController(url: url)
       } else {
@@ -87,6 +91,7 @@ extension AuthViewController {
   }
 
   func loggedIn(_ notification: Notification? = nil) {
+    NotificationCenter.default.removeObserver(self)
     hideSafariViewController()
     guard let loggingApp = loggingApp,
       let notification = notification,
