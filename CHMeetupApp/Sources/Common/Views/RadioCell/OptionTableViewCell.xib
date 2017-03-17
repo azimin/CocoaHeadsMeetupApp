@@ -21,14 +21,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AAo-hg-wg8">
-                        <rect key="frame" x="8" y="18" width="24" height="24"/>
+                        <rect key="frame" x="18" y="18" width="24" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="24" id="5er-d0-by8"/>
+                            <constraint firstAttribute="width" priority="750" constant="24" id="5er-d0-by8"/>
                             <constraint firstAttribute="width" secondItem="AAo-hg-wg8" secondAttribute="height" multiplier="1:1" id="89U-oJ-0IW"/>
+                            <constraint firstAttribute="width" priority="250" constant="22" id="LNa-H6-Y3u"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsX-KR-jMa">
-                        <rect key="frame" x="44" y="19.5" width="256" height="21"/>
+                        <rect key="frame" x="54" y="19.5" width="246" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,15 +38,17 @@
                 <constraints>
                     <constraint firstItem="bsX-KR-jMa" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6Wz-k5-ytM"/>
                     <constraint firstItem="bsX-KR-jMa" firstAttribute="leading" secondItem="AAo-hg-wg8" secondAttribute="trailing" constant="12" id="D8S-TX-Qbg"/>
-                    <constraint firstItem="AAo-hg-wg8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="R65-Jc-b0f"/>
+                    <constraint firstItem="AAo-hg-wg8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="R65-Jc-b0f"/>
                     <constraint firstItem="AAo-hg-wg8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="YNl-Di-BYL"/>
                     <constraint firstAttribute="trailingMargin" secondItem="bsX-KR-jMa" secondAttribute="trailing" constant="12" id="iWL-7I-ODg"/>
                     <constraint firstAttribute="bottomMargin" secondItem="AAo-hg-wg8" secondAttribute="bottom" constant="10" id="mGY-YP-FGB"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="checkWidthContraint" destination="LNa-H6-Y3u" id="SRc-KS-4oc"/>
                 <outlet property="label" destination="bsX-KR-jMa" id="90d-MH-Z77"/>
                 <outlet property="markImageView" destination="AAo-hg-wg8" id="cmG-Mk-0pS"/>
+                <outlet property="radioWidthContraint" destination="5er-d0-by8" id="qfG-KH-zXy"/>
             </connections>
             <point key="canvasLocation" x="117" y="62"/>
         </tableViewCell>

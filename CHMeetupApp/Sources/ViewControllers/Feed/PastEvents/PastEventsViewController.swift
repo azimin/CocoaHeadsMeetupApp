@@ -16,15 +16,23 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
       tableView.rowHeight = UITableViewAutomaticDimension
       tableView.backgroundColor = UIColor.clear
       tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+
+      // FIXME: - Delete before PR merge
+      tableView.registerNib(for: OptionTableViewCell.self)
+      tableView.allowsMultipleSelection = true
     }
   }
-  fileprivate var dataCollection: PastEventsDisplayCollection!
+
+  // FIXME: - Make it back
+  fileprivate var dataCollection = OptionsDisplayCollection()
+  // fileprivate var dataCollection: PastEventsDisplayCollection!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    dataCollection = PastEventsDisplayCollection()
-    dataCollection.delegate = self
+    // FIXME: - Make it back
+//    dataCollection = PastEventsDisplayCollection()
+//    dataCollection.delegate = self
 
     view.backgroundColor = UIColor(.lightGray)
 
@@ -58,16 +66,56 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
     return cell
   }
 
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.deselectRow(at: indexPath, animated: true)
-    dataCollection.didSelect(indexPath: indexPath)
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return section == 0 ? "Ваш стаж" : "Ваши языки"
   }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // FIXME: - Remove option cells
+    // tableView.deselectRow(at: indexPath, animated: true)
+    
+    dataCollection.didSelect(indexPath: indexPath)
+
+    // Early return if selected second section
+    if indexPath.section == 1 {
+      return
+    }
+    // deselect other radio cells
+    for (index, _) in dataCollection.modelCollection.first!.enumerated() {
+      // Do not touch just selected row
+      if index == indexPath.row {
+        continue
+      }
+      tableView.deselectRow(at: IndexPath.init(row: index, section: indexPath.section), animated: true)
+    }
+  }
+
 }
 
 // FIXME: - Remove this
 fileprivate extension PastEventsViewController {
 
   func fetchEvents() {
+
+    // FIXME: - Remove option cells
+    dataCollection.modelCollection =
+    [
+      [
+        OptionTableViewCellModel.init(id: "0", text: "Меньше года", type: .radio, isFirst: true, isLast: false),
+        OptionTableViewCellModel.init(id: "1", text: "1-2 года", type: .radio, isFirst: false, isLast: false),
+        OptionTableViewCellModel.init(id: "2", text: "Больше 3 лет", type: .radio, isFirst: false, isLast: false),
+        OptionTableViewCellModel.init(id: "3", text: "Прогаю лучше Зимина", type: .radio, isFirst: false, isLast: true)
+      ],
+      [
+        OptionTableViewCellModel.init(id: "4", text: "Swift", type: .check, isFirst: true, isLast: false),
+        OptionTableViewCellModel.init(id: "5", text: "Objective-C", type: .check, isFirst: false, isLast: false),
+        OptionTableViewCellModel.init(id: "6", text: "C++", type: .check, isFirst: false, isLast: false),
+        OptionTableViewCellModel.init(id: "7", text: "Java… помогите.", type: .check, isFirst: false, isLast: true)
+      ]
+    ]
+    return;
+
+
     let numberOfDemoEvents = 10
     for eventIndex in 1...numberOfDemoEvents {
       //Create past event

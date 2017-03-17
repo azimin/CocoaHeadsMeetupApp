@@ -22,6 +22,14 @@ final class OptionTableViewCell: PlateTableViewCell {
     }
   }
 
+  @IBOutlet private var radioWidthContraint: NSLayoutConstraint!
+  @IBOutlet private var checkWidthContraint: NSLayoutConstraint!
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    shouldHaveVerticalMargin = false
+  }
+
   override func prepareForReuse() {
     super.prepareForReuse()
     isRadio = false
@@ -34,10 +42,14 @@ final class OptionTableViewCell: PlateTableViewCell {
   }
 
   /// Preferable cell setup method
-  func setup(data: OptionTableViewCellModel) {
-    isRadio = data.type == .radio
-    updateSelection(shouldSelect: data.selected)
+  func setup(data: OptionTableViewCellModel, roundType: RoundType) {
     label.text = data.text
+    self.roundType = roundType
+
+    // Setup mark image
+    isRadio = data.type == .radio
+    radioWidthContraint.priority = isRadio ? UILayoutPriorityDefaultHigh : UILayoutPriorityDefaultLow
+    checkWidthContraint.priority = isRadio ? UILayoutPriorityDefaultLow : UILayoutPriorityDefaultHigh
   }
 
   // MARK: - Private
