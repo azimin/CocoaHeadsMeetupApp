@@ -9,7 +9,11 @@
 import Foundation
 
 class PastEventsTransform {
-  static func plainObject(in pastEvent: EventPlainObject) -> EventEntity {
+  static func transform(from pastEvents: [EventPlainObject]) {
+    _ = pastEvents.map({transform(from: $0)})
+  }
+
+  private static func transform(from pastEvent: EventPlainObject) {
     let event = EventEntity()
     event.id = pastEvent.id
     event.title = pastEvent.title
@@ -26,6 +30,9 @@ class PastEventsTransform {
     place.longitude = pastEvent.place.longitude
 
     event.place = place
-    return event
+    realmWrite {
+      mainRealm.add(event, update: true)
+      mainRealm.add(place, update: true)
+    }
   }
 }

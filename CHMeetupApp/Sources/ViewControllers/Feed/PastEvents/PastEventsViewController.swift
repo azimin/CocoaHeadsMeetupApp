@@ -45,15 +45,7 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
     Server.standard.request(EventPlainObject.Requests.list, completion: { list, error in
       guard let events = list,
         error == nil else { return }
-      for event in events {
-        let entity = PastEventsTransform.plainObject(in: event)
-        realmWrite {
-          mainRealm.add(entity, update: true)
-          if let place = entity.place {
-            mainRealm.add(place, update: true)
-          }
-        }
-      }
+      PastEventsTransform.transform(from: events)
     })
     tableView.reloadData()
   }
