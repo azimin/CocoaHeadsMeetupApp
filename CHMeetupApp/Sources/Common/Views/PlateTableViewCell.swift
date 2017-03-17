@@ -70,7 +70,7 @@ class PlateTableViewCell: UITableViewCell {
 
   override func awakeFromNib() {
     super.awakeFromNib()
-
+    selectionStyle = .none
     layer.insertSublayer(shape, at: 0)
 
     backgroundColor = UIColor.clear
@@ -78,6 +78,7 @@ class PlateTableViewCell: UITableViewCell {
   }
 
   override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
     updateSelection(shouldSelect: selected)
   }
 
