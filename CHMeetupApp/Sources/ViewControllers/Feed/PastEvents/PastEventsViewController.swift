@@ -43,11 +43,19 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
 
   func fetchPastEvents() {
     Server.standard.request(EventPlainObject.Requests.list, completion: { list, error in
-      guard let _ = list,
-      error == nil else { return }
-      // TODO: Create realm objects from plainobjects array
-      // let entities = list.flatMap(EventEntity.init)
+      guard let events = list,
+        error == nil else { return }
+      for event in events {
+        let entity = PastEventsTransform.plainObject(in: event)
+        realmWrite {
+          mainRealm.add(entity, update: true)
+          if let place = entity.place {
+            mainRealm.add(place, update: true)
+          }
+        }
+      }
     })
+    tableView.reloadData()
   }
 }
 
