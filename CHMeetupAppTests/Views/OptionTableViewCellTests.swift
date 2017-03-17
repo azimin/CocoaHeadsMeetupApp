@@ -1,5 +1,5 @@
 //
-//  RadioTableViewCellTests.swift
+//  OptionTableViewCellTests.swift
 //  CHMeetupApp
 //
 //  Created by Andrey Konstantinov on 16/03/2017.
@@ -8,6 +8,6 @@
 
 import XCTest
 
-final class RadioTableViewCellTests: XCTestCase {
+final class OptionTableViewCellTests: XCTestCase {
 
 }

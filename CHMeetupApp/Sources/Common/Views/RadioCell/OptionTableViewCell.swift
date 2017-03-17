@@ -1,5 +1,5 @@
 //
-//  RadioTableViewCell.swift
+//  OptionTableViewCell.swift
 //  CHMeetupApp
 //
 //  Created by Andrey Konstantinov on 16/03/2017.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-final class RadioTableViewCell: PlateTableViewCell {
+final class OptionTableViewCell: PlateTableViewCell {
 
   @IBOutlet private var markImageView: UIImageView! {
     didSet {
-      markImageView.image = RadioTableViewCell.image(selected: false)
+      markImageView.image = OptionTableViewCell.image(selected: false)
     }
   }
 
@@ -36,11 +36,11 @@ final class RadioTableViewCell: PlateTableViewCell {
 
   override func updateSelection(shouldSelect: Bool) {
     label.textColor = shouldSelect ? UIColor.init(.black) : UIColor.init(.gray)
-    markImageView.image = RadioTableViewCell.image(selected: shouldSelect)
+    markImageView.image = OptionTableViewCell.image(selected: shouldSelect)
   }
 
   /// Preferable cell setup method
-  func setup(data: RadioTableViewCellModel) {
+  func setup(data: OptionTableViewCellModel) {
     updateSelection(shouldSelect: data.selected)
     label.text = data.text
   }

@@ -115,11 +115,10 @@
 		A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */; };
-		A18DB1DE1E7A87D6002228BA /* RadioTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18DB1DD1E7A87D6002228BA /* RadioTableViewCellModel.swift */; };
-		A1A072F51E79F01F00FB83F1 /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A072F31E79F01F00FB83F1 /* RadioTableViewCell.swift */; };
-		A1A072F61E79F01F00FB83F1 /* RadioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A072F41E79F01F00FB83F1 /* RadioTableViewCell.xib */; };
-		A1A072F91E79F1E100FB83F1 /* RadioTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A072F81E79F1E100FB83F1 /* RadioTableViewCellTests.swift */; };
-		A1A072FA1E79F1FA00FB83F1 /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A072F31E79F01F00FB83F1 /* RadioTableViewCell.swift */; };
+		A18D1CDB1E7C1D1F0003A591 /* OptionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D1CDA1E7C1D1F0003A591 /* OptionTableViewCellModel.swift */; };
+		A18D1CDE1E7C1E740003A591 /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D1CDC1E7C1E740003A591 /* OptionTableViewCell.swift */; };
+		A18D1CDF1E7C1E740003A591 /* OptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18D1CDD1E7C1E740003A591 /* OptionTableViewCell.xib */; };
+		A18D1CE11E7C1E8C0003A591 /* OptionTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D1CE01E7C1E8C0003A591 /* OptionTableViewCellTests.swift */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 /* End PBXBuildFile section */
@@ -257,10 +256,10 @@
 		9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SocialEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidation.swift; path = Validation/StringValidation.swift; sourceTree = "<group>"; };
 		A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidationTests.swift; path = Validation/StringValidationTests.swift; sourceTree = "<group>"; };
-		A18DB1DD1E7A87D6002228BA /* RadioTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadioTableViewCellModel.swift; path = RadioCell/RadioTableViewCellModel.swift; sourceTree = "<group>"; };
-		A1A072F31E79F01F00FB83F1 /* RadioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadioTableViewCell.swift; path = RadioCell/RadioTableViewCell.swift; sourceTree = "<group>"; };
-		A1A072F41E79F01F00FB83F1 /* RadioTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RadioTableViewCell.xib; path = RadioCell/RadioTableViewCell.xib; sourceTree = "<group>"; };
-		A1A072F81E79F1E100FB83F1 /* RadioTableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadioTableViewCellTests.swift; path = Views/RadioTableViewCellTests.swift; sourceTree = "<group>"; };
+		A18D1CDA1E7C1D1F0003A591 /* OptionTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionTableViewCellModel.swift; path = RadioCell/OptionTableViewCellModel.swift; sourceTree = "<group>"; };
+		A18D1CDC1E7C1E740003A591 /* OptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionTableViewCell.swift; path = RadioCell/OptionTableViewCell.swift; sourceTree = "<group>"; };
+		A18D1CDD1E7C1E740003A591 /* OptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OptionTableViewCell.xib; path = RadioCell/OptionTableViewCell.xib; sourceTree = "<group>"; };
+		A18D1CE01E7C1E8C0003A591 /* OptionTableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionTableViewCellTests.swift; path = Views/OptionTableViewCellTests.swift; sourceTree = "<group>"; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
@@ -1096,9 +1095,9 @@
 		A1A072F21E79EF6800FB83F1 /* RadioCell */ = {
 			isa = PBXGroup;
 			children = (
-				A18DB1DD1E7A87D6002228BA /* RadioTableViewCellModel.swift */,
-				A1A072F31E79F01F00FB83F1 /* RadioTableViewCell.swift */,
-				A1A072F41E79F01F00FB83F1 /* RadioTableViewCell.xib */,
+				A18D1CDA1E7C1D1F0003A591 /* OptionTableViewCellModel.swift */,
+				A18D1CDC1E7C1E740003A591 /* OptionTableViewCell.swift */,
+				A18D1CDD1E7C1E740003A591 /* OptionTableViewCell.xib */,
 			);
 			name = RadioCell;
 			sourceTree = "<group>";
@@ -1106,7 +1105,7 @@
 		A1A072F71E79F1BC00FB83F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A1A072F81E79F1E100FB83F1 /* RadioTableViewCellTests.swift */,
+				A18D1CE01E7C1E8C0003A591 /* OptionTableViewCellTests.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1220,10 +1219,10 @@
 			files = (
 				9FB848931E6F6848002E81ED /* GothamPro-Medium.ttf in Resources */,
 				22323F351E70C0E500522E5C /* TabBarItemView.xib in Resources */,
+				A18D1CDF1E7C1E740003A591 /* OptionTableViewCell.xib in Resources */,
 				22323F9B1E70C2BE00522E5C /* ProfileNameCell.xib in Resources */,
 				9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */,
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
-				A1A072F61E79F01F00FB83F1 /* RadioTableViewCell.xib in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
 				9F487A7B1E740DC00016CE0B /* EventPreviewTableViewCell.xib in Resources */,
@@ -1299,7 +1298,6 @@
 				22323FA01E70C2BE00522E5C /* ProfileHierarhyViewControllerType.swift in Sources */,
 				22323F431E70C14300522E5C /* MapsController.swift in Sources */,
 				9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */,
-				A18DB1DE1E7A87D6002228BA /* RadioTableViewCellModel.swift in Sources */,
 				22323F3F1E70C14300522E5C /* ViewControllersFactory.swift in Sources */,
 				9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */,
 				22323F8F1E70C2BE00522E5C /* SpeechPreviewViewController.swift in Sources */,
@@ -1315,6 +1313,7 @@
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
+				A18D1CDE1E7C1E740003A591 /* OptionTableViewCell.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
@@ -1340,6 +1339,7 @@
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
 				22323F541E70C18700522E5C /* PlacePlainObject.swift in Sources */,
 				22323F2E1E70C0E500522E5C /* Utility.swift in Sources */,
+				A18D1CDB1E7C1D1F0003A591 /* OptionTableViewCellModel.swift in Sources */,
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
@@ -1362,7 +1362,6 @@
 				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
-				A1A072F51E79F01F00FB83F1 /* RadioTableViewCell.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
 				22323F0B1E70C0CE00522E5C /* UIColor+PaletteColors.swift in Sources */,
@@ -1399,8 +1398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
-				A1A072FA1E79F1FA00FB83F1 /* RadioTableViewCell.swift in Sources */,
-				A1A072F91E79F1E100FB83F1 /* RadioTableViewCellTests.swift in Sources */,
+				A18D1CE11E7C1E8C0003A591 /* OptionTableViewCellTests.swift in Sources */,
 				A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

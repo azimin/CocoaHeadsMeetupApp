@@ -1,5 +1,5 @@
 //
-//  RadioTableViewCellModel.swift
+//  OptionTableViewCellModel.swift
 //  CHMeetupApp
 //
 //  Created by Andrey Konstantinov on 16/03/17.
@@ -8,15 +8,23 @@
 
 import UIKit
 
-struct RadioTableViewCellModel {
+struct OptionTableViewCellModel {
+
+  enum `Type` {
+    case check
+    case radio
+  }
+
   let id: String
   let text: String
+  let type: Type
   var selected: Bool
+
 }
 
-extension RadioTableViewCellModel: CellViewModelType {
+extension OptionTableViewCellModel: CellViewModelType {
 
-  func setup(on cell: RadioTableViewCell) {
+  func setup(on cell: OptionTableViewCell) {
     cell.setup(data: self)
   }
 
