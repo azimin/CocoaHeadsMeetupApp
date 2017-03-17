@@ -10,11 +10,9 @@ import UIKit
 
 final class OptionTableViewCell: PlateTableViewCell {
 
-  @IBOutlet private var markImageView: UIImageView! {
-    didSet {
-      markImageView.image = OptionTableViewCell.image(selected: false)
-    }
-  }
+  private var isRadio = false
+
+  @IBOutlet private var markImageView: UIImageView!
 
   @IBOutlet private var label: UILabel! {
     didSet {
@@ -24,25 +22,31 @@ final class OptionTableViewCell: PlateTableViewCell {
     }
   }
 
-  class func image(selected: Bool) -> UIImage {
-    let imageName = selected ? "img_radio_selected" : "img_radio_normal"
-    return UIImage(named: imageName)!
-  }
-
   override func prepareForReuse() {
     super.prepareForReuse()
+    isRadio = false
     updateSelection(shouldSelect: false)
   }
 
   override func updateSelection(shouldSelect: Bool) {
     label.textColor = shouldSelect ? UIColor.init(.black) : UIColor.init(.gray)
-    markImageView.image = OptionTableViewCell.image(selected: shouldSelect)
+    markImageView.image = image(selected: shouldSelect, isRadio: isRadio)
   }
 
   /// Preferable cell setup method
   func setup(data: OptionTableViewCellModel) {
+    isRadio = data.type == .radio
     updateSelection(shouldSelect: data.selected)
     label.text = data.text
+  }
+
+  // MARK: - Private
+
+  private func image(selected: Bool, isRadio: Bool) -> UIImage {
+    let radioImage = selected ? "img_radio_selected" : "img_radio_normal"
+    let checkImage = selected ? "img_check_selected" : "img_check_normal"
+    let imageName = isRadio ? radioImage : checkImage
+    return UIImage(named: imageName)!
   }
 
 }
