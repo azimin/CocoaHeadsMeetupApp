@@ -15,13 +15,18 @@ extension EventPlainObject: PlainObjectType {
     static var list: Request<[EventPlainObject]> {
       return Request(query: "events")
     }
+    
+    // Past events list
+    static var pastList: Request<[EventPlainObject]> {
+      return Request(query: "events/past")
+    }
   }
 
   init?(json: JSONDictionary) {
     guard
       let id = json["id"] as? Int,
       let title = json["title"] as? String,
-      let desc = json["description"] as? String,
+      let description = json["description"] as? String,
       let photoUrl = json["photoUrl"] as? String,
       let startDate = json["startDate"] as? Double,
       let endDate = json["endDate"] as? Double,
@@ -31,7 +36,7 @@ extension EventPlainObject: PlainObjectType {
 
     self.id = id
     self.title = title
-    self.desc = desc
+    self.description = description
     self.place = place
     self.photoUrl = photoUrl
     self.startDate = Date(timeIntervalSince1970: startDate)

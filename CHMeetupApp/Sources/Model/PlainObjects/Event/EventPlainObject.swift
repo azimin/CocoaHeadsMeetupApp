@@ -11,7 +11,7 @@ import CoreLocation
 struct EventPlainObject {
   let id: Int
   let title: String
-  let desc: String
+  let description: String
   let place: PlacePlainObject
   let startDate: Date
   let endDate: Date
