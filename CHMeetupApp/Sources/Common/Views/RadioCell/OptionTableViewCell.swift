@@ -16,9 +16,10 @@ final class OptionTableViewCell: PlateTableViewCell {
 
   @IBOutlet private var label: UILabel! {
     didSet {
+      label.numberOfLines = 0
+      label.font = UIFont.appFont(.systemMediumFont(size: 15))
+      label.textColor = UIColor(.gray)
       label.text = " "
-      label.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
-      label.textColor = UIColor.init(.gray)
     }
   }
 
@@ -37,17 +38,16 @@ final class OptionTableViewCell: PlateTableViewCell {
   }
 
   override func updateSelection(shouldSelect: Bool) {
-    label.textColor = shouldSelect ? UIColor.init(.black) : UIColor.init(.gray)
+    label.textColor = shouldSelect ? UIColor(.black) : UIColor(.gray)
     markImageView.image = image(selected: shouldSelect, isRadio: isRadio)
   }
 
   /// Preferable cell setup method
-  func setup(data: OptionTableViewCellModel, roundType: RoundType) {
-    label.text = data.text
-    self.roundType = roundType
+  func setup(text: String, isRadio: Bool) {
+    label.text = text
 
     // Setup mark image
-    isRadio = data.type == .radio
+    self.isRadio = isRadio
     radioWidthContraint.priority = isRadio ? UILayoutPriorityDefaultHigh : UILayoutPriorityDefaultLow
     checkWidthContraint.priority = isRadio ? UILayoutPriorityDefaultLow : UILayoutPriorityDefaultHigh
   }

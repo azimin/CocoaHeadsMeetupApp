@@ -62,7 +62,8 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let model = dataCollection.model(for: indexPath)
-    let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
+    guard let cell = tableView.dequeueReusableCell(for: indexPath, with: model) as? PlateTableViewCell else { return UITableViewCell() }
+    cell.drawCorner(in: tableView, indexPath: indexPath)
     return cell
   }
 
@@ -86,7 +87,7 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
       if index == indexPath.row {
         continue
       }
-      tableView.deselectRow(at: IndexPath.init(row: index, section: indexPath.section), animated: true)
+      tableView.deselectRow(at: IndexPath(row: index, section: indexPath.section), animated: true)
     }
   }
 
@@ -101,16 +102,16 @@ fileprivate extension PastEventsViewController {
     dataCollection.modelCollection =
     [
       [
-        OptionTableViewCellModel.init(id: "0", text: "Меньше года", type: .radio, isFirst: true, isLast: false),
-        OptionTableViewCellModel.init(id: "1", text: "1-2 года", type: .radio, isFirst: false, isLast: false),
-        OptionTableViewCellModel.init(id: "2", text: "Больше 3 лет", type: .radio, isFirst: false, isLast: false),
-        OptionTableViewCellModel.init(id: "3", text: "Прогаю лучше Зимина", type: .radio, isFirst: false, isLast: true)
+        OptionTableViewCellModel(id: "0", text: "Меньше года", type: .radio),
+        OptionTableViewCellModel(id: "1", text: "1-2 года", type: .radio),
+        OptionTableViewCellModel(id: "2", text: "Больше 3 лет", type: .radio),
+        OptionTableViewCellModel(id: "3", text: "Прогаю лучше Зимина", type: .radio)
       ],
       [
-        OptionTableViewCellModel.init(id: "4", text: "Swift", type: .check, isFirst: true, isLast: false),
-        OptionTableViewCellModel.init(id: "5", text: "Objective-C", type: .check, isFirst: false, isLast: false),
-        OptionTableViewCellModel.init(id: "6", text: "C++", type: .check, isFirst: false, isLast: false),
-        OptionTableViewCellModel.init(id: "7", text: "Java… помогите.", type: .check, isFirst: false, isLast: true)
+        OptionTableViewCellModel(id: "4", text: "Swift", type: .check),
+        OptionTableViewCellModel(id: "5", text: "Objective-C", type: .check),
+        OptionTableViewCellModel(id: "6", text: "C++", type: .check),
+        OptionTableViewCellModel(id: "7", text: "Java… помогите.", type: .check)
       ]
     ]
     return;
