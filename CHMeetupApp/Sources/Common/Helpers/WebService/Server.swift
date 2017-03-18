@@ -28,6 +28,10 @@ enum ServerError: Error {
   }
 }
 
+protocol CustomServer {
+  func customSessionRequest<T>(_ request: Request<T>, with url: URL) -> URLRequest
+}
+
 class Server {
   let apiBase: String
 
@@ -98,6 +102,10 @@ class Server {
 
     sessionRequest.httpMethod = request.method.string
     sessionRequest.httpBody = request.params?.httpQuery
+    if let delegate = self as? CustomServer {
+      sessionRequest = delegate.customSessionRequest(request, with: query)
+    }
+
     let loadSession = URLSession.shared.dataTask(with: sessionRequest) { data, _, error in
       guard error == nil else {
         print("Session request error: \(error) for api resourse: \(request)")

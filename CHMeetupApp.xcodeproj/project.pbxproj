@@ -119,6 +119,9 @@
 		A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */; };
+		AD4B5A6B1E7C33950016187B /* AccessTokenPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A691E7C33950016187B /* AccessTokenPlainObject+Requests.swift */; };
+		AD4B5A6C1E7C33950016187B /* AccessTokenPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A6A1E7C33950016187B /* AccessTokenPlainObject.swift */; };
+		AD4B5A6E1E7D31250016187B /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A6D1E7D31250016187B /* Twitter.swift */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 /* End PBXBuildFile section */
@@ -262,6 +265,9 @@
 		A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidationTests.swift; path = Validation/StringValidationTests.swift; sourceTree = "<group>"; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD4B5A691E7C33950016187B /* AccessTokenPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccessTokenPlainObject+Requests.swift"; sourceTree = "<group>"; };
+		AD4B5A6A1E7C33950016187B /* AccessTokenPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenPlainObject.swift; sourceTree = "<group>"; };
+		AD4B5A6D1E7D31250016187B /* Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -576,6 +582,7 @@
 				22323F1E1E70C0E500522E5C /* Request.swift */,
 				22323F1F1E70C0E500522E5C /* RequestContentParser.swift */,
 				22323F201E70C0E500522E5C /* Server.swift */,
+				AD4B5A6D1E7D31250016187B /* Twitter.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -649,6 +656,7 @@
 			isa = PBXGroup;
 			children = (
 				22323F4C1E70C18700522E5C /* PlainObjectType.swift */,
+				AD4B5A681E7C33950016187B /* AccessToken */,
 				22323F461E70C18700522E5C /* Event */,
 				22323F491E70C18700522E5C /* Place */,
 				22323F4D1E70C18700522E5C /* User */,
@@ -1112,6 +1120,15 @@
 			path = CHMeetupAppTests;
 			sourceTree = "<group>";
 		};
+		AD4B5A681E7C33950016187B /* AccessToken */ = {
+			isa = PBXGroup;
+			children = (
+				AD4B5A691E7C33950016187B /* AccessTokenPlainObject+Requests.swift */,
+				AD4B5A6A1E7C33950016187B /* AccessTokenPlainObject.swift */,
+			);
+			path = AccessToken;
+			sourceTree = "<group>";
+		};
 		C30485AF1E740FC20052D632 /* PermissionsManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1303,6 +1320,7 @@
 				9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */,
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
+				AD4B5A6B1E7C33950016187B /* AccessTokenPlainObject+Requests.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
@@ -1332,6 +1350,7 @@
 				22323F541E70C18700522E5C /* PlacePlainObject.swift in Sources */,
 				22323F2E1E70C0E500522E5C /* Utility.swift in Sources */,
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
+				AD4B5A6E1E7D31250016187B /* Twitter.swift in Sources */,
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				22323F8A1E70C2BE00522E5C /* NavigationViewController.swift in Sources */,
@@ -1373,6 +1392,7 @@
 				22323F951E70C2BE00522E5C /* AuthViewController.swift in Sources */,
 				22323F8E1E70C2BE00522E5C /* RegistrationPreviewViewController.swift in Sources */,
 				9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */,
+				AD4B5A6C1E7C33950016187B /* AccessTokenPlainObject.swift in Sources */,
 				22323F0A1E70C0CE00522E5C /* UIColor+Hex.swift in Sources */,
 				22323F361E70C0E500522E5C /* TextViewWithPlaceholder.swift in Sources */,
 				9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */,
