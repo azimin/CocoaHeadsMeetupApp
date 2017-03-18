@@ -10,8 +10,6 @@ import UIKit
 
 final class OptionTableViewCell: PlateTableViewCell {
 
-  private var isRadio = false
-
   @IBOutlet private var markImageView: UIImageView!
 
   @IBOutlet private var label: UILabel! {
@@ -23,9 +21,6 @@ final class OptionTableViewCell: PlateTableViewCell {
     }
   }
 
-  @IBOutlet private var radioWidthContraint: NSLayoutConstraint!
-  @IBOutlet private var checkWidthContraint: NSLayoutConstraint!
-
   override func awakeFromNib() {
     super.awakeFromNib()
     shouldHaveVerticalMargin = false
@@ -33,23 +28,19 @@ final class OptionTableViewCell: PlateTableViewCell {
 
   override func prepareForReuse() {
     super.prepareForReuse()
-    isRadio = false
     updateSelection(shouldSelect: false)
   }
 
   override func updateSelection(shouldSelect: Bool) {
     label.textColor = shouldSelect ? UIColor(.black) : UIColor(.gray)
-    markImageView.image = image(selected: shouldSelect, isRadio: isRadio)
+    markImageView.isHighlighted = shouldSelect
   }
 
   /// Preferable cell setup method
   func setup(text: String, isRadio: Bool) {
     label.text = text
-
-    // Setup mark image
-    self.isRadio = isRadio
-    radioWidthContraint.priority = isRadio ? UILayoutPriorityDefaultHigh : UILayoutPriorityDefaultLow
-    checkWidthContraint.priority = isRadio ? UILayoutPriorityDefaultLow : UILayoutPriorityDefaultHigh
+    markImageView.image = image(selected: false, isRadio: isRadio)
+    markImageView.highlightedImage = image(selected: true, isRadio: isRadio)
   }
 
   // MARK: - Private

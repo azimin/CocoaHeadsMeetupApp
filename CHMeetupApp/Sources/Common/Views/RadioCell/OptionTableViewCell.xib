@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,15 +17,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AAo-hg-wg8">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_radio_normal" highlightedImage="img_radio_selected" translatesAutoresizingMaskIntoConstraints="NO" id="AAo-hg-wg8">
                         <rect key="frame" x="18" y="18" width="24" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="width" priority="750" constant="24" id="5er-d0-by8"/>
                             <constraint firstAttribute="width" secondItem="AAo-hg-wg8" secondAttribute="height" multiplier="1:1" id="89U-oJ-0IW"/>
-                            <constraint firstAttribute="width" priority="250" constant="22" id="LNa-H6-Y3u"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsX-KR-jMa">
@@ -45,12 +43,14 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="checkWidthContraint" destination="LNa-H6-Y3u" id="SRc-KS-4oc"/>
                 <outlet property="label" destination="bsX-KR-jMa" id="90d-MH-Z77"/>
                 <outlet property="markImageView" destination="AAo-hg-wg8" id="cmG-Mk-0pS"/>
-                <outlet property="radioWidthContraint" destination="5er-d0-by8" id="qfG-KH-zXy"/>
             </connections>
             <point key="canvasLocation" x="117" y="62"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="img_radio_normal" width="24" height="24"/>
+        <image name="img_radio_selected" width="24" height="24"/>
+    </resources>
 </document>
