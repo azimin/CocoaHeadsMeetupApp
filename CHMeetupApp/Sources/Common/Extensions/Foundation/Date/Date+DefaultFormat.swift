@@ -18,8 +18,8 @@ extension Date {
                                                     locale: .current)
 
     let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale.bundle
     dateFormatter.dateFormat = dateFormatString
-
     return dateFormatter.string(from: self)
   }
 }
