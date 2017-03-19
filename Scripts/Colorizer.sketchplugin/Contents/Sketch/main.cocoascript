@@ -1,0 +1,104 @@
+function onRun(context) {
+  //Get selected layers
+  var selection = context.selection
+
+  var colors = []
+  var fonts = []
+
+  for(var i=0; i<selection.count(); i++) {
+    var selectedLayer = selection[i]
+    var layers = layersFromLayer(selectedLayer)
+
+    for (var j=0; j<layers.length; j++) {
+      layer = layers[j]
+      // selected layer is Shape group
+      if (layer.class() == MSShapeGroup) {
+        var colorInfo = colorFromShape(context, layer)
+        colors.push(colorInfo);
+      }
+
+      if (layer.class() == MSTextLayer) {
+        var fontInfo = fontFromText(context, layer)
+        fonts.push(fontInfo)
+      }
+    }
+  }
+  showSavePanelWithColorList(colors, fonts);
+}
+
+function layersFromLayer(layer) {
+  // selected layer is artboard
+  if (layer.class() == MSArtboardGroup) {
+    return layer.layers()
+  } else {
+    return [layer]
+  }
+}
+
+function fontFromText(context, layer) {
+  var name
+
+  // Taking style id
+  var styleId = layer.styleGeneric().sharedObjectID()
+  // Finding style with this id and using it's name
+  if (styleId != null) {
+    name = context.document.documentData().layerTextStylesGeneric().sharedStyleWithID(styleId).name()
+  } else {
+    name = String(layer.parentGroup().name())
+  }
+
+  const fontName = layer.font().displayName()
+  const fontSize = layer.fontSize()
+
+  return {
+    name: name,
+    fontName: fontName,
+    fontSize: fontSize
+  }
+}
+
+function colorFromShape(context, layer) {
+  var name
+
+  // Taking style id
+  var styleId = layer.styleGeneric().sharedObjectID()
+  // Finding style with this id and using it's name
+  if (styleId != null) {
+    name = context.document.documentData().layerStyles().sharedStyleWithID(styleId).name()
+  } else {
+    name = String(layer.parentGroup().name())
+  }
+
+  const color = layer.style().fill().color()
+  const hexColor = colorToHex(color)
+
+  return {
+    name: name,
+    color: hexColor
+  }
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+}
+
+function colorToHex(color) {
+  var r = parseInt(color.red()*255)
+  var g = parseInt(color.green()*255)
+  var b = parseInt(color.blue()*255)
+  return rgbToHex(r,g,b)
+}
+
+function showSavePanelWithColorList(colors, fonts) {
+  var savePanel = NSSavePanel.savePanel()
+  savePanel.setNameFieldStringValue("design.json")
+  if (savePanel.runModal() == NSFileHandlingPanelOKButton) {
+   var path = savePanel.URL().path()
+   var fileDic = { "colors" : colors, "fonts": fonts }
+   var jsonData = [NSJSONSerialization dataWithJSONObject:fileDic options:0 error:nil]
+   var file = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]
+   [file writeToFile:path atomically:true encoding:NSUTF8StringEncoding error:null]
+ } else { 
+    NSApp.displayDialog("There are no layers to export.");
+  }
+}

@@ -14,7 +14,7 @@ class TabBarViewController: CustomTabBarController {
     super.viewDidLoad()
 
     // Query example
-    Server.request(UserPlainObject.Requests.list) { (users, error) in
+    Server.standard.request(UserPlainObject.Requests.list) { (users, error) in
       if let error = error {
         print(error)
       }
@@ -24,7 +24,7 @@ class TabBarViewController: CustomTabBarController {
       }
     }
 
-    Server.request(UserPlainObject.Requests.listOfIds) { (users, error) in
+    Server.standard.request(UserPlainObject.Requests.listOfIds) { (users, error) in
       if let error = error {
         print(error)
       }

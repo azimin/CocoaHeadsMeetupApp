@@ -44,7 +44,7 @@ class PlateTableViewCell: UITableViewCell {
     }
   }
 
-  var roundType: RoundType = .none {
+  var roundType: RoundType = .all {
     didSet {
       if oldValue != roundType {
         updateAppearance()

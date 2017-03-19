@@ -29,8 +29,17 @@ enum ServerError: Error {
 }
 
 class Server {
-  static func request<T: PlainObjectType>(_ request: Request<[T]>,
-                                          completion: @escaping (([T]?, ServerError?) -> Void)) {
+  let apiBase: String
+
+  static var standard: Server {
+    return Server(apiBase: Constants.apiBase)
+  }
+
+  init(apiBase: String) {
+    self.apiBase = apiBase
+  }
+
+  func request<T: PlainObjectType>(_ request: Request<[T]>, completion: @escaping (([T]?, ServerError?) -> Void)) {
     loadRequest(request) { (jsonObject, error) in
       guard let jsonObject = jsonObject else {
         completion(nil, error)
@@ -52,8 +61,7 @@ class Server {
     }
   }
 
-  static func request<T: PlainObjectType>(_ request: Request<T>,
-                                          completion: @escaping ((T?, ServerError?) -> Void)) {
+  func request<T: PlainObjectType>(_ request: Request<T>, completion: @escaping ((T?, ServerError?) -> Void)) {
     loadRequest(request) { (jsonObject, error) in
       guard let jsonObject = jsonObject else {
         completion(nil, error)
@@ -75,14 +83,14 @@ class Server {
     }
   }
 
-  private static func loadRequest<T>(_ request: Request<T>, completion: @escaping ((Any?, ServerError?) -> Void)) {
+  private func loadRequest<T>(_ request: Request<T>, completion: @escaping ((Any?, ServerError?) -> Void)) {
     guard Reachability.isInternetAvailable else {
       completion(nil, .noConnection)
       return
     }
 
-    guard let query = URL(string: Constants.apiBase + request.query) else {
-      print("Session query url faild: base \(Constants.apiBase) and query \(request.query)")
+    guard let query = URL(string: apiBase + request.query) else {
+      print("Session query url faild: base \(apiBase) and query \(request.query)")
       completion(nil, .requestFailed)
       return
     }

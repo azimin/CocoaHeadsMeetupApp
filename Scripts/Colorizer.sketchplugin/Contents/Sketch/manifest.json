@@ -1,0 +1,19 @@
+
+{
+    "name" : "Colorizer",
+    "identifier" : "com.ch.colorizer",
+    "version" : "1.0",
+    "description" : "Color json generator",
+    "authorEmail" : "cocoaheadsmsk@gmail.com",
+    "author" : "CocoaHeads App Developers",
+
+    "commands" : [
+    {
+      "script" : "main.cocoascript",
+      "handler" : "onRun",
+      "shortcut" : "command shift w",
+      "name" : "Get JSON of colors",
+      "identifier" : "com.ch.colorizer.colorsjson"
+    }
+  ],
+}
