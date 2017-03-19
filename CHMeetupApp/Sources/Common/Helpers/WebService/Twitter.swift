@@ -30,9 +30,8 @@ class Twitter: Server, CustomServer {
       sessionRequest.httpBody = nonOAuthParameters.httpQuery
     }
 
-    sessionRequest.setValue(self.authorizationHeader(for: method, url: url,
-                                                     params: request.params, isMediaUpload: false),
-                            forHTTPHeaderField: "Authorization")
+    let header = self.authorizationHeader(for: method, url: url, params: request.params, isMediaUpload: false)
+    sessionRequest.setValue(header, forHTTPHeaderField: "Authorization")
 
     return sessionRequest
   }
