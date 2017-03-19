@@ -28,26 +28,3 @@ extension OptionTableViewCellModel: CellViewModelType {
   }
 
 }
-
-// FIXME: - Delete
-
-struct OptionsDisplayCollection: DisplayCollection, DisplayCollectionAction {
-
-  var modelCollection = [[OptionTableViewCellModel]]()
-
-  var numberOfSections: Int {
-    return modelCollection.count
-  }
-
-  func numberOfRows(in section: Int) -> Int {
-    return modelCollection[section].count
-  }
-
-  func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    return modelCollection[indexPath.section][indexPath.row]
-  }
-
-  func didSelect(indexPath: IndexPath) {
-    print("tap")
-  }
-}
