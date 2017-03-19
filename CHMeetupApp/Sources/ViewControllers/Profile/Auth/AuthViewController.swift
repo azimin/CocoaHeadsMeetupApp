@@ -48,22 +48,34 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
     loginApp(at: .fb)
   }
 
+  @IBAction func twitterLoginButtonAction(_ sender: UIButton) {
+    loginApp(at: .twitter)
+  }
+
 }
 
 // MARK: - Login actions
 extension AuthViewController {
 
   func loginApp(at type: LoginType) {
+    // FIXME: - Make it more universal
     loggingApp = type
-    if !type.isAppExists {
-      let url = type.urlAuth
-      showSafariViewController(url: url)
+    if type == .twitter {
+      let request = AccessTokenPlainObject.Requests.requestToken(callback: Constants.Twitter.redirect)
+      Twitter.oauth.request(request, completion: { (token, error) in
+        print("\(token), \(error)")
+      })
     } else {
-      let url = type.schemeAuth
-      if let url = url {
-        UIApplication.shared.open(url, options: [:])
+      if type.isAppExists {
+        let url = type.schemeAuth
+        if let url = url {
+          UIApplication.shared.open(url, options: [:])
+        } else {
+          assertionFailure("Error: you didn't recieve url from notification")
+        }
       } else {
-        assertionFailure("Error: you didn't recieve url from notification")
+        let url = type.urlAuth
+        showSafariViewController(url: url)
       }
     }
   }

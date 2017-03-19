@@ -140,11 +140,17 @@
 		A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */; };
+		AD4B5A6B1E7C33950016187B /* AccessTokenPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A691E7C33950016187B /* AccessTokenPlainObject+Requests.swift */; };
+		AD4B5A6C1E7C33950016187B /* AccessTokenPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A6A1E7C33950016187B /* AccessTokenPlainObject.swift */; };
+		AD4B5A6E1E7D31250016187B /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A6D1E7D31250016187B /* Twitter.swift */; };
 		AD4B5A781E7E6CAD0016187B /* Data+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A771E7E6CAD0016187B /* Data+Encryption.swift */; };
 		AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */; };
 		AD4B5A801E7E6F230016187B /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7D1E7E6F230016187B /* HMAC.swift */; };
 		AD4B5A811E7E6F230016187B /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7E1E7E6F230016187B /* SHA1.swift */; };
 		AD4B5A821E7E6F230016187B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7F1E7E6F230016187B /* Utils.swift */; };
+		AD4B5A841E7E9DD70016187B /* Dictionary+Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A831E7E9DD70016187B /* Dictionary+Twitter.swift */; };
+		AD4B5A861E7E9E320016187B /* String+Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A851E7E9E320016187B /* String+Twitter.swift */; };
+		AD4B5A891E7EA52A0016187B /* Operator+Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A881E7EA52A0016187B /* Operator+Twitter.swift */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 /* End PBXBuildFile section */
@@ -309,11 +315,17 @@
 		A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidationTests.swift; path = Validation/StringValidationTests.swift; sourceTree = "<group>"; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD4B5A691E7C33950016187B /* AccessTokenPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccessTokenPlainObject+Requests.swift"; sourceTree = "<group>"; };
+		AD4B5A6A1E7C33950016187B /* AccessTokenPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenPlainObject.swift; sourceTree = "<group>"; };
+		AD4B5A6D1E7D31250016187B /* Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
 		AD4B5A771E7E6CAD0016187B /* Data+Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Encryption.swift"; sourceTree = "<group>"; };
 		AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Encryption.swift"; sourceTree = "<group>"; };
 		AD4B5A7D1E7E6F230016187B /* HMAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
 		AD4B5A7E1E7E6F230016187B /* SHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
 		AD4B5A7F1E7E6F230016187B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		AD4B5A831E7E9DD70016187B /* Dictionary+Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Twitter.swift"; sourceTree = "<group>"; };
+		AD4B5A851E7E9E320016187B /* String+Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Twitter.swift"; sourceTree = "<group>"; };
+		AD4B5A881E7EA52A0016187B /* Operator+Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Operator+Twitter.swift"; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -342,6 +354,7 @@
 			children = (
 				221A8B881E685EBF004E320D /* String+Localized.swift */,
 				9FB8488B1E6F63EB002E81ED /* String+Range.swift */,
+				AD4B5A851E7E9E320016187B /* String+Twitter.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -488,6 +501,7 @@
 		2231A5381E60E5030069A179 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				AD4B5A871E7EA52A0016187B /* Operator */,
 				AD4B5A791E7E6CCE0016187B /* Int */,
 				AD4B5A761E7E6CAD0016187B /* Data */,
 				7DDDB7671E7D15AD002C5ECE /* Bundle */,
@@ -502,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */,
+				AD4B5A831E7E9DD70016187B /* Dictionary+Twitter.swift */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -637,6 +652,7 @@
 				22323F1E1E70C0E500522E5C /* Request.swift */,
 				22323F1F1E70C0E500522E5C /* RequestContentParser.swift */,
 				22323F201E70C0E500522E5C /* Server.swift */,
+				AD4B5A6D1E7D31250016187B /* Twitter.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -712,6 +728,7 @@
 			isa = PBXGroup;
 			children = (
 				22323F4C1E70C18700522E5C /* PlainObjectType.swift */,
+				AD4B5A681E7C33950016187B /* AccessToken */,
 				22323F461E70C18700522E5C /* Event */,
 				22323F491E70C18700522E5C /* Place */,
 				22323F4D1E70C18700522E5C /* User */,
@@ -1292,6 +1309,15 @@
 			path = CHMeetupAppTests;
 			sourceTree = "<group>";
 		};
+		AD4B5A681E7C33950016187B /* AccessToken */ = {
+			isa = PBXGroup;
+			children = (
+				AD4B5A691E7C33950016187B /* AccessTokenPlainObject+Requests.swift */,
+				AD4B5A6A1E7C33950016187B /* AccessTokenPlainObject.swift */,
+			);
+			path = AccessToken;
+			sourceTree = "<group>";
+		};
 		AD4B5A761E7E6CAD0016187B /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -1316,6 +1342,14 @@
 				AD4B5A7F1E7E6F230016187B /* Utils.swift */,
 			);
 			path = Encryption;
+			sourceTree = "<group>";
+		};
+		AD4B5A871E7EA52A0016187B /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				AD4B5A881E7EA52A0016187B /* Operator+Twitter.swift */,
+			);
+			path = Operator;
 			sourceTree = "<group>";
 		};
 		C30485AF1E740FC20052D632 /* PermissionsManager */ = {
@@ -1515,6 +1549,7 @@
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
 				328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */,
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
+				AD4B5A6B1E7C33950016187B /* AccessTokenPlainObject+Requests.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				9F3767051E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift in Sources */,
@@ -1531,6 +1566,7 @@
 				784EFF931E637EA500F2E31A /* RealmController.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FB84AF01E7B6B5E00FEEC8E /* Date+Compare.swift in Sources */,
+				AD4B5A861E7E9E320016187B /* String+Twitter.swift in Sources */,
 				9F30FFD81E71FEDB00EF85F5 /* DisplayCollection.swift in Sources */,
 				22323F421E70C14300522E5C /* MapAppType.swift in Sources */,
 				22323F2C1E70C0E500522E5C /* KeyboardHandler.swift in Sources */,
@@ -1549,10 +1585,12 @@
 				4D9D24241E7B2FE300FA5E93 /* ActionTableViewCellModel.swift in Sources */,
 				22323F2E1E70C0E500522E5C /* Utility.swift in Sources */,
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
+				AD4B5A6E1E7D31250016187B /* Twitter.swift in Sources */,
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				22323F8A1E70C2BE00522E5C /* NavigationViewController.swift in Sources */,
 				9F30FFCA1E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift in Sources */,
+				AD4B5A891E7EA52A0016187B /* Operator+Twitter.swift in Sources */,
 				9F3767081E7D53E300CC565B /* GiveSpeechDisplayCollection.swift in Sources */,
 				9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */,
 				4D9F0D701E79CD2E006443ED /* ActionTableViewCell.swift in Sources */,
@@ -1580,6 +1618,7 @@
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
 				9F3767021E7D527000CC565B /* TextFieldPlateTableViewCell.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
+				AD4B5A841E7E9DD70016187B /* Dictionary+Twitter.swift in Sources */,
 				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
 				9FB84AF11E7B6D2F00FEEC8E /* Date+ComponentsHelper.swift in Sources */,
@@ -1605,6 +1644,7 @@
 				22323F951E70C2BE00522E5C /* AuthViewController.swift in Sources */,
 				22323F8E1E70C2BE00522E5C /* RegistrationPreviewViewController.swift in Sources */,
 				9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */,
+				AD4B5A6C1E7C33950016187B /* AccessTokenPlainObject.swift in Sources */,
 				22323F0A1E70C0CE00522E5C /* UIColor+Hex.swift in Sources */,
 				22323F361E70C0E500522E5C /* TextViewWithPlaceholder.swift in Sources */,
 				9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */,

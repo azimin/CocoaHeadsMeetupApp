@@ -25,7 +25,13 @@ final class Constants {
   }
 
   struct Twitter {
-
+    static let apiBaseOAuth = "https://api.twitter.com/"
+    static let clientId = "319871078148574"
+    static let redirect = "tw\(Constants.Twitter.clientId)://success"
+    static let key = "8tH84hNpnfVUi1GH5zQYMA"
+    static let secret = "Y641ZyNF3A9rNXfTEV4Uy4QxI8cSBsbkwghVl2FcqA"
+    static let versionOAuth = "1.0"
+    static let signatureMethod = "HMAC-SHA1"
   }
 
   struct SystemSizes {

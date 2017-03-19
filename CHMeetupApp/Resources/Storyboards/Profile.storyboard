@@ -39,6 +39,9 @@
                                         <state key="normal" title="Войти через Twitter" image="img_auth_twitter">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="twitterLoginButtonAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="spm-Qv-LVn"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
                                         <rect key="frame" x="20" y="276.5" width="287" height="40"/>
@@ -49,7 +52,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Войти через Вконтакте" image="img_auth_vk">
+                                        <state key="normal" title="Войти через ВКонтакте" image="img_auth_vk">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
