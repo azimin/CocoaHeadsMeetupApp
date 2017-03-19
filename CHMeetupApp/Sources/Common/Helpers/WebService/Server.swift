@@ -117,6 +117,9 @@ class Server {
         return
       }
 
+      let responseString = String(data: data, encoding: .utf8)!
+      print("responseString \(responseString)")
+      
       let jsonObject = try? JSONSerialization.jsonObject(with: data, options: [])
 
       completion(jsonObject, nil)
