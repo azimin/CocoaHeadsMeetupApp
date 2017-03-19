@@ -40,7 +40,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="twLoginButtonAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="nTT-c6-9CW"/>
+                                            <action selector="twitterLoginButtonAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="spm-Qv-LVn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">

@@ -48,7 +48,7 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
     loginApp(at: .fb)
   }
 
-  @IBAction func twLoginButtonAction(_ sender: UIButton) {
+  @IBAction func twitterLoginButtonAction(_ sender: UIButton) {
     loginApp(at: .twitter)
   }
 
