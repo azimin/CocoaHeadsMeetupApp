@@ -58,6 +58,7 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 extension AuthViewController {
 
   func loginApp(at type: LoginType) {
+    // FIXME: - Make it more universal
     loggingApp = type
     if type == .twitter {
       let request = AccessTokenPlainObject.Requests.requestToken(callback: Constants.Twitter.redirect)
