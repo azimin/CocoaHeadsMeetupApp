@@ -66,16 +66,16 @@ extension AuthViewController {
         print("\(token), \(error)")
       })
     } else {
-      if !type.isAppExists {
-        let url = type.urlAuth
-        showSafariViewController(url: url)
-      } else {
+      if type.isAppExists {
         let url = type.schemeAuth
         if let url = url {
           UIApplication.shared.open(url, options: [:])
         } else {
           assertionFailure("Error: you didn't recieve url from notification")
         }
+      } else {
+        let url = type.urlAuth
+        showSafariViewController(url: url)
       }
     }
   }

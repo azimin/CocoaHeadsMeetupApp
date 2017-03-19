@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Twitter: Server, CustomServer {
+class Twitter: Server, CustomizableRequest {
 
   static var oauth: Twitter {
     return Twitter(apiBase: Constants.Twitter.apiBaseOAuth)
@@ -22,10 +22,11 @@ class Twitter: Server, CustomServer {
     sessionRequest.httpMethod = method
     if let params = request.params {
       var nonOAuthParameters = RequestParams()
-      for (key, value) in params {
+      _ = params.filter { (key, value) -> Bool in
         if !key.hasPrefix("oauth_") {
           nonOAuthParameters[key] = value
         }
+        return true
       }
       sessionRequest.httpBody = nonOAuthParameters.httpQuery
     }

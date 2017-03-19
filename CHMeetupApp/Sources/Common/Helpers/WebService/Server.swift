@@ -28,7 +28,7 @@ enum ServerError: Error {
   }
 }
 
-protocol CustomServer {
+protocol CustomizableRequest {
   func customSessionRequest<T>(_ request: Request<T>, with url: URL) -> URLRequest
 }
 
@@ -102,7 +102,7 @@ class Server {
 
     sessionRequest.httpMethod = request.method.string
     sessionRequest.httpBody = request.params?.httpQuery
-    if let delegate = self as? CustomServer {
+    if let delegate = self as? CustomizableRequest {
       sessionRequest = delegate.customSessionRequest(request, with: query)
     }
 
