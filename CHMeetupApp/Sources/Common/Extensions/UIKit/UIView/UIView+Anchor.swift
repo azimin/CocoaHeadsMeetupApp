@@ -14,13 +14,13 @@ extension UIView {
 
   /// By sides with constants
   func anchor(
-      left: NSLayoutXAxisAnchor? = nil,
+      leading: NSLayoutXAxisAnchor? = nil,
       top: NSLayoutYAxisAnchor? = nil,
-      right: NSLayoutXAxisAnchor? = nil,
+      trailing: NSLayoutXAxisAnchor? = nil,
       bottom: NSLayoutYAxisAnchor? = nil,
-      leftConstant: CGFloat = 0,
+      leadingConstant: CGFloat = 0,
       topConstant: CGFloat = 0,
-      rightConstant: CGFloat = 0,
+      trailingConstant: CGFloat = 0,
       bottomConstant: CGFloat = 0,
       heightConstant: CGFloat = 0,
       widthConstant: CGFloat = 0
@@ -28,14 +28,14 @@ extension UIView {
 
     translatesAutoresizingMaskIntoConstraints = false
 
-    if let left = left {
-      leftAnchor.constraint(equalTo: left, constant: leftConstant).isActive = true
+    if let leading = leading {
+      leadingAnchor.constraint(equalTo: leading, constant: leadingConstant).isActive = true
     }
     if let top = top {
       topAnchor.constraint(equalTo: top, constant: topConstant).isActive = true
     }
-    if let right = right {
-      rightAnchor.constraint(equalTo: right, constant: rightConstant).isActive = true
+    if let trailing = trailing {
+      trailingAnchor.constraint(equalTo: trailing, constant: trailingConstant).isActive = true
     }
     if let bottom = bottom {
       bottomAnchor.constraint(equalTo: bottom, constant: bottomConstant).isActive = true
@@ -81,9 +81,9 @@ extension UIView {
   /// Pin to all 4 sides
   func anchorToAllSides(of view: UIView) {
     self.anchor(
-      left: view.leftAnchor,
+      leading: view.leftAnchor,
       top: view.topAnchor,
-      right: view.rightAnchor,
+      trailing: view.rightAnchor,
       bottom: view.bottomAnchor
     )
   }

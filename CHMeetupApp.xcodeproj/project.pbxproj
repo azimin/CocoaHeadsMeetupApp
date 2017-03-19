@@ -73,6 +73,10 @@
 		22323FA51E70C51A00522E5C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22323FA41E70C51A00522E5C /* Localizable.strings */; };
 		328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FF7551E7C05B300D9D43F /* CGFloat+Rounding.swift */; };
 		32AA9BBE1E7A91C000140413 /* ParticipantsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA9BBD1E7A91C000140413 /* ParticipantsCollectionView.swift */; };
+		4D6615981E7BE7A600EE77C4 /* ActionPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6615971E7BE7A600EE77C4 /* ActionPlainObject.swift */; };
+		4D9D24241E7B2FE300FA5E93 /* ActionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */; };
+		4D9F0D701E79CD2E006443ED /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F0D6E1E79CD2E006443ED /* ActionTableViewCell.swift */; };
+		4D9F0D711E79CD2E006443ED /* ActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9F0D6F1E79CD2E006443ED /* ActionTableViewCell.xib */; };
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -116,6 +120,7 @@
 		9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D62F1E749FB9006323FA /* PlateTableViewCellAppearance.swift */; };
 		9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D6311E74A7EA006323FA /* ShadowViewAppearance.swift */; };
 		9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D6341E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift */; };
+		9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8881791E7E9EE300CEFEA4 /* BottomButton.swift */; };
 		9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */; };
 		9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */; };
 		9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */; };
@@ -239,6 +244,10 @@
 		22323FA41E70C51A00522E5C /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		328FF7551E7C05B300D9D43F /* CGFloat+Rounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Rounding.swift"; sourceTree = "<group>"; };
 		32AA9BBD1E7A91C000140413 /* ParticipantsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsCollectionView.swift; sourceTree = "<group>"; };
+		4D6615971E7BE7A600EE77C4 /* ActionPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionPlainObject.swift; path = Action/ActionPlainObject.swift; sourceTree = "<group>"; };
+		4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTableViewCellModel.swift; path = ActionCell/ActionTableViewCellModel.swift; sourceTree = "<group>"; };
+		4D9F0D6E1E79CD2E006443ED /* ActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTableViewCell.swift; path = ActionCell/ActionTableViewCell.swift; sourceTree = "<group>"; };
+		4D9F0D6F1E79CD2E006443ED /* ActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActionTableViewCell.xib; path = ActionCell/ActionTableViewCell.xib; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
 		7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Locale.swift"; sourceTree = "<group>"; };
@@ -282,6 +291,7 @@
 		9F57D6311E74A7EA006323FA /* ShadowViewAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowViewAppearance.swift; sourceTree = "<group>"; };
 		9F57D6341E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlateTableViewCell+AutomaticDetection.swift"; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F8881791E7E9EE300CEFEA4 /* BottomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Object+Singletone.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Realm+WriteFunctions.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Realm+Notifications.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -641,13 +651,13 @@
 			isa = PBXGroup;
 			children = (
 				A1A072F21E79EF6800FB83F1 /* OptionCell */,
+				9F88817B1E7EA1A700CEFEA4 /* Buttons */,
 				9F3767091E7D81F700CC565B /* DefaultHeader */,
+				4D9F0D6D1E79CCF6006443ED /* ActionCell */,
 				32AA9BBC1E7A919600140413 /* ParticipantCollectionView */,
-				9F487A801E7417E50016CE0B /* LightButton */,
 				9F487A731E740D940016CE0B /* EventCell */,
 				9F487A661E73E94B0016CE0B /* Shadow */,
 				9F57D62C1E749B85006323FA /* PlateCell */,
-				22323F231E70C0E500522E5C /* ActionButton */,
 				22323F251E70C0E500522E5C /* TabBarItemView */,
 				22323F281E70C0E500522E5C /* TextViewWithPlaceholder */,
 			);
@@ -712,6 +722,7 @@
 				22323F461E70C18700522E5C /* Event */,
 				22323F491E70C18700522E5C /* Place */,
 				22323F4D1E70C18700522E5C /* User */,
+				4D6615991E7BE7AB00EE77C4 /* Action */,
 			);
 			path = PlainObjects;
 			sourceTree = "<group>";
@@ -984,6 +995,24 @@
 			name = ParticipantCollectionView;
 			sourceTree = "<group>";
 		};
+		4D6615991E7BE7AB00EE77C4 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				4D6615971E7BE7A600EE77C4 /* ActionPlainObject.swift */,
+			);
+			name = Action;
+			sourceTree = "<group>";
+		};
+		4D9F0D6D1E79CCF6006443ED /* ActionCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */,
+				4D9F0D6E1E79CD2E006443ED /* ActionTableViewCell.swift */,
+				4D9F0D6F1E79CD2E006443ED /* ActionTableViewCell.xib */,
+			);
+			name = ActionCell;
+			sourceTree = "<group>";
+		};
 		7DDDB7671E7D15AD002C5ECE /* Bundle */ = {
 			isa = PBXGroup;
 			children = (
@@ -1219,6 +1248,24 @@
 			path = CHMeetupApp;
 			sourceTree = "<group>";
 		};
+		9F8881781E7E9ECF00CEFEA4 /* BottomButton */ = {
+			isa = PBXGroup;
+			children = (
+				9F8881791E7E9EE300CEFEA4 /* BottomButton.swift */,
+			);
+			name = BottomButton;
+			sourceTree = "<group>";
+		};
+		9F88817B1E7EA1A700CEFEA4 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				9F8881781E7E9ECF00CEFEA4 /* BottomButton */,
+				22323F231E70C0E500522E5C /* ActionButton */,
+				9F487A801E7417E50016CE0B /* LightButton */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
 		9FD58FBA1E5E307800207199 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -1391,6 +1438,7 @@
 				9F3767031E7D527000CC565B /* TextFieldPlateTableViewCell.xib in Resources */,
 				9F37670D1E7DD8EB00CC565B /* DefaultTableHeaderView.xib in Resources */,
 				22323F9B1E70C2BE00522E5C /* ProfileNameCell.xib in Resources */,
+				4D9F0D711E79CD2E006443ED /* ActionTableViewCell.xib in Resources */,
 				9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */,
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
@@ -1516,6 +1564,7 @@
 				9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
 				22323F541E70C18700522E5C /* PlacePlainObject.swift in Sources */,
+				4D9D24241E7B2FE300FA5E93 /* ActionTableViewCellModel.swift in Sources */,
 				22323F2E1E70C0E500522E5C /* Utility.swift in Sources */,
 				A168379C1E7E979800A12B3B /* OptionTableViewCellModel.swift in Sources */,
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
@@ -1525,6 +1574,7 @@
 				9F30FFCA1E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift in Sources */,
 				9F3767081E7D53E300CC565B /* GiveSpeechDisplayCollection.swift in Sources */,
 				9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */,
+				4D9F0D701E79CD2E006443ED /* ActionTableViewCell.swift in Sources */,
 				22323F411E70C14300522E5C /* LoginType.swift in Sources */,
 				22323F9A1E70C2BE00522E5C /* ProfileNameCell.swift in Sources */,
 				22323F341E70C0E500522E5C /* TabBarItemView.swift in Sources */,
@@ -1540,6 +1590,7 @@
 				9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */,
 				32AA9BBE1E7A91C000140413 /* ParticipantsCollectionView.swift in Sources */,
 				22323F301E70C0E500522E5C /* RequestContentParser.swift in Sources */,
+				4D6615981E7BE7A600EE77C4 /* ActionPlainObject.swift in Sources */,
 				22323F941E70C2BE00522E5C /* PastEventsViewController.swift in Sources */,
 				22323F561E70C18700522E5C /* UserPlainObject+Requests.swift in Sources */,
 				AD4B5A781E7E6CAD0016187B /* Data+Encryption.swift in Sources */,
@@ -1569,6 +1620,7 @@
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,
 				22323F0D1E70C0CE00522E5C /* UIImage+RenderMode.swift in Sources */,
+				9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */,
 				9F37671A1E7DDE2700CC565B /* TextViewPlateTableViewCellModel.swift in Sources */,
 				22323F951E70C2BE00522E5C /* AuthViewController.swift in Sources */,
 				22323F8E1E70C2BE00522E5C /* RegistrationPreviewViewController.swift in Sources */,
@@ -1720,7 +1772,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5MGEMLZRS4;
+				DEVELOPMENT_TEAM = KH2KDZEEE3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

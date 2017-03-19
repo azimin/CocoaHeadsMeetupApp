@@ -32,7 +32,33 @@ extension KeyboardHandlerDelegate {
 enum KeyboardState: String { // String for rawValue while testing
   case opened, hidden, frameChanged
 }
-typealias KeyboardInfo = (beginFrame: CGRect, endFrame: CGRect, duration: TimeInterval, curve: UIViewAnimationCurve)
+
+struct KeyboardInfo {
+  let beginFrame: CGRect
+  let endFrame: CGRect
+  let duration: TimeInterval
+  let curve: UIViewAnimationCurve
+
+  func animate(_ animations: @escaping () -> Void, completion: ((Bool) -> Void)? = nil) {
+    let curveOption: UIViewAnimationOptions
+    switch curve {
+    case .linear:
+      curveOption = .curveLinear
+    case .easeIn:
+      curveOption = .curveEaseIn
+    case .easeOut:
+      curveOption = .curveEaseOut
+    case .easeInOut:
+      curveOption = .curveEaseInOut
+    }
+
+    UIView.animate(withDuration: duration,
+                   delay: 0,
+                   options: [curveOption],
+                   animations: animations,
+                   completion: completion)
+  }
+}
 
 /// Receives system notifications about keyboard appearance
 ///
@@ -133,7 +159,7 @@ class KeyboardHandler {
        let duration = from?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval,
        let curveRaw = from?[UIKeyboardAnimationCurveUserInfoKey] as? Int,
        let curve = UIViewAnimationCurve(rawValue: curveRaw) {
-      return (beginFrame: beginFrame, endFrame: endFrame, duration: duration, curve: curve)
+      return KeyboardInfo(beginFrame: beginFrame, endFrame: endFrame, duration: duration, curve: curve)
     }
     return nil
   }

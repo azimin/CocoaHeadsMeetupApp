@@ -16,6 +16,7 @@ extension UIColor {
     case white
     case black
     case lightGray
+    case pink
   }
 
   convenience init(_ colorType: ColorType) {
@@ -32,6 +33,8 @@ extension UIColor {
       self.init(hexString: "000000")
     case .lightGray:
       self.init(hexString: "E3E5E5")
+    case .pink:
+      self.init(hexString: "C550DC")
     }
   }
 }
