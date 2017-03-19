@@ -68,19 +68,11 @@
                             <constraint firstAttribute="height" constant="1" id="TST-80-ZqF"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STc-dX-eKl">
-                        <rect key="frame" x="16" y="142.5" width="288" height="60"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_speakers_template" translatesAutoresizingMaskIntoConstraints="NO" id="3Ak-2f-ARR">
-                                <rect key="frame" x="0.0" y="0.0" width="218" height="60"/>
-                            </imageView>
-                        </subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STc-dX-eKl" customClass="ParticipantsCollectionView" customModule="CHMeetupApp" customModuleProvider="target">
+                        <rect key="frame" x="16" y="154.5" width="288" height="36"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="JII-H7-bWj"/>
-                            <constraint firstItem="3Ak-2f-ARR" firstAttribute="top" secondItem="STc-dX-eKl" secondAttribute="top" id="ZBk-lM-0OY"/>
-                            <constraint firstAttribute="bottom" secondItem="3Ak-2f-ARR" secondAttribute="bottom" id="tW5-HT-0iy"/>
-                            <constraint firstItem="3Ak-2f-ARR" firstAttribute="leading" secondItem="STc-dX-eKl" secondAttribute="leading" id="y1M-Zr-W7c"/>
+                            <constraint firstAttribute="height" constant="36" id="JII-H7-bWj"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pO-3W-VoY" customClass="LightButton" customModule="CHMeetupApp" customModuleProvider="target">
@@ -100,8 +92,8 @@
                     <constraint firstItem="1ug-Ek-gDp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="JFA-YI-VID"/>
                     <constraint firstItem="hfj-Pb-Uaf" firstAttribute="centerY" secondItem="1ug-Ek-gDp" secondAttribute="centerY" id="PEG-bC-gMh"/>
                     <constraint firstAttribute="trailingMargin" secondItem="1ug-Ek-gDp" secondAttribute="trailing" id="U0g-9u-myL"/>
-                    <constraint firstItem="STc-dX-eKl" firstAttribute="top" secondItem="yLl-lp-2fc" secondAttribute="bottom" id="a9N-bo-A2a"/>
-                    <constraint firstItem="9pO-3W-VoY" firstAttribute="top" secondItem="STc-dX-eKl" secondAttribute="bottom" id="gsE-dD-BzG"/>
+                    <constraint firstItem="STc-dX-eKl" firstAttribute="top" secondItem="yLl-lp-2fc" secondAttribute="bottom" constant="12" id="a9N-bo-A2a"/>
+                    <constraint firstItem="9pO-3W-VoY" firstAttribute="top" secondItem="STc-dX-eKl" secondAttribute="bottom" constant="12" id="gsE-dD-BzG"/>
                     <constraint firstItem="S5q-5C-38R" firstAttribute="centerY" secondItem="p0Z-gF-poq" secondAttribute="centerY" id="h8U-pm-byw"/>
                     <constraint firstItem="STc-dX-eKl" firstAttribute="trailing" secondItem="yLl-lp-2fc" secondAttribute="trailing" id="nAz-ve-94V"/>
                     <constraint firstItem="9pO-3W-VoY" firstAttribute="leading" secondItem="STc-dX-eKl" secondAttribute="leading" id="nLr-EK-LH4"/>
@@ -118,6 +110,7 @@
                 <outlet property="eventImageView" destination="1ug-Ek-gDp" id="O1y-Zi-Bbf"/>
                 <outlet property="goingButton" destination="9pO-3W-VoY" id="e8I-IJ-Kxi"/>
                 <outlet property="nameLabel" destination="jhq-qS-4iF" id="3xG-EL-SxK"/>
+                <outlet property="participantsCollectionView" destination="STc-dX-eKl" id="fPA-jy-BWH"/>
                 <outlet property="placeLabel" destination="p0Z-gF-poq" id="5ku-q3-8yP"/>
                 <outlet property="separationView" destination="yLl-lp-2fc" id="yxg-PO-1Ox"/>
             </connections>
@@ -126,6 +119,5 @@
     </objects>
     <resources>
         <image name="img_icon_pin" width="10" height="13"/>
-        <image name="img_speakers_template" width="218" height="60"/>
     </resources>
 </document>

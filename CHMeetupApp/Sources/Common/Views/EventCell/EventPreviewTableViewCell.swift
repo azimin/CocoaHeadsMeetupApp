@@ -42,6 +42,8 @@ class EventPreviewTableViewCell: PlateTableViewCell {
     }
   }
 
+  @IBOutlet var participantsCollectionView: ParticipantsCollectionView!
+
   @IBOutlet var goingButton: UIButton!
 
   override func awakeFromNib() {
