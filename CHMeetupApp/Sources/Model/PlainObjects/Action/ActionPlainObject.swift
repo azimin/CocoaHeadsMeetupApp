@@ -11,10 +11,13 @@ import Foundation
 struct ActionPlainObject {
   var handler: String
   var imageName: String
-  var isEnable = true
+  var isEnable: Bool
+  var `isHidden`: Bool
 
-  init(handler: String, imageName: String) {
+  init(handler: String, imageName: String, isEnable: Bool, isHidden: Bool) {
     self.handler = handler
     self.imageName = imageName
+    self.isEnable = isEnable
+    self.isHidden = isHidden
   }
 }

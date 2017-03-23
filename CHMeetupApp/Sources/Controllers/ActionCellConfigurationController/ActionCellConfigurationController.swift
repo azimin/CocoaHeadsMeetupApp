@@ -10,21 +10,22 @@ import UIKit
 
 class ActionCellConfigurationController {
   func configureCellWithPermisson() -> ActionTableViewCellModel {
-    var model: ActionTableViewCellModel!
-
-    if !PermissionsManager.isAllowed(type: .reminders) {
-      let actionPlainObject = ActionPlainObject(handler: "Включите уведомления, чтобы не пропустить мероприятие",
-                                                imageName: "img_icon_notification")
-      model =  ActionTableViewCellModel(action: actionPlainObject)
-    } else {
-      let actionPlainObject = ActionPlainObject(handler: "Уведомления включены",
-                                                imageName: "img_icon_notification")
-      model =  ActionTableViewCellModel(action: actionPlainObject)
-    }
+    let `isHidden` = PermissionsManager.isAllowed(type: .reminders)
+    let actionPlainObject = ActionPlainObject(handler: "Включите уведомления, чтобы не пропустить событие".localized,
+                                              imageName: "img_icon_notification",
+                                              isEnable: true, isHidden: isHidden)
+    let model = ActionTableViewCellModel(action: actionPlainObject)
     return model
   }
 
-  func action(on view: UIViewController) {
-    PermissionsManager.requireAccess(from: view, to: .reminders, completion: { _ in })
+  func action(on view: UIViewController, with tableView: UITableView, cellAt indexPath: IndexPath) {
+    PermissionsManager.requireAccess(from: view, to: .reminders, completion: { success in
+      if success {
+        DispatchQueue.main.async {
+          let cell = tableView.cellForRow(at: indexPath)
+          cell?.isHidden = success
+        }
+      }
+    })
   }
 }

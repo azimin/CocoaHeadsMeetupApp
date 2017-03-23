@@ -60,7 +60,7 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    dataCollection.action(on: self)
+    dataCollection.action(on: self, with: tableView, cellAt: indexPath)
   }
 }
 
