@@ -18,6 +18,8 @@ extension ActionTableViewCellModel: CellViewModelType {
 
     cell.isEnableForAction = action.isEnable
 
+    cell.isHidden = action.isHidden
+
     if action.imageName != "" {
       cell.actionImageView.isHidden = false
       cell.actionImageView.image = UIImage(named: action.imageName)
