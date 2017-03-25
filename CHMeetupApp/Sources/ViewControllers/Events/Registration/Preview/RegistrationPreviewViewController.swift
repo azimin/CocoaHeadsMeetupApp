@@ -13,7 +13,7 @@ class RegistrationPreviewViewController: UIViewController {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.dataSource = self
-      tableView.defaultBottomInset = 8
+      tableView.setupDefaultBottomInset()
     }
   }
 

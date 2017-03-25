@@ -12,7 +12,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      tableView.defaultBottomInset = 8
+      tableView.setupDefaultBottomInset()
     }
   }
 

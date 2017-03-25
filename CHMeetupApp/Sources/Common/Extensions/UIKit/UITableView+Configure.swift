@@ -25,6 +25,11 @@ extension UITableView {
     }
   }
 
+  /// Which is 8
+  func setupDefaultBottomInset() {
+    defaultBottomInset = defaultBottomInsetValue
+  }
+
   func configure(
     estimatedRowHeight: CGFloat? = nil,
     rowHeight: CGFloat? = nil,
