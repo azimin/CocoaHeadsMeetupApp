@@ -10,7 +10,11 @@ import UIKit
 
 class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-  @IBOutlet var tableView: UITableView!
+  @IBOutlet var tableView: UITableView! {
+    didSet {
+      tableView.defaultBottomInset = 8
+    }
+  }
 
   var displayCollection: GiveSpeechDisplayCollection!
   var bottomButton: BottomButton!
@@ -24,6 +28,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
     setupGestureRecognizer()
 
     displayCollection = GiveSpeechDisplayCollection()
+    tableView.registerNibs(from: displayCollection)
 
     view.backgroundColor = UIColor(.lightGray)
     title = "Geve a speech".localized

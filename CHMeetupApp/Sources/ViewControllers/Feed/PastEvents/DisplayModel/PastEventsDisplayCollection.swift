@@ -13,6 +13,9 @@ protocol PastEventsDisplayCollectionDelegate: class {
 }
 
 struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
+  static var modelsForRegistration: [CellViewAnyModelType.Type] {
+    return [EventPreviewTableViewCellModel.self]
+  }
 
   let modelCollection: DataModelCollection<EventEntity> = {
     let predicate = NSPredicate(format: "endDate < %@", NSDate())

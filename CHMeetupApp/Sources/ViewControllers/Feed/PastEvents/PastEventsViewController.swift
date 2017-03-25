@@ -14,13 +14,16 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
       tableView.configure()
     }
   }
-  fileprivate var dataCollection: PastEventsDisplayCollection!
+
+  fileprivate var displayCollection: PastEventsDisplayCollection!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    dataCollection = PastEventsDisplayCollection()
-    dataCollection.delegate = self
+    displayCollection = PastEventsDisplayCollection()
+    displayCollection.delegate = self
+
+    tableView.registerNibs(from: displayCollection)
 
     view.backgroundColor = UIColor(.lightGray)
 
@@ -41,22 +44,22 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
 extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    return dataCollection.numberOfSections
+    return displayCollection.numberOfSections
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return dataCollection.numberOfRows(in: section)
+    return displayCollection.numberOfRows(in: section)
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let model = dataCollection.model(for: indexPath)
+    let model = displayCollection.model(for: indexPath)
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
     return cell
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    dataCollection.didSelect(indexPath: indexPath)
+    displayCollection.didSelect(indexPath: indexPath)
   }
 }
 

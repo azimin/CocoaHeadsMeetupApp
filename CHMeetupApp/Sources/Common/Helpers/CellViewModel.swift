@@ -10,7 +10,7 @@ import UIKit
 
 // Use this type in non-generic cases
 protocol CellViewAnyModelType {
-  func cellClass() -> UIView.Type
+  static func cellClass() -> UIView.Type
   func setup(on cell: UIView)
 }
 
@@ -22,7 +22,7 @@ protocol CellViewModelType: CellViewAnyModelType {
 
 // From generic to runtime
 extension CellViewModelType {
-  func cellClass() -> UIView.Type {
+  static func cellClass() -> UIView.Type {
     return Self.CellClass.self
   }
 

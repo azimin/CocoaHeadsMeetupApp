@@ -9,6 +9,9 @@
 import UIKit
 
 class FormDisplayCollection: NSObject, DisplayCollection {
+  static var modelsForRegistration: [CellViewAnyModelType.Type] {
+    return [FormPlateTableViewCellModel.self]
+  }
 
   init(formData: FormData) {
     self.formData = formData

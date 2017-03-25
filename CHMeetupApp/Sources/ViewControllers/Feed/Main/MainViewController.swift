@@ -16,12 +16,13 @@ class MainViewController: UIViewController {
     }
   }
 
-  fileprivate var dataCollection: MainViewDisplayCollection!
+  fileprivate var displayCollection: MainViewDisplayCollection!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    dataCollection = MainViewDisplayCollection()
+    displayCollection = MainViewDisplayCollection()
+    tableView.registerNibs(from: displayCollection)
 
     title = "Main".localized
 
@@ -40,15 +41,15 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
-    return dataCollection.numberOfSections
+    return displayCollection.numberOfSections
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return dataCollection.numberOfRows(in: section)
+    return displayCollection.numberOfRows(in: section)
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let model = dataCollection.model(for: indexPath)
+    let model = displayCollection.model(for: indexPath)
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
     return cell
   }

@@ -9,6 +9,9 @@
 import Foundation
 
 struct MainViewDisplayCollection: DisplayCollection {
+  static var modelsForRegistration: [CellViewAnyModelType.Type] {
+    return [EventPreviewTableViewCellModel.self, ActionTableViewCellModel.self]
+  }
 
   enum `Type` {
     case events

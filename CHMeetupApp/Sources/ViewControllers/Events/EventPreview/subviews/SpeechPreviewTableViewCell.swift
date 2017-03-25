@@ -1,5 +1,5 @@
 //
-//  SpeachPreviewTableViewCell.swift
+//  SpeechPreviewTableViewCell.swift
 //  CHMeetupApp
 //
 //  Created by Maxim Globak on 17.03.17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SpeachPreviewTableViewCell: PlateTableViewCell {
+class SpeechPreviewTableViewCell: PlateTableViewCell {
 
   @IBOutlet var avatarImageView: UIImageView! {
     didSet {

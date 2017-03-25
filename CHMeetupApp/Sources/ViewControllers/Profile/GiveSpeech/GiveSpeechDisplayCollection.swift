@@ -9,6 +9,10 @@
 import UIKit
 
 class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
+  static var modelsForRegistration: [CellViewAnyModelType.Type] {
+    return [TextFieldPlateTableViewCellModel.self, TextViewPlateTableViewCellModel.self]
+  }
+
   enum `Type` {
     case name
     case description

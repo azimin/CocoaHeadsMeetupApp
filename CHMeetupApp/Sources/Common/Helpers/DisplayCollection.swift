@@ -10,6 +10,8 @@ import Foundation
 
 protocol DisplayCollection {
   var numberOfSections: Int { get }
+  static var modelsForRegistration: [CellViewAnyModelType.Type] { get }
+
   func numberOfRows(in section: Int) -> Int
   func model(for indexPath: IndexPath) -> CellViewAnyModelType
 }
