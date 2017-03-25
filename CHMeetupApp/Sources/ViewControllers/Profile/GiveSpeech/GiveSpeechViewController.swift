@@ -10,14 +10,7 @@ import UIKit
 
 class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-  @IBOutlet var tableView: UITableView! {
-    didSet {
-      tableView.defaultBottomInset = 8
-      tableView.registerNib(for: TextFieldPlateTableViewCell.self)
-      tableView.registerNib(for: TextViewPlateTableViewCell.self)
-      tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
-    }
-  }
+  @IBOutlet var tableView: UITableView!
 
   var displayCollection: GiveSpeechDisplayCollection!
   var bottomButton: BottomButton!

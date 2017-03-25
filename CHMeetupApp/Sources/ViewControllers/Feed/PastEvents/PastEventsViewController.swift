@@ -11,7 +11,6 @@ import UIKit
 class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDelegate {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      tableView.registerNib(for: EventPreviewTableViewCell.self)
       tableView.configure()
     }
   }

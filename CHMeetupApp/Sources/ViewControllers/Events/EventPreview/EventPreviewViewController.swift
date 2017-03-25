@@ -14,8 +14,6 @@ class EventPreviewViewController: UIViewController {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.configure(topInset: margin, bottomInset: margin + BottomButton.constantHeight)
-      tableView.registerNib(for: SpeachPreviewTableViewCell.self)
-      tableView.registerNib(for: ActionTableViewCell.self)
     }
   }
   var bottomButton: BottomButton!

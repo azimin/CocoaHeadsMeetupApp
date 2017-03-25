@@ -10,13 +10,14 @@ import UIKit.UITableView
 import ObjectiveC
 
 private var associationKey = "tableView_bottom_inset"
+private var defaultBottomInsetValue: CGFloat = 8
 
 extension UITableView {
 
   /// Set once and use to calculate inset when keyboard appears
   var defaultBottomInset: CGFloat {
     get {
-      return (objc_getAssociatedObject(self, &associationKey) as? CGFloat) ?? 0
+      return (objc_getAssociatedObject(self, &associationKey) as? CGFloat) ?? defaultBottomInsetValue
     }
     set {
       contentInset.bottom = newValue
@@ -40,7 +41,7 @@ extension UITableView {
     let contentInset = UIEdgeInsets(
       top: topInset ?? 8,
       left: leftInset ?? 0,
-      bottom: bottomInset ?? 8,
+      bottom: bottomInset ?? defaultBottomInsetValue,
       right: rightInset ?? 0
     )
 
@@ -48,6 +49,8 @@ extension UITableView {
     self.rowHeight = rowHeight ?? defaultRowHeight
     self.backgroundColor = backgroundColor ?? defaultBackgroundColor
     self.contentInset = contentInset
+
+    self.defaultBottomInset = bottomInset ?? defaultBottomInsetValue
   }
 
 }
