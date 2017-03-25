@@ -16,10 +16,6 @@ extension ActionTableViewCellModel: CellViewModelType {
   func setup(on cell: ActionTableViewCell) {
     cell.descriptionActionLabel.text = action.handler
 
-    cell.isEnableForAction = action.isEnable
-
-    cell.isHidden = action.isHidden
-
     if action.imageName != "" {
       cell.actionImageView.isHidden = false
       cell.actionImageView.image = UIImage(named: action.imageName)
