@@ -1,0 +1,78 @@
+{
+  "colors": [{
+             "name": "lightWhite",
+             "color": "F5F5F5"
+             }, {
+             "name": "lightGrey",
+             "color": "F0F0F0"
+             }, {
+             "name": "grayYellow",
+             "color": "D7BE7D"
+             }, {
+             "name": "grayBlue",
+             "color": "C8CDDC"
+             }, {
+             "name": "grayPurple",
+             "color": "AFA5AA"
+             }, {
+             "name": "grayBlack",
+             "color": "373C3C"
+             }, {
+             "name": "darkBlue",
+             "color": "4B5F7D"
+             }, {
+             "name": "green",
+             "color": "7D9682"
+             }, {
+             "name": "yellow",
+             "color": "EBBE14"
+             }, {
+             "name": "pink",
+             "color": "CDA5B4"
+             }],
+  "fonts": [{
+            "fontName": "SFUIText-Regular"
+            }, {
+            "name": "light",
+            "fontName": "SFUIText-Light"
+            }, {
+            "fontName": "SFUIDisplay-Thin"
+            }, {
+            "name": "bold",
+            "fontName": "ProximaNova-Extrabld"
+            }],
+
+  "styles": [{
+    "text.default": {
+      "fontName": "light",
+      "textColor": "darkBlue",
+      "uppercased": 0
+             }}, {
+    "text.title": {
+      "parents": ["text.default"],
+      "fontName": "bold",
+      "uppercased": 1
+             }}, {
+    "label.title": {
+      "text": "text.default",
+      "parents": ["text.title"],
+      "fontName": "regular",
+      "fontSize": 20,
+      "uppercased": 1
+             }}, {
+    "button.default": {
+      "label": "text.default",
+      "cornerRadius": 10,
+      "borderColor": "red"
+             }}, {
+    "button.accessory": {
+      "label": "label.title",
+      "fontSize": 20,
+      "fontName": "light",
+      "textColor": "$titleColor.red"
+             }}, {
+    "button.action": {
+      "parents": ["button.default", "text.default"],
+      "textColor": "$actionColor.green"
+    }}]
+}

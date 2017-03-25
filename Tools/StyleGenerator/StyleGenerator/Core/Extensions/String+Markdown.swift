@@ -41,14 +41,17 @@ extension String {
       case `extension`
       case `protocol`
       case `class`
+      case `enum`
     }
   }
+
+  // MARK: - Public
 
   static func += (lhs: inout String, rhs: CodeSymbols) {
     lhs += rhs.value
   }
 
-  static let space = " "
+  // MARK: - Private
 
   fileprivate func addIndentation(_ count: Int = defaultIndentation) -> String {
 
@@ -66,11 +69,27 @@ extension String {
   fileprivate func makeIndent(count: Int) -> String {
     var result = ""
     for _ in 0 ..< count {
-      result += String.space
+      result += String.InputSymbols.space
     }
     return result
   }
 }
+
+// MARK: - Utilities
+
+extension String {
+
+  var capitalFirst: String {
+    guard characters.count > 0 else { return self }
+
+    let firstChar = String(characters.prefix(1)).uppercased()
+    let remainChars = String(characters.dropFirst())
+
+    return firstChar + remainChars
+  }
+}
+
+// MARK: - CodeSymbols
 
 extension String.CodeSymbols {
 
@@ -117,6 +136,11 @@ extension String.CodeSymbols {
 
       // Enum symbol
     case let .enum(name, cases):
+
+      guard cases.count > 0 else {
+        return "enum \(name) {}"
+      }
+
       var result = "enum \(name) {\n"
 
       var casesString = ""
@@ -168,7 +192,7 @@ extension String.CodeSymbols {
     }
   }
 
-  func addIndentation(_: Int = defaultIndentation) -> String {
-    return value.addIndentation()
+  func addIndentation(_ count: Int = defaultIndentation) -> String {
+    return value.addIndentation(count)
   }
 }

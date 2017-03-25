@@ -20,7 +20,7 @@ struct ColorsCollection: TemplateModel {
 
   init?(_ parameters: TemplateInputParameters) {
     guard let colorsParameters = parameters["colors"] as? [TemplateInputParameters] else {
-      exit(with: "you don't have parameteter 'colors'")
+      exit(with: "you don't have parameter 'colors'")
       return nil
     }
     colors = TemplateModelsFactory.makeModels(from: colorsParameters)

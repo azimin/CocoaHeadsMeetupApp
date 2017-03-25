@@ -20,7 +20,7 @@ struct FontsCollection: TemplateModel {
 
   init?(_ parameters: TemplateInputParameters) {
     guard let fontsParameters = parameters["fonts"] as? [TemplateInputParameters] else {
-      exit(with: "you don't have parameteter 'fonts'")
+      exit(with: "you don't have parameter 'fonts'")
       return nil
     }
     fonts = TemplateModelsFactory.makeModels(from: fontsParameters)

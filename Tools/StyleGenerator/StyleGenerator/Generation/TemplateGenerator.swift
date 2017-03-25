@@ -41,11 +41,10 @@ class TemplateGenerator {
   func generateFiles(for parameters: ConsoleInputParameters) {
     do {
       let templateParameters = try FileController.readTemplateParameters(from: parameters.inputPath)
-      let styleAttributes = StyleAttributes(templateParameters)
-      let template = makeTemplate(for: parameters.option, with: styleAttributes)
+      let template = makeTemplate(for: parameters.option, with: templateParameters)
       let code = try template?.generate()
       if let code = code {
-        try FileController.write(code: code, in: parameters.outputPath)
+        try FileController.write(code: code, in:  parameters.outputPath)
       } else {
         exit(with: "Something went wrong")
       }
@@ -56,18 +55,27 @@ class TemplateGenerator {
 
   // MARK: - Private
 
-  private func makeTemplate(for option: TemplateOption, with attributes: StyleAttributes?) -> GeneratedTemplate? {
-    guard let attributes = attributes else { return nil }
+  // swiftlint:disable:next line_length
+  private func makeTemplate(for option: TemplateOption, with parameters: TemplateInputParameters?) -> GeneratedTemplate? {
+    guard let parameters = parameters else { return nil }
     var result: GeneratedTemplate?
 
+    // FIXME: Need to add check for parameters
     switch option {
     case .unknown: break
     case .colors:
-      result = ColorsTemplate(attributes.colors)
+      if let colors = ColorsCollection(parameters) {
+        result = ColorsTemplate(colors)
+      }
     case .fonts:
-      result = FontsTemplate(attributes.fonts)
+      if let fonts = FontsCollection(parameters) {
+        result = FontsTemplate(fonts)
+      }
     case .styles:
-      result = StylesTemplate()
+      if let styles = StylesCollection(parameters) {
+        print("\(styles)")
+        result = StylesTemplate(styles)
+      }
     }
 
     return result
