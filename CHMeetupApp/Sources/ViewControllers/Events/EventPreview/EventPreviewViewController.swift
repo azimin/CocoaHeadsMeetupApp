@@ -16,14 +16,9 @@ class EventPreviewViewController: UIViewController {
 
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      tableView.estimatedRowHeight = 100
-      tableView.rowHeight = UITableViewAutomaticDimension
-      tableView.backgroundColor = UIColor.clear
-      tableView.contentInset = UIEdgeInsets(top: margin, left: 0,
-                                            bottom: margin + BottomButton.constantHeight, right: 0)
+      tableView.configure(topInset: margin, bottomInset: margin + BottomButton.constantHeight)
     }
   }
-
   var bottomButton: BottomButton!
   var displayCollection: EventPreviewDisplayCollection!
 
@@ -46,6 +41,7 @@ class EventPreviewViewController: UIViewController {
     let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
     navigationController?.pushViewController(viewController, animated: true)
   }
+
 }
 
 extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource {

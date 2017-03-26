@@ -8,14 +8,12 @@
 
 import UIKit
 
-private let bottomMargin: CGFloat = 8
-
 class RegistrationPreviewViewController: UIViewController {
 
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.dataSource = self
-      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomMargin, right: 0)
+      tableView.setupDefaultBottomInset()
     }
   }
 
@@ -95,7 +93,7 @@ extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
 
     switch state {
     case .frameChanged, .opened:
-      let tableViewBottomContentInsets = info.endFrame.height + bottomMargin + bottomButton.frame.height
+      let tableViewBottomContentInsets = info.endFrame.height + tableView.defaultBottomInset + bottomButton.frame.height
       tableView.contentInset.bottom = tableViewBottomContentInsets
       tableView.scrollIndicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
       buttonInsets = info.endFrame.height

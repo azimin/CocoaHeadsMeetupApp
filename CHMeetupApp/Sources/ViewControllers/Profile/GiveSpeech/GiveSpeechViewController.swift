@@ -8,14 +8,11 @@
 
 import UIKit
 
-private let bottomMargin: CGFloat = 8
-
 class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomMargin, right: 0)
-      tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
+      tableView.setupDefaultBottomInset()
     }
   }
 
@@ -99,7 +96,7 @@ extension GiveSpeechViewController: KeyboardHandlerDelegate {
 
     switch state {
     case .frameChanged, .opened:
-      let scrollViewContentInsets = info.endFrame.height + bottomMargin + bottomButton.frame.height
+      let scrollViewContentInsets = info.endFrame.height + tableView.defaultBottomInset + bottomButton.frame.height
       scrollViewContnetInsets.bottom = scrollViewContentInsets
       indicatorContentInsets.bottom = info.endFrame.height + bottomButton.frame.height
       buttonInsets = info.endFrame.height
