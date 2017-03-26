@@ -25,6 +25,9 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.tableFooterView = UIView()
+      tableView.registerNib(for: ProfilePictureCell.self)
+      tableView.registerNib(for: ProfileNameCell.self)
+      tableView.registerNib(for: ProfileSpeachCell.self)
     }
   }
 
