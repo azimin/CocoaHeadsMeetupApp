@@ -46,7 +46,7 @@ class FontsTemplate: GeneratedModelTemplate {
       .newLine,
       initFunc
     ]
-    let fontExtension = String.CodeSymbols.snippet(type: .extension, for: "UIFont", nestedTypes: nestedTypes)
+    let fontExtension = String.CodeSymbols.snippet(type: .extension, for: "UIFont", nestedSymbols: nestedTypes)
     output += fontExtension
 
     return output

@@ -41,38 +41,41 @@
             "name": "bold",
             "fontName": "ProximaNova-Extrabld"
             }],
-
-  "styles": [{
+  "styles": {
     "text.default": {
-      "fontName": "light",
-      "textColor": "darkBlue",
-      "uppercased": 0
-             }}, {
+      "font.size": 20,
+      "font.name": "SFUIText-Light",
+      "textColor": "red"
+    },
     "text.title": {
       "parents": ["text.default"],
-      "fontName": "bold",
-      "uppercased": 1
-             }}, {
-    "label.title": {
-      "text": "text.default",
-      "parents": ["text.title"],
-      "fontName": "regular",
-      "fontSize": 20,
-      "uppercased": 1
-             }}, {
+      "font.name": "bold",
+      "textColor": "green"
+    },
     "button.default": {
       "label": "text.default",
       "cornerRadius": 10,
-      "borderColor": "red"
-             }}, {
-    "button.accessory": {
-      "label": "label.title",
-      "fontSize": 20,
-      "fontName": "light",
-      "textColor": "$titleColor.red"
-             }}, {
+      "borderColor": "$boarderColor"
+    },
     "button.action": {
-      "parents": ["button.default", "text.default"],
-      "textColor": "$actionColor.green"
-    }}]
+      "parents": ["button.default", "text.title"],
+      "textColor": "$actionColor"
+    },
+    "button.action.accept": {
+      "parents": ["button.default", "text.title"],
+      "textColor": "$actionColor"
+    },
+    "button.action.cancel": {
+      "parents": ["button.default", "text.title"],
+      "textColor": "$actionColor"
+    },
+    "textField": {
+      "backgroundColor": "yellow"
+    }
+  },
+  "code_templates": {
+    "font": "UIFont(.$name, size: $size)",
+    "textColor": "UIColor(.$)",
+    "backgroundColor": "UIColor(.$)"
+  }
 }

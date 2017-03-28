@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92549FE41E8AAD2400FB1C08 /* CodeTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92549FE31E8AAD2400FB1C08 /* CodeTemplate.swift */; };
+		92549FE61E8AAF2400FB1C08 /* StyleAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92549FE51E8AAF2400FB1C08 /* StyleAttribute.swift */; };
+		92549FE81E8B021500FB1C08 /* StyleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92549FE71E8B021500FB1C08 /* StyleGroup.swift */; };
 		927134B61E7DF51F00F16322 /* ConsoleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134AC1E7DF51F00F16322 /* ConsoleController.swift */; };
 		927134B71E7DF51F00F16322 /* FileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134AD1E7DF51F00F16322 /* FileController.swift */; };
 		927134B81E7DF51F00F16322 /* String+Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134AF1E7DF51F00F16322 /* String+Markdown.swift */; };
@@ -43,6 +46,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		92549FE31E8AAD2400FB1C08 /* CodeTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTemplate.swift; sourceTree = "<group>"; };
+		92549FE51E8AAF2400FB1C08 /* StyleAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleAttribute.swift; sourceTree = "<group>"; };
+		92549FE71E8B021500FB1C08 /* StyleGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGroup.swift; sourceTree = "<group>"; };
 		927134AC1E7DF51F00F16322 /* ConsoleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleController.swift; sourceTree = "<group>"; };
 		927134AD1E7DF51F00F16322 /* FileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileController.swift; sourceTree = "<group>"; };
 		927134AF1E7DF51F00F16322 /* String+Markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Markdown.swift"; sourceTree = "<group>"; };
@@ -127,9 +133,12 @@
 		927134B21E7DF51F00F16322 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				92549FE71E8B021500FB1C08 /* StyleGroup.swift */,
 				927134B41E7DF51F00F16322 /* Color.swift */,
 				927134BC1E7DF69000F16322 /* Font.swift */,
 				928A266F1E86814C001E6E88 /* Style.swift */,
+				92549FE51E8AAF2400FB1C08 /* StyleAttribute.swift */,
+				92549FE31E8AAD2400FB1C08 /* CodeTemplate.swift */,
 				928A26771E869097001E6E88 /* TemplateStyles.swift */,
 				928A26711E86814C001E6E88 /* StylesInputParameters.json */,
 				928A26721E86814C001E6E88 /* TemplateParameters.json */,
@@ -305,7 +314,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "STYLE_GEN_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/StyleGenerator\"\nSTYLES_JSON_PATH=\"$PROJECT_DIR/StyleGenerator/Generation/Models/InputParameters.json\"\nCOLORS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppColors.swift\"\nFONTS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppFonts.swift\"\nSTYLES_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/Styles.swift\"\n\n#Generate AppColors.swift\n\"$STYLE_GEN_PATH\" colors \"$STYLES_JSON_PATH\" \"$COLORS_STYLE_PATH\"\n#Generate AppFonts.swift\n\"$STYLE_GEN_PATH\" fonts \"$STYLES_JSON_PATH\" \"$FONTS_STYLE_PATH\"\n#Generate Styles.swift\n\"$STYLE_GEN_PATH\" styles \"$STYLES_JSON_PATH\" \"$STYLES_STYLE_PATH\"";
+			shellScript = "STYLE_GEN_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/StyleGenerator\"\nSTYLES_JSON_PATH=\"$PROJECT_DIR/StyleGenerator/Generation/Models/InputParameters.json\"\nCOLORS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppColors.swift\"\nFONTS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppFonts.swift\"\nSTYLES_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/Styles.swift\"\n\n#Generate AppColors.swift\n#\"$STYLE_GEN_PATH\" colors \"$STYLES_JSON_PATH\" \"$COLORS_STYLE_PATH\"\n#Generate AppFonts.swift\n#\"$STYLE_GEN_PATH\" fonts \"$STYLES_JSON_PATH\" \"$FONTS_STYLE_PATH\"\n#Generate Styles.swift\n#\"$STYLE_GEN_PATH\" styles \"$STYLES_JSON_PATH\" \"$STYLES_STYLE_PATH\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -315,9 +324,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				927134BD1E7DF69000F16322 /* Font.swift in Sources */,
+				92549FE81E8B021500FB1C08 /* StyleGroup.swift in Sources */,
 				927134C81E7E03A800F16322 /* TemplateModelsFactory.swift in Sources */,
 				928A26761E8681B5001E6E88 /* String+InputSymbols.swift in Sources */,
 				928A26781E869097001E6E88 /* TemplateStyles.swift in Sources */,
+				92549FE41E8AAD2400FB1C08 /* CodeTemplate.swift in Sources */,
 				927134C31E7DF96100F16322 /* StylesTemplate.swift in Sources */,
 				927134B71E7DF51F00F16322 /* FileController.swift in Sources */,
 				927134B81E7DF51F00F16322 /* String+Markdown.swift in Sources */,
@@ -328,6 +339,7 @@
 				927134B61E7DF51F00F16322 /* ConsoleController.swift in Sources */,
 				927134B91E7DF51F00F16322 /* TemplateGenerator.swift in Sources */,
 				927134BB1E7DF51F00F16322 /* Color.swift in Sources */,
+				92549FE61E8AAF2400FB1C08 /* StyleAttribute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -60,7 +60,6 @@ class TemplateGenerator {
     guard let parameters = parameters else { return nil }
     var result: GeneratedTemplate?
 
-    // FIXME: Need to add check for parameters
     switch option {
     case .unknown: break
     case .colors:
@@ -72,12 +71,28 @@ class TemplateGenerator {
         result = FontsTemplate(fonts)
       }
     case .styles:
-      if let styles = StylesCollection(parameters) {
-        print("\(styles)")
-        result = StylesTemplate(styles)
-      }
+       result = makeStylesTemplate(from: parameters)
     }
 
     return result
+  }
+
+  private func makeStylesTemplate(from parameters: TemplateInputParameters) -> StylesTemplate? {
+    guard let stylesParameters = parameters["styles"] as? TemplateInputParameters else {
+      exit(with: "You don't have parameter 'styles' - \(parameters)")
+      return nil
+    }
+
+    guard let styleGroups = StyleGroup.createAll(from: Array(stylesParameters.keys)) else {
+      exit(with: "You should have at least one 'styles group' - \(stylesParameters)")
+      return nil
+    }
+
+    guard let styles = Style.createAll(from: stylesParameters) else {
+      exit(with: "You should have at least one 'styles' - \(stylesParameters)")
+      return nil
+    }
+    let model = StylesTemplateModel(styleGroups: Array(styleGroups), styles: Array(styles))
+    return StylesTemplate(model)
   }
 }

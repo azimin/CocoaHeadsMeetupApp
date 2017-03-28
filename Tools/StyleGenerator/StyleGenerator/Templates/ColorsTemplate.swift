@@ -47,7 +47,7 @@ class ColorsTemplate: GeneratedModelTemplate {
       .newLine,
       initFunc
     ]
-    let colorExtension = String.CodeSymbols.snippet(type: .extension, for: "UIColor", nestedTypes: nestedTypes)
+    let colorExtension = String.CodeSymbols.snippet(type: .extension, for: "UIColor", nestedSymbols: nestedTypes)
     output += colorExtension
 
     return output

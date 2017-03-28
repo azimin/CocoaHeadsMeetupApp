@@ -10,10 +10,28 @@ import Cocoa
 
 extension String {
 
-  enum InputSymbols {
-    static let styleNameSeparator = "."
-    static let styleVarName = "$"
-    static let styleParentsAttribute = "parents"
-    static let space = " "
+  enum InputSeparator: String {
+    case dot = "."
+    case space = " "
+  }
+
+  enum InputDetector: String {
+    case varName = "$"
+  }
+
+  enum InputKey: String {
+    case parentsAttribute = "parents"
+  }
+
+  func components(separatedBy separator: InputSeparator) -> [String] {
+    return components(separatedBy: separator.rawValue)
+  }
+
+  func uniqueComponents(by symbol: InputSeparator) -> Set<String> {
+    return Set(components(separatedBy: symbol))
+  }
+
+  func has(separator: InputSeparator) -> Bool {
+    return components(separatedBy: separator).count > 1
   }
 }

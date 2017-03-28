@@ -18,8 +18,20 @@ private let defaultIndentation = 2 // Based on default indentation for Swift
 /// ...
 /// create this -> SwitchCase("your pattern", "your code")
 /// the same for EnumCase
-typealias SwitchCase = (pattern: String, code: String)
-typealias EnumCase = (name: String, caseValue: String?)
+typealias SwitchCase = (pattern: CasePattern, code: String)
+typealias EnumCase = (name: CasePattern, caseValue: String?)
+typealias CasePattern = String
+
+fileprivate extension CasePattern {
+  var formatted: String {
+    let systemPatterns = ["default"]
+    if systemPatterns.contains(self) {
+      return "`\(self)`"
+    } else {
+      return self
+    }
+  }
+}
 
 extension String {
 
@@ -30,11 +42,12 @@ extension String {
     case newLine
     case line(string: String)
     case mark(title: String)
-    case snippet(type: SnippetType, for: String, nestedTypes: [CodeSymbols])
+    case snippet(type: SnippetType, for: String, nestedSymbols: [CodeSymbols])
     case `enum`(name: String, cases: [EnumCase])
     case `switch`(value: String, cases: [SwitchCase])
     case function(title: String, body: [CodeSymbols])
-    case forCycle(iteratorTitle: String, nestedTypes: [CodeSymbols])
+    case forCycle(iteratorTitle: String, nestedSymbols: [CodeSymbols])
+    case property(fullName: String, nestedSymbols: [CodeSymbols]?)
 
     // swiftlint:disable:next nesting
     enum SnippetType: String {
@@ -69,7 +82,7 @@ extension String {
   fileprivate func makeIndent(count: Int) -> String {
     var result = ""
     for _ in 0 ..< count {
-      result += String.InputSymbols.space
+      result += String.InputSeparator.space.rawValue
     }
     return result
   }
@@ -146,9 +159,9 @@ extension String.CodeSymbols {
       var casesString = ""
       for enumCase in cases {
         if let value = enumCase.caseValue {
-          casesString += "case \(enumCase.name) = \(value)\n"
+          casesString += "case \(enumCase.name.formatted) = \(value)\n"
         } else {
-          casesString += "case \(enumCase.name)\n"
+          casesString += "case \(enumCase.name.formatted)\n"
         }
       }
 
@@ -161,7 +174,7 @@ extension String.CodeSymbols {
       var result = ""
       result += .line(string: "switch \(value) {")
       for caseItem in cases {
-        result += .line(string: "case .\(caseItem.pattern):")
+        result += .line(string: "case .\(caseItem.pattern.formatted):")
         result += .line(string: caseItem.code.addIndentation())
       }
       result += .line(string: "}")
@@ -188,6 +201,23 @@ extension String.CodeSymbols {
         }
       }
       result += String.CodeSymbols.line(string: "}")
+      return result
+
+    case let .property(fullName, nestedSymbols):
+      guard let nestedSymbols = nestedSymbols, nestedSymbols.count > 0 else {
+        return "\(fullName)\n"
+      }
+
+      var result = fullName + " {\n"
+      for nestedSymbol in nestedSymbols {
+        if nestedSymbol.value == String.CodeSymbols.newLine.value {
+          result += nestedSymbol
+        } else {
+          result += nestedSymbol.addIndentation()
+        }
+      }
+      result += .newLine
+      result += "}"
       return result
     }
   }
