@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,13 +32,13 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="iiG-lR-rhw" secondAttribute="trailing" constant="24" id="2aV-cQ-NOw"/>
                     <constraint firstItem="C5C-ah-gk5" firstAttribute="top" secondItem="iiG-lR-rhw" secondAttribute="bottom" constant="14" id="9qa-5R-0op"/>
-                    <constraint firstItem="C5C-ah-gk5" firstAttribute="leading" secondItem="LXD-4d-pR9" secondAttribute="leading" constant="29" id="Abm-qM-uua"/>
-                    <constraint firstItem="iiG-lR-rhw" firstAttribute="top" secondItem="LXD-4d-pR9" secondAttribute="top" constant="16" id="DWD-eM-SBw"/>
-                    <constraint firstAttribute="trailing" secondItem="C5C-ah-gk5" secondAttribute="trailing" constant="24" id="Zuj-EZ-q0p"/>
-                    <constraint firstItem="iiG-lR-rhw" firstAttribute="leading" secondItem="LXD-4d-pR9" secondAttribute="leading" constant="24" id="lu5-uG-WQN"/>
-                    <constraint firstAttribute="bottom" secondItem="C5C-ah-gk5" secondAttribute="bottom" constant="19" id="oy2-m4-W4D"/>
+                    <constraint firstItem="iiG-lR-rhw" firstAttribute="leading" secondItem="LXD-4d-pR9" secondAttribute="leadingMargin" constant="16" id="BvB-mt-1SP"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="C5C-ah-gk5" secondAttribute="bottom" constant="11" id="Q9u-h7-tE7"/>
+                    <constraint firstItem="C5C-ah-gk5" firstAttribute="leading" secondItem="LXD-4d-pR9" secondAttribute="leadingMargin" constant="21" id="XPZ-R1-fsj"/>
+                    <constraint firstItem="iiG-lR-rhw" firstAttribute="top" secondItem="LXD-4d-pR9" secondAttribute="topMargin" constant="8" id="cXV-RI-nBW"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="iiG-lR-rhw" secondAttribute="trailing" constant="16" id="g7e-E9-NFO"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="C5C-ah-gk5" secondAttribute="trailing" constant="16" id="uRn-c0-6XE"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
