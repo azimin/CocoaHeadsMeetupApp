@@ -18,7 +18,8 @@ struct LabelTableViewCellModel {
 extension LabelTableViewCellModel: CellViewModelType {
 
   func setup(on cell: LabelTableViewCell) {
-    cell.setup(title: title, info: info)
+    cell.titleLabel.text = title
+    cell.infoLabel.text = info
   }
 
 }

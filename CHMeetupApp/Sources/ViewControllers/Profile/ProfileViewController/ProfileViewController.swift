@@ -14,8 +14,8 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
     struct Profile {
       static let picture = CGFloat(104.0)
       static let name = CGFloat(63.0)
-      static let phone = CGFloat(63.0)
-      static let email = CGFloat(63.0)
+      static let phone = CGFloat(92.0)
+      static let email = CGFloat(92.0)
       static let speach = CGFloat(37.0)
     }
   }
@@ -26,6 +26,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 
   @IBOutlet var tableView: UITableView! {
     didSet {
+      tableView.backgroundColor = UIColor.clear
       tableView.tableFooterView = UIView()
       tableView.registerNib(for: ProfilePictureCell.self)
       tableView.registerNib(for: ProfileNameCell.self)
@@ -43,6 +44,8 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
     updateTableView()
 
     title = "Profile".localized
+    view.backgroundColor = UIColor(.lightGray)
+
   }
 
   // MARK: - TableView update.
