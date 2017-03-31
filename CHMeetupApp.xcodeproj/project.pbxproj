@@ -12,6 +12,7 @@
 		03374B211E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1E1E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift */; };
 		03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B391E7F2C3100CA298E /* RegistrationController.swift */; };
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
+		036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036794941E8AF69000997D29 /* Date+LocalizedFormat.swift */; };
 		03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */; };
 		03CA501F1E8327EB00CF9613 /* RegistrationFormDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */; };
 		221A8B891E685EBF004E320D /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B881E685EBF004E320D /* String+Localized.swift */; };
@@ -76,6 +77,9 @@
 		22323FA01E70C2BE00522E5C /* ProfileHierarhyViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F881E70C2BE00522E5C /* ProfileHierarhyViewControllerType.swift */; };
 		22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323FA11E70C43800522E5C /* AppDelegate.swift */; };
 		22323FA51E70C51A00522E5C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22323FA41E70C51A00522E5C /* Localizable.strings */; };
+		320FA5781E87A8A800DAC7E1 /* UserTableViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320FA5761E87A8A800DAC7E1 /* UserTableViewHeaderCell.xib */; };
+		320FA57A1E87AD3700DAC7E1 /* UserTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FA5791E87AD3700DAC7E1 /* UserTableViewHeaderCell.swift */; };
+		320FA57E1E87AF1800DAC7E1 /* UserTableViewHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FA57D1E87AF1800DAC7E1 /* UserTableViewHeaderModel.swift */; };
 		328467551E7FF18400028431 /* TimePlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328467531E7FF18400028431 /* TimePlaceTableViewCell.swift */; };
 		328467561E7FF18400028431 /* TimePlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 328467541E7FF18400028431 /* TimePlaceTableViewCell.xib */; };
 		328467581E7FF1B200028431 /* TimePlaceTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328467571E7FF1B200028431 /* TimePlaceTableViewCellModel.swift */; };
@@ -173,6 +177,7 @@
 		AD88558A1E87A4A500829695 /* LabelTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8855871E87A4A500829695 /* LabelTableViewCellModel.swift */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
+		C3AC79701E8BEA2E00BA23C5 /* UITableView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +210,7 @@
 		03374B1E1E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
 		03374B391E7F2C3100CA298E /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		036794941E8AF69000997D29 /* Date+LocalizedFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+LocalizedFormat.swift"; sourceTree = "<group>"; };
 		03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFieldData.swift; sourceTree = "<group>"; };
 		03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFormDataCollection.swift; sourceTree = "<group>"; };
 		221A8B881E685EBF004E320D /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Localized.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -270,6 +276,9 @@
 		22323F881E70C2BE00522E5C /* ProfileHierarhyViewControllerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHierarhyViewControllerType.swift; sourceTree = "<group>"; };
 		22323FA11E70C43800522E5C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22323FA41E70C51A00522E5C /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		320FA5761E87A8A800DAC7E1 /* UserTableViewHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewHeaderCell.xib; sourceTree = "<group>"; };
+		320FA5791E87AD3700DAC7E1 /* UserTableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewHeaderCell.swift; sourceTree = "<group>"; };
+		320FA57D1E87AF1800DAC7E1 /* UserTableViewHeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewHeaderModel.swift; sourceTree = "<group>"; };
 		328467531E7FF18400028431 /* TimePlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePlaceTableViewCell.swift; sourceTree = "<group>"; };
 		328467541E7FF18400028431 /* TimePlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePlaceTableViewCell.xib; sourceTree = "<group>"; };
 		328467571E7FF1B200028431 /* TimePlaceTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePlaceTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -368,6 +377,7 @@
 		AD8855871E87A4A500829695 /* LabelTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCellModel.swift; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
+		C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Configure.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -659,6 +669,7 @@
 				9FB84AEB1E7B696000FEEC8E /* Date+DefaultFormat.swift */,
 				9FB84AED1E7B69D600FEEC8E /* Date+ComponentsHelper.swift */,
 				9FB84AEF1E7B6B5E00FEEC8E /* Date+Compare.swift */,
+				036794941E8AF69000997D29 /* Date+LocalizedFormat.swift */,
 			);
 			path = Date;
 			sourceTree = "<group>";
@@ -729,6 +740,7 @@
 			isa = PBXGroup;
 			children = (
 				AD8855841E87A4A500829695 /* LabelCell */,
+				320FA5721E87A80700DAC7E1 /* UserHeaderCell */,
 				3284674E1E7FEF8400028431 /* TimePlaceCell */,
 				A1A072F21E79EF6800FB83F1 /* OptionCell */,
 				9F88817B1E7EA1A700CEFEA4 /* Buttons */,
@@ -1064,6 +1076,16 @@
 			path = Localizations;
 			sourceTree = "<group>";
 		};
+		320FA5721E87A80700DAC7E1 /* UserHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				320FA57D1E87AF1800DAC7E1 /* UserTableViewHeaderModel.swift */,
+				320FA5791E87AD3700DAC7E1 /* UserTableViewHeaderCell.swift */,
+				320FA5761E87A8A800DAC7E1 /* UserTableViewHeaderCell.xib */,
+			);
+			name = UserHeaderCell;
+			sourceTree = "<group>";
+		};
 		3284674E1E7FEF8400028431 /* TimePlaceCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1194,6 +1216,7 @@
 				9F30FFC01E71E36F00EF85F5 /* UITableView+CellViewModel.swift */,
 				9F30FFCC1E71E77700EF85F5 /* UITableView+Registration.swift */,
 				9F30FFD21E71EB2100EF85F5 /* UITableView+Reuse.swift */,
+				C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */,
 			);
 			name = UITableView;
 			sourceTree = "<group>";
@@ -1644,6 +1667,7 @@
 				4D9F0D711E79CD2E006443ED /* ActionTableViewCell.xib in Resources */,
 				9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */,
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
+				320FA5781E87A8A800DAC7E1 /* UserTableViewHeaderCell.xib in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
 				9F3767181E7DDE1E00CC565B /* TextViewPlateTableViewCell.xib in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
@@ -1782,6 +1806,7 @@
 				7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */,
 				AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */,
 				22323F0E1E70C0CE00522E5C /* UIView+NibLoad.swift in Sources */,
+				320FA57A1E87AD3700DAC7E1 /* UserTableViewHeaderCell.swift in Sources */,
 				9F30FFCF1E71E87F00EF85F5 /* TemplateTableCellViewModel.swift in Sources */,
 				9F68E50D1E850D7500C6C931 /* ActionPlainObject.swift in Sources */,
 				9FB84AEC1E7B696000FEEC8E /* Date+DefaultFormat.swift in Sources */,
@@ -1801,6 +1826,7 @@
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
 				03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */,
+				320FA57E1E87AF1800DAC7E1 /* UserTableViewHeaderModel.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				22323F8A1E70C2BE00522E5C /* NavigationViewController.swift in Sources */,
 				9F30FFCA1E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift in Sources */,
@@ -1850,10 +1876,11 @@
 				03374B211E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift in Sources */,
 				22323F8B1E70C2BE00522E5C /* TabBarViewController.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
+				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,
+				C3AC79701E8BEA2E00BA23C5 /* UITableView+Configure.swift in Sources */,
 				7DE942141E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift in Sources */,
-				03CA50201E8327EB00CF9613 /* FormPlateTableViewCellModel.swift in Sources */,
 				03374B1F1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift in Sources */,
 				22323F0D1E70C0CE00522E5C /* UIImage+RenderMode.swift in Sources */,
 				9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */,

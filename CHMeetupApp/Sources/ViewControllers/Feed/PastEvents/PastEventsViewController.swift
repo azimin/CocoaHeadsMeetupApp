@@ -11,10 +11,7 @@ import UIKit
 class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDelegate {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      tableView.estimatedRowHeight = 100
-      tableView.rowHeight = UITableViewAutomaticDimension
-      tableView.backgroundColor = UIColor.clear
-      tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+      tableView.configure(with: .defaultConfiguration)
     }
   }
 

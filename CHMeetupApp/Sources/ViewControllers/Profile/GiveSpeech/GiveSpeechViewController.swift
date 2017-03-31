@@ -8,14 +8,12 @@
 
 import UIKit
 
-private let bottomMargin: CGFloat = 8
-
 class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      tableView.estimatedRowHeight = 44.0
-      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomMargin, right: 0)
+      let configuration = TableViewConfiguration(bottomInset: 8, estimatedRowHeight: 44)
+      tableView.configure(with: .custom(configuration))
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
@@ -35,7 +33,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
     tableView.registerNibs(from: displayCollection)
 
     view.backgroundColor = UIColor(.lightGray)
-    title = "Geve a speech".localized
+    title = "Give a speech".localized
 
     bottomButton = BottomButton(addingOnView: view, title: "Подать заявку".localized)
     bottomButton.addTarget(self, action: #selector(sendSpeech), for: .touchUpInside)
@@ -94,27 +92,27 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
 extension GiveSpeechViewController: KeyboardHandlerDelegate {
   func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {
 
-    var scrollViewContnetInsets = tableView.contentInset
-    var indicatorContentInsets = tableView.scrollIndicatorInsets
+    var scrollViewContentInsets = tableView.contentInset
+    var indicatorInsets = tableView.scrollIndicatorInsets
     var buttonInsets: CGFloat = 0
 
     switch state {
     case .frameChanged, .opened:
-      let scrollViewContentInsets = info.endFrame.height + bottomMargin + bottomButton.frame.height
-      scrollViewContnetInsets.bottom = scrollViewContentInsets
-      indicatorContentInsets.bottom = info.endFrame.height + bottomButton.frame.height
+      let scrollViewBottomInset = info.endFrame.height + tableView.defaultBottomInset + bottomButton.frame.height
+      scrollViewContentInsets.bottom = scrollViewBottomInset
+      indicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
       buttonInsets = info.endFrame.height
     case .hidden:
-      scrollViewContnetInsets.bottom = 0
-      indicatorContentInsets.bottom = 0
+      scrollViewContentInsets.bottom = 0
+      indicatorInsets.bottom = 0
       buttonInsets = 0
     }
 
-    tableView.contentInset = scrollViewContnetInsets
-    tableView.scrollIndicatorInsets = indicatorContentInsets
+    tableView.contentInset = scrollViewContentInsets
+    tableView.scrollIndicatorInsets = indicatorInsets
 
+    bottomButton.bottomInsetsConstant = buttonInsets
     info.animate ({ [weak self] in
-      self?.bottomButton.bottomInsetsConstant = buttonInsets
       self?.view.layoutIfNeeded()
     })
   }
