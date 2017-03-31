@@ -12,11 +12,11 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 
   struct CellHeights {
     struct Profile {
-      static let picture = CGFloat(104.0)
-      static let name = CGFloat(63.0)
-      static let phone = CGFloat(92.0)
-      static let email = CGFloat(92.0)
-      static let speach = CGFloat(37.0)
+      static let picture: CGFloat = 104.0
+      static let name: CGFloat = 63.0
+      static let phone: CGFloat = 92.0
+      static let email: CGFloat = 92.0
+      static let speach: CGFloat = 37.0
     }
   }
 
