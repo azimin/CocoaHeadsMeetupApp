@@ -172,6 +172,9 @@
 		A168379B1E7E979800A12B3B /* OptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A16837981E7E979800A12B3B /* OptionTableViewCell.xib */; };
 		A168379C1E7E979800A12B3B /* OptionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16837991E7E979800A12B3B /* OptionTableViewCellModel.swift */; };
 		AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */; };
+		AD8855881E87A4A500829695 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8855851E87A4A500829695 /* LabelTableViewCell.swift */; };
+		AD8855891E87A4A500829695 /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8855861E87A4A500829695 /* LabelTableViewCell.xib */; };
+		AD88558A1E87A4A500829695 /* LabelTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8855871E87A4A500829695 /* LabelTableViewCellModel.swift */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 		C3AC79701E8BEA2E00BA23C5 /* UITableView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */; };
@@ -369,6 +372,9 @@
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Encryption.swift"; sourceTree = "<group>"; };
+		AD8855851E87A4A500829695 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
+		AD8855861E87A4A500829695 /* LabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
+		AD8855871E87A4A500829695 /* LabelTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCellModel.swift; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Configure.swift"; sourceTree = "<group>"; };
@@ -733,6 +739,7 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD8855841E87A4A500829695 /* LabelCell */,
 				320FA5721E87A80700DAC7E1 /* UserHeaderCell */,
 				3284674E1E7FEF8400028431 /* TimePlaceCell */,
 				A1A072F21E79EF6800FB83F1 /* OptionCell */,
@@ -1541,6 +1548,16 @@
 			path = Int;
 			sourceTree = "<group>";
 		};
+		AD8855841E87A4A500829695 /* LabelCell */ = {
+			isa = PBXGroup;
+			children = (
+				AD8855871E87A4A500829695 /* LabelTableViewCellModel.swift */,
+				AD8855851E87A4A500829695 /* LabelTableViewCell.swift */,
+				AD8855861E87A4A500829695 /* LabelTableViewCell.xib */,
+			);
+			path = LabelCell;
+			sourceTree = "<group>";
+		};
 		C30485AF1E740FC20052D632 /* PermissionsManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1645,6 +1662,7 @@
 				9F3767031E7D527000CC565B /* TextFieldPlateTableViewCell.xib in Resources */,
 				9F37670D1E7DD8EB00CC565B /* DefaultTableHeaderView.xib in Resources */,
 				22323F9B1E70C2BE00522E5C /* ProfileNameCell.xib in Resources */,
+				AD8855891E87A4A500829695 /* LabelTableViewCell.xib in Resources */,
 				328467561E7FF18400028431 /* TimePlaceTableViewCell.xib in Resources */,
 				4D9F0D711E79CD2E006443ED /* ActionTableViewCell.xib in Resources */,
 				9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */,
@@ -1743,6 +1761,7 @@
 				7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */,
 				8ACCB3D41E808CFE00D62E5D /* EventPreviewDisplayCollection.swift in Sources */,
 				22323F3F1E70C14300522E5C /* ViewControllersFactory.swift in Sources */,
+				AD88558A1E87A4A500829695 /* LabelTableViewCellModel.swift in Sources */,
 				9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */,
 				22323F8F1E70C2BE00522E5C /* SpeechPreviewViewController.swift in Sources */,
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
@@ -1871,6 +1890,7 @@
 				22323F8E1E70C2BE00522E5C /* RegistrationPreviewViewController.swift in Sources */,
 				9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */,
 				22323F0A1E70C0CE00522E5C /* UIColor+Hex.swift in Sources */,
+				AD8855881E87A4A500829695 /* LabelTableViewCell.swift in Sources */,
 				22323F361E70C0E500522E5C /* TextViewWithPlaceholder.swift in Sources */,
 				9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */,
 				22323F931E70C2BE00522E5C /* PastEventsDisplayCollection.swift in Sources */,

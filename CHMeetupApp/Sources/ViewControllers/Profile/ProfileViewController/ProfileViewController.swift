@@ -12,22 +12,26 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 
   struct CellHeights {
     struct Profile {
-      static let picture = CGFloat(104.0)
-      static let name = CGFloat(63.0)
-      static let speach = CGFloat(37.0)
+      static let picture: CGFloat = 104.0
+      static let name: CGFloat = 63.0
+      static let phone: CGFloat = 92.0
+      static let email: CGFloat = 92.0
+      static let speach: CGFloat = 37.0
     }
   }
 
   enum ProfileCells {
-    case picture, name, speach
+    case picture, name, phone, email, speach
   }
 
   @IBOutlet var tableView: UITableView! {
     didSet {
+      tableView.backgroundColor = UIColor.clear
       tableView.tableFooterView = UIView()
       tableView.registerNib(for: ProfilePictureCell.self)
       tableView.registerNib(for: ProfileNameCell.self)
       tableView.registerNib(for: ProfileSpeachCell.self)
+      tableView.registerNib(for: LabelTableViewCell.self)
     }
   }
 
@@ -40,12 +44,14 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
     updateTableView()
 
     title = "Profile".localized
+    view.backgroundColor = UIColor(.lightGray)
+
   }
 
   // MARK: - TableView update.
 
   func updateTableView() {
-    tableArray = [.picture, .name, .speach]
+    tableArray = [.picture, .name, .phone, .email, .speach]
     tableView.reloadData()
   }
 
@@ -68,6 +74,10 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
       return CellHeights.Profile.picture
     case .name:
       return CellHeights.Profile.name
+    case .phone:
+      return CellHeights.Profile.phone
+    case .email:
+      return CellHeights.Profile.email
     case .speach:
       return CellHeights.Profile.speach
     }
@@ -80,6 +90,8 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
       cell = tableView.dequeueReusableCell(for: indexPath) as ProfilePictureCell
     case .name:
       cell = tableView.dequeueReusableCell(for: indexPath) as ProfileNameCell
+    case .phone, .email:
+      cell = tableView.dequeueReusableCell(for: indexPath) as LabelTableViewCell
     case .speach:
       cell = tableView.dequeueReusableCell(for: indexPath) as ProfileSpeachCell
     }
@@ -94,7 +106,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
         navigationController.pushViewController(giveSpeachViewController,
                                                 animated: true)
       }
-    case .name, .picture:
+    case .name, .picture, .phone, .email:
       return
     }
   }
