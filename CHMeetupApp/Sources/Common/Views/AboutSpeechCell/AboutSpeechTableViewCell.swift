@@ -28,5 +28,4 @@ class AboutSpeechTableViewCell: PlateTableViewCell {
       descriptionLabel.textColor = .black
     }
   }
-  
 }
