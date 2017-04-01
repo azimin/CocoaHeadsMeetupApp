@@ -1,5 +1,5 @@
 //
-//  ProfileSpeachCell.swift
+//  ProfileSpeechCell.swift
 //  CHMeetupApp
 //
 //  Created by Igor Tudoran on 25.02.17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileSpeachCell: UITableViewCell {
+class ProfileSpeechCell: UITableViewCell {
 
   override func awakeFromNib() {
     super.awakeFromNib()

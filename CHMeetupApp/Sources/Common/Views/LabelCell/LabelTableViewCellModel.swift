@@ -11,7 +11,7 @@ import UIKit
 struct LabelTableViewCellModel {
 
   let title: String
-  let info: String
+  let description: String
 
 }
 
@@ -19,7 +19,7 @@ extension LabelTableViewCellModel: CellViewModelType {
 
   func setup(on cell: LabelTableViewCell) {
     cell.titleLabel.text = title
-    cell.infoLabel.text = info
+    cell.descriptionLabel.text = description
   }
 
 }

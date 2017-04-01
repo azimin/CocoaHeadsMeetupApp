@@ -71,8 +71,6 @@
 		22323F9B1E70C2BE00522E5C /* ProfileNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22323F801E70C2BE00522E5C /* ProfileNameCell.xib */; };
 		22323F9C1E70C2BE00522E5C /* ProfilePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F821E70C2BE00522E5C /* ProfilePictureCell.swift */; };
 		22323F9D1E70C2BE00522E5C /* ProfilePictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22323F831E70C2BE00522E5C /* ProfilePictureCell.xib */; };
-		22323F9E1E70C2BE00522E5C /* ProfileSpeachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F851E70C2BE00522E5C /* ProfileSpeachCell.swift */; };
-		22323F9F1E70C2BE00522E5C /* ProfileSpeachCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22323F861E70C2BE00522E5C /* ProfileSpeachCell.xib */; };
 		22323FA01E70C2BE00522E5C /* ProfileHierarhyViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F881E70C2BE00522E5C /* ProfileHierarhyViewControllerType.swift */; };
 		22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323FA11E70C43800522E5C /* AppDelegate.swift */; };
 		22323FA51E70C51A00522E5C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22323FA41E70C51A00522E5C /* Localizable.strings */; };
@@ -171,6 +169,8 @@
 		AD8855881E87A4A500829695 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8855851E87A4A500829695 /* LabelTableViewCell.swift */; };
 		AD8855891E87A4A500829695 /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8855861E87A4A500829695 /* LabelTableViewCell.xib */; };
 		AD88558A1E87A4A500829695 /* LabelTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8855871E87A4A500829695 /* LabelTableViewCellModel.swift */; };
+		ADCCA0F11E8F8924009DAACE /* ProfileSpeechCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0EF1E8F8924009DAACE /* ProfileSpeechCell.swift */; };
+		ADCCA0F21E8F8924009DAACE /* ProfileSpeechCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCCA0F01E8F8924009DAACE /* ProfileSpeechCell.xib */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 /* End PBXBuildFile section */
@@ -265,8 +265,6 @@
 		22323F801E70C2BE00522E5C /* ProfileNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileNameCell.xib; sourceTree = "<group>"; };
 		22323F821E70C2BE00522E5C /* ProfilePictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePictureCell.swift; sourceTree = "<group>"; };
 		22323F831E70C2BE00522E5C /* ProfilePictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilePictureCell.xib; sourceTree = "<group>"; };
-		22323F851E70C2BE00522E5C /* ProfileSpeachCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSpeachCell.swift; sourceTree = "<group>"; };
-		22323F861E70C2BE00522E5C /* ProfileSpeachCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileSpeachCell.xib; sourceTree = "<group>"; };
 		22323F881E70C2BE00522E5C /* ProfileHierarhyViewControllerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHierarhyViewControllerType.swift; sourceTree = "<group>"; };
 		22323FA11E70C43800522E5C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22323FA41E70C51A00522E5C /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -366,6 +364,8 @@
 		AD8855851E87A4A500829695 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		AD8855861E87A4A500829695 /* LabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
 		AD8855871E87A4A500829695 /* LabelTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCellModel.swift; sourceTree = "<group>"; };
+		ADCCA0EF1E8F8924009DAACE /* ProfileSpeechCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSpeechCell.swift; sourceTree = "<group>"; };
+		ADCCA0F01E8F8924009DAACE /* ProfileSpeechCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileSpeechCell.xib; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1014,9 +1014,9 @@
 		22323F7D1E70C2BE00522E5C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				ADCCA0EE1E8F8924009DAACE /* ProfileSpeechCell */,
 				22323F7E1E70C2BE00522E5C /* ProfileNameCell */,
 				22323F811E70C2BE00522E5C /* ProfilePictureCell */,
-				22323F841E70C2BE00522E5C /* ProfileSpeachCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1037,15 +1037,6 @@
 				22323F831E70C2BE00522E5C /* ProfilePictureCell.xib */,
 			);
 			path = ProfilePictureCell;
-			sourceTree = "<group>";
-		};
-		22323F841E70C2BE00522E5C /* ProfileSpeachCell */ = {
-			isa = PBXGroup;
-			children = (
-				22323F851E70C2BE00522E5C /* ProfileSpeachCell.swift */,
-				22323F861E70C2BE00522E5C /* ProfileSpeachCell.xib */,
-			);
-			path = ProfileSpeachCell;
 			sourceTree = "<group>";
 		};
 		22323F871E70C2BE00522E5C /* Protocols */ = {
@@ -1535,6 +1526,15 @@
 			path = LabelCell;
 			sourceTree = "<group>";
 		};
+		ADCCA0EE1E8F8924009DAACE /* ProfileSpeechCell */ = {
+			isa = PBXGroup;
+			children = (
+				ADCCA0EF1E8F8924009DAACE /* ProfileSpeechCell.swift */,
+				ADCCA0F01E8F8924009DAACE /* ProfileSpeechCell.xib */,
+			);
+			path = ProfileSpeechCell;
+			sourceTree = "<group>";
+		};
 		C30485AF1E740FC20052D632 /* PermissionsManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1649,11 +1649,11 @@
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
 				03374B201E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib in Resources */,
 				9F487A7B1E740DC00016CE0B /* EventPreviewTableViewCell.xib in Resources */,
+				ADCCA0F21E8F8924009DAACE /* ProfileSpeechCell.xib in Resources */,
 				22323F9D1E70C2BE00522E5C /* ProfilePictureCell.xib in Resources */,
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
 				22323FA51E70C51A00522E5C /* Localizable.strings in Resources */,
 				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
-				22323F9F1E70C2BE00522E5C /* ProfileSpeachCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1814,7 +1814,6 @@
 				9FAFF8051E6AD76300B687CB /* UserEntity.swift in Sources */,
 				9F30FFCD1E71E77700EF85F5 /* UITableView+Registration.swift in Sources */,
 				9F487A821E7417F50016CE0B /* LightButton.swift in Sources */,
-				22323F9E1E70C2BE00522E5C /* ProfileSpeachCell.swift in Sources */,
 				9F487A7A1E740DC00016CE0B /* EventPreviewTableViewCell.swift in Sources */,
 				221CC3FC1E7B24A1004F0695 /* EventRegFormFieldPlainObject.swift in Sources */,
 				221A8B891E685EBF004E320D /* String+Localized.swift in Sources */,
@@ -1837,6 +1836,7 @@
 				22323F0B1E70C0CE00522E5C /* UIColor+PaletteColors.swift in Sources */,
 				9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */,
 				22323F531E70C18700522E5C /* PlacePlainObject+Requests.swift in Sources */,
+				ADCCA0F11E8F8924009DAACE /* ProfileSpeechCell.swift in Sources */,
 				22323F9C1E70C2BE00522E5C /* ProfilePictureCell.swift in Sources */,
 				22323F331E70C0E500522E5C /* ActionButton.swift in Sources */,
 				9F42ACCB1E89C7BA0099AB6A /* SwizzlingController.swift in Sources */,
@@ -1853,7 +1853,6 @@
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,
 				7DE942141E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift in Sources */,
-				03CA50201E8327EB00CF9613 /* FormPlateTableViewCellModel.swift in Sources */,
 				03374B1F1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift in Sources */,
 				22323F0D1E70C0CE00522E5C /* UIImage+RenderMode.swift in Sources */,
 				9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */,

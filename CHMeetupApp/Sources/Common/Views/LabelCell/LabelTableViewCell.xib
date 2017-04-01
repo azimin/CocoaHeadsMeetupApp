@@ -24,7 +24,7 @@
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5C-ah-gk5">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5C-ah-gk5">
                         <rect key="frame" x="29" y="51.5" width="267" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -42,7 +42,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="infoLabel" destination="C5C-ah-gk5" id="Ys3-45-wRo"/>
+                <outlet property="descriptionLabel" destination="C5C-ah-gk5" id="Jmi-1I-s2x"/>
                 <outlet property="titleLabel" destination="iiG-lR-rhw" id="ngm-jj-Gb0"/>
             </connections>
             <point key="canvasLocation" x="35" y="106.5"/>

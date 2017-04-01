@@ -18,11 +18,11 @@ final class LabelTableViewCell: PlateTableViewCell {
     }
   }
 
-  @IBOutlet var infoLabel: UILabel! {
+  @IBOutlet var descriptionLabel: UILabel! {
     didSet {
-      infoLabel.numberOfLines = 0
-      infoLabel.font = UIFont.appFont(.gothamPro(size: 15))
-      infoLabel.textColor = UIColor(.black)
+      descriptionLabel.numberOfLines = 0
+      descriptionLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      descriptionLabel.textColor = UIColor(.black)
     }
   }
 
