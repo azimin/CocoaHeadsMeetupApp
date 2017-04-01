@@ -24,7 +24,7 @@ struct ProfileViewDisplayCollection: DisplayCollection {
   var sections: [Type] = [.userHeader]
 
   let user: UserEntity = {
-    // Tamplate data
+    // Template data
     let userEntity = UserEntity()
     userEntity.name = "Dmitriy"
     userEntity.lastName = "Lis"
