@@ -1,0 +1,40 @@
+{
+  "colors": [{
+             "name": "lightWhite",
+             "color": "F5F5F5"
+             }],
+  "fonts": [{
+            "fontName": "SFUIText-Regular" //Если нет name, мы генерируем regular
+            },
+            {
+            "name": "light",
+            "fontName": "SFUIText-Light"
+            }],
+  "styles": {  //Проверять на одинаковость имен
+    "styleName": {
+      "parents": ["parents1","parents2"],
+      "styleAttributeName": "anyValue",
+      "styleAttributeName": [".anotherStyleName"],
+      "styleAttributeName": "$varName",
+      "styleAttributeName": "$varName.UIColor", //Autogeneration
+      "colorAttributeName": "$varName.UIColor.lightWhite", //Autogeneration with value ?
+    },
+    "StyleGroup.StyleName": {
+      "parents": ["parents1","parents2"],
+      "parentAttributeName": "styleValue",
+      "styleAttributeName": "anyValue",
+      "styleAttributeName": [".anotherStyleName"],
+      "styleAttributeName": "$varName",
+      "styleAttributeName": "$varName.UIColor", //Autogeneration
+      "colorAttributeName": "$varName.UIColor.lightWhite", //Autogeneration with value ?
+    }
+  },
+  "themes": {
+    "themeName" : {
+      "styleName": {
+        "styleAttributeName": "value"
+      },
+      "styleAttributeName": "commonValue"
+    }
+  }
+}

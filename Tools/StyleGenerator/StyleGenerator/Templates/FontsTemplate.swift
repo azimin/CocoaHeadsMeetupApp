@@ -33,11 +33,11 @@ class FontsTemplate: GeneratedModelTemplate {
 
     // Create FontType enum
     let enumCases = model.fonts.flatMap({ EnumCase("\($0.name)", "\"\($0.font)\"") })
-    let fontEnum = String.CodeSymbols.enum(name: "FontType", cases: enumCases)
+    let fontEnum = String.CodeSymbols.enum(name: "FontType: String", cases: enumCases)
 
     // Create convenience init(_ fontType: FontType, size: CGFloat)
     let initFuncTitle = "convenience init(_ fontType: FontType, size: CGFloat)"
-    let initFuncBody = String.CodeSymbols.line(string: "self.init(name: fontName.rawValue, size: size)!")
+    let initFuncBody = String.CodeSymbols.line(string: "self.init(name: fontType.rawValue, size: size)!")
     let initFunc = String.CodeSymbols.function(title: initFuncTitle, body: [initFuncBody])
 
     // Create extension

@@ -34,8 +34,9 @@ struct StyleAttribute: TemplateModel {
     }
 
     // Check if it's Default attribute (has name and parameter)
-    guard parameters.count > 1 else {
-      let nameKey = parameters.keys.first ?? ""
+    let nameKey = parameters.keys.first ?? ""
+    if parameters.count == 1 &&
+      !nameKey.has(separator: .dot) {
       self.name = nameKey
       self.components = parameters
       self.type = .default
@@ -58,10 +59,23 @@ struct StyleAttribute: TemplateModel {
     var resultComponents = [String: Any]()
     for parameter in parameters {
       //Remove attribute name from component
-      let attributeName = self.name + String.InputSeparator.dot.rawValue
+      let attributeName = self.name + String.InputSymbols.dot.rawValue
       let componentKey = parameter.key.replacingOccurrences(of: attributeName, with: "")
       resultComponents[componentKey] = parameter.value
     }
     self.components = resultComponents
+  }
+}
+
+extension StyleAttribute: Hashable {
+
+  // MARK: - Hashable
+
+  var hashValue: Int {
+    return name.hashValue
+  }
+
+  static func == (lhs: StyleAttribute, rhs: StyleAttribute) -> Bool {
+    return lhs.name.hashValue == rhs.name.hashValue
   }
 }

@@ -17,11 +17,14 @@ struct CodeTemplatesCollection: TemplateModel {
   // MARK: - Public
 
   init?(_ parameters: TemplateInputParameters) {
-    guard let fontsParameters = parameters["code_templates"] as? [TemplateInputParameters] else {
+    guard let parameters = parameters["code_templates"] as? TemplateInputParameters else {
       consoleController.printMessage("you don't have parameter 'code_templates'")
       return nil
     }
-    templates = TemplateModelsFactory.makeModels(from: fontsParameters)
+    let codeParameters = parameters.map({ (key, value) -> TemplateInputParameters in
+      return [key: value]
+    })
+    templates = TemplateModelsFactory.makeModels(from: codeParameters)
   }
 }
 

@@ -57,20 +57,21 @@ extension StyleGroup {
       components = Array(components.dropFirst())
 
       /// Check, if group was created
-      if let group = result.filter({ $0.name == name }).first {
+      let group = result.filter({ $0.name == name }).first
+      if let group = group {
 
         /// If we have components, we add childs for grop
-        var currentAllGroups = allChilds[group.name]
+        var currentAllGroups = allChilds[group.name] ?? []
         if components.count > 0 {
-          currentAllGroups?.append(components.joined(separator: String.InputSeparator.dot.rawValue))
-          allChilds[group.name] = currentAllGroups
+          currentAllGroups.append(components.joined(separator: String.InputSymbols.dot.rawValue))
         }
+        allChilds[group.name] = currentAllGroups
       } else {
 
         //Create new, if doesn't find
         let group = StyleGroup(name)
         if components.count > 0 {
-          allChilds[group.name] = [components.joined(separator: String.InputSeparator.dot.rawValue)]
+          allChilds[group.name] = [components.joined(separator: String.InputSymbols.dot.rawValue)]
         } else {
           allChilds[group.name] = []
         }

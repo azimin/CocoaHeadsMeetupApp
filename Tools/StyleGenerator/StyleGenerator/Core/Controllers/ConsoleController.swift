@@ -68,15 +68,6 @@ class ConsoleController {
 
   func obtainInputParameters() throws -> ConsoleInputParameters {
     let arguments = CommandLine.arguments
-    // TODO: Remove it after implemtenting styles
-    if arguments.count == 1 {
-      // swiftlint:disable:next line_length
-      let jsonPath = "/Users/denis/Life/Projects/OpenSource/CocoaHeads/MeetupApp/Tools/StyleGenerator/StyleGenerator/Generation/Models/StylesInputParameters.json"
-      // swiftlint:disable:next line_length
-      let outputPath = "/Users/denis/Life/Projects/OpenSource/CocoaHeads/MeetupApp/Tools/StyleGenerator/StyleGenerator/Generation/Models/TemplateStyles.swift"
-      return ConsoleInputParameters(option: .styles, inputPath: jsonPath, outputPath: outputPath)
-    }
-
     guard arguments.count == CommandLineArgument.requiredCount else {
       throw InputError.wrongArgumentsCount
     }

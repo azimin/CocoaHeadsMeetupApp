@@ -10,28 +10,26 @@ import Cocoa
 
 extension String {
 
-  enum InputSeparator: String {
+  enum InputSymbols: String {
     case dot = "."
     case space = " "
-  }
-
-  enum InputDetector: String {
-    case varName = "$"
+    case dash = "-"
+    case componentDetector = "$"
   }
 
   enum InputKey: String {
     case parentsAttribute = "parents"
   }
 
-  func components(separatedBy separator: InputSeparator) -> [String] {
+  func components(separatedBy separator: InputSymbols) -> [String] {
     return components(separatedBy: separator.rawValue)
   }
 
-  func uniqueComponents(by symbol: InputSeparator) -> Set<String> {
+  func uniqueComponents(by symbol: InputSymbols) -> Set<String> {
     return Set(components(separatedBy: symbol))
   }
 
-  func has(separator: InputSeparator) -> Bool {
+  func has(separator: InputSymbols) -> Bool {
     return components(separatedBy: separator).count > 1
   }
 }

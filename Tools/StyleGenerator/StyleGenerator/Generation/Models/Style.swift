@@ -19,6 +19,7 @@ struct Style: TemplateModel {
   // MARK: - Properties
 
   let name: StyleName
+  let parentsNames: [StyleName]?
   let attributes: [StyleAttribute]
 
   var allComponents: [String: Any] {
@@ -29,7 +30,7 @@ struct Style: TemplateModel {
         case .default:
           result[attribute.name] = component.value
         case .complex:
-          let separator = String.InputSeparator.dot.rawValue
+          let separator = String.InputSymbols.dot.rawValue
           result[attribute.name + separator + component.key] = component.value
         }
       }
@@ -39,7 +40,7 @@ struct Style: TemplateModel {
 
   // MARK: - Public
 
-  init?(_ parameters: CustomParameters) {
+  init?(_ parameters: TemplateInputParameters) {
     guard parameters.keys.count == 1,
           let styleName = parameters.keys.first else {
       exit(with: "Wrong generation for style, it should be Dictionary with one Key == Style name - \(parameters)")
@@ -54,10 +55,19 @@ struct Style: TemplateModel {
 
     self.name = styleName
 
+    /// Check if style has parents
+    let parentsKey = String.InputKey.parentsAttribute.rawValue
+    if let parentsNames = parameters[parentsKey] as? [String] {
+      self.parentsNames = parentsNames
+    } else {
+      self.parentsNames = nil
+    }
+
     //TODO: Need to improve realization of method
     var groupedParameters = [String: [String: Any]]()
     for parameter in attributesParameters {
-      if let firstComponent = parameter.key.components(separatedBy: .dot).first {
+      let firstComponent = parameter.key.components(separatedBy: .dot).first
+      if let firstComponent = firstComponent {
         if var currentAttributes = groupedParameters[firstComponent] {
           currentAttributes[parameter.key] = parameter.value
           groupedParameters[firstComponent] = currentAttributes
@@ -71,7 +81,8 @@ struct Style: TemplateModel {
 
     var resultAttributes = [StyleAttribute]()
     for parameter in groupedParameters.enumerated() {
-      if let attribute = StyleAttribute(parameter.element.value) {
+      let attribute = StyleAttribute(parameter.element.value)
+      if let attribute = attribute {
         resultAttributes.append(attribute)
       } else {
         exit(with: "Something went wrong with attribute - \(parameter.element.key)")
@@ -89,7 +100,7 @@ extension Style: Hashable {
   }
 
   static func == (lhs: Style, rhs: Style) -> Bool {
-    return lhs.name == rhs.name
+    return lhs.name.hashValue == rhs.name.hashValue
   }
 }
 
@@ -107,12 +118,11 @@ extension Style {
     /// Use this method to create styles, if they doesn't exist
     /// And add them to `result`
     func createIfNeeded(_ styleNames: [String]) {
+
       for name in styleNames {
         /// Check if we need to create style
-        if let _ = result.first(where: {$0.name == name}) {
-          return
-        } else {
-
+        let existedStyle = result.first(where: {$0.name == name})
+        if existedStyle == nil {
           guard var styleParameters = parameters[name] else {
             exit(with: "Style should has parameters")
             return
@@ -122,7 +132,8 @@ extension Style {
           let parentsKey = String.InputKey.parentsAttribute.rawValue
 
           /// Check if style has parents
-          if let parentsNames = styleParameters[parentsKey] as? [String] {
+          let parentsNames = styleParameters[parentsKey]
+          if let parentsNames = parentsNames as? [String] {
             /// Create paretns if needed
             createIfNeeded(parentsNames)
 
@@ -151,7 +162,11 @@ extension Style {
     }
 
     //Run recursion
-    createIfNeeded(Array(parameters.keys))
+    var parametersNames = [String]()
+    for parameter in parameters {
+      parametersNames.append(parameter.key)
+    }
+    createIfNeeded(parametersNames)
 
     return result
   }

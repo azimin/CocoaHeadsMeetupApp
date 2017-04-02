@@ -22,7 +22,7 @@
 		927134C81E7E03A800F16322 /* TemplateModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134C71E7E03A800F16322 /* TemplateModelsFactory.swift */; };
 		928A26731E86814C001E6E88 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928A266F1E86814C001E6E88 /* Style.swift */; };
 		928A26761E8681B5001E6E88 /* String+InputSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928A26751E8681B5001E6E88 /* String+InputSymbols.swift */; };
-		928A26781E869097001E6E88 /* TemplateStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928A26771E869097001E6E88 /* TemplateStyles.swift */; };
+		92AF2AB71E91AC9300BC0023 /* String+InputSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928A26751E8681B5001E6E88 /* String+InputSymbols.swift */; };
 		92E9DA591E72111600BCB658 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DA581E72111600BCB658 /* main.swift */; };
 		92FC05971E82B10E00513584 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC05961E82B10E00513584 /* ColorTests.swift */; };
 		92FC05991E82B11F00513584 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC05981E82B11F00513584 /* FontTests.swift */; };
@@ -61,10 +61,7 @@
 		927134C41E7DFD0300F16322 /* InputParameters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InputParameters.json; sourceTree = "<group>"; };
 		927134C71E7E03A800F16322 /* TemplateModelsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateModelsFactory.swift; sourceTree = "<group>"; };
 		928A266F1E86814C001E6E88 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
-		928A26711E86814C001E6E88 /* StylesInputParameters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StylesInputParameters.json; sourceTree = "<group>"; };
-		928A26721E86814C001E6E88 /* TemplateParameters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TemplateParameters.json; sourceTree = "<group>"; };
 		928A26751E8681B5001E6E88 /* String+InputSymbols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+InputSymbols.swift"; sourceTree = "<group>"; };
-		928A26771E869097001E6E88 /* TemplateStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateStyles.swift; sourceTree = "<group>"; };
 		92E9DA551E72111600BCB658 /* StyleGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StyleGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E9DA581E72111600BCB658 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		92FC058E1E82B07F00513584 /* StyleGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StyleGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,9 +136,6 @@
 				928A266F1E86814C001E6E88 /* Style.swift */,
 				92549FE51E8AAF2400FB1C08 /* StyleAttribute.swift */,
 				92549FE31E8AAD2400FB1C08 /* CodeTemplate.swift */,
-				928A26771E869097001E6E88 /* TemplateStyles.swift */,
-				928A26711E86814C001E6E88 /* StylesInputParameters.json */,
-				928A26721E86814C001E6E88 /* TemplateParameters.json */,
 				927134C41E7DFD0300F16322 /* InputParameters.json */,
 			);
 			path = Models;
@@ -314,7 +308,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "STYLE_GEN_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/StyleGenerator\"\nSTYLES_JSON_PATH=\"$PROJECT_DIR/StyleGenerator/Generation/Models/InputParameters.json\"\nCOLORS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppColors.swift\"\nFONTS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppFonts.swift\"\nSTYLES_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/Styles.swift\"\n\n#Generate AppColors.swift\n#\"$STYLE_GEN_PATH\" colors \"$STYLES_JSON_PATH\" \"$COLORS_STYLE_PATH\"\n#Generate AppFonts.swift\n#\"$STYLE_GEN_PATH\" fonts \"$STYLES_JSON_PATH\" \"$FONTS_STYLE_PATH\"\n#Generate Styles.swift\n#\"$STYLE_GEN_PATH\" styles \"$STYLES_JSON_PATH\" \"$STYLES_STYLE_PATH\"";
+			shellScript = "STYLE_GEN_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/StyleGenerator\"\nSTYLES_JSON_PATH=\"$PROJECT_DIR/StyleGenerator/Generation/Models/InputParameters.json\"\nCOLORS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppColors.swift\"\nFONTS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppFonts.swift\"\nSTYLES_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/Styles.swift\"\n\n#Generate AppColors.swift\n\"$STYLE_GEN_PATH\" colors \"$STYLES_JSON_PATH\" \"$COLORS_STYLE_PATH\"\n#Generate AppFonts.swift\n\"$STYLE_GEN_PATH\" fonts \"$STYLES_JSON_PATH\" \"$FONTS_STYLE_PATH\"\n#Generate Styles.swift\n\"$STYLE_GEN_PATH\" styles \"$STYLES_JSON_PATH\" \"$STYLES_STYLE_PATH\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -327,7 +321,6 @@
 				92549FE81E8B021500FB1C08 /* StyleGroup.swift in Sources */,
 				927134C81E7E03A800F16322 /* TemplateModelsFactory.swift in Sources */,
 				928A26761E8681B5001E6E88 /* String+InputSymbols.swift in Sources */,
-				928A26781E869097001E6E88 /* TemplateStyles.swift in Sources */,
 				92549FE41E8AAD2400FB1C08 /* CodeTemplate.swift in Sources */,
 				927134C31E7DF96100F16322 /* StylesTemplate.swift in Sources */,
 				927134B71E7DF51F00F16322 /* FileController.swift in Sources */,
@@ -350,6 +343,7 @@
 				92FC05A11E82C31F00513584 /* TemplateModelsFactory.swift in Sources */,
 				92FC05A01E82C30A00513584 /* Font.swift in Sources */,
 				92FC05991E82B11F00513584 /* FontTests.swift in Sources */,
+				92AF2AB71E91AC9300BC0023 /* String+InputSymbols.swift in Sources */,
 				92FC05971E82B10E00513584 /* ColorTests.swift in Sources */,
 				92FC059F1E82B4C700513584 /* TestsParametersFactory.swift in Sources */,
 				92FC05A61E82DE6B00513584 /* Color.swift in Sources */,

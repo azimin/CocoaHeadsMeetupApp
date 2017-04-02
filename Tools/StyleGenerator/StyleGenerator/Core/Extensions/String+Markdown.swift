@@ -54,6 +54,7 @@ extension String {
       case `extension`
       case `protocol`
       case `class`
+      case `struct`
       case `enum`
     }
   }
@@ -64,9 +65,7 @@ extension String {
     lhs += rhs.value
   }
 
-  // MARK: - Private
-
-  fileprivate func addIndentation(_ count: Int = defaultIndentation) -> String {
+  func addIndentation(_ count: Int = defaultIndentation) -> String {
 
     let indent = makeIndent(count: count)
     var result = replacingOccurrences(of: "\n", with: "\n" + indent)
@@ -79,10 +78,12 @@ extension String {
     return result
   }
 
+  // MARK: - Private
+
   fileprivate func makeIndent(count: Int) -> String {
     var result = ""
     for _ in 0 ..< count {
-      result += String.InputSeparator.space.rawValue
+      result += String.InputSymbols.space.rawValue
     }
     return result
   }
@@ -216,7 +217,6 @@ extension String.CodeSymbols {
           result += nestedSymbol.addIndentation()
         }
       }
-      result += .newLine
       result += "}"
       return result
     }

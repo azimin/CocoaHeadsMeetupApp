@@ -42,7 +42,11 @@ struct Font: TemplateModel {
     }
 
     font = fontName
-    name = type(of: self).generateName(from: font)
+    if let nameParams = parameters["name"] as? String {
+      name = nameParams
+    } else {
+      name = type(of: self).generateName(from: font)
+    }
   }
 }
 
@@ -50,15 +54,20 @@ extension Font {
 
   // MARK: - Private
 
-  // Convert from "GothamPro-Light" -> "gothamProLight"
-  fileprivate static func generateName(from font: String) -> String {
-    if font.isEmpty {
+  // Convert from "GothamPro-Light" try -> "light", else "gothamPro"
+  static func generateName(from fontName: String) -> String {
+    if fontName.isEmpty {
       return ""
     }
 
-    let firstChar = String(font.characters.prefix(1)).lowercased()
-    let remainChars = String(font.characters.dropFirst()).replacingOccurrences(of: "-", with: "")
+    let fontComponents = fontName.components(separatedBy: .dash)
 
-    return firstChar + remainChars
+    if fontComponents.count > 1 {
+      return fontComponents.last?.lowercased() ?? ""
+    } else {
+      let firstChar = String(fontName.characters.prefix(1)).lowercased()
+      let remainChars = String(fontName.characters.dropFirst()).replacingOccurrences(of: "-", with: "")
+      return firstChar + remainChars
+    }
   }
 }

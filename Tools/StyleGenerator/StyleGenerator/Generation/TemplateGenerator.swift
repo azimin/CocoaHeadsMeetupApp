@@ -89,10 +89,15 @@ class TemplateGenerator {
     }
 
     guard let styles = Style.createAll(from: stylesParameters) else {
-      exit(with: "You should have at least one 'styles' - \(stylesParameters)")
+      exit(with: "You should have at least one 'styles group' - \(stylesParameters)")
       return nil
     }
-    let model = StylesTemplateModel(styleGroups: Array(styleGroups), styles: Array(styles))
+    var templates = [CodeTemplate]()
+    if let templatesCollection = CodeTemplatesCollection(parameters) {
+      templates = templatesCollection.templates
+    }
+
+    let model = StylesTemplateModel(styleGroups: Array(styleGroups), styles: Array(styles), codeTemplates: templates)
     return StylesTemplate(model)
   }
 }
