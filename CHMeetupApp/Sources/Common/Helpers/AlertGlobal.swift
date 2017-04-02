@@ -15,7 +15,7 @@ class AlertGlobal {
     if let actions = actions {
       actions.forEach({ action in alert.addAction(action) })
     } else {
-      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+      alert.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: nil))
     }
     viewController.present(alert, animated: true, completion: nil)
   }
