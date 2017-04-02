@@ -57,9 +57,8 @@ final class PermissionsManager {
       PermissionsManager.requestAccess(forType: type) { success in
         completion(success)
         if !success {
-          let alert = PermissionsManager.alertForSettingsWith(type: type)
           DispatchQueue.main.async {
-            controller.present(alert, animated: true, completion: nil)
+            PermissionsManager.alertForSettingsWith(type: type, on: controller)
           }
         }
       }
@@ -119,17 +118,19 @@ final class PermissionsManager {
     }
   }
 
-  private static func alertForSettingsWith(type: Type) -> UIAlertController {
+  private static func alertForSettingsWith(type: Type, on viewController: UIViewController) {
     let phrase = PermissionConstants.askPhrases[type]
     assert(phrase != nil, "[PermissionsManager] Unknown Type passed")
-
     let messageFull = "\(PermissionConstants.askForAccess) \(phrase!)"
-    let alert = UIAlertController(title: PermissionConstants.accessError, message: messageFull, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: PermissionConstants.cancel, style: .default, handler: nil))
-    alert.addAction(UIAlertAction(title: PermissionConstants.settings, style: .default) { _ in
-      self.openSettings()
-    })
-    return alert
+
+    let actions: [UIAlertAction] = [
+      UIAlertAction(title: PermissionConstants.cancel, style: .default, handler: nil),
+      UIAlertAction(title: PermissionConstants.settings, style: .default, handler: { _ in
+        self.openSettings()
+      })
+    ]
+    AlertGlobal.showAlert(on: viewController,
+                          title: PermissionConstants.accessError, message: messageFull, actions: actions)
   }
 
   /**
