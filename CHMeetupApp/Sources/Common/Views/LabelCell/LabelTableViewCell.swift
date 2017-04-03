@@ -10,41 +10,23 @@ import UIKit
 
 final class LabelTableViewCell: PlateTableViewCell {
 
-  @IBOutlet private var titleLabel: UILabel! {
+  @IBOutlet var titleLabel: UILabel! {
     didSet {
-      titleLabel.numberOfLines = 0
       titleLabel.font = UIFont.appFont(.gothamProMedium(size: 15))
       titleLabel.textColor = UIColor(.gray)
-      titleLabel.text = " "
     }
   }
 
-  @IBOutlet private var infoLabel: UILabel! {
+  @IBOutlet var descriptionLabel: UILabel! {
     didSet {
-      infoLabel.numberOfLines = 0
-      infoLabel.font = UIFont.appFont(.gothamPro(size: 15))
-      infoLabel.textColor = UIColor(.black)
-      infoLabel.text = " "
+      descriptionLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      descriptionLabel.textColor = UIColor(.black)
     }
   }
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    shouldHaveVerticalMargin = false
-  }
-
-  override func prepareForReuse() {
-    super.prepareForReuse()
-    updateSelection(shouldSelect: false)
-  }
-
-  override func updateSelection(shouldSelect: Bool) {
-    titleLabel.textColor = shouldSelect ? UIColor(.black) : UIColor(.gray)
-  }
-
-  func setup(title: String, info: String) {
-    titleLabel.text = title
-    infoLabel.text = info
+    roundType = .all
   }
 
 }

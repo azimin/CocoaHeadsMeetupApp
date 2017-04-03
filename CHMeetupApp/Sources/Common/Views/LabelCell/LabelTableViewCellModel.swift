@@ -11,14 +11,15 @@ import UIKit
 struct LabelTableViewCellModel {
 
   let title: String
-  let info: String
+  let description: String
 
 }
 
 extension LabelTableViewCellModel: CellViewModelType {
 
   func setup(on cell: LabelTableViewCell) {
-    cell.setup(title: title, info: info)
+    cell.titleLabel.text = title
+    cell.descriptionLabel.text = description
   }
 
 }
