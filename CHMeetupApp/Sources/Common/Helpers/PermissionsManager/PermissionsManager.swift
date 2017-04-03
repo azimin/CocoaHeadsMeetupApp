@@ -58,7 +58,7 @@ final class PermissionsManager {
         completion(success)
         if !success {
           DispatchQueue.main.async {
-            PermissionsManager.alertForSettingsWith(type: type, on: controller)
+            PermissionsManager.alertForSettings(with: type, on: controller)
           }
         }
       }
@@ -118,7 +118,7 @@ final class PermissionsManager {
     }
   }
 
-  private static func alertForSettingsWith(type: Type, on viewController: UIViewController) {
+  private static func alertForSettings(with type: Type, on viewController: UIViewController) {
     let phrase = PermissionConstants.askPhrases[type]
     assert(phrase != nil, "[PermissionsManager] Unknown Type passed")
     let messageFull = "\(PermissionConstants.askForAccess) \(phrase!)"
