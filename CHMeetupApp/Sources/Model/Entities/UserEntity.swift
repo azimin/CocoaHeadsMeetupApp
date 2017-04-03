@@ -32,4 +32,8 @@ class UserEntity: Object {
   override static func primaryKey() -> String? {
     return "id"
   }
+
+  dynamic var fullName: String {
+    return name + " " + lastName
+  }
 }

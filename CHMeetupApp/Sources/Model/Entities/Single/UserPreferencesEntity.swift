@@ -11,4 +11,5 @@ import RealmSwift
 
 class UserPreferencesEntity: Object, ObjectSingletone {
   dynamic var isLoggedIn: Bool = false
+  dynamic var currentUser: UserEntity?
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,35 +21,35 @@
                         <viewControllerLayoutGuide type="bottom" id="Ilb-Pz-Fca"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="22N-8c-n1H">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbP-cw-RIa">
-                                <rect key="frame" x="24" y="150.5" width="327" height="366.5"/>
+                                <rect key="frame" x="24" y="109.5" width="272" height="349"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tw" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="326.5" width="287" height="40"/>
+                                        <rect key="frame" x="8" y="309" width="256" height="40"/>
                                         <color key="backgroundColor" red="0.30612394213676453" green="0.7424468994140625" blue="0.93023401498794556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="WrD-rK-qrf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Войти через Twitter" image="img_auth_twitter">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="vk" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="276.5" width="287" height="40"/>
+                                        <rect key="frame" x="8" y="259" width="256" height="40"/>
                                         <color key="backgroundColor" red="0.32803952693939209" green="0.46409446001052856" blue="0.60960102081298828" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="5WJ-ID-2dF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Войти через Вконтакте" image="img_auth_vk">
+                                        <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Войти через ВКонтакте" image="img_auth_vk">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -57,14 +57,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="fb" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-p0-rbw" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="226.5" width="287" height="40"/>
+                                        <rect key="frame" x="8" y="209" width="256" height="40"/>
                                         <color key="backgroundColor" red="0.22943970561027527" green="0.34702008962631226" blue="0.59602290391921997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="zzw-4h-5Ik"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
                                         <state key="normal" title="Войти через Facebook" image="img_auth_fb">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,28 +73,28 @@
                                             <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="B5k-h1-N0K"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зарегистрированным пользователям  доступно больше функций!   Авторизируйтесь и регистрируйтесь  на встречи в одно касание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rk-2cD">
-                                        <rect key="frame" x="0.0" y="96.5" width="327" height="90"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зарегистрированным пользователям  доступно больше функций!   Авторизируйтесь и регистрируйтесь  на встречи в одно касание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rk-2cD">
+                                        <rect key="frame" x="0.0" y="97" width="272" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.55310022830000005" green="0.67898041009999999" blue="0.67554408310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_profile_man" translatesAutoresizingMaskIntoConstraints="NO" id="pvT-nQ-V1Y">
-                                        <rect key="frame" x="133.5" y="0.0" width="60" height="69"/>
+                                        <rect key="frame" x="106" y="0.0" width="60" height="69"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailingMargin" secondItem="a2j-p0-rbw" secondAttribute="trailing" constant="12" id="1NN-gG-dXB"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="a2j-p0-rbw" secondAttribute="trailing" id="1NN-gG-dXB"/>
                                     <constraint firstItem="pvT-nQ-V1Y" firstAttribute="centerX" secondItem="VbP-cw-RIa" secondAttribute="centerX" id="1ri-69-Cd4"/>
                                     <constraint firstItem="jYh-rk-2cD" firstAttribute="leading" secondItem="VbP-cw-RIa" secondAttribute="leading" id="Bd3-B3-s6H"/>
-                                    <constraint firstAttribute="leadingMargin" secondItem="a2j-p0-rbw" secondAttribute="leading" constant="-12" id="GGt-0G-Mw5"/>
+                                    <constraint firstAttribute="leadingMargin" secondItem="a2j-p0-rbw" secondAttribute="leading" id="GGt-0G-Mw5"/>
                                     <constraint firstItem="sxo-Mt-f4Q" firstAttribute="top" secondItem="gl9-SA-VgD" secondAttribute="bottom" constant="10" id="bnm-nw-C8n"/>
                                     <constraint firstItem="gl9-SA-VgD" firstAttribute="top" secondItem="a2j-p0-rbw" secondAttribute="bottom" constant="10" id="dyd-9X-JD3"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="sxo-Mt-f4Q" secondAttribute="trailing" constant="12" id="eR0-Kv-2eI"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="gl9-SA-VgD" secondAttribute="trailing" constant="12" id="hHS-JR-pXF"/>
-                                    <constraint firstItem="sxo-Mt-f4Q" firstAttribute="leading" secondItem="VbP-cw-RIa" secondAttribute="leadingMargin" constant="12" id="j8h-pF-rRj"/>
-                                    <constraint firstAttribute="leadingMargin" secondItem="gl9-SA-VgD" secondAttribute="leading" constant="-12" id="jb3-Fh-Hxc"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="sxo-Mt-f4Q" secondAttribute="trailing" id="eR0-Kv-2eI"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="gl9-SA-VgD" secondAttribute="trailing" id="hHS-JR-pXF"/>
+                                    <constraint firstItem="sxo-Mt-f4Q" firstAttribute="leading" secondItem="VbP-cw-RIa" secondAttribute="leadingMargin" id="j8h-pF-rRj"/>
+                                    <constraint firstAttribute="leadingMargin" secondItem="gl9-SA-VgD" secondAttribute="leading" id="jb3-Fh-Hxc"/>
                                     <constraint firstItem="pvT-nQ-V1Y" firstAttribute="top" secondItem="VbP-cw-RIa" secondAttribute="top" id="nGh-DX-TsC"/>
                                     <constraint firstItem="pvT-nQ-V1Y" firstAttribute="centerX" secondItem="VbP-cw-RIa" secondAttribute="centerX" id="pCr-nb-zZK"/>
                                     <constraint firstItem="jYh-rk-2cD" firstAttribute="firstBaseline" secondItem="pvT-nQ-V1Y" secondAttribute="bottom" constant="42" id="pM7-4R-ajg"/>
@@ -132,15 +132,16 @@
                         <viewControllerLayoutGuide type="bottom" id="nwW-pZ-9ia"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="T2c-QD-Zwl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5gD-wy-4Yc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5gD-wy-4Yc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="p5C-xH-cy8" id="ghq-tf-FJm"/>
-                                    <outlet property="delegate" destination="p5C-xH-cy8" id="Ll3-H9-Ptl"/>
+                                    <outlet property="dataSource" destination="p5C-xH-cy8" id="JrQ-I2-Qcu"/>
+                                    <outlet property="delegate" destination="p5C-xH-cy8" id="jb6-ph-2dn"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -155,7 +156,7 @@
                     <navigationItem key="navigationItem" title="Profile" id="5yg-zd-3yO">
                         <barButtonItem key="leftBarButtonItem" title="Log out" id="D0b-if-5RI">
                             <connections>
-                                <action selector="logutBarButtonAction:" destination="p5C-xH-cy8" id="eEL-Ld-VBH"/>
+                                <action selector="logoutBarButtonAction:" destination="p5C-xH-cy8" id="1Pf-GJ-dF4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="9Vg-65-3KU">
@@ -183,7 +184,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Zvk-T6-twm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LUJ-lg-thX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -202,11 +203,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ZRv-Xe-9jk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="974-sJ-D3K">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dY2-b6-Nvf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -244,7 +245,7 @@
             <objects>
                 <navigationController storyboardIdentifier="AuthViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="7aJ-hD-rjf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zdg-QD-JoR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zdg-QD-JoR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -262,7 +263,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ProfileViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="8x9-GI-9iQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SkT-lA-HEb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SkT-lA-HEb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

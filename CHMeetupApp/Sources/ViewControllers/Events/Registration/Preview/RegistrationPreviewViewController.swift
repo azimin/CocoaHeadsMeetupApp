@@ -8,27 +8,20 @@
 
 import UIKit
 
-private let bottomMargin: CGFloat = 8
-
 class RegistrationPreviewViewController: UIViewController {
 
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.allowsMultipleSelection = true
-      tableView.backgroundColor = UIColor.clear
-
-      tableView.contentInset = UIEdgeInsets(top: 0,
-                                            left: 0,
-                                            bottom: bottomMargin + BottomButton.constantHeight,
-                                            right: 0)
-
+      let configuration = TableViewConfiguration(
+                                      bottomInset: 8 + BottomButton.constantHeight,
+                                      estimatedRowHeight: 44,
+                                      backgroundColor: .clear)
+      tableView.configure(with: .custom(configuration))
       tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0,
                                                      left: 0,
                                                      bottom: BottomButton.constantHeight,
                                                      right: 0)
-
-      tableView.estimatedRowHeight = 44.0
-
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
@@ -166,12 +159,12 @@ extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
 
     switch state {
     case .frameChanged, .opened:
-      let tableViewBottomContentInsets = info.endFrame.height + bottomMargin + bottomButton.frame.height
+      let tableViewBottomContentInsets = info.endFrame.height + tableView.defaultBottomInset
       tableView.contentInset.bottom = tableViewBottomContentInsets
       tableView.scrollIndicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
       buttonInsets = info.endFrame.height
     case .hidden:
-      tableView.contentInset.bottom = bottomMargin + BottomButton.constantHeight
+      tableView.contentInset.bottom = tableView.defaultBottomInset
       tableView.scrollIndicatorInsets.bottom = BottomButton.constantHeight
       buttonInsets = 0
     }

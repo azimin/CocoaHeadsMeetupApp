@@ -8,19 +8,15 @@
 
 import UIKit
 
-private let margin: CGFloat = 8
-
 class EventPreviewViewController: UIViewController {
 
   var selectedEventId: Int = 0
 
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      tableView.estimatedRowHeight = 100
-      tableView.rowHeight = UITableViewAutomaticDimension
-      tableView.backgroundColor = UIColor.clear
-      tableView.contentInset = UIEdgeInsets(top: margin, left: 0,
-                                            bottom: margin + BottomButton.constantHeight, right: 0)
+      var configuration = TableViewConfiguration.default
+      configuration.bottomInset = 8 + BottomButton.constantHeight
+      tableView.configure(with: .custom(configuration))
     }
   }
 

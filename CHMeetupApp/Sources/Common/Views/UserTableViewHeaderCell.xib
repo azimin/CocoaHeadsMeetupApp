@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="222" id="KGk-i7-Jjw" customClass="UserTableViewHeaderCell" customModule="CHMeetupApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="222"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="330" height="221.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzx-8M-7Yn">
+                        <rect key="frame" x="8" y="151" width="314" height="46.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DuV-0I-Kbz">
+                        <rect key="frame" x="120" y="37" width="90" height="90"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="90" id="948-Ek-rkT"/>
+                            <constraint firstAttribute="width" secondItem="DuV-0I-Kbz" secondAttribute="height" multiplier="1:1" id="adj-Tn-O62"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Fzx-8M-7Yn" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="3Nx-di-t2A"/>
+                    <constraint firstItem="Fzx-8M-7Yn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="7Zs-3Z-HRU"/>
+                    <constraint firstItem="DuV-0I-Kbz" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Fdi-F8-n0e"/>
+                    <constraint firstAttribute="trailing" secondItem="Fzx-8M-7Yn" secondAttribute="trailing" constant="8" id="L89-up-z2h"/>
+                    <constraint firstAttribute="bottom" secondItem="Fzx-8M-7Yn" secondAttribute="bottom" constant="24" id="aDJ-24-t1O"/>
+                    <constraint firstItem="DuV-0I-Kbz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="d07-N8-lRW"/>
+                    <constraint firstItem="Fzx-8M-7Yn" firstAttribute="top" secondItem="DuV-0I-Kbz" secondAttribute="bottom" constant="24" id="y6q-yG-rMK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="positionAtCompanyLabel" destination="Fzx-8M-7Yn" id="bOO-wI-UuO"/>
+                <outlet property="userImageView" destination="DuV-0I-Kbz" id="Drz-bb-sqk"/>
+            </connections>
+            <point key="canvasLocation" x="39" y="143"/>
+        </tableViewCell>
+    </objects>
+</document>

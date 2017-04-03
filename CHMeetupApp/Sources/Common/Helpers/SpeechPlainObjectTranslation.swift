@@ -14,6 +14,7 @@ struct SpeechPlainObjectTranslation: PlainObjectTranslation {
 
     let speakerPlainObject = plainObject.speaker
 
+    //TODO: Move out this translation of here
     let user = UserEntity()
     user.id = speakerPlainObject.id
     user.name = speakerPlainObject.name

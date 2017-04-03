@@ -94,10 +94,8 @@ final class AuthServiceFacade {
   }
 
   /*
-   *
    * Present safari view controller to current view controller
    * Kirill Averyanov
-   *
    */
 
   fileprivate func showSafari(url: URL) {

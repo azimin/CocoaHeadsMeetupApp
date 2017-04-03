@@ -10,105 +10,30 @@ import UIKit
 
 class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType {
 
-  struct CellHeights {
-    struct Profile {
-      static let picture: CGFloat = 104.0
-      static let name: CGFloat = 63.0
-      static let phone: CGFloat = 92.0
-      static let email: CGFloat = 92.0
-      static let speech: CGFloat = 37.0
-    }
-  }
+  @IBOutlet var tableView: UITableView!
 
-  enum ProfileCells {
-    case picture, name, phone, email, speech
-  }
-
-  @IBOutlet var tableView: UITableView! {
-    didSet {
-      tableView.backgroundColor = UIColor.clear
-      tableView.tableFooterView = UIView()
-      tableView.registerNib(for: ProfilePictureCell.self)
-      tableView.registerNib(for: ProfileNameCell.self)
-      tableView.registerNib(for: ProfileSpeechCell.self)
-      tableView.registerNib(for: LabelTableViewCell.self)
-    }
-  }
-
-  var tableArray = [ProfileCells]()
+  fileprivate var displayCollection: ProfileViewDisplayCollection!
 
   // MARK: - View Lifecycle.
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    updateTableView()
+    displayCollection = ProfileViewDisplayCollection()
+    tableView.registerNibs(from: displayCollection)
 
-    title = "Profile".localized
+    title = displayCollection.user.fullName
     view.backgroundColor = UIColor(.lightGray)
-
-  }
-
-  // MARK: - TableView update.
-
-  func updateTableView() {
-    tableArray = [.picture, .name, .phone, .email, .speech]
-    tableView.reloadData()
   }
 
   // MARK: - Actions.
 
-  @IBAction func logutBarButtonAction(_ sender: UIBarButtonItem) {
-    LoginProcessController.isLogin = false
+  @IBAction func logoutBarButtonAction(_ sender: UIBarButtonItem) {
+    LoginProcessController.logout()
     profileNavigationController?.updateRootViewController()
   }
 
   @IBAction func editBarButtonAction(_ sender: UIBarButtonItem) {
 
-  }
-
-  // MARK: - Table helpers.
-
-  func cellHeightFor(_ indexPath: IndexPath) -> CGFloat {
-    switch tableArray[indexPath.row] {
-    case .picture:
-      return CellHeights.Profile.picture
-    case .name:
-      return CellHeights.Profile.name
-    case .phone:
-      return CellHeights.Profile.phone
-    case .email:
-      return CellHeights.Profile.email
-    case .speech:
-      return CellHeights.Profile.speech
-    }
-  }
-
-  func cellObjectFor(_ indexPath: IndexPath) -> UITableViewCell {
-    var cell: UITableViewCell!
-    switch tableArray[indexPath.row] {
-    case .picture:
-      cell = tableView.dequeueReusableCell(for: indexPath) as ProfilePictureCell
-    case .name:
-      cell = tableView.dequeueReusableCell(for: indexPath) as ProfileNameCell
-    case .phone, .email:
-      cell = tableView.dequeueReusableCell(for: indexPath) as LabelTableViewCell
-    case .speech:
-      cell = tableView.dequeueReusableCell(for: indexPath) as ProfileSpeechCell
-    }
-    return cell
-  }
-
-  func cellActionFor(_ indexPath: IndexPath) {
-    switch tableArray[indexPath.row] {
-    case .speech:
-      let giveSpeechViewController = Storyboards.Profile.instantiateGiveSpeechViewController()
-      if let navigationController = navigationController {
-        navigationController.pushViewController(giveSpeechViewController,
-                                                animated: true)
-      }
-    case .name, .picture, .phone, .email:
-      return
-    }
   }
 }
 
@@ -116,11 +41,13 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 
 extension ProfileViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return tableArray.count
+    return displayCollection.numberOfRows(in: section)
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return cellObjectFor(indexPath)
+    let model = displayCollection.model(for: indexPath)
+    let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
+    return cell
   }
 }
 
@@ -128,11 +55,10 @@ extension ProfileViewController: UITableViewDataSource {
 
 extension ProfileViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return cellHeightFor(indexPath)
+    return displayCollection.cellHeightFor(indexPath)
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    cellActionFor(indexPath)
   }
 }

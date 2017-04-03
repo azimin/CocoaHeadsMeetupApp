@@ -12,9 +12,7 @@ class MainViewController: UIViewController {
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      tableView.estimatedRowHeight = 100
-      tableView.rowHeight = UITableViewAutomaticDimension
-      tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+      tableView.configure(with: .defaultConfiguration)
     }
   }
 
@@ -22,18 +20,14 @@ class MainViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
     displayCollection = MainViewDisplayCollection()
+    displayCollection.configureActionCellsSection(on: self, with: tableView)
     tableView.registerNibs(from: displayCollection)
 
     title = "Main".localized
 
     view.backgroundColor = UIColor(.lightGray)
     // Do any additional setup after loading the view.
-  }
-
-  @IBAction func showEventAction(_ sender: UIButton) {
-    navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController, animated: true)
   }
 
   override func customTabBarItemContentView() -> CustomTabBarItemView {
@@ -59,6 +53,7 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController, animated: true)
+    tableView.deselectRow(at: indexPath, animated: true)
+    displayCollection.didSelect(indexPath: indexPath)
   }
 }
