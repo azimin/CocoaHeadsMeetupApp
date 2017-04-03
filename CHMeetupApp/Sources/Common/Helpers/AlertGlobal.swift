@@ -10,8 +10,9 @@ import UIKit
 
 class AlertGlobal {
   static func showAlert(on viewController: UIViewController,
-                        title: String?, message: String?, actions: [UIAlertAction]?) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                        title: String? = nil, message: String? = nil,
+                        actions: [UIAlertAction]? = nil, style: UIAlertControllerStyle = .alert) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: style)
     if let actions = actions {
       actions.forEach({ action in alert.addAction(action) })
     } else {
