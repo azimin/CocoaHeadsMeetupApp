@@ -43,7 +43,10 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 
     auth.login(with: authResourceType, from: self) { [weak self] (user, error) in
       guard let user = user, error == nil else {
-        // Show alert about error
+        if let viewController = self {
+          AlertGlobal.showAlert(on: viewController, title: "Error".localized,
+                                message: "Error with login".localized)
+        }
         return
       }
       LoginProcessController.setCurrentUser(user)
