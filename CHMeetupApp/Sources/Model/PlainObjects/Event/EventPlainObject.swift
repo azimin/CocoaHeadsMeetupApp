@@ -6,7 +6,7 @@
 //  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
-import CoreLocation
+import Foundation
 
 struct EventPlainObject {
   let id: Int

@@ -62,11 +62,7 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
 
 fileprivate extension PastEventsViewController {
   func fetchEvents() {
-    Server.standard.request(EventPlainObject.Requests.pastList, completion: { list, error in
-      guard let list = list,
-        error == nil else { return }
-
-      EventPlainObjectTranslation.translate(of: list, to: nil)
+    EventFetching.fetchElements(request: EventPlainObject.Requests.pastList, completion: {
       self.tableView.reloadData()
     })
   }
