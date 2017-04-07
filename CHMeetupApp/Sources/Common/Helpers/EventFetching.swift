@@ -15,7 +15,7 @@ struct EventFetching: FetchingElements {
         error == nil else { return }
 
       EventPlainObjectTranslation.translate(of: list, to: nil)
-      if let completion = completion { completion() }
+      completion?()
     })
   }
 }
