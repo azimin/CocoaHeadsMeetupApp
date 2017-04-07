@@ -8,19 +8,24 @@
 
 import UIKit
 
+protocol MainViewDisplayCollectionDelegate: class {
+  func shouldPresent(viewController: UIViewController)
+}
+
 class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [EventPreviewTableViewCellModel.self, ActionTableViewCellModel.self]
   }
 
-  enum `Type` {
+  private enum `Type` {
     case events
     case actionButtons
   }
 
-  var sections: [Type] = [.events, .actionButtons]
+  weak var delegate: MainViewDisplayCollectionDelegate?
 
-  var actionPlainObjects: [ActionPlainObject] = []
+  private var sections: [Type] = [.events, .actionButtons]
+  private var actionPlainObjects: [ActionPlainObject] = []
 
   private var indexPath: IndexPath?
 
@@ -49,12 +54,6 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     if let calendarCell = calendarPermissionCell {
       actionPlainObjects.append(calendarCell)
     }
-
-    // FIXME: Setup with real case
-    actionPlainObjects.append(ActionPlainObject(text: "Example", imageName: nil, action: {
-      viewController.navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController,
-                                                              animated: true)
-    }))
   }
 
   let modelCollection: DataModelCollection<EventEntity> = {
@@ -88,7 +87,9 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func didSelect(indexPath: IndexPath) {
     switch sections[indexPath.section] {
     case .events:
-      break
+      let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
+      eventPreview.selectedEventId = modelCollection[indexPath.row].id
+      delegate?.shouldPresent(viewController: eventPreview)
     case .actionButtons:
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()

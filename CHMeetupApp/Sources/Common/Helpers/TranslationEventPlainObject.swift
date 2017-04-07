@@ -17,6 +17,7 @@ struct EventPlainObjectTranslation: PlainObjectTranslation {
     event.startDate = plainObject.startDate
     event.endDate = plainObject.endDate
     event.descriptionText = plainObject.description
+    event.isRegistrationOpen = plainObject.isRegistrationOpen
 
     for speakerURLs in plainObject.speakersPhotos {
       let containerEntity = StringContainerEntity()
