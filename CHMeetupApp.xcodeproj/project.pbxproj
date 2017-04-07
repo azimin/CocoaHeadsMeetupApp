@@ -106,6 +106,8 @@
 		8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */; };
 		8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */; };
 		8ACCB3D41E808CFE00D62E5D /* EventPreviewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */; };
+		920B47C41E96A992001EFB9C /* TextInputViewsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920B47C31E96A992001EFB9C /* TextInputViewsHandler.swift */; };
+		920B47C61E96A9A1001EFB9C /* TextInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920B47C51E96A9A1001EFB9C /* TextInputModel.swift */; };
 		9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */; };
 		9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2638601E6B83D50081D23B /* DataModelCollection.swift */; };
 		9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */; };
@@ -309,6 +311,8 @@
 		8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationPlainObjectProtocol.swift; sourceTree = "<group>"; };
 		8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationEventPlainObject.swift; sourceTree = "<group>"; };
 		8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewDisplayCollection.swift; path = CHMeetupApp/Sources/ViewControllers/Events/DisplayModel/EventPreviewDisplayCollection.swift; sourceTree = SOURCE_ROOT; };
+		920B47C31E96A992001EFB9C /* TextInputViewsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputViewsHandler.swift; sourceTree = "<group>"; };
+		920B47C51E96A9A1001EFB9C /* TextInputModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputModel.swift; sourceTree = "<group>"; };
 		9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = UserPreferencesEntity.swift; path = Single/UserPreferencesEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F2638601E6B83D50081D23B /* DataModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataModelCollection.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
@@ -693,6 +697,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				920B47C21E96A97F001EFB9C /* TextInputViewsHandler */,
 				F718BFB51E942C0A008B3C0B /* Optional */,
 				7DE942081E867AA900E7E9E6 /* AuthService */,
 				8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */,
@@ -1197,6 +1202,15 @@
 				8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */,
 			);
 			name = DisplayModel;
+			sourceTree = "<group>";
+		};
+		920B47C21E96A97F001EFB9C /* TextInputViewsHandler */ = {
+			isa = PBXGroup;
+			children = (
+				920B47C31E96A992001EFB9C /* TextInputViewsHandler.swift */,
+				920B47C51E96A9A1001EFB9C /* TextInputModel.swift */,
+			);
+			path = TextInputViewsHandler;
 			sourceTree = "<group>";
 		};
 		9F26385B1E6B82F50081D23B /* Single */ = {
@@ -1803,6 +1817,7 @@
 				03CA501F1E8327EB00CF9613 /* RegistrationFormDataCollection.swift in Sources */,
 				4D9DEA2B1E9543DC00260264 /* UIImageView+RoundCorners.swift in Sources */,
 				22323F971E70C2BE00522E5C /* GiveSpeechViewController.swift in Sources */,
+				920B47C41E96A992001EFB9C /* TextInputViewsHandler.swift in Sources */,
 				9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */,
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
 				328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */,
@@ -1919,6 +1934,7 @@
 				7DE942141E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift in Sources */,
 				03374B1F1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift in Sources */,
 				22323F0D1E70C0CE00522E5C /* UIImage+RenderMode.swift in Sources */,
+				920B47C61E96A9A1001EFB9C /* TextInputModel.swift in Sources */,
 				9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */,
 				F718BFAA1E93BF8D008B3C0B /* Bool+Random.swift in Sources */,
 				9FD5948C1E8716E800BAD1B5 /* SpeechPlainObjectTranslation.swift in Sources */,
