@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol FetchingElements {
   associatedtype Value = PlainObjectType
+  associatedtype Parent = Object
 
-  static func fetchElements(request: Request<[Value]>, completion: (() -> Void)?)
+  static func fetchElements(request: Request<[Value]>, to parent: Parent?, completion: (() -> Void)?)
 }

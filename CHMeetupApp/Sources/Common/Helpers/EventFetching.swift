@@ -9,12 +9,13 @@
 import Foundation
 
 struct EventFetching: FetchingElements {
-  static func fetchElements(request: Request<[EventPlainObject]>, completion: (() -> Void)? = nil) {
+  static func fetchElements(request: Request<[EventPlainObject]>,
+                            to parent: EventEntity? = nil, completion: (() -> Void)?) {
     Server.standard.request(request, completion: { list, error in
       guard let list = list,
         error == nil else { return }
 
-      EventPlainObjectTranslation.translate(of: list, to: nil)
+      EventPlainObjectTranslation.translate(of: list, to: parent)
       completion?()
     })
   }
