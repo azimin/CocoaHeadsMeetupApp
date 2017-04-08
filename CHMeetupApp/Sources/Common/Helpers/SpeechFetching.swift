@@ -10,7 +10,7 @@ import Foundation
 
 struct SpeechFetching: FetchingElements {
   static func fetchElements(request: Request<[SpeechPlainObject]>,
-                            to parent: EventEntity?, completion: (() -> Void)?) {
+                            to parent: EventEntity?, completion: (() -> Void)? = nil) {
     Server.standard.request(request, completion: { list, error in
       guard let list = list,
         error == nil else { return }
