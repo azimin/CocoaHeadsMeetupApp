@@ -68,15 +68,9 @@ extension MainViewController: MainViewDisplayCollectionDelegate {
   }
 }
 
-// FIXME: - Move into personal structure, 
-// When https://trello.com/c/XQgNIbD5/194-fetchevents-pasteventsviewcontroller would be done
 fileprivate extension MainViewController {
   func fetchEvents() {
-    Server.standard.request(EventPlainObject.Requests.list, completion: { [weak self] list, error in
-      guard let list = list,
-        error == nil else { return }
-
-      EventPlainObjectTranslation.translate(of: list, to: nil)
+    EventFetching.fetchElements(request: EventPlainObject.Requests.list, completion: { [weak self] in
       self?.tableView.reloadData()
     })
   }

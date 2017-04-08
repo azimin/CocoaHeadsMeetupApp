@@ -96,17 +96,11 @@ extension EventPreviewViewController: EventPreviewDisplayCollectionDelegate {
   }
 }
 
-// FIXME: - Move into personal structure,
-// When https://trello.com/c/XQgNIbD5/194-fetchevents-pasteventsviewcontroller would be done
 extension EventPreviewViewController {
   func fetchEvents(on eventEntity: EventEntity) {
     let speechesRequest = SpeechPlainObject.Requests.speechesOnEvent(with: selectedEventId)
-    Server.standard.request(speechesRequest, completion: { list, error in
-      guard let list = list,
-        error == nil else { return }
-
-      SpeechPlainObjectTranslation.translate(of: list, to: eventEntity)
-      self.tableView.reloadData()
+    SpeechFetching.fetchElements(request: speechesRequest, to: eventEntity, completion: { [weak self] in
+      self?.tableView.reloadData()
     })
   }
 }

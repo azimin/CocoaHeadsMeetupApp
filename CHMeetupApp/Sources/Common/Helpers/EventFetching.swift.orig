@@ -1,0 +1,30 @@
+//
+//  EventFetching.swift
+//  CHMeetupApp
+//
+//  Created by Kirill Averyanov on 06/04/2017.
+//  Copyright © 2017 CocoaHeads Community. All rights reserved.
+//
+
+import Foundation
+
+struct EventFetching: FetchingElements {
+<<<<<<< HEAD
+  static func fetchElements(request: Request<[EventPlainObject]>,
+                            to parent: EventEntity? = nil, completion: (() -> Void)?) {
+=======
+  static func fetchElements(request: Request<[EventPlainObject]>, completion: (() -> Void)? = nil) {
+>>>>>>> 74797322165dc972da4823982cd67934499ac034
+    Server.standard.request(request, completion: { list, error in
+      guard let list = list,
+        error == nil else { return }
+
+<<<<<<< HEAD
+      EventPlainObjectTranslation.translate(of: list, to: parent)
+=======
+      EventPlainObjectTranslation.translate(of: list, to: nil)
+>>>>>>> 74797322165dc972da4823982cd67934499ac034
+      completion?()
+    })
+  }
+}
