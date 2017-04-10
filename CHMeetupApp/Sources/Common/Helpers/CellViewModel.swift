@@ -11,7 +11,7 @@ import UIKit
 // Use this type in non-generic cases
 protocol CellViewAnyModelType {
   static func cellClass() -> UIView.Type
-  func setup(on cell: UIView)
+  func setupDefault(on cell: UIView)
 
   func updateAppearance(of view: UIView, in parentView: UIView, at indexPath: IndexPath)
 }
@@ -32,7 +32,7 @@ extension CellViewModelType {
     return Self.CellClass.self
   }
 
-  func setup(on cell: UIView) {
+  func setupDefault(on cell: UIView) {
     setup(on: cell as! Self.CellClass) // swiftlint:disable:this force_cast
   }
 }

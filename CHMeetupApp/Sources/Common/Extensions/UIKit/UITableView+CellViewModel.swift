@@ -16,7 +16,7 @@ extension UITableView {
                                    for: indexPath)
 
     model.updateAppearance(of: cell, in: self, at: indexPath)
-    model.setup(on: cell)
+    model.setupDefault(on: cell)
 
     return cell
   }
