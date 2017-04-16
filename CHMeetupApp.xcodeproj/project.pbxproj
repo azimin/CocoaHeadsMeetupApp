@@ -90,7 +90,6 @@
 		329F08131EA2761F00A03889 /* TemplateableViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F08121EA2761F00A03889 /* TemplateableViewType.swift */; };
 		329F08151EA2766D00A03889 /* UIView+Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F08141EA2766D00A03889 /* UIView+Template.swift */; };
 		32AA9BBE1E7A91C000140413 /* ParticipantsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA9BBD1E7A91C000140413 /* ParticipantsCollectionView.swift */; };
-		32F0788D1EA02F2F00B373C6 /* LoadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F0788C1EA02F2F00B373C6 /* LoadingLabel.swift */; };
 		32FB3C8D1E9D3DCE00727A3D /* TemplateableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FB3C8C1E9D3DCE00727A3D /* TemplateableEntity.swift */; };
 		32FB3C911E9E23B000727A3D /* Templateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FB3C901E9E23B000727A3D /* Templateable.swift */; };
 		4D0E6B561E86E11100C44DC0 /* ActionCellConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */; };
@@ -319,7 +318,6 @@
 		329F08121EA2761F00A03889 /* TemplateableViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateableViewType.swift; sourceTree = "<group>"; };
 		329F08141EA2766D00A03889 /* UIView+Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Template.swift"; sourceTree = "<group>"; };
 		32AA9BBD1E7A91C000140413 /* ParticipantsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsCollectionView.swift; sourceTree = "<group>"; };
-		32F0788C1EA02F2F00B373C6 /* LoadingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingLabel.swift; sourceTree = "<group>"; };
 		32FB3C8C1E9D3DCE00727A3D /* TemplateableEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateableEntity.swift; sourceTree = "<group>"; };
 		32FB3C901E9E23B000727A3D /* Templateable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Templateable.swift; sourceTree = "<group>"; };
 		4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionCellConfigurationController.swift; path = ActionCellConfigurationController/ActionCellConfigurationController.swift; sourceTree = "<group>"; };
@@ -847,7 +845,6 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				329F08161EA35D3500A03889 /* LoadingLabel */,
 				ADCCA0FA1E936156009DAACE /* LabelCell */,
 				8A3699821E8C471800B37528 /* AboutSpeechCell */,
 				320FA5721E87A80700DAC7E1 /* UserHeaderCell */,
@@ -1187,14 +1184,6 @@
 				328FF7551E7C05B300D9D43F /* CGFloat+Rounding.swift */,
 			);
 			name = CGFloat;
-			sourceTree = "<group>";
-		};
-		329F08161EA35D3500A03889 /* LoadingLabel */ = {
-			isa = PBXGroup;
-			children = (
-				32F0788C1EA02F2F00B373C6 /* LoadingLabel.swift */,
-			);
-			name = LoadingLabel;
 			sourceTree = "<group>";
 		};
 		32AA9BBC1E7A919600140413 /* ParticipantCollectionView */ = {
@@ -2020,7 +2009,6 @@
 				9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */,
 				9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
-				32F0788D1EA02F2F00B373C6 /* LoadingLabel.swift in Sources */,
 				22323F541E70C18700522E5C /* PlacePlainObject.swift in Sources */,
 				4D9D24241E7B2FE300FA5E93 /* ActionTableViewCellModel.swift in Sources */,
 				22323F2E1E70C0E500522E5C /* Utility.swift in Sources */,
