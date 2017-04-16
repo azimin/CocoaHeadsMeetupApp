@@ -1,5 +1,5 @@
 //
-//  TemplateableViewType.swift
+//  TemplatableViewType.swift
 //  CHMeetupApp
 //
 //  Created by Dmitriy Lis on 15/04/2017.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol TemplateableViewType {
+protocol TemplatableViewType {
   func apply(template: Bool)
 }

@@ -1,5 +1,5 @@
 //
-//  Templateable.swift
+//  Templatable.swift
 //  CHMeetupApp
 //
 //  Created by Dmitriy Lis on 12/04/2017.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol Templateable {
+protocol Templatable {
   var isTemplate: Bool { get set }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView: TemplateableViewType {
+extension UIView: TemplatableViewType {
   func apply(template: Bool) {
     for view in subviews {
       view.apply(template: template)

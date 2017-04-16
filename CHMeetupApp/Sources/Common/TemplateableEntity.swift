@@ -1,5 +1,5 @@
 //
-//  TemplateableEntity.swift
+//  TemplatableEntity.swift
 //  CHMeetupApp
 //
 //  Created by Dmitriy Lis on 11/04/2017.
@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-protocol TemplateableEntity {
+protocol TemplatableEntity {
   associatedtype EntityType: Object
   static var templateEntity: EntityType { get }
 }
