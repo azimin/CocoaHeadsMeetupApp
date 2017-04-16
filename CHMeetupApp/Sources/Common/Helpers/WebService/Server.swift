@@ -89,7 +89,7 @@ class Server {
       return
     }
 
-    if request.method == .get, let _ = request.params {
+    if request.method == .get, request.params != nil {
       fatalError("Get query should not have params. Use request url for sending any parameters.")
     }
 

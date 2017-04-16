@@ -16,8 +16,10 @@ struct SpeechPreviewTableViewCellModel {
 extension SpeechPreviewTableViewCellModel: CellViewModelType {
   func setup(on cell: SpeechPreviewTableViewCell) {
     if let user = speech.user {
-      //    cell.avatarImageView.image = UIImage(data: userPhoto)
       cell.fullNameLabel.text = user.name + " " + user.lastName
+      if let photoURL = user.photoURL, let url = URL(string: photoURL) {
+        cell.avatarImageView.loadImage(from: url)
+      }
     }
 
     cell.topicLabel.text = "«" + speech.title + "»"

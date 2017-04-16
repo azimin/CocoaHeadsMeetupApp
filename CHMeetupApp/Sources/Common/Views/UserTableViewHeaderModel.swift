@@ -14,12 +14,9 @@ struct UserTableViewHeaderCellModel {
 
 extension UserTableViewHeaderCellModel: CellViewModelType {
   func setup(on cell: UserTableViewHeaderCell) {
-    if let url = URL(string: userEntity.photoURL ?? "") {
-      if let data = NSData(contentsOf: url) {
-        cell.userImageView.image = UIImage(data: data as Data)
-      }
+    if let photoURL = userEntity.photoURL, let url = URL(string: photoURL) {
+      cell.userImageView.loadImage(from: url)
     }
-
     cell.positionAtCompanyLabel.attributedText =
     AttributedSentenceHelper.Preposition.at.concatString(firstPartString: userEntity.position,
                                                          secondPartString: userEntity.company)

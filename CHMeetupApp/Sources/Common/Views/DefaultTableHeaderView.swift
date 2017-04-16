@@ -19,6 +19,6 @@ class DefaultTableHeaderView: UITableViewHeaderFooterView {
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    contentView.backgroundColor = UIColor(.lightGray).withAlphaComponent(0.8)
+    contentView.backgroundColor = UIColor(.lightGray).withAlphaComponent(1.0)
   }
 }

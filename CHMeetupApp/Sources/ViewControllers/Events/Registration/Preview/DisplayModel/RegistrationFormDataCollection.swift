@@ -38,7 +38,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     let section = formData.sections[indexPath.section]
     let answerCell = section.fieldAnswers[indexPath.row]
-    let (boolAnswer, stringAnswer) = answerCell.answer.pasrseAnswers()
+    let (boolAnswer, stringAnswer) = answerCell.answer.parseAnswers()
     switch section.type {
     case .checkbox:
       return OptionTableViewCellModel(id: answerCell.id, text: answerCell.value, type: .checkbox, result: boolAnswer)
@@ -49,7 +49,8 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
                                               placeholder: answerCell.value,
                                               textFieldDelegate: self,
                                               valueChanged: { [weak answerCell] value in
-        answerCell?.answer = .string(value: value)
+                                                answerCell?.answer = .string(value: value)
+                                                self.delegate?.formDisplayRequestTouchGeuster(enable: true)
       })
     }
   }
@@ -74,7 +75,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
   func didSelect(indexPath: IndexPath) {
     let section = formData.sections[indexPath.section]
     let answerCell = section.fieldAnswers[indexPath.row]
-    let (boolAnswer, _) = answerCell.answer.pasrseAnswers()
+    let (boolAnswer, _) = answerCell.answer.parseAnswers()
     switch section.type {
     case .checkbox:
       answerCell.answer = .selection(isSelected: !boolAnswer)
@@ -87,7 +88,6 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
       let cell = delegate?.formDisplayRequestCell(at: indexPath)
       if let cell = cell as? TextFieldPlateTableViewCell {
         cell.textField.becomeFirstResponder()
-        cell.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
       }
     }
   }
@@ -104,7 +104,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     var deselectIndex: Int?
 
     for (index, value) in formData.sections[indexPath.section].fieldAnswers.enumerated() {
-      let result = value.answer.pasrseAnswers().0
+      let result = value.answer.parseAnswers().0
       if result == true, index != indexPath.row {
         deselectIndex = index
         value.answer = .selection(isSelected: false)
@@ -126,16 +126,18 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     delegate?.formDisplayRequestTo(selectItemsAt: selectedIndexPath, deselectItemsAt: deselectIndexPaths)
   }
 
-  func checkRequired() -> Bool {
-    for section in formData.sections where section.isRequired {
+  var failedSection: Int? {
+    for (index, section) in formData.sections.enumerated() where section.isRequired {
       var checked = false
       for row in section.fieldAnswers {
-        checked = row.answer.pasrseAnswers().0 || row.answer.pasrseAnswers().1.characters.count > 0
+        checked = row.answer.parseAnswers().0 || row.answer.parseAnswers().1.characters.count > 0
         if checked { break }
       }
-      if !checked { return false }
+      if !checked {
+        return index
+      }
     }
-    return true
+    return nil
   }
 
 }
@@ -152,9 +154,5 @@ extension FormDisplayCollection: UITextFieldDelegate {
 
   func textFieldDidEndEditing(_ textField: UITextField) {
     delegate?.formDisplayRequestTouchGeuster(enable: false)
-  }
-
-  func textFieldDidChange(_ textField: UITextField) {
-    delegate?.formDisplayRequestTouchGeuster(enable: true)
   }
 }

@@ -4,6 +4,7 @@ excluded: # paths to ignore during linting.
 
 identifier_name:
   min_length: 2
+  max_length: 50
 
 disabled_rules:
   - nesting

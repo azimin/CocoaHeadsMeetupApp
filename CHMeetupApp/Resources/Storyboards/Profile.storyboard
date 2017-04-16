@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,52 +26,54 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbP-cw-RIa">
                                 <rect key="frame" x="24" y="101" width="272" height="366"/>
                                 <subviews>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tw" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="326" width="256" height="40"/>
-                                        <color key="backgroundColor" red="0.30612394213676453" green="0.7424468994140625" blue="0.93023401498794556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="WrD-rK-qrf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Войти через Twitter" image="img_auth_twitter">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="vk" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="276" width="256" height="40"/>
-                                        <color key="backgroundColor" red="0.32803952693939209" green="0.46409446001052856" blue="0.60960102081298828" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="5WJ-ID-2dF"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Войти через ВКонтакте" image="img_auth_vk">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="gaN-Zn-Hsf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="fb" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-p0-rbw" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="226" width="256" height="40"/>
-                                        <color key="backgroundColor" red="0.22943970561027527" green="0.34702008962631226" blue="0.59602290391921997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="zzw-4h-5Ik"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
-                                        <state key="normal" title="Войти через Facebook" image="img_auth_fb">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="B5k-h1-N0K"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s83-FI-OGO">
+                                        <rect key="frame" x="8" y="226" width="256" height="136"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="fb" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-p0-rbw" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="256" height="40"/>
+                                                <color key="backgroundColor" red="0.22943970561027527" green="0.34702008962631226" blue="0.59602290391921997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="zzw-4h-5Ik"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                                                <state key="normal" title="Войти через Facebook" image="img_auth_fb">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="B5k-h1-N0K"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="vk" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="48" width="256" height="40"/>
+                                                <color key="backgroundColor" red="0.32803952693939209" green="0.46409446001052856" blue="0.60960102081298828" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="H9b-bR-yF8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Войти через ВКонтакте" image="img_auth_vk">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="gaN-Zn-Hsf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tw" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="96" width="256" height="40"/>
+                                                <color key="backgroundColor" red="0.30612394213676453" green="0.7424468994140625" blue="0.93023401498794556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Войти через Twitter" image="img_auth_twitter">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зарегистрированным пользователям  доступно больше функций!  Авторизируйтесь и регистрируйтесь  на встречи в одно касание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rk-2cD">
                                         <rect key="frame" x="0.0" y="96" width="272" height="90"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -85,22 +86,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailingMargin" secondItem="a2j-p0-rbw" secondAttribute="trailing" id="1NN-gG-dXB"/>
                                     <constraint firstItem="pvT-nQ-V1Y" firstAttribute="centerX" secondItem="VbP-cw-RIa" secondAttribute="centerX" id="1ri-69-Cd4"/>
                                     <constraint firstItem="jYh-rk-2cD" firstAttribute="leading" secondItem="VbP-cw-RIa" secondAttribute="leading" id="Bd3-B3-s6H"/>
-                                    <constraint firstAttribute="leadingMargin" secondItem="a2j-p0-rbw" secondAttribute="leading" id="GGt-0G-Mw5"/>
-                                    <constraint firstItem="sxo-Mt-f4Q" firstAttribute="top" secondItem="gl9-SA-VgD" secondAttribute="bottom" constant="10" id="bnm-nw-C8n"/>
-                                    <constraint firstItem="gl9-SA-VgD" firstAttribute="top" secondItem="a2j-p0-rbw" secondAttribute="bottom" constant="10" id="dyd-9X-JD3"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="sxo-Mt-f4Q" secondAttribute="trailing" id="eR0-Kv-2eI"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="gl9-SA-VgD" secondAttribute="trailing" id="hHS-JR-pXF"/>
-                                    <constraint firstItem="sxo-Mt-f4Q" firstAttribute="leading" secondItem="VbP-cw-RIa" secondAttribute="leadingMargin" id="j8h-pF-rRj"/>
-                                    <constraint firstAttribute="leadingMargin" secondItem="gl9-SA-VgD" secondAttribute="leading" id="jb3-Fh-Hxc"/>
+                                    <constraint firstItem="s83-FI-OGO" firstAttribute="leading" secondItem="VbP-cw-RIa" secondAttribute="leading" constant="8" id="NU6-G2-Q66"/>
                                     <constraint firstItem="pvT-nQ-V1Y" firstAttribute="top" secondItem="VbP-cw-RIa" secondAttribute="top" id="nGh-DX-TsC"/>
+                                    <constraint firstAttribute="trailing" secondItem="s83-FI-OGO" secondAttribute="trailing" constant="8" id="no2-S9-0CH"/>
                                     <constraint firstItem="pvT-nQ-V1Y" firstAttribute="centerX" secondItem="VbP-cw-RIa" secondAttribute="centerX" id="pCr-nb-zZK"/>
                                     <constraint firstItem="jYh-rk-2cD" firstAttribute="firstBaseline" secondItem="pvT-nQ-V1Y" secondAttribute="bottom" constant="42" id="pM7-4R-ajg"/>
                                     <constraint firstAttribute="trailing" secondItem="jYh-rk-2cD" secondAttribute="trailing" id="sof-DL-ARh"/>
-                                    <constraint firstAttribute="bottom" secondItem="sxo-Mt-f4Q" secondAttribute="bottom" id="uVo-PX-ALD"/>
-                                    <constraint firstItem="a2j-p0-rbw" firstAttribute="top" secondItem="jYh-rk-2cD" secondAttribute="baseline" constant="44" id="upQ-Yy-TPQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="s83-FI-OGO" secondAttribute="bottom" constant="4" id="tqd-dn-5tY"/>
+                                    <constraint firstItem="s83-FI-OGO" firstAttribute="top" secondItem="jYh-rk-2cD" secondAttribute="bottom" constant="40" id="ztt-sG-3Y2"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -114,9 +109,9 @@
                     <navigationItem key="navigationItem" title="Авторизация" id="H6i-Oc-rNL"/>
                     <connections>
                         <outlet property="infoLabel" destination="jYh-rk-2cD" id="110-gP-bDD"/>
-                        <outletCollection property="authButtons" destination="sxo-Mt-f4Q" collectionClass="NSMutableArray" id="Kl0-HC-pMe"/>
-                        <outletCollection property="authButtons" destination="gl9-SA-VgD" collectionClass="NSMutableArray" id="MYQ-qY-cB5"/>
                         <outletCollection property="authButtons" destination="a2j-p0-rbw" collectionClass="NSMutableArray" id="yHh-mR-Am8"/>
+                        <outletCollection property="authButtons" destination="gl9-SA-VgD" collectionClass="NSMutableArray" id="MYQ-qY-cB5"/>
+                        <outletCollection property="authButtons" destination="sxo-Mt-f4Q" collectionClass="NSMutableArray" id="Kl0-HC-pMe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwx-63-Jfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,12 +149,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="5yg-zd-3yO">
-                        <barButtonItem key="leftBarButtonItem" title="Log out" id="D0b-if-5RI">
+                        <barButtonItem key="leftBarButtonItem" image="img_log_out" id="D0b-if-5RI">
                             <connections>
                                 <action selector="logoutBarButtonAction:" destination="p5C-xH-cy8" id="1Pf-GJ-dF4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="9Vg-65-3KU">
+                        <barButtonItem key="rightBarButtonItem" image="img_edit_button" id="9Vg-65-3KU">
                             <connections>
                                 <action selector="editBarButtonAction:" destination="p5C-xH-cy8" id="zDC-FV-TEg"/>
                                 <segue destination="6F4-3B-MvC" kind="show" id="Z83-8i-De7"/>
@@ -281,6 +276,8 @@
         <image name="img_auth_fb" width="25" height="25"/>
         <image name="img_auth_twitter" width="25" height="25"/>
         <image name="img_auth_vk" width="25" height="25"/>
+        <image name="img_edit_button" width="25" height="25"/>
+        <image name="img_log_out" width="25" height="25"/>
         <image name="img_profile_man" width="60" height="69"/>
     </resources>
 </document>

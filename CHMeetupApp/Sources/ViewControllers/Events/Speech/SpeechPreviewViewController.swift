@@ -10,19 +10,27 @@ import UIKit
 
 class SpeechPreviewViewController: UIViewController {
 
+  var selectedSpeechId: Int = 0
+
   @IBOutlet var tableView: UITableView! {
     didSet {
-      tableView.registerNibs(from: displayCollection)
       tableView.configure(with: .defaultConfiguration)
     }
   }
 
-  var displayCollection = SpeechPreviewDisplayCollection()
+  var displayCollection: SpeechPreviewDisplayCollection!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Speech".localized
     view.backgroundColor = UIColor(.lightGray)
+
+    displayCollection = SpeechPreviewDisplayCollection()
+    displayCollection.delegate = self
+    tableView.registerNibs(from: displayCollection)
+
+    let dataModel = DataModelCollection(type: SpeechEntity.self)
+    displayCollection.speech = dataModel.first(where: { $0.id == selectedSpeechId })
   }
 }
 

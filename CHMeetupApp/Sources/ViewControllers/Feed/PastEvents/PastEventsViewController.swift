@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDelegate {
+class PastEventsViewController: UIViewController {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)
@@ -32,9 +32,6 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
     return TabBarItemView.create(with: .past)
   }
 
-  func shouldPresent(viewController: UIViewController) {
-    navigationController?.pushViewController(viewController, animated: true)
-  }
 }
 
 extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {

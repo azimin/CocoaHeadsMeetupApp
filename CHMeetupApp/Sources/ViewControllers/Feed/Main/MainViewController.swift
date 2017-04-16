@@ -60,12 +60,6 @@ extension MainViewController: UITableViewDelegate {
   }
 }
 
-extension MainViewController: MainViewDisplayCollectionDelegate {
-  func shouldPresent(viewController: UIViewController) {
-    navigationController?.pushViewController(viewController, animated: true)
-  }
-}
-
 fileprivate extension MainViewController {
   func fetchEvents() {
     EventFetching.fetchElements(request: EventPlainObject.Requests.list, completion: { [weak self] in

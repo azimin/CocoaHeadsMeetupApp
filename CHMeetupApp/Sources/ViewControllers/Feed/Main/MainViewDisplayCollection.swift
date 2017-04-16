@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol MainViewDisplayCollectionDelegate: class {
-  func shouldPresent(viewController: UIViewController)
-}
-
 class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [EventPreviewTableViewCellModel.self, ActionTableViewCellModel.self]
@@ -22,12 +18,14 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case actionButtons
   }
 
-  weak var delegate: MainViewDisplayCollectionDelegate?
+  weak var delegate: DisplayCollectionDelegate?
 
   private var sections: [Type] = [.events, .actionButtons]
   private var actionPlainObjects: [ActionPlainObject] = []
 
   private var indexPath: IndexPath?
+
+  let groupImageLoader = GroupImageLoader.standard
 
   func configureActionCellsSection(on viewController: UIViewController,
                                    with tableView: UITableView) {
@@ -78,7 +76,9 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .events:
-      return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
+      return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row],
+                                            index: indexPath.row,
+                                            groupImageLoader: groupImageLoader)
     case .actionButtons:
       return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
     }
@@ -89,7 +89,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case .events:
       let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
       eventPreview.selectedEventId = modelCollection[indexPath.row].id
-      delegate?.shouldPresent(viewController: eventPreview)
+      delegate?.push(viewController: eventPreview)
     case .actionButtons:
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()

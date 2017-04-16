@@ -12,7 +12,7 @@ enum EventRegFormFieldAnswer {
   case string(value: String)
   case selection(isSelected: Bool)
 
-  func pasrseAnswers() -> (Bool, String) {
+  func parseAnswers() -> (Bool, String) {
     switch self {
     case let .selection(isSelected):
       return (isSelected, "")

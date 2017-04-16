@@ -24,7 +24,7 @@ class AboutSpeechTableViewCell: PlateTableViewCell {
   }
   @IBOutlet var descriptionLabel: UILabel! {
     didSet {
-      descriptionLabel.font = UIFont.appFont(.gothamPro(size: 17))
+      descriptionLabel.font = UIFont.appFont(.gothamPro(size: 15))
       descriptionLabel.textColor = .black
     }
   }

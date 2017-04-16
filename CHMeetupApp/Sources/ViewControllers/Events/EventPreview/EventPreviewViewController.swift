@@ -44,6 +44,8 @@ class EventPreviewViewController: UIViewController {
     super.viewDidLoad()
     title = "Event Preview".localized
 
+    view.backgroundColor = UIColor(.lightGray)
+
     displayCollection = EventPreviewDisplayCollection()
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
@@ -53,8 +55,7 @@ class EventPreviewViewController: UIViewController {
 
     if let event = displayCollection.event {
       fetchEvents(on: event)
-      // FIXME: - Check on registation open
-      isRegistrationEnabled = true
+      isRegistrationEnabled = event.isRegistrationOpen
     }
   }
 
@@ -83,16 +84,6 @@ extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     displayCollection.didSelect(indexPath: indexPath)
-  }
-}
-
-extension EventPreviewViewController: EventPreviewDisplayCollectionDelegate {
-  func displayCollectionRequestingUIUpdate() {
-    tableView.reloadData()
-  }
-
-  func shouldPresentModalViewController(_ viewController: UIViewController) {
-    present(viewController, animated: true, completion: nil)
   }
 }
 

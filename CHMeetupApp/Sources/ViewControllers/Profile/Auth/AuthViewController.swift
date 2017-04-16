@@ -31,6 +31,8 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Auth".localized
+    // FIXME: delete it when implement twitter auth
+    authButtons[2].isHidden = true
   }
 
   @IBAction func loginAction(_ sender: UIButton) {

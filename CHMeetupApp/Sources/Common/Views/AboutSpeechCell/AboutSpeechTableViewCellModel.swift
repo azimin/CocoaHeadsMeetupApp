@@ -9,12 +9,13 @@
 import UIKit
 
 struct AboutSpeechTableViewCellModel {
-  let speech: SpeechContentEntity
+  let speech: SpeechEntity
 }
 
 extension AboutSpeechTableViewCellModel: CellViewModelType {
   func setup(on cell: AboutSpeechTableViewCell) {
     cell.infoLabel.text = "О докладе:".localized
     cell.titleLabel.text = speech.title
+    cell.descriptionLabel.text = speech.descriptionText
   }
 }

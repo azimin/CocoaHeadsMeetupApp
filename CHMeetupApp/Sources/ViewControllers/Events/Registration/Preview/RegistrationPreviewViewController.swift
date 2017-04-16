@@ -28,7 +28,6 @@ class RegistrationPreviewViewController: UIViewController {
   fileprivate var bottomButton: BottomButton! {
     didSet {
       bottomButton.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
-      bottomButton.isEnabled = false
     }
   }
   fileprivate var displayCollection: FormDisplayCollection!
@@ -78,9 +77,13 @@ class RegistrationPreviewViewController: UIViewController {
   }
 
   func registrationButtonAction() {
-    registrate(completion: {
-      presentRegistrationConfirmViewController()
-    })
+    if let failedSection = displayCollection.failedSection {
+      showFailed(for: failedSection)
+    } else {
+      registrate(completion: {
+        presentRegistrationConfirmViewController()
+      })
+    }
   }
 
   func registrate(completion: () -> Void) {
@@ -135,7 +138,6 @@ extension RegistrationPreviewViewController: UITableViewDelegate {
 extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
   func formDisplayRequestTo(selectItemsAt selectionIndexPaths: [IndexPath],
                             deselectItemsAt deselectIndexPaths: [IndexPath]) {
-    checkBottomButton()
     for indexPath in selectionIndexPaths {
       tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
     }
@@ -149,12 +151,16 @@ extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
   }
 
   func formDisplayRequestTouchGeuster(enable: Bool) {
-    checkBottomButton()
     dissmisKeyboardTouch.isEnabled = enable
   }
 
-  func checkBottomButton() {
-    bottomButton.isEnabled = displayCollection.checkRequired()
+  func showFailed(for section: Int) {
+    let indexPath = IndexPath(row: 0, section: section)
+    tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+      self.tableView.failedShakeSection(section)
+    }
   }
 }
 
@@ -167,7 +173,8 @@ extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
 
     switch state {
     case .frameChanged, .opened:
-      let tableViewBottomContentInsets = info.endFrame.height + tableView.defaultBottomInset
+      // 15 is necessary offset due to the feature of the projected cell
+      let tableViewBottomContentInsets = info.endFrame.height + 15 + tableView.defaultBottomInset
       tableView.contentInset.bottom = tableViewBottomContentInsets
       tableView.scrollIndicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
       buttonInsets = info.endFrame.height

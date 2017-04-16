@@ -19,6 +19,7 @@ struct SpeechPlainObjectTranslation: PlainObjectTranslation {
     user.id = speakerPlainObject.id
     user.name = speakerPlainObject.name
     user.lastName = speakerPlainObject.lastname
+    user.photoURL = speakerPlainObject.photoUrl
     user.company = speakerPlainObject.company
 
     let speech = SpeechEntity()

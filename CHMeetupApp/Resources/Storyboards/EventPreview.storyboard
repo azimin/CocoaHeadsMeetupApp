@@ -34,8 +34,8 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="UsB-oN-JJI" secondAttribute="trailing" id="077-6s-dga"/>
                             <constraint firstItem="UsB-oN-JJI" firstAttribute="leading" secondItem="AK6-Xh-59r" secondAttribute="leading" id="7sP-cq-g7a"/>
+                            <constraint firstAttribute="bottom" secondItem="UsB-oN-JJI" secondAttribute="bottom" id="8kq-7a-BCe"/>
                             <constraint firstItem="UsB-oN-JJI" firstAttribute="top" secondItem="AK6-Xh-59r" secondAttribute="top" id="bOO-qM-MpY"/>
-                            <constraint firstItem="0Nx-GU-Cyr" firstAttribute="top" secondItem="UsB-oN-JJI" secondAttribute="bottom" id="eHF-2q-RYm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Event Preview" id="3ZJ-CZ-Ntl"/>
@@ -116,7 +116,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bvD-K0-j6J">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bvD-K0-j6J">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -147,7 +147,7 @@
             <objects>
                 <navigationController storyboardIdentifier="EventPreviewViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="smh-qd-feH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uvB-MX-NTM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uvB-MX-NTM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

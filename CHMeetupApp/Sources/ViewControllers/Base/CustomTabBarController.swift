@@ -78,7 +78,7 @@ public class CustomTabBar: UITabBar {
   public override var alpha: CGFloat {
     didSet {
       for view in subviews {
-        if view is CustomTabBarItemView {
+        if view is CustomTabBarItemView || view is ShadowView {
           view.alpha = alpha
         } else {
           view.alpha = 0.0
@@ -171,6 +171,9 @@ public class CustomTabBarController: UITabBarController {
     tabBar.alpha = 1
     tabBar.shadowImage = UIImage()
     tabBar.backgroundImage = UIImage()
+
+    let shadowView = ShadowView(frame: tabBar.bounds)
+    tabBar.addSubview(shadowView)
   }
 
   private func customSetupView(onItem item: CustomTabBarItem, index: Int) -> CustomTabBarItemView {

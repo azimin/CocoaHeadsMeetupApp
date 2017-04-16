@@ -15,7 +15,7 @@ extension UICollectionView {
     let cell = dequeueReusableCell(withReuseIdentifier: cellIdentifier,
                                    for: indexPath)
 
-    model.setup(on: cell)
+    model.setupDefault(on: cell)
 
     return cell
   }

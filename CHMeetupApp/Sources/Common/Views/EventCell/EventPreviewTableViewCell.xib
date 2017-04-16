@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="282"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="281"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="281.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ug-Ek-gDp">
@@ -68,7 +68,7 @@
                             <constraint firstAttribute="height" constant="1" id="TST-80-ZqF"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STc-dX-eKl" customClass="ParticipantsCollectionView" customModule="CHMeetupApp" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STc-dX-eKl" customClass="PhotosPresentationView" customModule="CHMeetupApp" customModuleProvider="target">
                         <rect key="frame" x="16" y="154.5" width="288" height="36"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -111,6 +111,8 @@
                 <outlet property="goingButton" destination="9pO-3W-VoY" id="e8I-IJ-Kxi"/>
                 <outlet property="nameLabel" destination="jhq-qS-4iF" id="3xG-EL-SxK"/>
                 <outlet property="participantsCollectionView" destination="STc-dX-eKl" id="fPA-jy-BWH"/>
+                <outlet property="participantsCollectionViewHeightConstraint" destination="JII-H7-bWj" id="7e8-s0-xou"/>
+                <outlet property="participantsCollectionViewTopConstraint" destination="a9N-bo-A2a" id="qgs-hU-gaY"/>
                 <outlet property="placeLabel" destination="p0Z-gF-poq" id="5ku-q3-8yP"/>
                 <outlet property="separationView" destination="yLl-lp-2fc" id="yxg-PO-1Ox"/>
             </connections>
