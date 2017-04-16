@@ -8,8 +8,25 @@
 
 import UIKit
 
-class EventPreviewTableViewCell: PlateTableViewCell {
+class EventPreviewTableViewCell: PlateTableViewCell, Templatable {
 
+  override func apply(template: Bool) {
+    super.apply(template: template)
+    isTemplate = template
+  }
+
+  var isTemplate: Bool = true {
+    didSet {
+      goingButton.isEnabled = !isTemplate
+      if oldValue == true && isTemplate == false {
+        alpha = 0.0
+        UIView.animate(withDuration: 0.3, animations: {
+          self.alpha = 1.0
+        })
+      }
+    }
+  }
+  
   var isEnabledForRegistration = false {
     didSet {
       goingButton.isHidden = !isEnabledForRegistration
@@ -18,19 +35,19 @@ class EventPreviewTableViewCell: PlateTableViewCell {
 
   @IBOutlet var eventImageView: UIImageView!
 
-  @IBOutlet var nameLabel: UILabel! {
+  @IBOutlet var nameLabel: LoadingLabel! {
     didSet {
       nameLabel.font = UIFont.appFont(.gothamPro(size: 17))
     }
   }
 
-  @IBOutlet var dateLabel: UILabel! {
+  @IBOutlet var dateLabel: LoadingLabel! {
     didSet {
       dateLabel.font = UIFont.appFont(.gothamPro(size: 15))
     }
   }
 
-  @IBOutlet var placeLabel: UILabel! {
+  @IBOutlet var placeLabel: LoadingLabel! {
     didSet {
       placeLabel.font = UIFont.appFont(.gothamPro(size: 15))
     }

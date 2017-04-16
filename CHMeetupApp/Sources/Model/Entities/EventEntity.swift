@@ -31,7 +31,7 @@ class EventEntity: Object {
   }
 }
 #if DEBUG
-extension EventEntity {
+  extension EventEntity: TemplatableEntity {
   static var templateEntity: EventEntity {
 
     let formatter = DateFormatter()

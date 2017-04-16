@@ -38,7 +38,7 @@ class UserEntity: Object {
   }
 }
 #if DEBUG
-extension UserEntity {
+  extension UserEntity {
   static var templateEntity: UserEntity {
 
     let names = ["Ivan", "Petr", "Anton"]

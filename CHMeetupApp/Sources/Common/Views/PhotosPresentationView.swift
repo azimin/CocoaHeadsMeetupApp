@@ -12,7 +12,7 @@ protocol PhotosPresentationViewDelegate: class {
   func participantsCollectionViewWillUpdateData(view: PhotosPresentationView)
 }
 
-class PhotosPresentationView: UIView {
+class PhotosPresentationView: UIView, Templatable {
 
   weak var delegate: PhotosPresentationViewDelegate?
 
@@ -20,6 +20,21 @@ class PhotosPresentationView: UIView {
     didSet {
       drawParticipants()
       delegate?.participantsCollectionViewWillUpdateData(view: self)
+    }
+  }
+
+  override func apply(template: Bool) {
+    super.apply(template: true)
+    isTemplate = template
+  }
+
+  var isTemplate: Bool = false {
+    didSet {
+      if isTemplate {
+        let templateImage = UIImage.from(color: UIColor(.lightGray))
+        let templateCount = Int.random(lower: 3, upper: 10)
+        imagesCollection = Array(repeating: templateImage, count: templateCount)
+      }
     }
   }
 

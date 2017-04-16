@@ -28,13 +28,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfj-Pb-Uaf">
                         <rect key="frame" x="139" y="34" width="42" height="50"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhq-qS-4iF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhq-qS-4iF" customClass="LoadingLabel" customModule="CHMeetupApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d41-dn-D4t">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d41-dn-D4t" customClass="LoadingLabel" customModule="CHMeetupApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="29" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -52,31 +52,31 @@
                             <constraint firstAttribute="bottom" secondItem="d41-dn-D4t" secondAttribute="bottom" id="wSR-23-wcD"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0Z-gF-poq">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0Z-gF-poq" customClass="LoadingLabel" customModule="CHMeetupApp" customModuleProvider="target">
                         <rect key="frame" x="34" y="118" width="270" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="img_icon_pin" translatesAutoresizingMaskIntoConstraints="NO" id="S5q-5C-38R">
-                        <rect key="frame" x="16" y="120.5" width="10" height="13"/>
+                        <rect key="frame" x="16" y="120" width="10" height="13"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLl-lp-2fc">
-                        <rect key="frame" x="16" y="141.5" width="288" height="1"/>
+                        <rect key="frame" x="16" y="141" width="288" height="1"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="TST-80-ZqF"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STc-dX-eKl" customClass="PhotosPresentationView" customModule="CHMeetupApp" customModuleProvider="target">
-                        <rect key="frame" x="16" y="154.5" width="288" height="36"/>
+                        <rect key="frame" x="16" y="154" width="288" height="36"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="36" id="JII-H7-bWj"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pO-3W-VoY" customClass="LightButton" customModule="CHMeetupApp" customModuleProvider="target">
-                        <rect key="frame" x="16" y="202.5" width="288" height="58"/>
+                        <rect key="frame" x="16" y="202" width="288" height="58"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="58" id="14e-JV-zkH"/>
                         </constraints>

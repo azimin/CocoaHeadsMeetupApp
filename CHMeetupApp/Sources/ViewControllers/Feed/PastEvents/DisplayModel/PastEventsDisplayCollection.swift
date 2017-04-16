@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
+struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction, Templatable {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [EventPreviewTableViewCellModel.self]
   }
@@ -17,6 +17,15 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
     let predicate = NSPredicate(format: "endDate < %@", NSDate())
     let modelCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
     return modelCollection
+  }()
+
+  var isTemplate: Bool = {
+    return mainRealm.objects(EventEntity.self).isEmpty
+  }()
+
+  let templateModelCollection: [EventEntity] = {
+    let templateModelCollection = Array(repeating: EventEntity.templateEntity, count: 5)
+    return templateModelCollection
   }()
 
   weak var delegate: DisplayCollectionDelegate?
@@ -28,18 +37,22 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   }
 
   func numberOfRows(in section: Int) -> Int {
-    return modelCollection.count
+    return isTemplate ? templateModelCollection.count : modelCollection.count
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row],
+    let event = isTemplate ? templateModelCollection[indexPath.row] : modelCollection[indexPath.row]
+    return EventPreviewTableViewCellModel(event: event,
                                           index: indexPath.row,
-                                          groupImageLoader: groupImageLoader)
+                                          groupImageLoader: groupImageLoader,
+                                          isTemplate: isTemplate)
   }
 
   func didSelect(indexPath: IndexPath) {
-    let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
-    eventPreview.selectedEventId = modelCollection[indexPath.row].id
-    delegate?.push(viewController: eventPreview)
+    if !isTemplate {
+      let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
+      eventPreview.selectedEventId = modelCollection[indexPath.row].id
+      delegate?.push(viewController: eventPreview)
+    }
   }
 }

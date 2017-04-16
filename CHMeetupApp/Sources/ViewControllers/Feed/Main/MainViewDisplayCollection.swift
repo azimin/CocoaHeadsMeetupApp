@@ -78,7 +78,8 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case .events:
       return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row],
                                             index: indexPath.row,
-                                            groupImageLoader: groupImageLoader)
+                                            groupImageLoader: groupImageLoader,
+                                            isTemplate: false)
     case .actionButtons:
       return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
     }
