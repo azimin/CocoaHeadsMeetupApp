@@ -87,7 +87,12 @@
 		3284F2581E992EF90033437F /* Optional+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284F2571E992EF90033437F /* Optional+Empty.swift */; };
 		328E9E6A1E8BDFEF008B409F /* ProfileViewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328E9E691E8BDFEF008B409F /* ProfileViewDisplayCollection.swift */; };
 		328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FF7551E7C05B300D9D43F /* CGFloat+Rounding.swift */; };
+		329F08131EA2761F00A03889 /* TemplateableViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F08121EA2761F00A03889 /* TemplateableViewType.swift */; };
+		329F08151EA2766D00A03889 /* UIView+Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F08141EA2766D00A03889 /* UIView+Template.swift */; };
 		32AA9BBE1E7A91C000140413 /* ParticipantsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA9BBD1E7A91C000140413 /* ParticipantsCollectionView.swift */; };
+		32F0788D1EA02F2F00B373C6 /* LoadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F0788C1EA02F2F00B373C6 /* LoadingLabel.swift */; };
+		32FB3C8D1E9D3DCE00727A3D /* TemplateableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FB3C8C1E9D3DCE00727A3D /* TemplateableEntity.swift */; };
+		32FB3C911E9E23B000727A3D /* Templateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FB3C901E9E23B000727A3D /* Templateable.swift */; };
 		4D0E6B561E86E11100C44DC0 /* ActionCellConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */; };
 		4D9D24241E7B2FE300FA5E93 /* ActionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */; };
 		4D9DEA2B1E9543DC00260264 /* UIImageView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DEA2A1E9543DC00260264 /* UIImageView+RoundCorners.swift */; };
@@ -304,7 +309,12 @@
 		3284F2571E992EF90033437F /* Optional+Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Empty.swift"; sourceTree = "<group>"; };
 		328E9E691E8BDFEF008B409F /* ProfileViewDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewDisplayCollection.swift; sourceTree = "<group>"; };
 		328FF7551E7C05B300D9D43F /* CGFloat+Rounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Rounding.swift"; sourceTree = "<group>"; };
+		329F08121EA2761F00A03889 /* TemplateableViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateableViewType.swift; sourceTree = "<group>"; };
+		329F08141EA2766D00A03889 /* UIView+Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Template.swift"; sourceTree = "<group>"; };
 		32AA9BBD1E7A91C000140413 /* ParticipantsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsCollectionView.swift; sourceTree = "<group>"; };
+		32F0788C1EA02F2F00B373C6 /* LoadingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingLabel.swift; sourceTree = "<group>"; };
+		32FB3C8C1E9D3DCE00727A3D /* TemplateableEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateableEntity.swift; sourceTree = "<group>"; };
+		32FB3C901E9E23B000727A3D /* Templateable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Templateable.swift; sourceTree = "<group>"; };
 		4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionCellConfigurationController.swift; path = ActionCellConfigurationController/ActionCellConfigurationController.swift; sourceTree = "<group>"; };
 		4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTableViewCellModel.swift; path = ActionCell/ActionTableViewCellModel.swift; sourceTree = "<group>"; };
 		4D9DEA2A1E9543DC00260264 /* UIImageView+RoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+RoundCorners.swift"; path = "UIImageView/UIImageView+RoundCorners.swift"; sourceTree = "<group>"; };
@@ -726,6 +736,7 @@
 			children = (
 				C30485B21E740FDE0052D632 /* UIView+Anchor.swift */,
 				22323F061E70C0CE00522E5C /* UIView+NibLoad.swift */,
+				329F08141EA2766D00A03889 /* UIView+Template.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -820,6 +831,7 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				329F08161EA35D3500A03889 /* LoadingLabel */,
 				ADCCA0FA1E936156009DAACE /* LabelCell */,
 				8A3699821E8C471800B37528 /* AboutSpeechCell */,
 				320FA5721E87A80700DAC7E1 /* UserHeaderCell */,
@@ -1161,6 +1173,14 @@
 			name = CGFloat;
 			sourceTree = "<group>";
 		};
+		329F08161EA35D3500A03889 /* LoadingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				32F0788C1EA02F2F00B373C6 /* LoadingLabel.swift */,
+			);
+			name = LoadingLabel;
+			sourceTree = "<group>";
+		};
 		32AA9BBC1E7A919600140413 /* ParticipantCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1335,6 +1355,9 @@
 			isa = PBXGroup;
 			children = (
 				9F30FFC61E71E6FE00EF85F5 /* ReusableCell.swift */,
+				32FB3C8C1E9D3DCE00727A3D /* TemplateableEntity.swift */,
+				32FB3C901E9E23B000727A3D /* Templateable.swift */,
+				329F08121EA2761F00A03889 /* TemplateableViewType.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -1755,7 +1778,7 @@
 				TargetAttributes = {
 					9F6048941E5B3CCB00C414C3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 5MGEMLZRS4;
+						DevelopmentTeam = 3FT85RFR4V;
 						ProvisioningStyle = Automatic;
 					};
 					A1DBA4EF1E71ED1200E3F1E5 = {
@@ -1895,6 +1918,7 @@
 				7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */,
 				22323F3F1E70C14300522E5C /* ViewControllersFactory.swift in Sources */,
 				9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */,
+				32FB3C911E9E23B000727A3D /* Templateable.swift in Sources */,
 				22323F8F1E70C2BE00522E5C /* SpeechPreviewViewController.swift in Sources */,
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
 				9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */,
@@ -1913,6 +1937,7 @@
 				8A0244B11E93011D008AFFE6 /* UIViewController+Alert.swift in Sources */,
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
+				329F08151EA2766D00A03889 /* UIView+Template.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				9F3767051E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift in Sources */,
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
@@ -1962,6 +1987,7 @@
 				9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */,
 				9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
+				32F0788D1EA02F2F00B373C6 /* LoadingLabel.swift in Sources */,
 				22323F541E70C18700522E5C /* PlacePlainObject.swift in Sources */,
 				4D9D24241E7B2FE300FA5E93 /* ActionTableViewCellModel.swift in Sources */,
 				22323F2E1E70C0E500522E5C /* Utility.swift in Sources */,
@@ -2041,6 +2067,7 @@
 				9F6E1A241E95B62D0027416B /* MapsActionSheetHelper.swift in Sources */,
 				22323F8E1E70C2BE00522E5C /* RegistrationPreviewViewController.swift in Sources */,
 				9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */,
+				329F08131EA2761F00A03889 /* TemplateableViewType.swift in Sources */,
 				22323F0A1E70C0CE00522E5C /* UIColor+Hex.swift in Sources */,
 				8A36998E1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift in Sources */,
 				22323F361E70C0E500522E5C /* TextViewWithPlaceholder.swift in Sources */,
@@ -2049,6 +2076,7 @@
 				22323F981E70C2BE00522E5C /* ProfileNavigationViewController.swift in Sources */,
 				9F30FFD11E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift in Sources */,
 				9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */,
+				32FB3C8D1E9D3DCE00727A3D /* TemplateableEntity.swift in Sources */,
 				9F487A6F1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift in Sources */,
 				9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */,
 				22323F8D1E70C2BE00522E5C /* RegistrationConfirmViewController.swift in Sources */,
@@ -2173,15 +2201,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5MGEMLZRS4;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3FT85RFR4V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupApp;
+				PRODUCT_BUNDLE_IDENTIFIER = dmitriylis.ch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -2190,15 +2220,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KH2KDZEEE3;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3FT85RFR4V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupApp;
+				PRODUCT_BUNDLE_IDENTIFIER = dmitriylis.ch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
