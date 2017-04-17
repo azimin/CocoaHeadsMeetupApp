@@ -28,11 +28,18 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
     }
   }
 
+  var targetViewController: UIViewController?
+
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Auth".localized
     // FIXME: delete it when implement twitter auth
     authButtons[2].isHidden = true
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    profileNavigationController?.updateRootViewController()
   }
 
   @IBAction func loginAction(_ sender: UIButton) {
@@ -49,7 +56,14 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
         return
       }
       LoginProcessController.setCurrentUser(user)
-      self?.profileNavigationController?.updateRootViewController()
+
+      if let target = self?.targetViewController, let navigationController = self?.navigationController {
+        navigationController.viewControllers.insert(target, at: navigationController.viewControllers.count-1)
+        navigationController.popViewController(animated: true)
+      } else {
+        self?.profileNavigationController?.updateRootViewController()
+      }
+
     }
   }
 }
