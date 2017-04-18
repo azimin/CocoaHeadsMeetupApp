@@ -25,6 +25,9 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
       cell.placeLabel.text = place.city + ", " + place.title
     }
 
+    let hideSeparation = event.speakerPhotosURLs.count == 0
+    cell.separationView.isHidden = hideSeparation
+
     cell.isEnabledForRegistration = event.isRegistrationOpen
     cell.delegate = delegate
     cell.participantsCollectionView.imagesCollection.removeAll()
