@@ -35,6 +35,11 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
     authButtons[2].isHidden = true
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    profileNavigationController?.updateRootViewController()
+  }
+
   @IBAction func loginAction(_ sender: UIButton) {
     guard let buttonId = sender.restorationIdentifier,
       let authResourceType = AuthServiceFacade.AuthResourceType(rawValue: buttonId)
@@ -49,7 +54,12 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
         return
       }
       LoginProcessController.setCurrentUser(user)
-      self?.profileNavigationController?.updateRootViewController()
+
+      if let nextTransition = self?.router.nextTransition, let from = self {
+        self?.router.transition(from: from, route: nextTransition)
+      } else {
+        self?.profileNavigationController?.updateRootViewController()
+      }
     }
   }
 }
