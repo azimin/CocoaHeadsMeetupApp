@@ -33,6 +33,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
 
   weak var delegate: DisplayCollectionDelegate?
 
+  var indexPath: IndexPath?
   // MARK: - Adrsess Plain Object
 
   private var addressActionObject: ActionPlainObject?
@@ -69,6 +70,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
   }
 
   var sections: [Type] = []
+  var actionPlainObjects: [ActionPlainObject] = []
 
   func updateSections() {
     sections = []
@@ -88,6 +90,33 @@ class EventPreviewDisplayCollection: DisplayCollection {
     // We show additional cells only if event exist
     if event != nil {
       sections.append(.additionalCells)
+    }
+  }
+
+  private func createActionCells(on viewController: UIViewController, with tableView: UITableView) {
+    let actionCell = ActionCellConfigurationController()
+
+    let PermissionAction = {
+      guard let index = self.indexPath else {
+        return
+      }
+      self.actionPlainObjects.remove(at: index.row)
+      tableView.deleteRows(at: [index], with: .left)
+    }
+
+    let addDateAction = {
+      if PermissionsManager.isAllowed(type: .calendar) || PermissionsManager.isAllowed(type: .reminders) {
+      }
+    }
+
+    let calendarPermissonCell = actionCell.checkAccess(on: viewController, for: .calendar, with: PermissionAction)
+    let remindersPermissionCell = actionCell.checkAccess(on: viewController, for: .reminders, with: PermissionAction)
+
+    if let calendarCell = calendarPermissonCell {
+      actionPlainObjects.append(calendarCell)
+    }
+    if let remindersCell = remindersPermissionCell {
+      actionPlainObjects.append(remindersCell)
     }
   }
 
