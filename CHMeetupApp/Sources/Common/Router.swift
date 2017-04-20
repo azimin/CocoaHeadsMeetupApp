@@ -12,7 +12,7 @@ import ObjectiveC
 private var associationKey = "viewController_router"
 
 enum RouteDirection {
-  case push, pop(position: Int?), present, dismiss
+  case push, pop(position: Int), present, dismiss
 }
 
 protocol Route {
@@ -42,7 +42,7 @@ class RouterDefault: Router {
     viewController = vc
   }
 
-  var nextTransition: Route? { didSet { print("didSet value:", nextTransition ?? "nil") }}
+  var nextTransition: Route?
   func transition(route: Route, completionHandler: CompletionBlock?) {
     viewController?.transition(rule: route.rule, completionHandler: completionHandler)
   }
@@ -52,19 +52,20 @@ extension UIViewController {
   func transition(rule: Route.RouteRule, completionHandler: Router.CompletionBlock?) {
     switch rule.direction {
     case .push:
+      guard let navControler = navigationController else { return }
       CATransaction.begin()
-      navigationController?.pushViewController(rule.to, animated: true)
+      navControler.pushViewController(rule.to, animated: true)
       CATransaction.setCompletionBlock(completionHandler)
       CATransaction.commit()
     case .pop(let position):
-      if let position = position,
-        let index = navigationController?.viewControllers.index(where: {$0 == rule.to}),
-        let count = navigationController?.viewControllers.count {
-        navigationController?.viewControllers.remove(at: index)
-        navigationController?.viewControllers.insert(rule.to, at: count + position)
+      guard let navControler = navigationController else { return }
+      if let index = navControler.viewControllers.index(where: {$0 == rule.to}) {
+        navControler.viewControllers.remove(at: index)
       }
+      let count = navControler.viewControllers.count
+      navControler.viewControllers.insert(rule.to, at: count + position)
       CATransaction.begin()
-      navigationController?.popToViewController(rule.to, animated: true)
+      navControler.popToViewController(rule.to, animated: true)
       CATransaction.setCompletionBlock(completionHandler)
       CATransaction.commit()
     case .present:
@@ -93,7 +94,12 @@ extension UIViewController {
 
   var router: Router {
     get {
-      return (objc_getAssociatedObject(self, &associationKey) as? Router) ?? RouterDefault(topViewController())
+      if let router = objc_getAssociatedObject(self, &associationKey) as? Router {
+        return router
+      } else {
+        self.router = RouterDefault(topViewController())
+        return self.router
+      }
     }
     set {
       objc_setAssociatedObject(self, &associationKey, newValue, .OBJC_ASSOCIATION_RETAIN)

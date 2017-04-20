@@ -19,7 +19,6 @@ enum EventPreviewRoute: Route {
       } else {
         let authVC = Storyboards.Profile.instantiateAuthViewController()
         authVC.router.nextTransition = AuthRoute.registration
-        print("nextTransition:", authVC.router.nextTransition ?? "nil")
         return (authVC, .push)
       }
     }
