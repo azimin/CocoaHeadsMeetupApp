@@ -15,6 +15,8 @@ class PastEventsViewController: UIViewController, DisplayCollectionWithTableView
     }
   }
 
+  private var previusContentOffset: CGPoint?
+
   fileprivate var displayCollection: PastEventsDisplayCollection!
 
   override func viewDidLoad() {
@@ -32,6 +34,17 @@ class PastEventsViewController: UIViewController, DisplayCollectionWithTableView
     return TabBarItemView.create(with: .past)
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    if let offset = previusContentOffset {
+     tableView.contentOffset = offset
+    }
+  }
+
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    previusContentOffset = tableView.contentOffset
+  }
 }
 
 extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
