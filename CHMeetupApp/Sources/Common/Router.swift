@@ -53,10 +53,9 @@ extension UIViewController {
     switch rule.direction {
     case .push:
       guard let navControler = navigationController else { return }
-      CATransaction.begin()
-      navControler.pushViewController(rule.to, animated: true)
-      CATransaction.setCompletionBlock(completionHandler)
-      CATransaction.commit()
+      completeTransaction(completionHandler: completionHandler, block: {
+        navControler.pushViewController(rule.to, animated: true)
+      })
     case .pop(let position):
       guard let navControler = navigationController else { return }
       if let index = navControler.viewControllers.index(where: {$0 == rule.to}) {
@@ -64,10 +63,9 @@ extension UIViewController {
       }
       let count = navControler.viewControllers.count
       navControler.viewControllers.insert(rule.to, at: count + position)
-      CATransaction.begin()
-      navControler.popToViewController(rule.to, animated: true)
-      CATransaction.setCompletionBlock(completionHandler)
-      CATransaction.commit()
+      completeTransaction(completionHandler: completionHandler, block: {
+        navControler.popToViewController(rule.to, animated: true)
+      })
     case .present:
       present(rule.to, animated: true, completion: completionHandler)
     case .dismiss:
@@ -75,12 +73,19 @@ extension UIViewController {
     }
   }
 
+  private func completeTransaction(completionHandler: Router.CompletionBlock?, block: () -> Void) {
+    CATransaction.begin()
+    block()
+    CATransaction.setCompletionBlock(completionHandler)
+    CATransaction.commit()
+  }
+
   static var rootViewController: UIViewController? {
     return UIApplication.shared.delegate?.window??.rootViewController
   }
 
   // swiftlint:disable:next line_length
-  func topViewController(from viewController: UIViewController? = UIViewController.rootViewController) -> UIViewController? {
+  private func topViewController(from viewController: UIViewController? = UIViewController.rootViewController) -> UIViewController? {
     if let tabBarViewController = viewController as? UITabBarController {
       return topViewController(from: tabBarViewController.selectedViewController)
     } else if let navigationController = viewController as? UINavigationController {
