@@ -48,11 +48,11 @@ extension UIViewController {
       CATransaction.setCompletionBlock(completionHandler)
       CATransaction.commit()
     case .pop(let position):
-      if let position = position, let navigationController = navigationController {
-        if let index = navigationController.viewControllers.index(where: {$0 == rule.to}) {
-          navigationController.viewControllers.remove(at: index)
-        }
-        navigationController.viewControllers.insert(rule.to, at: navigationController.viewControllers.count + position)
+      if let position = position,
+        let index = navigationController?.viewControllers.index(where: {$0 == rule.to}),
+        let count = navigationController?.viewControllers.count {
+        navigationController?.viewControllers.remove(at: index)
+        navigationController?.viewControllers.insert(rule.to, at: count + position)
       }
       CATransaction.begin()
       navigationController?.popToViewController(rule.to, animated: true)
