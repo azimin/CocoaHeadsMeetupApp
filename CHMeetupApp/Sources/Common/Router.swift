@@ -21,22 +21,32 @@ protocol Route {
 }
 
 protocol Router: class {
+  typealias CompletionBlock = () -> Void
   var nextTransition: Route? { get set }
-  func transition(from: UIViewController, route: Route)
+  func transition(from: UIViewController, route: Route, completionHandler: CompletionBlock?)
+}
+
+extension Router {
+  func transition(from: UIViewController, route: Route, completionHandler: CompletionBlock? = nil) {
+    transition(from: from, route: route, completionHandler: completionHandler)
+  }
 }
 
 class RouterDefault: Router {
   var nextTransition: Route? { didSet { print("didSet value:", nextTransition ?? "nil") }}
-  func transition(from: UIViewController, route: Route) {
-    from.transition(rule: route.rule)
+  func transition(from: UIViewController, route: Route, completionHandler: CompletionBlock?) {
+    from.transition(rule: route.rule, completionHandler: completionHandler)
   }
 }
 
 extension UIViewController {
-  func transition(rule: Route.RouteRule) {
+  func transition(rule: Route.RouteRule, completionHandler: Router.CompletionBlock?) {
     switch rule.direction {
     case .push:
+      CATransaction.begin()
       navigationController?.pushViewController(rule.to, animated: true)
+      CATransaction.setCompletionBlock(completionHandler)
+      CATransaction.commit()
     case .pop(let position):
       if let position = position, let navigationController = navigationController {
         if let index = navigationController.viewControllers.index(where: {$0 == rule.to}) {
@@ -44,11 +54,14 @@ extension UIViewController {
         }
         navigationController.viewControllers.insert(rule.to, at: navigationController.viewControllers.count + position)
       }
+      CATransaction.begin()
       navigationController?.popToViewController(rule.to, animated: true)
+      CATransaction.setCompletionBlock(completionHandler)
+      CATransaction.commit()
     case .present:
-      present(rule.to, animated: true, completion: nil)
+      present(rule.to, animated: true, completion: completionHandler)
     case .dismiss:
-      dismiss(animated: true, completion: nil)
+      dismiss(animated: true, completion: completionHandler)
     }
   }
 
