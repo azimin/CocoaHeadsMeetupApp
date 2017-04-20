@@ -60,7 +60,7 @@ class EventPreviewViewController: UIViewController {
   }
 
   func acceptAction() {
-    router.transition(from: self, route: EventPreviewRoute.registration) {
+    router.transition(route: EventPreviewRoute.registration) {
       print("completion")
     }
   }

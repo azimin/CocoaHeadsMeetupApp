@@ -55,8 +55,8 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
       }
       LoginProcessController.setCurrentUser(user)
 
-      if let nextTransition = self?.router.nextTransition, let from = self {
-        self?.router.transition(from: from, route: nextTransition)
+      if let nextTransition = self?.router.nextTransition {
+        self?.router.transition(route: nextTransition)
       } else {
         self?.profileNavigationController?.updateRootViewController()
       }
