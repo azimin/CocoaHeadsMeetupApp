@@ -10,41 +10,37 @@ import RealmSwift
 import UIKit
 
 class ImporterActionSheetHelper {
-  weak static var event: EventEntity?
-
-  static func createActionSheet(on viewController: UIViewController) {
-    guard let event = event else {
-      assertionFailure("EventEntity is nil!")
-      return
+  static func createActionSheet(on viewController: UIViewController, with event: EventEntity) {
+    if PermissionsManager.isAllowed(type: .calendar) || PermissionsManager.isAllowed(type: .reminders) {
+      if !event.isAdded.addedToCalendar || !event.isAdded.addedToReminder {
+        let actionSheet = UIAlertController(title: "Добавить в".localized, message: nil, preferredStyle: .actionSheet)
+        createActions(for: actionSheet, with: event)
+        viewController.present(viewController: actionSheet)
+      }
     }
-    let actionSheet = UIAlertController(title: "Добавить в".localized, message: nil, preferredStyle: .actionSheet)
-    createActions(for: actionSheet, with: event)
-    viewController.present(viewController: actionSheet)
   }
 
   private static func createActions(for actionSheet: UIAlertController, with event: EventEntity) {
-    if !event.isAdded.addedToCalendar {
-      let action = UIAlertAction(title: "В календарь".localized, style: .default, handler: { (_) in
-        Importer.import(event: event, to: .calendar, completion: { _ in
-          realmWrite {
-              event.isAdded.addedToCalendar = true
-            }
-        })
-      })
-      PermissionsManager.isAllowed(type: .calendar) ? actionSheet.addAction(action) : print("Calendar is not allowed")
-    }
-    if !event.isAdded.addedToReminder {
-    let action = UIAlertAction(title: "В напоминания".localized, style: .default, handler: { (_) in
-      Importer.import(event: event, to: .reminder, completion: { _ in
-        realmWrite {
-          event.isAdded.addedToReminder = true
+    let addToCalendar = UIAlertAction(title: "В календарь".localized, style: .default, handler: { _ in
+      Importer.import(event: event, to: .calendar, completion: { _ in
+        mainRealm.realmWrite {
+          event.isAdded.addedToCalendar = true
         }
       })
     })
-    PermissionsManager.isAllowed(type: .reminders) ? actionSheet.addAction(action) : print("Reminders is not allowed")
-    }
+    PermissionsManager.isAllowed(type: .calendar) && !event.isAdded.addedToCalendar ?
+      actionSheet.addAction(addToCalendar) : print("Calendar is not allowed")
 
-    let action = UIAlertAction(title: "Отменить".localized, style: .cancel, handler: nil)
-    actionSheet.addAction(action)
+    let addToReminder = UIAlertAction(title: "В напоминания".localized, style: .default, handler: { _ in
+      Importer.import(event: event, to: .reminder, completion: { _ in
+        mainRealm.realmWrite({
+        })
+      })
+    })
+    PermissionsManager.isAllowed(type: .reminders) && !event.isAdded.addedToReminder ?
+      actionSheet.addAction(addToReminder) : print("Reminders is not allowed")
+
+    let cancel = UIAlertAction(title: "Отменить".localized, style: .cancel, handler: nil)
+    actionSheet.addAction(cancel)
   }
 }

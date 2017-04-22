@@ -42,6 +42,18 @@ class EventPreviewDisplayCollection: DisplayCollection {
       tableView.deleteRows(at: [index], with: .left)
     }
 
+    guard let event = self.event else {
+      return
+    }
+
+    let addEventCell = ActionPlainObject(text: "Добавьте".localized,
+                                         imageName: nil,
+                                         action: {
+                                          DispatchQueue.main.async {
+                                            ImporterActionSheetHelper.createActionSheet(on: viewController,
+                                                                                        with: event)
+                                          }
+    })
     let calendarPermissonCell = actionCell.checkAccess(on: viewController, for: .calendar, with: action)
     let remindersPermissionCell = actionCell.checkAccess(on: viewController, for: .reminders, with: action)
 
@@ -51,6 +63,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
     if let remindersCell = remindersPermissionCell {
       actionPlainObjects.append(remindersCell)
     }
+    actionPlainObjects.append(addEventCell)
   }
 
   weak var delegate: DisplayCollectionDelegate?
