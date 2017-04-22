@@ -31,6 +31,28 @@ class EventPreviewDisplayCollection: DisplayCollection {
     }
   }
 
+  func createActionCellsSection(on viewController: UIViewController, with tableView: UITableView) {
+    let actionCell = ActionCellConfigurationController()
+
+    let action = {
+      guard let index = self.indexPath else {
+        return
+      }
+      self.actionPlainObjects.remove(at: index.row)
+      tableView.deleteRows(at: [index], with: .left)
+    }
+
+    let calendarPermissonCell = actionCell.checkAccess(on: viewController, for: .calendar, with: action)
+    let remindersPermissionCell = actionCell.checkAccess(on: viewController, for: .reminders, with: action)
+
+    if let calendarCell = calendarPermissonCell {
+      actionPlainObjects.append(calendarCell)
+    }
+    if let remindersCell = remindersPermissionCell {
+      actionPlainObjects.append(remindersCell)
+    }
+  }
+
   weak var delegate: DisplayCollectionDelegate?
 
   var indexPath: IndexPath?
@@ -93,33 +115,6 @@ class EventPreviewDisplayCollection: DisplayCollection {
     }
   }
 
-  private func createActionCells(on viewController: UIViewController, with tableView: UITableView) {
-    let actionCell = ActionCellConfigurationController()
-
-    let PermissionAction = {
-      guard let index = self.indexPath else {
-        return
-      }
-      self.actionPlainObjects.remove(at: index.row)
-      tableView.deleteRows(at: [index], with: .left)
-    }
-
-    let addDateAction = {
-      if PermissionsManager.isAllowed(type: .calendar) || PermissionsManager.isAllowed(type: .reminders) {
-      }
-    }
-
-    let calendarPermissonCell = actionCell.checkAccess(on: viewController, for: .calendar, with: PermissionAction)
-    let remindersPermissionCell = actionCell.checkAccess(on: viewController, for: .reminders, with: PermissionAction)
-
-    if let calendarCell = calendarPermissonCell {
-      actionPlainObjects.append(calendarCell)
-    }
-    if let remindersCell = remindersPermissionCell {
-      actionPlainObjects.append(remindersCell)
-    }
-  }
-
   var numberOfSections: Int {
     return sections.count
   }
@@ -131,11 +126,12 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .speaches:
       return event?.speeches.count ?? 0
     case .additionalCells:
-      return 0
+      return actionPlainObjects.count
     }
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
+    let actionCell = ActionCellConfigurationController()
     let type = sections[indexPath.section]
     switch type {
     case .location:
@@ -161,8 +157,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .description:
       return ActionTableViewCellModel(action: ActionPlainObject(text: event?.descriptionText ?? ""))
     case .additionalCells:
-      return ActionTableViewCellModel(action: ActionPlainObject(text: "Should be additional cell",
-                                                                imageName: nil, action: { }))
+      return actionCell.modelForActionCell(with: actionPlainObjects[indexPath.row])
     }
   }
 
@@ -177,7 +172,10 @@ class EventPreviewDisplayCollection: DisplayCollection {
         viewController.selectedSpeechId = event.speeches[indexPath.row].id
         delegate?.push(viewController: viewController)
       }
-    case .additionalCells, .description, .location:
+    case .additionalCells:
+      self.indexPath = indexPath
+      actionPlainObjects[indexPath.row].action?()
+    case .description, .location:
       break
     }
   }
