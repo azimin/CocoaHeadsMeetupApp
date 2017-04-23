@@ -46,7 +46,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
       return
     }
 
-    let addEventCell = ActionPlainObject(text: "Добавьте".localized,
+    let addEventCell = ActionPlainObject(text: "Сохраните событие в Календарь или Напоминания чтобы не пропустить!".localized,
                                          imageName: nil,
                                          action: {
                                           DispatchQueue.main.async {

@@ -26,7 +26,7 @@ class EventEntity: Object {
   let speeches = List<SpeechEntity>()
   let speakerPhotosURLs = List<StringContainerEntity>()
   let isAdded = AddedEventEntity()
-
+  
   override static func primaryKey() -> String? {
     return "id"
   }
