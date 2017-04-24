@@ -133,7 +133,7 @@ extension UIViewController {
       if let router = objc_getAssociatedObject(self, &associationRouterKey) as? Router {
         return router
       } else {
-//        assertionFailure("You MUST setup Router inside")
+        assertionFailure("You MUST setup Router inside")
         self.router = Router(rootViewController: self)
         return self.router
       }
