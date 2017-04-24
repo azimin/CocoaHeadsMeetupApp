@@ -85,9 +85,8 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func didSelect(indexPath: IndexPath) {
     switch sections[indexPath.section] {
     case .events:
-      let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
-      eventPreview.selectedEventId = modelCollection[indexPath.row].id
-      delegate?.push(viewController: eventPreview)
+      let selectedId = modelCollection[indexPath.row].id
+      delegate?.follow(destination: CommonDestination.eventPreview(id: selectedId))
     case .actionButtons:
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
@@ -97,12 +96,11 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
 extension MainViewDisplayCollection: EventPreviewTableViewCellDelegate {
   func eventCellAcceptButtonPressed(_ eventCell: EventPreviewTableViewCell) {
-    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
     guard let indexPath = delegate?.getIndexPath(from: eventCell) else {
       assertionFailure("IndexPath is unknown")
       return
     }
-    viewController.selectedEventId = modelCollection[indexPath.row].id
-    delegate?.push(viewController: viewController)
+    let id = modelCollection[indexPath.row].id
+    delegate?.follow(destination: CommonDestination.registrationPreview(id: id))
   }
 }

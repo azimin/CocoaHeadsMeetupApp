@@ -167,6 +167,7 @@
 		9F68E50D1E850D7500C6C931 /* ActionPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F68E50C1E850D7500C6C931 /* ActionPlainObject.swift */; };
 		9F6E1A241E95B62D0027416B /* MapsActionSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6E1A231E95B62D0027416B /* MapsActionSheetHelper.swift */; };
 		9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8881791E7E9EE300CEFEA4 /* BottomButton.swift */; };
+		9FACF46F1EAEB10800C9EF96 /* CommonDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FACF46E1EAEB10800C9EF96 /* CommonDestination.swift */; };
 		9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */; };
 		9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */; };
 		9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */; };
@@ -398,6 +399,7 @@
 		9F68E50C1E850D7500C6C931 /* ActionPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionPlainObject.swift; sourceTree = "<group>"; };
 		9F6E1A231E95B62D0027416B /* MapsActionSheetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsActionSheetHelper.swift; sourceTree = "<group>"; };
 		9F8881791E7E9EE300CEFEA4 /* BottomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
+		9FACF46E1EAEB10800C9EF96 /* CommonDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDestination.swift; sourceTree = "<group>"; };
 		9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Object+Singletone.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Realm+WriteFunctions.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Realm+Notifications.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -601,6 +603,7 @@
 		221F4F901E5C0B6C0009FD07 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9FACF46D1EAEB0FB00C9EF96 /* Destination */,
 				22323F131E70C0E500522E5C /* Helpers */,
 				22323F211E70C0E500522E5C /* Views */,
 				221F4F921E5C0B6C0009FD07 /* Extensions */,
@@ -988,9 +991,9 @@
 		22323F5E1E70C2BE00522E5C /* EventPreview */ = {
 			isa = PBXGroup;
 			children = (
+				9FACF46C1EAEB0EB00C9EF96 /* Destination */,
 				03FB4F321E9092CF006DDC2C /* DisplayModel */,
 				22323F5F1E70C2BE00522E5C /* EventPreviewViewController.swift */,
-				F7188A6F1EA7DA0D0072B652 /* EventPreviewDestination.swift */,
 				03374B1B1E7F20EA00CA298E /* subviews */,
 			);
 			path = EventPreview;
@@ -1639,6 +1642,22 @@
 			name = Buttons;
 			sourceTree = "<group>";
 		};
+		9FACF46C1EAEB0EB00C9EF96 /* Destination */ = {
+			isa = PBXGroup;
+			children = (
+				F7188A6F1EA7DA0D0072B652 /* EventPreviewDestination.swift */,
+			);
+			name = Destination;
+			sourceTree = "<group>";
+		};
+		9FACF46D1EAEB0FB00C9EF96 /* Destination */ = {
+			isa = PBXGroup;
+			children = (
+				9FACF46E1EAEB10800C9EF96 /* CommonDestination.swift */,
+			);
+			name = Destination;
+			sourceTree = "<group>";
+		};
 		9FD58FBA1E5E307800207199 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -1996,6 +2015,7 @@
 				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
 				7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */,
 				F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */,
+				9FACF46F1EAEB10800C9EF96 /* CommonDestination.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
 				7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,

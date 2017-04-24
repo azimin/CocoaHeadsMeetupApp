@@ -144,9 +144,8 @@ class EventPreviewDisplayCollection: DisplayCollection {
       addressActionObject?.action?()
     case .speaches:
       if let event = event {
-        let viewController = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
-        viewController.selectedSpeechId = event.speeches[indexPath.row].id
-        delegate?.push(viewController: viewController)
+        let id = event.speeches[indexPath.row].id
+        delegate?.follow(destination: CommonDestination.speechPreview(id: id))
       }
     case .additionalCells, .description, .location:
       break

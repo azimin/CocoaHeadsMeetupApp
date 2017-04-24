@@ -39,20 +39,18 @@ final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAct
   }
 
   func didSelect(indexPath: IndexPath) {
-    let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
-    eventPreview.selectedEventId = modelCollection[indexPath.row].id
-    delegate?.push(viewController: eventPreview)
+    let selectedId = modelCollection[indexPath.row].id
+    delegate?.follow(destination: CommonDestination.eventPreview(id: selectedId))
   }
 }
 
 extension PastEventsDisplayCollection: EventPreviewTableViewCellDelegate {
   func eventCellAcceptButtonPressed(_ eventCell: EventPreviewTableViewCell) {
-    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
     guard let indexPath = delegate?.getIndexPath(from: eventCell) else {
       assertionFailure("IndexPath is unknown")
       return
     }
-    viewController.selectedEventId = modelCollection[indexPath.row].id
-    delegate?.push(viewController: viewController)
+    let id = modelCollection[indexPath.row].id
+    delegate?.follow(destination: CommonDestination.registrationPreview(id: id))
   }
 }

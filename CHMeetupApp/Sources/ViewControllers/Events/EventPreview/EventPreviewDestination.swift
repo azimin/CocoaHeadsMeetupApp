@@ -7,6 +7,7 @@
 //
 
 enum EventPreviewDestination: Destination {
+  
   case registration
   var route: Route {
     switch self {

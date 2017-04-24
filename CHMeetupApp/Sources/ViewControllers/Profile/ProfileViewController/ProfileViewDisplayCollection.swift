@@ -41,20 +41,17 @@ final class ProfileViewDisplayCollection: DisplayCollection {
     self.delegate = delegate
 
     let giveSpeechObject = ActionPlainObject(text: "Стать спикером".localized, imageName: nil) { [weak delegate] in
-      let giveSpeech = Storyboards.Profile.instantiateGiveSpeechViewController()
-      delegate?.push(viewController: giveSpeech)
+      delegate?.follow(destination: CommonDestination.giveSpeech)
     }
     let giveSpeechAction = ActionTableViewCellModel(action: giveSpeechObject)
 
     let creatorsObject = ActionPlainObject(text: "Создатели".localized, imageName: nil) { [weak delegate] in
-      let creators = Storyboards.Profile.instantiateCreatorsViewController()
-      delegate?.push(viewController: creators)
+      delegate?.follow(destination: CommonDestination.creators)
     }
     let creatorsAction = ActionTableViewCellModel(action: creatorsObject)
 
     let askQuestionObject = ActionPlainObject(text: "Задать вопрос".localized, imageName: nil) { [weak delegate] in
-      let askQuestion = Storyboards.Profile.instantiateAskQuestionViewController()
-      delegate?.push(viewController: askQuestion)
+      delegate?.follow(destination: CommonDestination.askQuestion)
     }
     let askQuestionAction = ActionTableViewCellModel(action: askQuestionObject)
 

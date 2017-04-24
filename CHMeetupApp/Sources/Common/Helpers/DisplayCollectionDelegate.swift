@@ -11,7 +11,7 @@ import UIKit
 protocol DisplayCollectionDelegate: class {
   func updateUI()
   func present(viewController: UIViewController)
-  func push(viewController: UIViewController)
+  func follow(destination: Destination)
 }
 
 extension UIViewController: DisplayCollectionDelegate {
@@ -19,8 +19,8 @@ extension UIViewController: DisplayCollectionDelegate {
     present(viewController, animated: true, completion: nil)
   }
 
-  func push(viewController: UIViewController) {
-    navigationController?.pushViewController(viewController, animated: true)
+  func follow(destination: Destination) {
+    router.follow(to: destination, completionHandler: nil)
   }
 
   func updateUI() {
