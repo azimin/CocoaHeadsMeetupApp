@@ -40,12 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
 
   func routerSetup(viewController: UIViewController?) {
     if let tabBarViewController = viewController as? UITabBarController {
-      routerSetup(viewController: tabBarViewController.viewControllers?[0])
+      for viewController in tabBarViewController.viewControllers ?? [] {
+        routerSetup(viewController: viewController)
+      }
     } else if let navigationController = viewController as? UINavigationController,
       let viewController = navigationController.viewControllers.first {
+      routerSetup(viewController: viewController)
+    } else if let viewController = viewController {
       viewController.router = Router(rootViewController: viewController)
     } else {
-      assertionFailure("No navigation view controller")
+      assertionFailure("No such view cotnroller")
     }
   }
 }
