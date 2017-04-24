@@ -10,6 +10,6 @@ import Foundation
 import RealmSwift
 
 class AddedEventEntity: Object {
-  dynamic var addedToCalendar = false
-  dynamic var addedToReminder = false
+  dynamic var toCalendar = false
+  dynamic var toReminder = false
 }

@@ -51,7 +51,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
                                          action: {
                                           DispatchQueue.main.async {
                                             ImporterActionSheetHelper.createActionSheet(on: viewController,
-                                                                                        with: event)
+                                                                                        for: event)
                                           }
     })
     let calendarPermissonCell = actionCell.checkAccess(on: viewController, for: .calendar, with: action)

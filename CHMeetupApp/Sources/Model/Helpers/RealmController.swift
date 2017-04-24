@@ -15,7 +15,7 @@ class RealmController {
 
   func setup() {
     Realm.Configuration.defaultConfiguration =
-      Realm.Configuration(schemaVersion: 20, migrationBlock: nil)
+      Realm.Configuration(schemaVersion: 21, migrationBlock: nil)
 
     do {
       mainRealm = try Realm()
