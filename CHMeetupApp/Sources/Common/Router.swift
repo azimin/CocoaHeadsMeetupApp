@@ -9,105 +9,137 @@
 import UIKit
 import ObjectiveC
 
-private var associationKey = "viewController_router"
+private var associationRouterKey = "viewController_router"
 
-enum RouteDirection {
-  case push, pop(position: Int), present, dismiss
-}
+typealias CompletionBlock = () -> Void
 
-protocol Route {
-  typealias RouteRule = (to: UIViewController, direction: RouteDirection)
-  var rule: RouteRule { get }
-}
-
-protocol Router: class {
-  typealias CompletionBlock = () -> Void
-
-  var viewController: UIViewController? { get }
-  init(_ vc: UIViewController?)
-
-  var nextTransition: Route? { get set }
-  func transition(route: Route, completionHandler: CompletionBlock?)
-}
-
-extension Router {
-  func transition(route: Route, completionHandler: CompletionBlock? = nil) {
-    transition(route: route, completionHandler: completionHandler)
+struct WeakContainer<T: AnyObject> {
+  weak var value: T?
+  init(value: T?) {
+    self.value = value
   }
 }
 
-class RouterDefault: Router {
-  var viewController: UIViewController?
-  required init(_ vc: UIViewController?) {
-    viewController = vc
+protocol Destination {
+  var route: Route { get }
+}
+
+struct Route {
+  enum Back {
+    case hide, returnToPoint
   }
 
-  var nextTransition: Route?
-  func transition(route: Route, completionHandler: CompletionBlock?) {
-    viewController?.transition(rule: route.rule, completionHandler: completionHandler)
+  enum Next {
+    case show, insert, createPoint
+  }
+
+  var to: UIViewController
+  var direction: Next
+
+  public static func == (lhs: Route, rhs: Route) -> Bool {
+    return lhs.to == rhs.to && lhs.direction == lhs.direction
   }
 }
 
-extension UIViewController {
-  func transition(rule: Route.RouteRule, completionHandler: Router.CompletionBlock?) {
-    switch rule.direction {
-    case .push:
-      guard let navControler = navigationController else { return }
-      completeTransaction(completionHandler: completionHandler, block: {
-        navControler.pushViewController(rule.to, animated: true)
-      })
-    case .pop(let position):
-      guard let navControler = navigationController else { return }
-      if let index = navControler.viewControllers.index(where: {$0 == rule.to}) {
-        navControler.viewControllers.remove(at: index)
-      }
-      let count = navControler.viewControllers.count
-      navControler.viewControllers.insert(rule.to, at: count + position)
-      completeTransaction(completionHandler: completionHandler, block: {
-        navControler.popToViewController(rule.to, animated: true)
-      })
-    case .present:
-      present(rule.to, animated: true, completion: completionHandler)
-    case .dismiss:
-      dismiss(animated: true, completion: completionHandler)
+final class Router {
+  private(set) weak var parent: Router?
+  private(set) weak var child: Router?
+
+  private var viewControllers: [WeakContainer<UIViewController>] = []
+
+  private var lastViewController: UIViewController {
+    viewControllers = viewControllers.filter({ $0.value != nil })
+
+    if let last = viewControllers.last?.value {
+      return last
+    } else {
+      assertionFailure("Not last view controller in current router")
+      return (UIApplication.shared.keyWindow?.rootViewController)!
     }
   }
 
-  private func completeTransaction(completionHandler: Router.CompletionBlock?, block: () -> Void) {
+  init(rootViewController: UIViewController, parent: Router? = nil) {
+    viewControllers.append(WeakContainer(value: rootViewController))
+    self.parent = parent
+    parent?.child = self
+  }
+
+  func leave(to direction: Route.Back, completionHandler: CompletionBlock? = nil) {
+    switch direction {
+    case .hide:
+      lastViewController.navigationController?.popToViewController(animated: true, completionHandler: completionHandler)
+      viewControllers.removeLast()
+    case .returnToPoint:
+      if let preveousLastViewController = parent?.lastViewController {
+        lastViewController.navigationController?.popToViewController(preveousLastViewController,
+                                                                     animated: true,
+                                                                     completionHandler: completionHandler)
+      }
+    }
+  }
+
+  func follow(to destination: Destination, completionHandler: CompletionBlock? = nil) {
+    let route = destination.route
+    var futureRouter = self
+    switch route.direction {
+    case .show:
+      lastViewController.navigationController?.pushViewController(route.to, animated: true,
+                                                                  completionHandler: completionHandler)
+      viewControllers.append(WeakContainer(value: route.to))
+    case .insert:
+      if let index = lastViewController.navigationController?.viewControllers.index(of: lastViewController) {
+        lastViewController.navigationController?.viewControllers.insert(route.to, at: index + 1)
+      }
+      viewControllers.append(WeakContainer(value: route.to))
+    case .createPoint:
+      let router = Router(rootViewController: route.to, parent: self)
+      lastViewController.navigationController?.pushViewController(route.to, animated: true,
+                                                                  completionHandler: completionHandler)
+      futureRouter = router
+    }
+    route.to.router = futureRouter
+  }
+}
+
+extension UINavigationController {
+  func pushViewController(_ destination: UIViewController, animated: Bool, completionHandler: CompletionBlock?) {
+    completeTransaction(completionHandler: completionHandler) {
+      pushViewController(destination, animated: animated)
+    }
+  }
+
+  func popToViewController(_ destination: UIViewController? = nil, animated: Bool,
+                           completionHandler: CompletionBlock?) {
+    completeTransaction(completionHandler: completionHandler) {
+      if let destination = destination {
+        popToViewController(destination, animated: animated)
+      } else {
+        popViewController(animated: animated)
+      }
+    }
+  }
+
+  private func completeTransaction(completionHandler: CompletionBlock?, block: () -> Void) {
     CATransaction.begin()
     block()
     CATransaction.setCompletionBlock(completionHandler)
     CATransaction.commit()
   }
+}
 
-  static var rootViewController: UIViewController? {
-    return UIApplication.shared.delegate?.window??.rootViewController
-  }
-
-  // swiftlint:disable:next line_length
-  private func topViewController(from viewController: UIViewController? = UIViewController.rootViewController) -> UIViewController? {
-    if let tabBarViewController = viewController as? UITabBarController {
-      return topViewController(from: tabBarViewController.selectedViewController)
-    } else if let navigationController = viewController as? UINavigationController {
-      return topViewController(from: navigationController.visibleViewController)
-    } else if let presentedViewController = viewController?.presentedViewController {
-      return topViewController(from: presentedViewController)
-    } else {
-      return viewController
-    }
-  }
-
+extension UIViewController {
   var router: Router {
     get {
-      if let router = objc_getAssociatedObject(self, &associationKey) as? Router {
+      if let router = objc_getAssociatedObject(self, &associationRouterKey) as? Router {
         return router
       } else {
-        self.router = RouterDefault(topViewController())
+//        assertionFailure("You MUST setup Router inside")
+        self.router = Router(rootViewController: self)
         return self.router
       }
     }
     set {
-      objc_setAssociatedObject(self, &associationKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+      objc_setAssociatedObject(self, &associationRouterKey, newValue, .OBJC_ASSOCIATION_RETAIN)
     }
   }
 }

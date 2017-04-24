@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
     if PermissionsManager.isAllowed(type: .notifications) {
       PushNotificationController.configureNotification()
     }
+
+    routerSetup(viewController: window?.rootViewController)
+
     return true
   }
 
@@ -35,4 +38,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
     return true
   }
 
+  func routerSetup(viewController: UIViewController?) {
+    if let tabBarViewController = viewController as? UITabBarController {
+      routerSetup(viewController: tabBarViewController.viewControllers?[0])
+    } else if let navigationController = viewController as? UINavigationController,
+      let viewController = navigationController.viewControllers.first {
+      viewController.router = Router(rootViewController: viewController)
+    } else {
+      assertionFailure("No navigation view controller")
+    }
+  }
 }

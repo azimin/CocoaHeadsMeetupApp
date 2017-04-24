@@ -202,8 +202,7 @@
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 		C3AC79701E8BEA2E00BA23C5 /* UITableView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */; };
 		F7188A6E1EA7D9FA0072B652 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7188A6D1EA7D9FA0072B652 /* Router.swift */; };
-		F7188A701EA7DA0D0072B652 /* EventPreviewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7188A6F1EA7DA0D0072B652 /* EventPreviewRoute.swift */; };
-		F7188A721EA7DA350072B652 /* AuthRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7188A711EA7DA350072B652 /* AuthRoute.swift */; };
+		F7188A701EA7DA0D0072B652 /* EventPreviewDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7188A6F1EA7DA0D0072B652 /* EventPreviewDestination.swift */; };
 		F718BFAA1E93BF8D008B3C0B /* Bool+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFA91E93BF8D008B3C0B /* Bool+Random.swift */; };
 		F718BFB21E93C940008B3C0B /* RandomAccessCollection+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFB11E93C940008B3C0B /* RandomAccessCollection+Random.swift */; };
 		F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFB61E942C27008B3C0B /* OptionalOperator.swift */; };
@@ -435,8 +434,7 @@
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Configure.swift"; sourceTree = "<group>"; };
 		F7188A6D1EA7D9FA0072B652 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		F7188A6F1EA7DA0D0072B652 /* EventPreviewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewRoute.swift; sourceTree = "<group>"; };
-		F7188A711EA7DA350072B652 /* AuthRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRoute.swift; sourceTree = "<group>"; };
+		F7188A6F1EA7DA0D0072B652 /* EventPreviewDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewDestination.swift; sourceTree = "<group>"; };
 		F718BFA91E93BF8D008B3C0B /* Bool+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Random.swift"; sourceTree = "<group>"; };
 		F718BFB11E93C940008B3C0B /* RandomAccessCollection+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Random.swift"; sourceTree = "<group>"; };
 		F718BFB61E942C27008B3C0B /* OptionalOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalOperator.swift; sourceTree = "<group>"; };
@@ -992,7 +990,7 @@
 			children = (
 				03FB4F321E9092CF006DDC2C /* DisplayModel */,
 				22323F5F1E70C2BE00522E5C /* EventPreviewViewController.swift */,
-				F7188A6F1EA7DA0D0072B652 /* EventPreviewRoute.swift */,
+				F7188A6F1EA7DA0D0072B652 /* EventPreviewDestination.swift */,
 				03374B1B1E7F20EA00CA298E /* subviews */,
 			);
 			path = EventPreview;
@@ -1090,7 +1088,6 @@
 			isa = PBXGroup;
 			children = (
 				22323F731E70C2BE00522E5C /* AuthViewController.swift */,
-				F7188A711EA7DA350072B652 /* AuthRoute.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -1994,7 +1991,6 @@
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				8AAAA04C1EA39B4800934D8F /* TableViewGetDelegate.swift in Sources */,
 				9F3767051E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift in Sources */,
-				F7188A721EA7DA350072B652 /* AuthRoute.swift in Sources */,
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
 				9FD594951E8732F600BAD1B5 /* List+RemoveDublicates.swift in Sources */,
 				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
@@ -2114,7 +2110,7 @@
 				030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
-				F7188A701EA7DA0D0072B652 /* EventPreviewRoute.swift in Sources */,
+				F7188A701EA7DA0D0072B652 /* EventPreviewDestination.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,
 				F718BFB21E93C940008B3C0B /* RandomAccessCollection+Random.swift in Sources */,
