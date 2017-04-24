@@ -23,9 +23,13 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
 
   func updateRootViewController() {
     if LoginProcessController.isLogin {
-      viewControllers = [ViewControllersFactory.profileViewController]
+      if !viewControllers.contains(where: {$0 is ProfileViewController}) {
+        viewControllers = [ViewControllersFactory.profileViewController]
+      }
     } else {
-      viewControllers = [ViewControllersFactory.authViewController]
+      if !viewControllers.contains(where: {$0 is AuthViewController}) {
+        viewControllers = [ViewControllersFactory.authViewController]
+      }
     }
   }
 

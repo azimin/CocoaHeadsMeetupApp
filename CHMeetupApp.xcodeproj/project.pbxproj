@@ -215,6 +215,8 @@
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 		C3AC79701E8BEA2E00BA23C5 /* UITableView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */; };
+		F7188A6E1EA7D9FA0072B652 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7188A6D1EA7D9FA0072B652 /* Router.swift */; };
+		F7188A701EA7DA0D0072B652 /* EventPreviewDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7188A6F1EA7DA0D0072B652 /* EventPreviewDestination.swift */; };
 		F718BFAA1E93BF8D008B3C0B /* Bool+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFA91E93BF8D008B3C0B /* Bool+Random.swift */; };
 		F718BFB21E93C940008B3C0B /* RandomAccessCollection+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFB11E93C940008B3C0B /* RandomAccessCollection+Random.swift */; };
 		F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFB61E942C27008B3C0B /* OptionalOperator.swift */; };
@@ -459,6 +461,8 @@
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Configure.swift"; sourceTree = "<group>"; };
+		F7188A6D1EA7D9FA0072B652 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F7188A6F1EA7DA0D0072B652 /* EventPreviewDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewDestination.swift; sourceTree = "<group>"; };
 		F718BFA91E93BF8D008B3C0B /* Bool+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Random.swift"; sourceTree = "<group>"; };
 		F718BFB11E93C940008B3C0B /* RandomAccessCollection+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Random.swift"; sourceTree = "<group>"; };
 		F718BFB61E942C27008B3C0B /* OptionalOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalOperator.swift; sourceTree = "<group>"; };
@@ -1018,6 +1022,7 @@
 			children = (
 				03FB4F321E9092CF006DDC2C /* DisplayModel */,
 				22323F5F1E70C2BE00522E5C /* EventPreviewViewController.swift */,
+				F7188A6F1EA7DA0D0072B652 /* EventPreviewDestination.swift */,
 				03374B1B1E7F20EA00CA298E /* subviews */,
 			);
 			path = EventPreview;
@@ -1483,6 +1488,7 @@
 				F718C0341E966B6A008B3C0B /* ImageLoader.swift */,
 				9F1167C41EA4E20D008D3A1B /* UIViewControllerWithTableView.swift */,
 				9FB0FE0E1EA6869700383E1D /* ActiveWindowManager.swift */,
+				F7188A6D1EA7D9FA0072B652 /* Router.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -2139,6 +2145,7 @@
 				A168379C1E7E979800A12B3B /* OptionTableViewCellModel.swift in Sources */,
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
+				F7188A6E1EA7D9FA0072B652 /* Router.swift in Sources */,
 				03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */,
 				4D1CD1DB1EA4F7D6002E5811 /* GetPushNotificationController.swift in Sources */,
 				320FA57E1E87AF1800DAC7E1 /* ProfilePhotoTableViewCellModel.swift in Sources */,
@@ -2205,6 +2212,7 @@
 				030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
+				F7188A701EA7DA0D0072B652 /* EventPreviewDestination.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,
 				F718BFB21E93C940008B3C0B /* RandomAccessCollection+Random.swift in Sources */,
