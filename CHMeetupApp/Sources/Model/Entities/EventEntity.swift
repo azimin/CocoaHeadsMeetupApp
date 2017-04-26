@@ -21,6 +21,7 @@ class EventEntity: Object {
   dynamic var photoURL: String = ""
 
   dynamic var place: PlaceEntity?
+  dynamic var isAdded: ImportEventStatusEntity?
   dynamic var isRegistrationOpen: Bool = false
 
   let speeches = List<SpeechEntity>()

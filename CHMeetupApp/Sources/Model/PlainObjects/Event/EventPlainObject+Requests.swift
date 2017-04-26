@@ -50,6 +50,10 @@ extension EventPlainObject: PlainObjectType {
     self.startDate = Date(timeIntervalSince1970: startDate)
     self.endDate = Date(timeIntervalSince1970: endDate)
 
+    // FIXME: Delete when add request from server
+    let isAdded = ImportEventStatusPlainObject(toCalendar: false, toReminder: false)
+    self.isAdded = isAdded
+    
     var photos: [URL] = []
     speakersJson.forEach { photoUrl in
       guard let url = URL(string: photoUrl) else { return }
