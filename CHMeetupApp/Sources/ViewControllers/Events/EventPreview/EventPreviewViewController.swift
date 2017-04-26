@@ -53,7 +53,7 @@ class EventPreviewViewController: UIViewController {
 
     let dataModel = DataModelCollection(type: EventEntity.self)
     displayCollection.event = dataModel.first(where: { $0.id == selectedEventId })
-
+    displayCollection.createActionCellsSection(on: self, with: tableView)
     if let event = displayCollection.event {
       fetchEvents(on: event)
       isRegistrationEnabled = event.isRegistrationOpen
