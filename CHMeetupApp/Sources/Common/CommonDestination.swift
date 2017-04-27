@@ -16,6 +16,7 @@ enum CommonDestination: Destination {
   case giveSpeech
   case registrationPreview(id: Int)
   case speechPreview(id: Int)
+  case profileEdit
 
   var route: Route {
     switch self {
@@ -37,6 +38,8 @@ enum CommonDestination: Destination {
       let speechPreview = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
       speechPreview.selectedSpeechId = id
       return Route(to: speechPreview, direction: .show)
+    case .profileEdit:
+      return Route(to: Storyboards.Profile.instantiateProfileEditViewController(), direction: .show)
     }
   }
 }

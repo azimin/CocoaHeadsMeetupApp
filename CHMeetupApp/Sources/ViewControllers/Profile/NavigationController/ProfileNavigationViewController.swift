@@ -24,11 +24,15 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
   func updateRootViewController() {
     if LoginProcessController.isLogin {
       if !viewControllers.contains(where: {$0 is ProfileViewController}) {
-        viewControllers = [ViewControllersFactory.profileViewController]
+        let profileViewController = ViewControllersFactory.profileViewController
+        profileViewController.router = Router(rootViewController: profileViewController)
+        viewControllers = [profileViewController]
       }
     } else {
       if !viewControllers.contains(where: {$0 is AuthViewController}) {
-        viewControllers = [ViewControllersFactory.authViewController]
+        let authViewController = ViewControllersFactory.authViewController
+        authViewController.router = Router(rootViewController: authViewController)
+        viewControllers = [authViewController]
       }
     }
   }

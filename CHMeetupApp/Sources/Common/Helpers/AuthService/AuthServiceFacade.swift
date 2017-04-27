@@ -61,7 +61,7 @@ final class AuthServiceFacade {
       if service.resource.appExists {
         UIApplication.shared.open(authURL, options: [:])
       } else {
-        showSafari(url: authURL)
+        showSafari(url: authURL, router: view.router)
       }
 
     }
@@ -98,8 +98,9 @@ final class AuthServiceFacade {
    * Kirill Averyanov
    */
 
-  fileprivate func showSafari(url: URL) {
+  fileprivate func showSafari(url: URL, router: Router?) {
     safari = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+    safari?.router = router
     currentViewController?.present(safari!, animated: true, completion: nil)
   }
 

@@ -20,7 +20,7 @@ extension UIViewController: DisplayCollectionDelegate {
   }
 
   func follow(destination: Destination) {
-    router.follow(to: destination, completionHandler: nil)
+    router?.follow(to: destination, completionHandler: nil)
   }
 
   func updateUI() {

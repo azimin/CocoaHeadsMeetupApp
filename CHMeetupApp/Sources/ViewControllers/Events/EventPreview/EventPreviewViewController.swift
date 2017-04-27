@@ -60,7 +60,7 @@ class EventPreviewViewController: UIViewController {
   }
 
   func acceptAction() {
-    router.follow(to: EventPreviewDestination.registration)
+    router?.follow(to: EventPreviewDestination.registration)
   }
 }
 

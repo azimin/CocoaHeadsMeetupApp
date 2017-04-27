@@ -168,6 +168,8 @@
 		9F6E1A241E95B62D0027416B /* MapsActionSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6E1A231E95B62D0027416B /* MapsActionSheetHelper.swift */; };
 		9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8881791E7E9EE300CEFEA4 /* BottomButton.swift */; };
 		9FACF46F1EAEB10800C9EF96 /* CommonDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FACF46E1EAEB10800C9EF96 /* CommonDestination.swift */; };
+		9FAFDAD61EB266E6001ED7DB /* UIViewController+StaticRouterCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFDAD51EB266E6001ED7DB /* UIViewController+StaticRouterCheck.swift */; };
+		9FAFDAD81EB28811001ED7DB /* UIViewController+FirstResponderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFDAD71EB28811001ED7DB /* UIViewController+FirstResponderRouter.swift */; };
 		9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */; };
 		9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */; };
 		9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */; };
@@ -400,6 +402,8 @@
 		9F6E1A231E95B62D0027416B /* MapsActionSheetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsActionSheetHelper.swift; sourceTree = "<group>"; };
 		9F8881791E7E9EE300CEFEA4 /* BottomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		9FACF46E1EAEB10800C9EF96 /* CommonDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDestination.swift; sourceTree = "<group>"; };
+		9FAFDAD51EB266E6001ED7DB /* UIViewController+StaticRouterCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StaticRouterCheck.swift"; sourceTree = "<group>"; };
+		9FAFDAD71EB28811001ED7DB /* UIViewController+FirstResponderRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+FirstResponderRouter.swift"; sourceTree = "<group>"; };
 		9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Object+Singletone.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Realm+WriteFunctions.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Realm+Notifications.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -760,6 +764,8 @@
 				22323F081E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift */,
 				9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */,
 				8A0244B01E93011D008AFFE6 /* UIViewController+Alert.swift */,
+				9FAFDAD51EB266E6001ED7DB /* UIViewController+StaticRouterCheck.swift */,
+				9FAFDAD71EB28811001ED7DB /* UIViewController+FirstResponderRouter.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -2102,6 +2108,7 @@
 				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
+				9FAFDAD61EB266E6001ED7DB /* UIViewController+StaticRouterCheck.swift in Sources */,
 				9F3767021E7D527000CC565B /* TextFieldPlateTableViewCell.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
 				7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */,
@@ -2143,6 +2150,7 @@
 				F718BFAA1E93BF8D008B3C0B /* Bool+Random.swift in Sources */,
 				9FD5948C1E8716E800BAD1B5 /* SpeechPlainObjectTranslation.swift in Sources */,
 				9F37671A1E7DDE2700CC565B /* TextViewPlateTableViewCellModel.swift in Sources */,
+				9FAFDAD81EB28811001ED7DB /* UIViewController+FirstResponderRouter.swift in Sources */,
 				22323F951E70C2BE00522E5C /* AuthViewController.swift in Sources */,
 				9F6E1A241E95B62D0027416B /* MapsActionSheetHelper.swift in Sources */,
 				22323F8E1E70C2BE00522E5C /* RegistrationPreviewViewController.swift in Sources */,

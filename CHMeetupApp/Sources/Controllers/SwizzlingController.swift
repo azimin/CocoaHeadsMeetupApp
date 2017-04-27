@@ -11,5 +11,11 @@ import UIKit
 struct SwizzlingController {
   static func swizzleMethods() {
     UINavigationItem.swizzleForTitleConfugation()
+
+    UIViewController.swizzleFirstResponderRouter()
+
+    #if DEBUG
+    UIViewController.swizzleStaticRouterAnalyzer()
+    #endif
   }
 }

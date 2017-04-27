@@ -9,6 +9,9 @@
 import UIKit
 import ObjectiveC
 
+// For ViewControllers that shound't implement router
+protocol RouterIgnorable { }
+
 private var associationRouterKey = "viewController_router"
 
 typealias CompletionBlock = () -> Void
@@ -41,7 +44,20 @@ struct Route: Equatable {
   }
 }
 
-final class Router {
+final class RouterContainer {
+//  var routers = [WeakContainer<Router>]()
+  static var firstResponder: Router?
+
+//  func addRouter(router: Router) {
+//    routers = routers.filter({ $0.value != nil })
+//    if routers.contains(where: { $0.value == router }) {
+//      return
+//    }
+//    routers.append(WeakContainer(value: router))
+//  }
+}
+
+final class Router: NSObject {
   private(set) weak var parent: Router?
   private(set) weak var child: Router?
 
@@ -61,6 +77,8 @@ final class Router {
   init(rootViewController: UIViewController, parent: Router? = nil) {
     viewControllers.append(WeakContainer(value: rootViewController))
     self.parent = parent
+
+    super.init()
     parent?.child = self
   }
 
@@ -132,14 +150,12 @@ extension UINavigationController {
 }
 
 extension UIViewController {
-  var router: Router {
+  var router: Router? {
     get {
       if let router = objc_getAssociatedObject(self, &associationRouterKey) as? Router {
         return router
       } else {
-        assertionFailure("You MUST setup Router inside")
-        self.router = Router(rootViewController: self)
-        return self.router
+        return nil
       }
     }
     set {

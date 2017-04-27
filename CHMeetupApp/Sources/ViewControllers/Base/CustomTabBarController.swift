@@ -106,7 +106,7 @@ extension UIViewController {
   }
 }
 
-public class CustomTabBarController: UITabBarController {
+public class CustomTabBarController: UITabBarController, RouterIgnorable {
 
   @IBInspectable public var preferedHeight: CGFloat = defaultHeight {
     didSet {

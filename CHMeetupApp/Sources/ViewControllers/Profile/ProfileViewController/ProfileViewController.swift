@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
   }
 
   @IBAction func editBarButtonAction(_ sender: UIBarButtonItem) {
-
+    router?.follow(to: CommonDestination.profileEdit)
   }
 }
 

@@ -55,8 +55,8 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
       }
       LoginProcessController.setCurrentUser(user)
 
-      if self?.router.parent != nil {
-        self?.router.leave(to: .returnToPoint)
+      if self?.router?.parent != nil {
+        self?.router?.leave(to: .returnToPoint)
       } else {
         self?.profileNavigationController?.updateRootViewController()
       }

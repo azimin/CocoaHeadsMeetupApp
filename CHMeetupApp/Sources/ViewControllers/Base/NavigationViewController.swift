@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NavigationViewController: UINavigationController {
+class NavigationViewController: UINavigationController, RouterIgnorable {
 
   var shadowView: ShadowView!
 
