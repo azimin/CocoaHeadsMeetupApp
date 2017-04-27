@@ -24,7 +24,7 @@ protocol Destination {
   var route: Route { get }
 }
 
-struct Route {
+struct Route: Equatable {
   enum Back {
     case hide, returnToPoint
   }
@@ -74,6 +74,8 @@ final class Router {
         lastViewController.navigationController?.popToViewController(preveousLastViewController,
                                                                      animated: true,
                                                                      completionHandler: completionHandler)
+      } else {
+        assertionFailure("No preveous router")
       }
     }
   }
@@ -89,8 +91,10 @@ final class Router {
     case .insert:
       if let index = lastViewController.navigationController?.viewControllers.index(of: lastViewController) {
         lastViewController.navigationController?.viewControllers.insert(route.to, at: index + 1)
+        viewControllers.append(WeakContainer(value: route.to))
+      } else {
+        assertionFailure("No navigation controller hierarhy")
       }
-      viewControllers.append(WeakContainer(value: route.to))
     case .createPoint:
       let router = Router(rootViewController: route.to, parent: self)
       lastViewController.navigationController?.pushViewController(route.to, animated: true,

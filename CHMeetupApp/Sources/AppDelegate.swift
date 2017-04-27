@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
       PushNotificationController.configureNotification()
     }
 
-    routerSetup(viewController: window?.rootViewController)
+    setupRouter(viewController: window?.rootViewController)
 
     return true
   }
@@ -38,14 +38,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
     return true
   }
 
-  func routerSetup(viewController: UIViewController?) {
+  func setupRouter(viewController: UIViewController?) {
     if let tabBarViewController = viewController as? UITabBarController {
       for viewController in tabBarViewController.viewControllers ?? [] {
-        routerSetup(viewController: viewController)
+        setupRouter(viewController: viewController)
       }
     } else if let navigationController = viewController as? UINavigationController,
       let viewController = navigationController.viewControllers.first {
-      routerSetup(viewController: viewController)
+      setupRouter(viewController: viewController)
     } else if let viewController = viewController {
       viewController.router = Router(rootViewController: viewController)
     } else {
