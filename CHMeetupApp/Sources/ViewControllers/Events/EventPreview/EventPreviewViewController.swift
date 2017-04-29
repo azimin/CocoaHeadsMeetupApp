@@ -61,8 +61,9 @@ class EventPreviewViewController: UIViewController {
   }
 
   func acceptAction() {
-    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
-    navigationController?.pushViewController(viewController, animated: true)
+    if let navigationController = navigationController {
+      displayCollection.didTransition(navigationController: navigationController)
+    }
   }
 }
 

@@ -163,6 +163,17 @@ class EventPreviewDisplayCollection: DisplayCollection {
       break
     }
   }
+
+  func didTransition(navigationController: UINavigationController) {
+    if LoginProcessController.isLogin {
+      let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+      delegate?.push(viewController: viewController)
+    } else {
+      let viewController = Storyboards.Profile.instantiateAuthViewController()
+      viewController.targetViewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+      delegate?.push(viewController: viewController)
+    }
+  }
 }
 
 extension EventPreviewDisplayCollection: TemplateModelCollectionDelegate {
