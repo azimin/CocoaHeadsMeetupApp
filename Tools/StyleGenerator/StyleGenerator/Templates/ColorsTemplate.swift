@@ -34,7 +34,7 @@ class ColorsTemplate: GeneratedModelTemplate {
 
     // Create ColorType enum
     let colorEnumCases = model.colors.flatMap({ EnumCase($0.name, "\"\($0.hex)\"") })
-    let colorEnum = String.CodeSymbols.enum(name: "ColorType", cases: colorEnumCases)
+    let colorEnum = String.CodeSymbols.enum(name: "ColorType: String", cases: colorEnumCases)
 
     // Create init func
     let initFuncTitle = "convenience init(_ colorType: ColorType)"
@@ -47,7 +47,7 @@ class ColorsTemplate: GeneratedModelTemplate {
       .newLine,
       initFunc
     ]
-    let colorExtension = String.CodeSymbols.snippet(type: .extension, for: "UIColor", nestedTypes: nestedTypes)
+    let colorExtension = String.CodeSymbols.snippet(type: .extension, for: "UIColor", nestedSymbols: nestedTypes)
     output += colorExtension
 
     return output

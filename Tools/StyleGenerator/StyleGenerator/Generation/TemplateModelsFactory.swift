@@ -10,6 +10,7 @@ import Foundation
 
 // MARK: - Model
 
+typealias CustomParameters = [String: Any]
 typealias TemplateInputParameters = [String: Any]
 
 protocol TemplateModel {

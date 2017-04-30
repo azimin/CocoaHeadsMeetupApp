@@ -18,8 +18,20 @@ private let defaultIndentation = 2 // Based on default indentation for Swift
 /// ...
 /// create this -> SwitchCase("your pattern", "your code")
 /// the same for EnumCase
-typealias SwitchCase = (pattern: String, code: String)
-typealias EnumCase = (name: String, caseValue: String?)
+typealias SwitchCase = (pattern: CasePattern, code: String)
+typealias EnumCase = (name: CasePattern, caseValue: String?)
+typealias CasePattern = String
+
+fileprivate extension CasePattern {
+  var formatted: String {
+    let systemPatterns = ["default"]
+    if systemPatterns.contains(self) {
+      return "`\(self)`"
+    } else {
+      return self
+    }
+  }
+}
 
 extension String {
 
@@ -30,27 +42,30 @@ extension String {
     case newLine
     case line(string: String)
     case mark(title: String)
-    case snippet(type: SnippetType, for: String, nestedTypes: [CodeSymbols])
+    case snippet(type: SnippetType, for: String, nestedSymbols: [CodeSymbols])
     case `enum`(name: String, cases: [EnumCase])
     case `switch`(value: String, cases: [SwitchCase])
     case function(title: String, body: [CodeSymbols])
-    case forCycle(iteratorTitle: String, nestedTypes: [CodeSymbols])
+    case forCycle(iteratorTitle: String, nestedSymbols: [CodeSymbols])
+    case property(fullName: String, nestedSymbols: [CodeSymbols]?)
 
     // swiftlint:disable:next nesting
     enum SnippetType: String {
       case `extension`
       case `protocol`
       case `class`
+      case `struct`
+      case `enum`
     }
   }
+
+  // MARK: - Public
 
   static func += (lhs: inout String, rhs: CodeSymbols) {
     lhs += rhs.value
   }
 
-  static let space = " "
-
-  fileprivate func addIndentation(_ count: Int = defaultIndentation) -> String {
+  func addIndentation(_ count: Int = defaultIndentation) -> String {
 
     let indent = makeIndent(count: count)
     var result = replacingOccurrences(of: "\n", with: "\n" + indent)
@@ -63,14 +78,32 @@ extension String {
     return result
   }
 
+  // MARK: - Private
+
   fileprivate func makeIndent(count: Int) -> String {
     var result = ""
     for _ in 0 ..< count {
-      result += String.space
+      result += String.InputSymbols.space.rawValue
     }
     return result
   }
 }
+
+// MARK: - Utilities
+
+extension String {
+
+  var capitalFirst: String {
+    guard characters.count > 0 else { return self }
+
+    let firstChar = String(characters.prefix(1)).uppercased()
+    let remainChars = String(characters.dropFirst())
+
+    return firstChar + remainChars
+  }
+}
+
+// MARK: - CodeSymbols
 
 extension String.CodeSymbols {
 
@@ -117,14 +150,19 @@ extension String.CodeSymbols {
 
       // Enum symbol
     case let .enum(name, cases):
+
+      guard cases.count > 0 else {
+        return "enum \(name) {}"
+      }
+
       var result = "enum \(name) {\n"
 
       var casesString = ""
       for enumCase in cases {
         if let value = enumCase.caseValue {
-          casesString += "case \(enumCase.name) = \(value)\n"
+          casesString += "case \(enumCase.name.formatted) = \(value)\n"
         } else {
-          casesString += "case \(enumCase.name)\n"
+          casesString += "case \(enumCase.name.formatted)\n"
         }
       }
 
@@ -137,7 +175,7 @@ extension String.CodeSymbols {
       var result = ""
       result += .line(string: "switch \(value) {")
       for caseItem in cases {
-        result += .line(string: "case .\(caseItem.pattern):")
+        result += .line(string: "case .\(caseItem.pattern.formatted):")
         result += .line(string: caseItem.code.addIndentation())
       }
       result += .line(string: "}")
@@ -165,10 +203,26 @@ extension String.CodeSymbols {
       }
       result += String.CodeSymbols.line(string: "}")
       return result
+
+    case let .property(fullName, nestedSymbols):
+      guard let nestedSymbols = nestedSymbols, nestedSymbols.count > 0 else {
+        return "\(fullName)\n"
+      }
+
+      var result = fullName + " {\n"
+      for nestedSymbol in nestedSymbols {
+        if nestedSymbol.value == String.CodeSymbols.newLine.value {
+          result += nestedSymbol
+        } else {
+          result += nestedSymbol.addIndentation()
+        }
+      }
+      result += "}"
+      return result
     }
   }
 
-  func addIndentation(_: Int = defaultIndentation) -> String {
-    return value.addIndentation()
+  func addIndentation(_ count: Int = defaultIndentation) -> String {
+    return value.addIndentation(count)
   }
 }

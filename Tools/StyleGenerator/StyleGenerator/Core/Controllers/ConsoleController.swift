@@ -68,7 +68,6 @@ class ConsoleController {
 
   func obtainInputParameters() throws -> ConsoleInputParameters {
     let arguments = CommandLine.arguments
-
     guard arguments.count == CommandLineArgument.requiredCount else {
       throw InputError.wrongArgumentsCount
     }
