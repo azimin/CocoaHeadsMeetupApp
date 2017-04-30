@@ -34,8 +34,8 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
 }
 
-// MARK: - UITableViewDelegate & UITableViewDataSource
-extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - TableViewDelegate
+extension ProfileEditViewController: TableViewDelegate {
   func numberOfSections(in tableView: UITableView) -> Int {
     return displayCollection.numberOfSections
   }

@@ -34,9 +34,8 @@ class CreatorsViewController: UIViewController {
   }
 }
 
-// MARK: - UITableViewDataSource
-
-extension CreatorsViewController: UITableViewDataSource {
+// MARK: - TableViewDelegate
+extension CreatorsViewController: TableViewDelegate {
   func numberOfSections(in tableView: UITableView) -> Int {
     return displayCollection.numberOfSections
   }
@@ -50,11 +49,7 @@ extension CreatorsViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
     return cell
   }
-}
 
-// MARK: - UITableViewDelegate
-
-extension CreatorsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     displayCollection.didSelect(indexPath: indexPath)

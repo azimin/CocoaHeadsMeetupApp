@@ -11,6 +11,8 @@ import ObjectiveC
 
 private var associationKey = "tableView_bottom_inset"
 
+typealias TableViewDelegate = UITableViewDelegate & UITableViewDataSource
+
 struct TableViewConfiguration {
   var topInset: CGFloat?
   var bottomInset: CGFloat?
