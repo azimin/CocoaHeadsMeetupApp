@@ -13,6 +13,13 @@ class TabBarViewController: CustomTabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    tabBar.barTintColor = UIColor(.white)
+    tabBar.isTranslucent = false
+    tabBar.tintColor = UIColor(.black)
+
+    let shadowView = ShadowView(frame: tabBar.frame)
+    tabBar.addSubview(shadowView)
+
     // Query example
 
     Server.standard.request(SpeechContentPlainObject.Requests.contentsOnSpeech(with: 3)) { (contents, error) in
