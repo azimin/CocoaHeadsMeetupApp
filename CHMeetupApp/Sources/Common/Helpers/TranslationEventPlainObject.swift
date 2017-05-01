@@ -34,9 +34,15 @@ struct EventPlainObjectTranslation: PlainObjectTranslation {
     place.city = plainObject.place.cityName
     event.place = place
 
+    let isAdded = ImportEventStatusEntity()
+    isAdded.toCalendar = plainObject.isAdded.toCalendar
+    isAdded.toReminder = plainObject.isAdded.toReminder
+    event.isAdded = isAdded
+
     realmWrite {
       mainRealm.add(event, update: true)
       mainRealm.add(place, update: true)
+      mainRealm.add(isAdded, update: false)
     }
   }
 }

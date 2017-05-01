@@ -14,6 +14,7 @@ struct EventPlainObject {
   let description: String
   let photoUrl: String
   let place: PlacePlainObject
+  let isAdded: ImportEventStatusPlainObject
   let isRegistrationOpen: Bool
   let startDate: Date
   let endDate: Date
