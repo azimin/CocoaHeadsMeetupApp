@@ -39,7 +39,19 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
       })
 
-      let email = EditableField(value: user.email ?? "", title: "Email".localized, parse: { _ -> Bool in
+      let email = EditableField(value: user.email, title: "Email".localized, parse: { _ -> Bool in
+        return true
+      }, save: { _ in
+
+      })
+
+      let company = EditableField(value: user.company ?? "", title: "Компания".localized, parse: { _ -> Bool in
+        return true
+      }, save: { _ in
+
+      })
+
+      let position = EditableField(value: user.position ?? "", title: "Позиция".localized, parse: { _ -> Bool in
         return true
       }, save: { _ in
 
@@ -47,6 +59,8 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
       editableFields.append(phone)
       editableFields.append(email)
+      editableFields.append(company)
+      editableFields.append(position)
       self.editableFields = editableFields
     }
   }
