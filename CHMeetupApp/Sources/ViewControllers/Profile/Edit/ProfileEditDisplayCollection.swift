@@ -8,20 +8,50 @@
 
 import UIKit
 
-class ProfileEditDisplayCollection: DisplayCollection {
+class ProfileEditDisplayCollection: NSObject, DisplayCollection {
+
+  struct EditableField {
+    var value: String
+    var title: String
+    var parse: (String) -> Bool
+    var save: (String) -> Void
+  }
+
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [ChooseProfilePhotoTableViewCellModel.self,
-            LabelTableViewCellModel.self]
+            EditableLabelTableViewModel.self]
   }
 
   enum `Type` {
     case userHeader
-    case userContacts
+    case userEditableFields
   }
 
-  fileprivate var sections: [Type] = [.userHeader, .userContacts]
+  fileprivate var sections: [Type] = [.userHeader, .userEditableFields]
 
-  var user: UserEntity!
+  var user: UserEntity! {
+    didSet {
+      var editableFields: [EditableField] = []
+
+      let phone = EditableField(value: user.phone ?? "", title: "Телефон".localized, parse: { _ -> Bool in
+        return true
+      }, save: { _ in
+
+      })
+
+      let email = EditableField(value: user.email ?? "", title: "Email".localized, parse: { _ -> Bool in
+        return true
+      }, save: { _ in
+
+      })
+
+      editableFields.append(phone)
+      editableFields.append(email)
+      self.editableFields = editableFields
+    }
+  }
+
+  var editableFields: [EditableField]!
 
   weak var delegate: ProfileHierarhyViewControllerType?
 
@@ -33,8 +63,8 @@ class ProfileEditDisplayCollection: DisplayCollection {
     switch sections[section] {
     case .userHeader:
       return 1
-    case .userContacts:
-      return user.contacts.count
+    case .userEditableFields:
+      return editableFields.count
     }
   }
 
@@ -42,12 +72,21 @@ class ProfileEditDisplayCollection: DisplayCollection {
     switch sections[indexPath.section] {
     case .userHeader:
       return ChooseProfilePhotoTableViewCellModel(userEntity: user, delegate: self)
-    case .userContacts:
-      let key = Array(user.contacts.keys).sorted(by: > )[indexPath.row]
-      let value = user.contacts[key] ?? ""
-      return LabelTableViewCellModel(title: key, description: value)
+
+    case .userEditableFields:
+      let field = editableFields[indexPath.row]
+      return EditableLabelTableViewModel(title: "",
+                                         description: field.value,
+                                         placeholder: field.title,
+                                         textFieldDelegate: self,
+                                         valueChanged: { changedValue in
+                                          if field.parse(changedValue) {
+                                            field.save(changedValue)
+                                          }
+      })
     }
   }
+
 }
 
 extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate {
@@ -70,5 +109,11 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
 
   func changeCheckedImage(image: UIImage) {
     // TODO: - Load image
+  }
+}
+
+extension ProfileEditDisplayCollection: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    return true
   }
 }
