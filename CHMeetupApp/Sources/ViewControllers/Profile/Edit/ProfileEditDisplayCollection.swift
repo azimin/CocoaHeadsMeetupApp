@@ -89,8 +89,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
     case .userEditableFields:
       let field = editableFields[indexPath.row]
-      return EditableLabelTableViewModel(title: "",
-                                         description: field.value,
+      return EditableLabelTableViewModel(description: field.value,
                                          placeholder: field.title,
                                          textFieldDelegate: self,
                                          valueChanged: { changedValue in

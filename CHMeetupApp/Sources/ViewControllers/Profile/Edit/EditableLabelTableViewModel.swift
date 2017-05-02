@@ -9,7 +9,6 @@
 import UIKit
 
 struct EditableLabelTableViewModel {
-  let title: String
   let description: String
   let placeholder: String
   weak var textFieldDelegate: UITextFieldDelegate?
@@ -18,7 +17,6 @@ struct EditableLabelTableViewModel {
 
 extension EditableLabelTableViewModel: CellViewModelType {
   func setup(on cell: EditableLabelTableViewCell) {
-    cell.titleLabel.text = title
     cell.descriptionTextField.text = description
     cell.descriptionTextField.placeholder = placeholder
     cell.descriptionTextField.delegate = textFieldDelegate
