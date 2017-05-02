@@ -42,6 +42,7 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
     case .name:
       return TextFieldPlateTableViewCellModel(value: nameText,
                                               placeholder: "Название".localized,
+                                              keyboardType: .default,
                                               textFieldDelegate: self,
                                               valueChanged: { [weak self] value in
                                                 self?.nameText = value
