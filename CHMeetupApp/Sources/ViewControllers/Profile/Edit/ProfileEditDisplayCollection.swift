@@ -10,11 +10,18 @@ import UIKit
 
 class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
-  struct EditableField {
+  class EditableField {
     var value: String
     var title: String
     var parse: (String) -> Bool
     var save: (String) -> Void
+
+    init(value: String, title: String, parse: @escaping (String) -> Bool, save: @escaping (String) -> Void) {
+      self.value = value
+      self.title = title
+      self.parse = parse
+      self.save = save
+    }
   }
 
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
@@ -96,14 +103,12 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       return ChooseProfilePhotoTableViewCellModel(userEntity: user, delegate: self)
 
     case .userEditableFields:
-      let field = editableFields[indexPath.row]
+      var field = editableFields[indexPath.row]
       return EditableLabelTableViewModel(description: field.value,
                                          placeholder: field.title,
                                          textFieldDelegate: self,
                                          valueChanged: { changedValue in
-                                          if field.parse(changedValue) {
-                                            field.save(changedValue)
-                                          }
+                                          field.value = changedValue
       })
     }
   }
@@ -140,7 +145,7 @@ extension ProfileEditDisplayCollection: UITextFieldDelegate {
 }
 
 extension ProfileEditDisplayCollection {
-  func save() {
+  func update() {
     realmWrite {
       for field in editableFields {
         if field.parse(field.value) {

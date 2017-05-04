@@ -100,7 +100,18 @@ extension ProfileEditViewController: KeyboardHandlerDelegate {
 
 extension ProfileEditViewController {
   func saveProfile() {
-    displayCollection.save()
-    
+    displayCollection.update()
+    ProfileController.save { success in
+      if success {
+        let notification = NotificationHelper.viewController(title: "Профиль изменён".localized,
+                                          description: "Ваши прекрасные данные улетели на сервер.".localized,
+                                          emjoi: "📋",
+                                          completion: {
+                                            self.navigationController?.popToRootViewController(animated: true)
+        })
+
+        self.present(viewController: notification)
+      }
+    }
   }
 }
