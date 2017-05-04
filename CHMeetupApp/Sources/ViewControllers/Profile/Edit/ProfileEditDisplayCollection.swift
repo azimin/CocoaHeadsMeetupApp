@@ -103,7 +103,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       return ChooseProfilePhotoTableViewCellModel(userEntity: user, delegate: self)
 
     case .userEditableFields:
-      var field = editableFields[indexPath.row]
+      let field = editableFields[indexPath.row]
       return EditableLabelTableViewModel(description: field.value,
                                          placeholder: field.title,
                                          textFieldDelegate: self,
@@ -145,13 +145,11 @@ extension ProfileEditDisplayCollection: UITextFieldDelegate {
 }
 
 extension ProfileEditDisplayCollection {
-  func update() {
-    realmWrite {
-      for field in editableFields {
-        if field.parse(field.value) {
-          field.save(field.value)
+    func update() {
+        for field in editableFields {
+            if field.parse(field.value) {
+                field.save(field.value)
+            }
         }
-      }
     }
-  }
 }

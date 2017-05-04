@@ -14,5 +14,6 @@ struct UserPlainObject {
   let lastname: String
   let photoUrl: String?
   let company: String?
+  let position: String?
   let token: String?
 }

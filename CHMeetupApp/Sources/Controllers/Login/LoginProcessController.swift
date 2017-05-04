@@ -26,6 +26,7 @@ class LoginProcessController {
       currentUser.lastName = user.lastname
       currentUser.photoURL = user.photoUrl ?? ""
       currentUser.company = user.company ?? ""
+      currentUser.position = user.position ?? ""
       currentUser.token = user.token ?? ""
 
       UserPreferencesEntity.value.updateUser(currentUser: currentUser)
