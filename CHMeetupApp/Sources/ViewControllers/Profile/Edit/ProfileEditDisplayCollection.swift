@@ -35,26 +35,34 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
       let phone = EditableField(value: user.phone ?? "", title: "Телефон".localized, parse: { _ -> Bool in
         return true
-      }, save: { _ in
-
+      }, save: { [weak self] value in
+        realmWrite {
+          self?.user.phone = value
+        }
       })
 
       let email = EditableField(value: user.email, title: "Email".localized, parse: { _ -> Bool in
         return true
-      }, save: { _ in
-
+      }, save: { [weak self] value in
+        realmWrite {
+          self?.user.email = value
+        }
       })
 
       let company = EditableField(value: user.company ?? "", title: "Компания".localized, parse: { _ -> Bool in
         return true
-      }, save: { _ in
-
+      }, save: { [weak self] value in
+        realmWrite {
+          self?.user.company = value
+        }
       })
 
       let position = EditableField(value: user.position ?? "", title: "Позиция".localized, parse: { _ -> Bool in
         return true
-      }, save: { _ in
-
+      }, save: { [weak self] value in
+        realmWrite {
+          self?.user.position = value
+        }
       })
 
       editableFields.append(phone)
@@ -128,5 +136,17 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
 extension ProfileEditDisplayCollection: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     return true
+  }
+}
+
+extension ProfileEditDisplayCollection {
+  func save() {
+    realmWrite {
+      for field in editableFields {
+        if field.parse(field.value) {
+          field.save(field.value)
+        }
+      }
+    }
   }
 }

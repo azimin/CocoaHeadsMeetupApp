@@ -100,6 +100,7 @@ extension ProfileEditViewController: KeyboardHandlerDelegate {
 
 extension ProfileEditViewController {
   func saveProfile() {
-
+    displayCollection.save()
+    
   }
 }
