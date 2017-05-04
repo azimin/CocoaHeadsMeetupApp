@@ -18,17 +18,19 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 
   fileprivate var displayCollection: ProfileViewDisplayCollection!
 
-  // MARK: - View Lifecycle.
+  // MARK: - View Lifecycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    displayCollection = ProfileViewDisplayCollection(delegate: self)
-    tableView.registerNibs(from: displayCollection)
-
-    title = displayCollection.user.fullName
+    fetch()
   }
 
-  // MARK: - Actions.
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    fetch()
+  }
+
+  // MARK: - Actions
 
   @IBAction func logoutBarButtonAction(_ sender: UIBarButtonItem) {
     LoginProcessController.logout()
@@ -67,5 +69,14 @@ extension ProfileViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     displayCollection.didSelect(indexPath: indexPath)
+  }
+}
+
+extension ProfileViewController {
+  func fetch() {
+    displayCollection = ProfileViewDisplayCollection(delegate: self)
+    title = displayCollection.user.fullName
+    tableView.registerNibs(from: displayCollection)
+    tableView.reloadData()
   }
 }
