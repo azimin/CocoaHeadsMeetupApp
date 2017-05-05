@@ -39,7 +39,6 @@ extension RequestPlainObject {
 
   struct Requests {
 
-
     static func editProfile(token: String,
                             email: String,
                             phone: String?,

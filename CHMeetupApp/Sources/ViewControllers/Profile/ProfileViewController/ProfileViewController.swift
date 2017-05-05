@@ -22,7 +22,6 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    fetch()
   }
 
   override func viewWillAppear(_ animated: Bool) {
