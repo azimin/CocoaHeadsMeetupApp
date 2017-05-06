@@ -11,6 +11,7 @@ import UIKit
 struct TextFieldPlateTableViewCellModel {
   let value: String
   let placeholder: String
+  let keyboardType: UIKeyboardType
   weak var textFieldDelegate: UITextFieldDelegate?
   let valueChanged: ((String) -> Void)
 }
@@ -20,6 +21,7 @@ extension TextFieldPlateTableViewCellModel: CellViewModelType {
     cell.textField.placeholder = placeholder
     cell.textField.delegate = textFieldDelegate
     cell.textField.text = value
+    cell.textField.keyboardType = keyboardType
     cell.valueChanged = valueChanged
   }
 }

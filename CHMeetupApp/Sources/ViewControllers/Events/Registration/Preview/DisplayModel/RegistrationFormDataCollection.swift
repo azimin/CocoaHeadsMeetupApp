@@ -48,6 +48,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     case .string:
       return TextFieldPlateTableViewCellModel(value: stringAnswer,
                                               placeholder: answerCell.value,
+                                              keyboardType: .numberPad,
                                               textFieldDelegate: self,
                                               valueChanged: { [weak answerCell] value in
                                                 answerCell?.answer = .string(value: value)
