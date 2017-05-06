@@ -41,9 +41,8 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
   }
 }
 
-// MARK: - TableView Data Source.
-
-extension ProfileViewController: UITableViewDataSource {
+// MARK: - TableViewDelegate
+extension ProfileViewController: TableViewDelegate {
 
   func numberOfSections(in tableView: UITableView) -> Int {
     return displayCollection.numberOfSections
@@ -58,11 +57,6 @@ extension ProfileViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
     return cell
   }
-}
-
-// MARK: - TableView Delegate.
-
-extension ProfileViewController: UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)

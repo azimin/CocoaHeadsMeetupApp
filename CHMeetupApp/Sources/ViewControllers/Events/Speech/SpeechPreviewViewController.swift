@@ -34,7 +34,8 @@ class SpeechPreviewViewController: UIViewController {
   }
 }
 
-extension SpeechPreviewViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - TableViewDelegate
+extension SpeechPreviewViewController: TableViewDelegate {
 
   func numberOfSections(in tableView: UITableView) -> Int {
     return displayCollection.numberOfSections

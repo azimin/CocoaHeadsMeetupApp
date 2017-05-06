@@ -64,8 +64,8 @@ class RegistrationConfirmViewController: UIViewController, UIViewControllerWithT
   }
 }
 
-// MARK: - UITableViewDataSource
-extension RegistrationConfirmViewController: UITableViewDataSource, UITableViewDelegate {
+// MARK: - TableViewDelegate
+extension RegistrationConfirmViewController: TableViewDelegate {
   func numberOfSections(in tableView: UITableView) -> Int {
     return displayCollection.numberOfSections
   }

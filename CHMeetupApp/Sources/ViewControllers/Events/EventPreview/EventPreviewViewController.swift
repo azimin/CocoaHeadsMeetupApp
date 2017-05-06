@@ -76,7 +76,7 @@ class EventPreviewViewController: UIViewController {
   }
 }
 
-extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource {
+extension EventPreviewViewController: TableViewDelegate {
 
   func numberOfSections(in tableView: UITableView) -> Int {
     return displayCollection.numberOfSections

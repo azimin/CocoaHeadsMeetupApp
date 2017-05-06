@@ -120,9 +120,8 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
   }
 }
 
-// MARK: - UITableViewDataSource
-extension RegistrationPreviewViewController: UITableViewDataSource {
-
+// MARK: - TableViewDelegate
+extension RegistrationPreviewViewController: TableViewDelegate {
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return displayCollection.headerHeight(for: section)
   }
@@ -146,9 +145,7 @@ extension RegistrationPreviewViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
     return cell
   }
-}
 
-extension RegistrationPreviewViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     displayCollection.didSelect(indexPath: indexPath)
   }

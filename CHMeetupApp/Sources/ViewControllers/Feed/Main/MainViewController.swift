@@ -52,7 +52,8 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
   }
 }
 
-extension MainViewController: UITableViewDataSource {
+// MARK: - TableViewDelegate
+extension MainViewController: TableViewDelegate {
   func numberOfSections(in tableView: UITableView) -> Int {
     return displayCollection.numberOfSections
   }
@@ -66,9 +67,7 @@ extension MainViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
     return cell
   }
-}
 
-extension MainViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     displayCollection.didSelect(indexPath: indexPath)

@@ -45,7 +45,7 @@ class PastEventsViewController: UIViewController, DisplayCollectionWithTableView
 
 }
 
-extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
+extension PastEventsViewController: TableViewDelegate {
 
   func numberOfSections(in tableView: UITableView) -> Int {
     return displayCollection.numberOfSections

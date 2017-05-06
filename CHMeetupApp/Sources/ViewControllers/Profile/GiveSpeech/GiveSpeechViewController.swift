@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class GiveSpeechViewController: UIViewController, TableViewDelegate {
 
   @IBOutlet var tableView: UITableView! {
     didSet {
