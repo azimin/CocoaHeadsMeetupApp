@@ -40,16 +40,16 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     didSet {
       var editableFields: [EditableField] = []
 
-      let phone = EditableField(value: user.phone ?? "", title: "Телефон".localized, parse: { _ -> Bool in
-        return true
+      let phone = EditableField(value: user.phone ?? "", title: "Телефон".localized, parse: { phone -> Bool in
+        return StringValidation.isValid(string: phone, type: .phone)
       }, save: { [weak self] value in
         realmWrite {
           self?.user.phone = value
         }
       })
 
-      let email = EditableField(value: user.email, title: "Email".localized, parse: { _ -> Bool in
-        return true
+      let email = EditableField(value: user.email, title: "Email".localized, parse: { email -> Bool in
+        return StringValidation.isValid(string: email, type: .mail)
       }, save: { [weak self] value in
         realmWrite {
           self?.user.email = value
@@ -145,11 +145,21 @@ extension ProfileEditDisplayCollection: UITextFieldDelegate {
 }
 
 extension ProfileEditDisplayCollection {
-    func update() {
-        for field in editableFields {
-            if field.parse(field.value) {
-                field.save(field.value)
-            }
-        }
+
+  var failedField: IndexPath? {
+    for (index, field) in editableFields.enumerated() {
+      if !field.parse(field.value) {
+        return IndexPath(row: index, section: 1)
+      }
     }
+    return nil
+  }
+
+  func update() {
+    for field in editableFields {
+      if field.parse(field.value) {
+        field.save(field.value)
+      }
+    }
+  }
 }

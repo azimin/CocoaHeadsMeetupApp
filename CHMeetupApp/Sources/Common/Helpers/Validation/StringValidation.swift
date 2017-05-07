@@ -11,7 +11,7 @@ import Foundation
 final class StringValidation {
 
   enum `Type` {
-    case mail, url, urlWithPath
+    case mail, url, urlWithPath, phone
   }
 
   /// Domains to check for .urlWithPath type
@@ -21,6 +21,8 @@ final class StringValidation {
     switch type {
     case .mail:
       return isMail(string)
+    case .phone:
+      return isPhone(string)
     case .url:
       return isURL(string)
     case .urlWithPath:
@@ -34,6 +36,12 @@ final class StringValidation {
     let format = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     let predicate = NSPredicate(format: "SELF MATCHES %@", format)
     return predicate.evaluate(with: string) && !string.contains("..") // NOT contains two dots in a row
+  }
+
+  private static func isPhone(_ string: String) -> Bool {
+    let chars = CharacterSet.decimalDigits.inverted
+    let components = string.components(separatedBy: chars)
+    return components.count == 1
   }
 
   private static func isURL(_ string: String) -> Bool {

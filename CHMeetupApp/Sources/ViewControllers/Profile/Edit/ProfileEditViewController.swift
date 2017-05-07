@@ -100,6 +100,10 @@ extension ProfileEditViewController: KeyboardHandlerDelegate {
 
 extension ProfileEditViewController {
   func saveProfile() {
+    if let failedFieldIndexPath = displayCollection.failedField {
+      return
+    }
+
     displayCollection.update()
     ProfileController.save { success in
       if success {
