@@ -128,6 +128,7 @@
 		7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EC7021E898E5300713E6D /* SpeechContentPlainObject+Requests.swift */; };
 		7D3F9DB61EBAEC0700BC6ABD /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F9DB51EBAEC0700BC6ABD /* ProfileController.swift */; };
 		7D3F9DB81EBAFED900BC6ABD /* String+URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F9DB71EBAFED900BC6ABD /* String+URLEncoding.swift */; };
+		7D3F9DD21EBF2CE000BC6ABD /* UITableView+ShakeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F9DD11EBF2CE000BC6ABD /* UITableView+ShakeRow.swift */; };
 		7DAC86331EA8168A00437283 /* GiveSpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC86321EA8168A00437283 /* GiveSpeechController.swift */; };
 		7DAC86361EA81F1900437283 /* CreatorsViewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC86351EA81F1900437283 /* CreatorsViewDisplayCollection.swift */; };
 		7DAC863F1EA8220B00437283 /* CreatorsTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC863D1EA8220B00437283 /* CreatorsTableViewCellModel.swift */; };
@@ -400,6 +401,7 @@
 		7D1EC7021E898E5300713E6D /* SpeechContentPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpeechContentPlainObject+Requests.swift"; sourceTree = "<group>"; };
 		7D3F9DB51EBAEC0700BC6ABD /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		7D3F9DB71EBAFED900BC6ABD /* String+URLEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+URLEncoding.swift"; sourceTree = "<group>"; };
+		7D3F9DD11EBF2CE000BC6ABD /* UITableView+ShakeRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ShakeRow.swift"; sourceTree = "<group>"; };
 		7DAC86321EA8168A00437283 /* GiveSpeechController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSpeechController.swift; sourceTree = "<group>"; };
 		7DAC86351EA81F1900437283 /* CreatorsViewDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsViewDisplayCollection.swift; sourceTree = "<group>"; };
 		7DAC863D1EA8220B00437283 /* CreatorsTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -1638,6 +1640,7 @@
 				C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */,
 				7D1CB6D11EA2B8E9003136FA /* UITableView+ShakeSection.swift */,
 				9F1B1FCD1EB3FD32009840A1 /* UITableView+LazyReload.swift */,
+				7D3F9DD11EBF2CE000BC6ABD /* UITableView+ShakeRow.swift */,
 			);
 			name = UITableView;
 			sourceTree = "<group>";
@@ -2235,6 +2238,7 @@
 				9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */,
 				22323F8F1E70C2BE00522E5C /* SpeechPreviewViewController.swift in Sources */,
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
+				7D3F9DD21EBF2CE000BC6ABD /* UITableView+ShakeRow.swift in Sources */,
 				8AE5BCB81EB4E885007047CE /* ChooseProfilePhotoButton.swift in Sources */,
 				32AFE59A1EAF5B3D004904FB /* TemplateView.swift in Sources */,
 				F718C0371E966BA6008B3C0B /* UIImageView+ImageLoader.swift in Sources */,

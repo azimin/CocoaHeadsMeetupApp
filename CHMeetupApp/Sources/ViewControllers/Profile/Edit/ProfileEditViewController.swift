@@ -101,6 +101,7 @@ extension ProfileEditViewController: KeyboardHandlerDelegate {
 extension ProfileEditViewController {
   func saveProfile() {
     if let failedFieldIndexPath = displayCollection.failedField {
+      tableView.failedShakeRow(failedFieldIndexPath)
       return
     }
 
