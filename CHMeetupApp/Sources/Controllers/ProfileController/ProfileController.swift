@@ -12,6 +12,7 @@ class ProfileController {
   static func save(completion: @escaping (_ success: Bool) -> Void) {
     guard let user = UserPreferencesEntity.value.currentUser,
       let token = user.token else {
+        completion(false)
         return
     }
 
@@ -20,9 +21,8 @@ class ProfileController {
                                                           phone: user.phone,
                                                           company: user.company,
                                                           position: user.position)
-    Server.standard.request(request) { response, error in
+    Server.standard.request(request) { response, _ in
       completion(response?.success ?? false)
     }
-    
   }
 }

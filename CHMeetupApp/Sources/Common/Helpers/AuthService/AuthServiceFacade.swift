@@ -85,8 +85,9 @@ final class AuthServiceFacade {
     SVProgressHUD.show()
     UIApplication.shared.beginIgnoringInteractionEvents()
 
-    // swiftlint:disable:next line_length
-    let authRequest = UserPlainObject.Requests.auth(token: token, secret: secret, socialId: social)
+    let authRequest = UserPlainObject.Requests.auth(token: token,
+                                                    secret: secret,
+                                                    socialId: social)
     Server.standard.request(authRequest) { user, error in
       guard let loginCompletion = self.loginCompletion else { return }
       SVProgressHUD.dismiss(completion: {

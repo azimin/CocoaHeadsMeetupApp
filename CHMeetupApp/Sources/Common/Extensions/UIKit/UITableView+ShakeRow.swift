@@ -10,7 +10,7 @@ import UIKit
 import AudioToolbox
 
 extension UITableView {
-  func shakeRow(_ indexPath: IndexPath) {
+  private func shakeRow(_ indexPath: IndexPath) {
     let cell = self.cellForRow(at: indexPath)
     cell?.shake()
   }

@@ -39,9 +39,8 @@ final class StringValidation {
   }
 
   private static func isPhone(_ string: String) -> Bool {
-    let chars = CharacterSet.decimalDigits.inverted
-    let components = string.components(separatedBy: chars)
-    return components.count == 1
+    // TODO: Add phone checking
+    return true
   }
 
   private static func isURL(_ string: String) -> Bool {
