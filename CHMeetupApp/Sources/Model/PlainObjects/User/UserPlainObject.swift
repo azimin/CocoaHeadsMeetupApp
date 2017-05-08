@@ -16,4 +16,6 @@ struct UserPlainObject {
   let company: String?
   let position: String?
   let token: String?
+  let phone: String?
+  let email: String?
 }
