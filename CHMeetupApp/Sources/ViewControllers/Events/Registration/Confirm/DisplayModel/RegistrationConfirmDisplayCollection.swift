@@ -21,51 +21,38 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
 
   private var sections: [Type] = [.header, .actionButtons]
   private var actionPlainObjects: [ActionPlainObject] = []
-  private var indexPath: IndexPath?
+
+  weak var delegate: DisplayCollectionDelegate?
 
   var event: EventEntity?
 
-  func configureActionCellsSection(on viewController: UIViewController,
-                                   with tableView: UITableView) {
+  func updateActionCellsSection(on viewController: UIViewController,
+                                with tableView: UITableView,
+                                event: EventEntity) {
+    actionPlainObjects = []
+
     let actionCell = ActionCellConfigurationController()
 
-    let calendarPermissionCell = actionCell.addActionCell(
-      on: viewController,
-      for: .calendar,
-      with: {
-        self.import(event: self.event, to: .calendar, from: viewController)
-    })
+    let calendarPermissionCell = actionCell.createImportAction(for: event,
+                                                               on: viewController,
+                                                               for: .calendar) {
+                                                                [weak self] in
+                                                                self?.delegate?.updateUI()
+    }
 
-    let remindersPermissionCell = actionCell.addActionCell(
-      on: viewController,
-      for: .reminders,
-      with: {
-        self.import(event: self.event, to: .reminder, from: viewController)
-    })
+    let reminderPermissionCell = actionCell.createImportAction(for: event,
+                                                                on: viewController,
+                                                                for: .reminder) {
+                                                                  [weak self] in
+                                                                  self?.delegate?.updateUI()
+    }
 
     if let calendarPermissionCell = calendarPermissionCell {
       actionPlainObjects.append(calendarPermissionCell)
     }
 
-    if let remindersPermissionCell = remindersPermissionCell {
-      actionPlainObjects.append(remindersPermissionCell)
-    }
-  }
-
-  private func `import`(event: EventEntity?, to type: Importer.ImportType, from viewController: UIViewController) {
-    if let event = self.event {
-      Importer.import(event: event, to: type, completion: { (result) in
-        switch result {
-        case .success:
-          viewController.showMessageAlert(title: "Успешно добавлено".localized)
-        case .permissionError:
-          viewController.showMessageAlert(title: "Нет прав доступа".localized)
-        case .saveError(_):
-          viewController.showMessageAlert(title: "Ошибка сохранения".localized)
-        }
-      })
-    } else {
-      assertionFailure("No event entity")
+    if let reminderPermissionCell = reminderPermissionCell {
+      actionPlainObjects.append(reminderPermissionCell)
     }
   }
 
@@ -107,7 +94,6 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
       // Do nothing
       break
     case .actionButtons:
-      self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
     }
   }

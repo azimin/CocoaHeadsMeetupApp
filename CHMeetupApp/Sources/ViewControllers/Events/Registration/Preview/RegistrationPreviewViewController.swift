@@ -101,6 +101,11 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
   func registrate() {
     RegistrationController.sendFormData(displayCollection.formData, completion: { [weak self] success in
       if success {
+        let dataModel = DataModelCollection(type: EventEntity.self)
+        let event = dataModel.first(where: { $0.id == self?.selectedEventId })
+        realmWrite {
+          event?.statusValue = EventEntity.EventRegistrationStatus.waiting.rawValue
+        }
         self?.presentRegistrationConfirmViewController()
       } else {
         self?.showMessageAlert(title: "Возникла ошибка".localized)

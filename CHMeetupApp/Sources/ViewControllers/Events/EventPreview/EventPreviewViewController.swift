@@ -53,10 +53,11 @@ class EventPreviewViewController: UIViewController {
 
     let dataModel = DataModelCollection(type: EventEntity.self)
     displayCollection.event = dataModel.first(where: { $0.id == selectedEventId })
-
     if let event = displayCollection.event {
       fetchSpeeches(on: event)
-      isRegistrationEnabled = event.isRegistrationOpen
+      displayCollection.updateActionCellsSection(on: self, with: tableView, event: event)
+      bottomButton?.setTitle(event.status.statusText, for: .normal)
+      isRegistrationEnabled = event.isRegistrationOpen && event.status.allowRegister
     }
   }
 
@@ -65,6 +66,13 @@ class EventPreviewViewController: UIViewController {
       eventId: selectedEventId
     )
     navigationController?.pushViewController(viewController, animated: true)
+  }
+
+  override func updateUI() {
+    if let event = displayCollection.event {
+      displayCollection.updateActionCellsSection(on: self, with: tableView, event: event)
+    }
+    super.updateUI()
   }
 }
 

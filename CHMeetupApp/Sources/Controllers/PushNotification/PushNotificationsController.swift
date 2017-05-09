@@ -15,7 +15,19 @@ final class PushNotificationsController {
     registerNotification(tokenString: deviceTokenString)
   }
 
+  static func updateTokenRegistration() {
+    registerNotification(tokenString: UserPreferencesEntity.value.pushToken)
+  }
+
   private static func registerNotification(tokenString: String) {
+    realmWrite {
+      UserPreferencesEntity.value.pushToken = tokenString
+    }
+
+    guard tokenString.characters.count > 0 else {
+      return
+    }
+
     let request = RequestPlainObject.Requests.registerPush(pushToken: tokenString,
                                                            userToken: UserPreferencesEntity.value.currentUser?.token)
     Server.standard.request(request) { answer, _ in

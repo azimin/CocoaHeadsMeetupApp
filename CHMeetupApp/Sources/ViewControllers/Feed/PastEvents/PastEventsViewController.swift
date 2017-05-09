@@ -9,6 +9,9 @@
 import UIKit
 
 class PastEventsViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
+
+  var currentUserId: Int? = -1
+
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)
@@ -23,9 +26,17 @@ class PastEventsViewController: UIViewController, DisplayCollectionWithTableView
     displayCollection = PastEventsDisplayCollection()
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
-
     title = "Прошедшие встречи".localized
-    fetchEvents()
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.tableView.reloadDataImmediately()
+
+    if currentUserId != UserPreferencesEntity.value.currentUser?.remoteId {
+      fetchEvents()
+      currentUserId = UserPreferencesEntity.value.currentUser?.remoteId
+    }
   }
 
   override func customTabBarItemContentView() -> CustomTabBarItemView {

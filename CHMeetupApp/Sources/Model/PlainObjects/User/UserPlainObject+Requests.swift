@@ -19,7 +19,9 @@ extension UserPlainObject: PlainObjectType {
 
     // Authorization by social network
     static func auth(token: String, secret: String, socialId: String) -> Request<UserPlainObject> {
-      let params = ["token": token, "secret": secret, "social": socialId]
+      var params = Constants.Server.baseParams
+      params["secret"] = secret
+      params["social"] = socialId
       return Request<UserPlainObject>(query: "user/auth", method: .post, params: params)
     }
 

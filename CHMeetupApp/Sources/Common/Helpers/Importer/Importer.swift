@@ -9,17 +9,17 @@
 import EventKit
 import UIKit
 
+enum ImportType {
+  case calendar
+  case reminder
+}
+
 class Importer {
 
   enum Result {
     case success
     case permissionError
     case saveError(error: Error)
-  }
-
-  enum ImportType {
-    case calendar
-    case reminder
   }
 
   private static let calendarEventStore = EKEventStore()

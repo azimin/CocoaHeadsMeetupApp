@@ -16,27 +16,23 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   private enum `Type` {
     case events
     case actionButtons
+    case collectionIsEmpty
   }
 
   weak var delegate: DisplayCollectionWithTableViewDelegate?
 
-  private var sections: [Type] = [.events, .actionButtons]
+  private var sections: [Type] = [.events, .actionButtons, .collectionIsEmpty]
   private var actionPlainObjects: [ActionPlainObject] = []
-
-  private var indexPath: IndexPath?
 
   let groupImageLoader = GroupImageLoader.standard
 
-  func configureActionCellsSection(on viewController: UIViewController,
-                                   with tableView: UITableView) {
+  func updateActionCellsSection(on viewController: UIViewController,
+                                with tableView: UITableView) {
+    actionPlainObjects = []
     let actionCell = ActionCellConfigurationController()
 
-    let action = {
-      guard let index = self.indexPath else {
-        return
-      }
-      self.actionPlainObjects.remove(at: index.row)
-      tableView.deleteRows(at: [index], with: .left)
+    let action = { [weak self] in
+      self?.delegate?.updateUI()
     }
 
     let notificationPermissionCell = actionCell.checkAccess(on: viewController,
@@ -71,6 +67,11 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       return modelCollection.count
     case .actionButtons:
       return actionPlainObjects.count
+    case .collectionIsEmpty:
+      if modelCollection.count == 0 && actionPlainObjects.count == 0 {
+        return 1
+      }
+      return 0
     }
   }
 
@@ -83,6 +84,10 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
                                             groupImageLoader: groupImageLoader)
     case .actionButtons:
       return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
+    case .collectionIsEmpty:
+      return ActionTableViewCellModel(action: ActionPlainObject(text:
+        "Будущие события скоро появятся, и вы будете первыми, кто про это узнает!".localized
+      ))
     }
   }
 
@@ -96,8 +101,9 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       eventPreview.selectedEventId = modelCollection[indexPath.row].id
       delegate?.push(viewController: eventPreview)
     case .actionButtons:
-      self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
+    case .collectionIsEmpty:
+      break
     }
   }
 }

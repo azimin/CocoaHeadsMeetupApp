@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
 
+  var currentUserId: Int? = -1
+
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)
@@ -22,18 +24,31 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     super.viewDidLoad()
 
     displayCollection = MainViewDisplayCollection()
-    displayCollection.configureActionCellsSection(on: self, with: tableView)
+    displayCollection.updateActionCellsSection(on: self, with: tableView)
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
 
     title = "CocoaHeads Russia".localized
-    fetchEvents()
-
     // Do any additional setup after loading the view.
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.tableView.reloadData()
+
+    if currentUserId != UserPreferencesEntity.value.currentUser?.remoteId {
+      fetchEvents()
+      currentUserId = UserPreferencesEntity.value.currentUser?.remoteId
+    }
   }
 
   override func customTabBarItemContentView() -> CustomTabBarItemView {
     return TabBarItemView.create(with: .main)
+  }
+
+  override func updateUI() {
+    displayCollection.updateActionCellsSection(on: self, with: tableView)
+    super.updateUI()
   }
 }
 

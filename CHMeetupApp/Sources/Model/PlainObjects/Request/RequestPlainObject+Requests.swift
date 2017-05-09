@@ -61,10 +61,9 @@ extension RequestPlainObject {
                            description: String,
                            userId: Int,
                            token: String) -> Request<RequestPlainObject> {
-      let params = ["title": title,
-                    "description": description,
-                    "token": token,
-                    "user_id": "\(userId)"]
+      var params = Constants.Server.baseParams
+      params["title"] = title
+      params["description"] = description
 
       return Request(query: "user/givespeech",
                                          method: .post,
@@ -73,10 +72,8 @@ extension RequestPlainObject {
 
     static func registerPush(pushToken: String,
                              userToken: String?) -> Request<RequestPlainObject> {
-      var params = ["push_token": pushToken]
-      if let userToken = userToken {
-        params["token"] = userToken
-      }
+      var params = Constants.Server.baseParams
+      params["push_token"] = pushToken
 
       return Request(query: "/user/register_push",
                      method: .post,

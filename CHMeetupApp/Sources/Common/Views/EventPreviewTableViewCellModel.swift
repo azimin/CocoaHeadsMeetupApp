@@ -24,8 +24,9 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
     if let place = entity.place {
       cell.placeLabel.text = place.city + ", " + place.title
     }
-
-    cell.isEnabledForRegistration = entity.isRegistrationOpen
+    cell.goingButton.setTitle(entity.status.statusText, for: .normal)
+    cell.goingButton.isEnabled = entity.status.allowRegister
+    cell.isEnabledForRegistration = entity.shouldShowRegistrationStatus
     cell.delegate = delegate
     cell.photosPresentationView.photos.removeAll()
     let urls = entity.speakerPhotosURLs.map { URL(string: $0.value) }.flatMap { $0 } as [URL]

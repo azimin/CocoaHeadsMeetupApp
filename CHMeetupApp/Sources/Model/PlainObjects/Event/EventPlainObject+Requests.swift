@@ -13,12 +13,13 @@ extension EventPlainObject: PlainObjectType {
   struct Requests {
     // Events list
     static var list: Request<[EventPlainObject]> {
-      return Request(query: "events/index")
+      return Request(query: "events/index", method: .post, params: Constants.Server.baseParams)
     }
 
     // Past events list
     static var pastList: Request<[EventPlainObject]> {
-      return Request(query: "events/past")
+
+      return Request(query: "events/past", method: .post, params: Constants.Server.baseParams)
     }
 
     // Event speakers list
@@ -37,6 +38,7 @@ extension EventPlainObject: PlainObjectType {
       let endDate = json["end_date"] as? Double,
       let placeJson = json["place"] as? JSONDictionary,
       let speakersJson = json["speakers_photos"] as? [String],
+      let registrationStatus = json["status"] as? String,
       let place = PlacePlainObject(json: placeJson),
       let isRegistrationOpen = json["is_registration_open"] as? Bool
     else { return nil }
@@ -49,6 +51,7 @@ extension EventPlainObject: PlainObjectType {
     self.isRegistrationOpen = isRegistrationOpen
     self.startDate = Date(timeIntervalSince1970: startDate)
     self.endDate = Date(timeIntervalSince1970: endDate)
+    self.registrationStatus = registrationStatus
 
     var photos: [URL] = []
     speakersJson.forEach { photoUrl in

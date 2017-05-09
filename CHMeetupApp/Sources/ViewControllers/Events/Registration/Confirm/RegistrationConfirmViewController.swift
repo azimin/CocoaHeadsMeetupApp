@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegistrationConfirmViewController: UIViewController {
+class RegistrationConfirmViewController: UIViewController, UIViewControllerWithTableView {
 
   @IBOutlet var tableView: UITableView! {
     didSet {
@@ -39,10 +39,14 @@ class RegistrationConfirmViewController: UIViewController {
     navigationController?.setNavigationBarHidden(true, animated: true)
     bottomButton = BottomButton(addingOnView: view, title: "Закрыть".localized)
     displayCollection = RegistrationConfirmDisplayCollection()
-    displayCollection.configureActionCellsSection(on: self, with: tableView)
     tableView.registerNibs(from: displayCollection)
 
+    displayCollection.delegate = self
     displayCollection.event = mainRealm.objects(EventEntity.self).first(where: { $0.id == selectedEventId })
+
+    if let event = displayCollection.event {
+      displayCollection.updateActionCellsSection(on: self, with: tableView, event: event)
+    }
   }
 
   func closeButtonAction() {
@@ -50,6 +54,13 @@ class RegistrationConfirmViewController: UIViewController {
     navigationController?.setNavigationBarHidden(false, animated: false)
     // Go to main screen
     navigationController?.popToRootViewController(animated: true)
+  }
+
+  override func updateUI() {
+    if let event = displayCollection.event {
+      displayCollection.updateActionCellsSection(on: self, with: tableView, event: event)
+    }
+    super.updateUI()
   }
 }
 

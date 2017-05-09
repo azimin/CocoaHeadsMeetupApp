@@ -8,9 +8,33 @@
 
 import UIKit
 
+typealias Action = () -> Void
+
 class ActionCellConfigurationController {
 
-  typealias Action = () -> Void
+  func createImportAction(for event: EventEntity,
+                          on viewController: UIViewController,
+                          for importType: ImportType,
+                          with additionalAction: Action? = nil) -> ActionPlainObject? {
+    let importToPermission: [ImportType: PermissionsType] = [.calendar: .calendar,
+                                                             .reminder: .reminders]
+    let isImported: [ImportType: Bool] = [.calendar: event.importingState.toCalendar,
+                                          .reminder: event.importingState.toReminder]
+
+    if let permission = importToPermission[importType] {
+      if let state = isImported[importType], state == false {
+        return addActionCell(on: viewController, for: permission, with: {
+          ImporterHelper.importToSave(event: event, to: importType, from: viewController) {
+            additionalAction?()
+          }
+        })
+      }
+    } else {
+      assertionFailure("No such permission")
+    }
+
+    return nil
+  }
 
   func addActionCell(on viewController: UIViewController,
                      for type: PermissionsType,
@@ -31,6 +55,8 @@ class ActionCellConfigurationController {
                                                                   additionalAction?()
                                               })
       })
+    } else {
+      assertionFailure("No such permission")
     }
 
     return actionPlainObject

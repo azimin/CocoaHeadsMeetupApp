@@ -53,7 +53,7 @@ final class ProfileViewDisplayCollection: DisplayCollection {
     let creatorsAction = ActionTableViewCellModel(action: creatorsObject)
 
     let askQuestionObject = ActionPlainObject(text: "Задать вопрос".localized, imageName: nil) {
-      if let url = URL(string: "mailto:\(Constants.supportEmail)"), UIApplication.shared.canOpenURL(url) {
+      if let url = URL(string: "mailto:\(Constants.supportEmail)"), self.canSendMail {
         UIApplication.shared.open(url)
       }
     }
@@ -61,7 +61,17 @@ final class ProfileViewDisplayCollection: DisplayCollection {
 
     userActions.append(giveSpeechAction)
     userActions.append(creatorsAction)
-    userActions.append(askQuestionAction)
+
+    if canSendMail {
+      userActions.append(askQuestionAction)
+    }
+  }
+
+  private var canSendMail: Bool {
+    if let url = URL(string: "mailto:\(Constants.supportEmail)"), UIApplication.shared.canOpenURL(url) {
+      return true
+    }
+    return false
   }
 
   func numberOfRows(in section: Int) -> Int {

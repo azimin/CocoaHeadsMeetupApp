@@ -38,6 +38,10 @@ extension UITableView {
     }
   }
 
+  func reloadDataImmediately() {
+    ch_reloadData()
+  }
+
   private var isReloadInProgress: Bool {
     get {
       return (objc_getAssociatedObject(self, &associationKey) as? Bool) ?? false
