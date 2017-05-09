@@ -41,7 +41,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       var editableFields: [EditableField] = []
 
       let phone = EditableField(value: user.phone ?? "", title: "Телефон".localized, parse: { phone -> Bool in
-        return StringValidation.isValid(string: phone, type: .phone)
+        return true
       }, save: { [weak self] value in
         realmWrite {
           self?.user.phone = value
@@ -140,6 +140,7 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
 
 extension ProfileEditDisplayCollection: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
     return true
   }
 }
@@ -149,6 +150,7 @@ extension ProfileEditDisplayCollection {
   var failedField: IndexPath? {
     for (index, field) in editableFields.enumerated() {
       if !field.parse(field.value) {
+        // FIXME: - Improved logic on section
         return IndexPath(row: index, section: 1)
       }
     }
