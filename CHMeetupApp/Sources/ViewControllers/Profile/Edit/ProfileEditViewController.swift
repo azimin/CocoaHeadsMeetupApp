@@ -59,6 +59,16 @@ extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
   }
+
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return displayCollection.headerHeight(for: section)
+  }
+
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let header = tableView.dequeueReusableHeaderFooterView() as DefaultTableHeaderView
+    header.headerLabel.text = displayCollection.headerTitle(for: section)
+    return header
+  }
 }
 
 // MARK: - ImagePicker
