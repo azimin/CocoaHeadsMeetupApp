@@ -13,13 +13,13 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
   class EditableField {
     var value: String
     var title: String
-    var parse: (String) -> Bool
+    var isValid: (String) -> Bool
     var save: (String) -> Void
 
-    init(value: String, title: String, parse: @escaping (String) -> Bool, save: @escaping (String) -> Void) {
-      self.value = value
+    init(value: String?, title: String, isValid: @escaping (String) -> Bool, save: @escaping (String) -> Void) {
+      self.value = value ?? ""
       self.title = title
-      self.parse = parse
+      self.isValid = isValid
       self.save = save
     }
   }
@@ -40,7 +40,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     didSet {
       var editableFields: [EditableField] = []
 
-      let phone = EditableField(value: user.phone ?? "", title: "Телефон".localized, parse: { phone -> Bool in
+      let phone = EditableField(value: user.phone, title: "Телефон".localized, isValid: { phone -> Bool in
         return true
       }, save: { [weak self] value in
         realmWrite {
@@ -48,7 +48,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
         }
       })
 
-      let email = EditableField(value: user.email, title: "Email".localized, parse: { email -> Bool in
+      let email = EditableField(value: user.email, title: "Email".localized, isValid: { email -> Bool in
         return StringValidation.isValid(string: email, type: .mail)
       }, save: { [weak self] value in
         realmWrite {
@@ -56,7 +56,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
         }
       })
 
-      let company = EditableField(value: user.company ?? "", title: "Компания".localized, parse: { _ -> Bool in
+      let company = EditableField(value: user.company, title: "Компания".localized, isValid: { _ -> Bool in
         return true
       }, save: { [weak self] value in
         realmWrite {
@@ -64,7 +64,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
         }
       })
 
-      let position = EditableField(value: user.position ?? "", title: "Позиция".localized, parse: { _ -> Bool in
+      let position = EditableField(value: user.position, title: "Позиция".localized, isValid: { _ -> Bool in
         return true
       }, save: { [weak self] value in
         realmWrite {
@@ -77,6 +77,9 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       editableFields.append(company)
       editableFields.append(position)
       self.editableFields = editableFields
+
+      sections = [.userHeader]
+      sections += Array(repeating: .userEditableFields, count: editableFields.count)
     }
   }
 
@@ -93,7 +96,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     case .userHeader:
       return 1
     case .userEditableFields:
-      return editableFields.count
+      return 1
     }
   }
 
@@ -103,7 +106,10 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       return ChooseProfilePhotoTableViewCellModel(userEntity: user, delegate: self)
 
     case .userEditableFields:
-      let field = editableFields[indexPath.row]
+      guard let firstIndex = sections.index(of: .userEditableFields) else {
+        fatalError("No index for current section")
+      }
+      let field = editableFields[indexPath.section - firstIndex]
       return EditableLabelTableViewModel(description: field.value,
                                          placeholder: field.title,
                                          textFieldDelegate: self,
@@ -136,6 +142,29 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
   func changeCheckedImage(image: UIImage) {
     // TODO: - Load image
   }
+
+  func headerHeight(for section: Int) -> CGFloat {
+    switch sections[section] {
+    case .userEditableFields:
+      return 40
+    case .userHeader:
+      return 0
+    }
+  }
+
+  func headerTitle(for section: Int) -> String {
+    switch sections[section] {
+    case .userHeader:
+      return ""
+    case .userEditableFields:
+      guard let firstIndex = sections.index(of: .userEditableFields) else {
+        fatalError("No index for current section")
+      }
+      let index = section - firstIndex
+      return editableFields[index].title
+    }
+  }
+
 }
 
 extension ProfileEditDisplayCollection: UITextFieldDelegate {
@@ -149,9 +178,11 @@ extension ProfileEditDisplayCollection {
 
   var failedField: IndexPath? {
     for (index, field) in editableFields.enumerated() {
-      if !field.parse(field.value) {
-        // FIXME: - Improved logic on section
-        return IndexPath(row: index, section: 1)
+      if !field.isValid(field.value) {
+        guard let firstIndex = sections.index(of: .userEditableFields) else {
+          fatalError("No index for current section")
+        }
+        return IndexPath(row: 0, section: firstIndex + index)
       }
     }
     return nil
@@ -159,7 +190,7 @@ extension ProfileEditDisplayCollection {
 
   func update() {
     for field in editableFields {
-      if field.parse(field.value) {
+      if field.isValid(field.value) {
         field.save(field.value)
       }
     }
