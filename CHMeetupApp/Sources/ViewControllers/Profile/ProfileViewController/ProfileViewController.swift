@@ -22,11 +22,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 
   override func viewDidLoad() {
     super.viewDidLoad()
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    fetch()
+    showInfo()
   }
 
   // MARK: - Actions
@@ -72,7 +68,7 @@ extension ProfileViewController: UITableViewDelegate {
 }
 
 extension ProfileViewController {
-  func fetch() {
+  func showInfo() {
     displayCollection = ProfileViewDisplayCollection(delegate: self)
     title = displayCollection.user.fullName
     tableView.registerNibs(from: displayCollection)
