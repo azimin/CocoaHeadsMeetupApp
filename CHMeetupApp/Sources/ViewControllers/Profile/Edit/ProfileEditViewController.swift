@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileEditViewController: UIViewController, ProfileHierarhyViewControllerType {
 
-  @IBOutlet var tableView: UITableView! {
+  @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       let configuration = TableViewConfiguration(bottomInset: 8, estimatedRowHeight: 44)
       tableView.configure(with: .custom(configuration))
@@ -36,6 +36,27 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
     bottomButton = BottomButton(addingOnView: view, title: "Сохранить".localized)
     bottomButton.addTarget(self, action: #selector(saveProfile), for: .touchUpInside)
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    changeInsets(keyboardInset: 0)
+  }
+
+  fileprivate func changeInsets(keyboardInset: CGFloat) {
+    var scrollViewContentInsets = tableView.contentInset
+    var indicatorInsets = tableView.scrollIndicatorInsets
+    var buttonInsets: CGFloat = 0
+
+    let scrollViewBottomInset = keyboardInset + tableView.defaultBottomInset + bottomButton.frame.height
+    scrollViewContentInsets.bottom = scrollViewBottomInset
+    indicatorInsets.bottom = keyboardInset + bottomButton.frame.height
+    buttonInsets = keyboardInset
+
+    tableView.contentInset = scrollViewContentInsets
+    tableView.scrollIndicatorInsets = indicatorInsets
+
+    bottomButton.bottomInsetsConstant = buttonInsets
   }
 
 }
@@ -80,32 +101,15 @@ extension ProfileEditViewController: ImagePickerDelegate {
 
 // MARK: - KeyboardHandlerDelegate
 extension ProfileEditViewController: KeyboardHandlerDelegate {
+
   func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {
-
-    var scrollViewContentInsets = tableView.contentInset
-    var indicatorInsets = tableView.scrollIndicatorInsets
-    var buttonInsets: CGFloat = 0
-
-    switch state {
-    case .frameChanged, .opened:
-      let scrollViewBottomInset = info.endFrame.height + tableView.defaultBottomInset + bottomButton.frame.height
-      scrollViewContentInsets.bottom = scrollViewBottomInset
-      indicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
-      buttonInsets = info.endFrame.height
-    case .hidden:
-      scrollViewContentInsets.bottom = 0
-      indicatorInsets.bottom = 0
-      buttonInsets = 0
-    }
-
-    tableView.contentInset = scrollViewContentInsets
-    tableView.scrollIndicatorInsets = indicatorInsets
-
-    bottomButton.bottomInsetsConstant = buttonInsets
+    let insetToSet: CGFloat = (state == .hidden) ? 0 : info.endFrame.height
+    changeInsets(keyboardInset: insetToSet)
     info.animate ({ [weak self] in
       self?.view.layoutIfNeeded()
     })
   }
+
 }
 
 extension ProfileEditViewController {
