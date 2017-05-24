@@ -74,8 +74,7 @@ class Server {
         return
       }
 
-      if let json = jsonObject as? JSONDictionary {
-        let value = T(json: json)
+      if let json = jsonObject as? JSONDictionary, let value = T(json: json) {
         completion(value, nil)
       } else {
         completion(nil, .wrongResponse)

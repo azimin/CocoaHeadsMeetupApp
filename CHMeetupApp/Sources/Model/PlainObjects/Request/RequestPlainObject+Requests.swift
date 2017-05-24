@@ -38,6 +38,25 @@ extension RequestPlainObject: PlainObjectType {
 extension RequestPlainObject {
 
   struct Requests {
+
+    static func editProfile(token: String,
+                            email: String,
+                            phone: String?,
+                            company: String?,
+                            position: String?) -> Request<RequestPlainObject> {
+      var params: [String: String] = [:]
+
+      params[Constants.Keys.token] = token
+      params["email"] = email
+      params["phone"] = phone ?? ""
+      params["company"] = company ?? ""
+      params["position"] = position ?? ""
+      return Request(query: "user/edit",
+                     method: .post,
+                     params: params)
+    }
+
+
     static func giveSpeech(title: String,
                            description: String,
                            userId: Int,
