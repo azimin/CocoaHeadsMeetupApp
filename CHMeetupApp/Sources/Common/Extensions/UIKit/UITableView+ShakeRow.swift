@@ -15,7 +15,7 @@ extension UITableView {
     cell?.shake()
   }
 
-  func failedShakeRow(_ indexPath: IndexPath) {
+  func failedShakeRow(at indexPath: IndexPath) {
     self.shakeRow(indexPath)
     AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
   }
