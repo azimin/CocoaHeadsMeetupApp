@@ -10,6 +10,11 @@ import UIKit
 
 class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
+  struct LocalConstants {
+    static let phoneTitle = "Телефон".localized
+    static let emailTitle = "Email".localized
+  }
+
   class EditableField {
     var value: String
     var title: String
@@ -40,7 +45,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     didSet {
       var editableFields: [EditableField] = []
 
-      let phone = EditableField(value: user.phone, title: "Телефон".localized, isValid: { phone -> Bool in
+      let phone = EditableField(value: user.phone, title: LocalConstants.phoneTitle, isValid: { phone -> Bool in
         return true
       }, save: { [weak self] value in
         realmWrite {
@@ -48,7 +53,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
         }
       })
 
-      let email = EditableField(value: user.email, title: "Email".localized, isValid: { email -> Bool in
+      let email = EditableField(value: user.email, title: LocalConstants.emailTitle, isValid: { email -> Bool in
         return StringValidation.isValid(string: email, type: .mail)
       }, save: { [weak self] value in
         realmWrite {
@@ -110,18 +115,35 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
         fatalError("No index for current section")
       }
       let field = editableFields[indexPath.section - firstIndex]
-      return EditableLabelTableViewModel(description: field.value,
-                                         placeholder: field.title,
-                                         textFieldDelegate: self,
-                                         valueChanged: { changedValue in
-                                          field.value = changedValue
-      })
+      let keyboardType: UIKeyboardType = {
+        if field.title == LocalConstants.phoneTitle {
+          return .phonePad
+        } else if field.title == LocalConstants.emailTitle {
+          return .asciiCapable
+        }
+        return .default
+      }()
+      let isLastField = indexPath.section == (sections.count - 1)
+      let viewModel = EditableLabelTableViewModel(
+        description: field.value,
+        placeholder: field.title,
+        textFieldDelegate: self,
+        returnKeyType: isLastField ? .done : .next,
+        keyboardType: keyboardType,
+        valueChanged: { changedValue in
+          field.value = changedValue
+        }
+      )
+      return viewModel
     }
   }
 
 }
 
+// MARK: - ChooseProfilePhotoTableViewCellDelegate
+
 extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate {
+
   func chooseProfilePhotoCellDidPressOnPhoto(_ cell: ChooseProfilePhotoTableViewCell) {
     let viewController = delegate?.getViewController()
     if let viewController = viewController as? ProfileEditViewController {
@@ -167,11 +189,17 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
 
 }
 
+// MARK: - UITextFieldDelegate
+
 extension ProfileEditDisplayCollection: UITextFieldDelegate {
+
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
+    if textField.returnKeyType == .done {
+      textField.resignFirstResponder()
+    }
     return true
   }
+
 }
 
 extension ProfileEditDisplayCollection {

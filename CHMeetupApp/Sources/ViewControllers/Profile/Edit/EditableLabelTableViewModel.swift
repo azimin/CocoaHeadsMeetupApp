@@ -12,6 +12,8 @@ struct EditableLabelTableViewModel {
   let description: String
   let placeholder: String
   weak var textFieldDelegate: UITextFieldDelegate?
+  let returnKeyType: UIReturnKeyType
+  let keyboardType: UIKeyboardType
   let valueChanged: ((String) -> Void)
 }
 
@@ -20,6 +22,8 @@ extension EditableLabelTableViewModel: CellViewModelType {
     cell.descriptionTextField.text = description
     cell.descriptionTextField.placeholder = placeholder
     cell.descriptionTextField.delegate = textFieldDelegate
+    cell.descriptionTextField.keyboardType = keyboardType
+    cell.descriptionTextField.returnKeyType = returnKeyType
     cell.valueChanged = valueChanged
   }
 }

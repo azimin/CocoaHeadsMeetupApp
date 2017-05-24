@@ -14,7 +14,6 @@ class EditableLabelTableViewCell: PlateTableViewCell {
     didSet {
       descriptionTextField.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
       descriptionTextField.textColor = UIColor(.black)
-      descriptionTextField.returnKeyType = .done
       descriptionTextField.autocorrectionType = .no
     }
   }
