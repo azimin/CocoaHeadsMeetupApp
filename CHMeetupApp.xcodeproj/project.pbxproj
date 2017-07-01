@@ -237,6 +237,14 @@
 		A168379A1E7E979800A12B3B /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16837971E7E979800A12B3B /* OptionTableViewCell.swift */; };
 		A168379B1E7E979800A12B3B /* OptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A16837981E7E979800A12B3B /* OptionTableViewCell.xib */; };
 		A168379C1E7E979800A12B3B /* OptionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16837991E7E979800A12B3B /* OptionTableViewCellModel.swift */; };
+		A1AD7E621F06F3B300977FAE /* CreatorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E5B1F06F3B300977FAE /* CreatorDetailViewController.swift */; };
+		A1AD7E631F06F3B300977FAE /* CreatorDetailDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E5D1F06F3B300977FAE /* CreatorDetailDisplayCollection.swift */; };
+		A1AD7E871F078D7600977FAE /* CreatorHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E811F078D7600977FAE /* CreatorHeaderTableViewCell.swift */; };
+		A1AD7E881F078D7600977FAE /* CreatorHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AD7E821F078D7600977FAE /* CreatorHeaderTableViewCell.xib */; };
+		A1AD7E891F078D7600977FAE /* CreatorHeaderTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E831F078D7600977FAE /* CreatorHeaderTableViewCellModel.swift */; };
+		A1AD7E8A1F078D7600977FAE /* CreatorInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E841F078D7600977FAE /* CreatorInfoTableViewCell.swift */; };
+		A1AD7E8B1F078D7600977FAE /* CreatorInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AD7E851F078D7600977FAE /* CreatorInfoTableViewCell.xib */; };
+		A1AD7E8C1F078D7600977FAE /* CreatorInfoTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E861F078D7600977FAE /* CreatorInfoTableViewCellModel.swift */; };
 		AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */; };
 		ADCCA0FE1E936156009DAACE /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0FB1E936156009DAACE /* LabelTableViewCell.swift */; };
 		ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */; };
@@ -509,6 +517,14 @@
 		A16837971E7E979800A12B3B /* OptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionTableViewCell.swift; path = OptionCell/OptionTableViewCell.swift; sourceTree = "<group>"; };
 		A16837981E7E979800A12B3B /* OptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OptionTableViewCell.xib; path = OptionCell/OptionTableViewCell.xib; sourceTree = "<group>"; };
 		A16837991E7E979800A12B3B /* OptionTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionTableViewCellModel.swift; path = OptionCell/OptionTableViewCellModel.swift; sourceTree = "<group>"; };
+		A1AD7E5B1F06F3B300977FAE /* CreatorDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorDetailViewController.swift; sourceTree = "<group>"; };
+		A1AD7E5D1F06F3B300977FAE /* CreatorDetailDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorDetailDisplayCollection.swift; sourceTree = "<group>"; };
+		A1AD7E811F078D7600977FAE /* CreatorHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		A1AD7E821F078D7600977FAE /* CreatorHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatorHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		A1AD7E831F078D7600977FAE /* CreatorHeaderTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorHeaderTableViewCellModel.swift; sourceTree = "<group>"; };
+		A1AD7E841F078D7600977FAE /* CreatorInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorInfoTableViewCell.swift; sourceTree = "<group>"; };
+		A1AD7E851F078D7600977FAE /* CreatorInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatorInfoTableViewCell.xib; sourceTree = "<group>"; };
+		A1AD7E861F078D7600977FAE /* CreatorInfoTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorInfoTableViewCellModel.swift; sourceTree = "<group>"; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Encryption.swift"; sourceTree = "<group>"; };
@@ -1197,6 +1213,7 @@
 			children = (
 				7D1CB6D61EA2D5B4003136FA /* AskQuestion */,
 				7D1CB6D31EA2D208003136FA /* Creators */,
+				A1AD7E5A1F06F3B300977FAE /* CreatorDetail */,
 				22323F721E70C2BE00522E5C /* Auth */,
 				22323F741E70C2BE00522E5C /* Edit */,
 				22323F761E70C2BE00522E5C /* GiveSpeech */,
@@ -1963,6 +1980,37 @@
 			name = OptionCell;
 			sourceTree = "<group>";
 		};
+		A1AD7E5A1F06F3B300977FAE /* CreatorDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A1AD7E5B1F06F3B300977FAE /* CreatorDetailViewController.swift */,
+				A1AD7E5C1F06F3B300977FAE /* DisplayModel */,
+				A1AD7E681F0786B600977FAE /* Cells */,
+			);
+			path = CreatorDetail;
+			sourceTree = "<group>";
+		};
+		A1AD7E5C1F06F3B300977FAE /* DisplayModel */ = {
+			isa = PBXGroup;
+			children = (
+				A1AD7E5D1F06F3B300977FAE /* CreatorDetailDisplayCollection.swift */,
+			);
+			path = DisplayModel;
+			sourceTree = "<group>";
+		};
+		A1AD7E681F0786B600977FAE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A1AD7E831F078D7600977FAE /* CreatorHeaderTableViewCellModel.swift */,
+				A1AD7E811F078D7600977FAE /* CreatorHeaderTableViewCell.swift */,
+				A1AD7E821F078D7600977FAE /* CreatorHeaderTableViewCell.xib */,
+				A1AD7E861F078D7600977FAE /* CreatorInfoTableViewCellModel.swift */,
+				A1AD7E841F078D7600977FAE /* CreatorInfoTableViewCell.swift */,
+				A1AD7E851F078D7600977FAE /* CreatorInfoTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A1DBA4F11E71ED1200E3F1E5 /* CHMeetupAppTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -2127,8 +2175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A36998D1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib in Resources */,
+				A1AD7E881F078D7600977FAE /* CreatorHeaderTableViewCell.xib in Resources */,
 				22323F351E70C0E500522E5C /* TabBarItemView.xib in Resources */,
 				A168379B1E7E979800A12B3B /* OptionTableViewCell.xib in Resources */,
+				A1AD7E8B1F078D7600977FAE /* CreatorInfoTableViewCell.xib in Resources */,
 				9F3767031E7D527000CC565B /* TextFieldPlateTableViewCell.xib in Resources */,
 				9F37670D1E7DD8EB00CC565B /* DefaultTableHeaderView.xib in Resources */,
 				ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */,
@@ -2294,11 +2344,13 @@
 				784EFF931E637EA500F2E31A /* RealmController.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FB84AF01E7B6B5E00FEEC8E /* Date+Compare.swift in Sources */,
+				A1AD7E871F078D7600977FAE /* CreatorHeaderTableViewCell.swift in Sources */,
 				03153BC41EAD41FB0011FF5F /* RegistrationConfirmDisplayCollection.swift in Sources */,
 				9F30FFD81E71FEDB00EF85F5 /* DisplayCollection.swift in Sources */,
 				22323F421E70C14300522E5C /* MapAppType.swift in Sources */,
 				22323F2C1E70C0E500522E5C /* KeyboardHandler.swift in Sources */,
 				ADCCA1001E936156009DAACE /* LabelTableViewCellModel.swift in Sources */,
+				A1AD7E8A1F078D7600977FAE /* CreatorInfoTableViewCell.swift in Sources */,
 				328467581E7FF1B200028431 /* TimePlaceTableViewCellModel.swift in Sources */,
 				8A36998C1E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift in Sources */,
 				7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */,
@@ -2359,6 +2411,7 @@
 				221A8B891E685EBF004E320D /* String+Localized.swift in Sources */,
 				7DE942111E869A6F00E7E9E6 /* FBResource.swift in Sources */,
 				9F3767121E7DDBBD00CC565B /* UITableViewHeaderFooterView+ReusableCell.swift in Sources */,
+				A1AD7E631F06F3B300977FAE /* CreatorDetailDisplayCollection.swift in Sources */,
 				9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */,
 				8A6A56A11EB8EA68008BEDF9 /* ImporterHelper.swift in Sources */,
 				8A6A84481E99AA8A00C3A9E7 /* EventFetching.swift in Sources */,
@@ -2384,6 +2437,7 @@
 				4D8851021E9F8FC400A49ADD /* PushNotificationsController.swift in Sources */,
 				8A6A56A31EB90604008BEDF9 /* ImportingStateEntity.swift in Sources */,
 				32424A1A1EB7DDDE002EED9B /* EditableLabelTableViewModel.swift in Sources */,
+				A1AD7E891F078D7600977FAE /* CreatorHeaderTableViewCellModel.swift in Sources */,
 				9FB84AF11E7B6D2F00FEEC8E /* Date+ComponentsHelper.swift in Sources */,
 				22323F0B1E70C0CE00522E5C /* UIColor+PaletteColors.swift in Sources */,
 				9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */,
@@ -2409,6 +2463,7 @@
 				32DD63051EA8CED0005B565E /* ChooseProfilePhotoTableViewModel.swift in Sources */,
 				F718C0351E966B6A008B3C0B /* ImageLoader.swift in Sources */,
 				030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */,
+				A1AD7E8C1F078D7600977FAE /* CreatorInfoTableViewCellModel.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
@@ -2425,6 +2480,7 @@
 				9F37671A1E7DDE2700CC565B /* TextViewPlateTableViewCellModel.swift in Sources */,
 				22323F951E70C2BE00522E5C /* AuthViewController.swift in Sources */,
 				9F6E1A241E95B62D0027416B /* MapsActionSheetHelper.swift in Sources */,
+				A1AD7E621F06F3B300977FAE /* CreatorDetailViewController.swift in Sources */,
 				22323F8E1E70C2BE00522E5C /* RegistrationPreviewViewController.swift in Sources */,
 				9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */,
 				22323F0A1E70C0CE00522E5C /* UIColor+Hex.swift in Sources */,

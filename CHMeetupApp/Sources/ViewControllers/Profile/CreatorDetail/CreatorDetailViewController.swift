@@ -1,36 +1,43 @@
 //
-//  CreatorsViewController.swift
+//  CreatorDetailViewController.swift
 //  CHMeetupApp
 //
-//  Created by Sam Mejlumyan on 16/04/2017.
+//  Created by Andrey Konstantinov on 01/07/2017.
 //  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
 import UIKit
 
-class CreatorsViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
-  @IBOutlet var tableView: UITableView! {
+final class CreatorDetailViewController: UIViewController {
+
+  var creatorId: Int!
+
+  @IBOutlet private var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)
     }
   }
 
-  fileprivate var displayCollection: CreatorsViewDisplayCollection!
+  var displayCollection: CreatorDetailDisplayCollection!
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = "Создатель".localized
+    view.backgroundColor = UIColor(.lightGray)
 
-    navigationItem.title = "Создатели".localized
-    displayCollection = CreatorsViewDisplayCollection()
-    tableView.registerNibs(from: displayCollection)
+    displayCollection = CreatorDetailDisplayCollection()
     displayCollection.delegate = self
-    fetchCreators()
+    tableView.registerNibs(from: displayCollection)
+
+    let dataModel = DataModelCollection(type: CreatorEntity.self)
+    displayCollection.creator = dataModel.first(where: { $0.id == creatorId })
   }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension CreatorsViewController: UITableViewDataSource {
+extension CreatorDetailViewController: UITableViewDelegate, UITableViewDataSource {
+
   func numberOfSections(in tableView: UITableView) -> Int {
     return displayCollection.numberOfSections
   }
@@ -44,23 +51,9 @@ extension CreatorsViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
     return cell
   }
-}
 
-// MARK: - UITableViewDelegate
-
-extension CreatorsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     displayCollection.didSelect(indexPath: indexPath)
-  }
-}
-
-fileprivate extension CreatorsViewController {
-  func fetchCreators() {
-    displayCollection.creators.isLoading = true
-    CreatorsController.fetchElements(request: CreatorPlainObject.Requests.list, completion: { [weak self] in
-      self?.displayCollection.creators.isLoading = false
-      self?.tableView.reloadData()
-    })
   }
 }

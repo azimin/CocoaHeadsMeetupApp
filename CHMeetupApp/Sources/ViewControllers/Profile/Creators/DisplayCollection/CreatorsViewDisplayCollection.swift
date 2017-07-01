@@ -33,6 +33,13 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     return CreatorTableViewCellModel(entity: creators[indexPath.row])
   }
+
+  func didSelect(indexPath: IndexPath) {
+    let model = creators[indexPath.row]
+    let viewController = Storyboards.Profile.instantiateCreatorDetailViewController()
+    viewController.creatorId = model.id
+    delegate?.push(viewController: viewController)
+  }
 }
 
 // MARK: - TemplateModelCollectionDelegate
