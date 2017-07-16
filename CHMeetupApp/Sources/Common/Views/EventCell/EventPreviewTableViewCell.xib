@@ -80,7 +80,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="58" id="14e-JV-zkH"/>
                         </constraints>
-                        <state key="normal" title="Я пойду"/>
+                        <state key="normal" title="Нет статуса"/>
                         <connections>
                             <action selector="goingButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vYs-QG-dyb"/>
                         </connections>
