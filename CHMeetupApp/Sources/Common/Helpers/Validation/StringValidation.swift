@@ -39,8 +39,9 @@ final class StringValidation {
   }
 
   private static func isPhone(_ string: String) -> Bool {
-    // TODO: Add phone checking
-    return true
+    let format = "\\+[0-9]{1} \\([0-9]{3}\\) [0-9]{3}\\-[0-9]{4}"
+    let predicate = NSPredicate(format: "SELF MATCHES %@", format)
+    return predicate.evaluate(with: string)
   }
 
   private static func isURL(_ string: String) -> Bool {

@@ -108,11 +108,11 @@ extension ProfileEditViewController {
     displayCollection.update()
     ProfileController.save { success in
       if success {
-        let notification = NotificationHelper.viewController(title: "Профиль изменён".localized,
-                                          description: "Ваши прекрасные данные успешно обновлены.".localized,
-                                          emjoi: "📋",
-                                          completion: {
-                                            self.navigationController?.popToRootViewController(animated: true)
+        let notification = NotificationHelper.viewController(
+          title: "Профиль изменён".localized,
+          description: "Ваши прекрасные данные успешно обновлены.".localized,
+          emjoi: "📋", completion: {
+            self.navigationController?.popToRootViewController(animated: true)
         })
 
         self.present(viewController: notification)
