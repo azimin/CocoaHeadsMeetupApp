@@ -77,6 +77,10 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     }
   }
 
+  var isUpcomingEvent: Bool {
+    return startDate.timeIntervalSince1970 > Date().timeIntervalSince1970
+  }
+
   var shouldShowRegistrationStatus: Bool {
     return isRegistrationOpen && status != .unknown
   }
