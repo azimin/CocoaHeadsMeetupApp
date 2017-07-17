@@ -10,14 +10,14 @@ import Foundation
 
 final class StringValidation {
 
-  enum `Type` {
+  public enum ValidationType {
     case mail, url, urlWithPath, phone
   }
 
   /// Domains to check for .urlWithPath type
   private static let domainsToCheckPath: Set<String> = Set(["github", "facebook", "vk", "twitter", "linkedin"])
 
-  static func isValid(string: String, type: Type) -> Bool {
+  static func isValid(string: String, type: ValidationType) -> Bool {
     switch type {
     case .mail:
       return isMail(string)
@@ -39,7 +39,7 @@ final class StringValidation {
   }
 
   private static func isPhone(_ string: String) -> Bool {
-    let format = "\\+[0-9]{1} \\([0-9]{3}\\) [0-9]{3}\\-[0-9]{4}"
+    let format = "\\+[0-9]{1} \\([0-9]{3}\\) [0-9]{3} [0-9]{2}\\-[0-9]{2}"
     let predicate = NSPredicate(format: "SELF MATCHES %@", format)
     return predicate.evaluate(with: string)
   }

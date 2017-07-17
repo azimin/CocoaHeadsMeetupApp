@@ -19,7 +19,7 @@ class EditableLabelTableViewCell: PlateTableViewCell {
     }
   }
 
-  var valueChanged: ((String) -> Void)?
+  var valueChanged: ((UITextField) -> Void)?
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -27,6 +27,6 @@ class EditableLabelTableViewCell: PlateTableViewCell {
   }
 
   @IBAction func descriptionTextViewChanged(_ sender: UITextField) {
-    valueChanged?(sender.text ?? "")
+    valueChanged?(sender)
   }
 }

@@ -92,6 +92,7 @@
 		32424A171EB7DA39002EED9B /* EditableLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32424A151EB7DA39002EED9B /* EditableLabelTableViewCell.swift */; };
 		32424A181EB7DA39002EED9B /* EditableLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32424A161EB7DA39002EED9B /* EditableLabelTableViewCell.xib */; };
 		32424A1A1EB7DDDE002EED9B /* EditableLabelTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32424A191EB7DDDE002EED9B /* EditableLabelTableViewModel.swift */; };
+		326D260A1F1D4EAA00B5846F /* PhoneNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D26091F1D4EAA00B5846F /* PhoneNumberFormatter.swift */; };
 		328467551E7FF18400028431 /* TimePlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328467531E7FF18400028431 /* TimePlaceTableViewCell.swift */; };
 		328467561E7FF18400028431 /* TimePlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 328467541E7FF18400028431 /* TimePlaceTableViewCell.xib */; };
 		328467581E7FF1B200028431 /* TimePlaceTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328467571E7FF1B200028431 /* TimePlaceTableViewCellModel.swift */; };
@@ -374,6 +375,7 @@
 		32424A151EB7DA39002EED9B /* EditableLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableLabelTableViewCell.swift; sourceTree = "<group>"; };
 		32424A161EB7DA39002EED9B /* EditableLabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditableLabelTableViewCell.xib; sourceTree = "<group>"; };
 		32424A191EB7DDDE002EED9B /* EditableLabelTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableLabelTableViewModel.swift; sourceTree = "<group>"; };
+		326D26091F1D4EAA00B5846F /* PhoneNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberFormatter.swift; sourceTree = "<group>"; };
 		328467531E7FF18400028431 /* TimePlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePlaceTableViewCell.swift; sourceTree = "<group>"; };
 		328467541E7FF18400028431 /* TimePlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePlaceTableViewCell.xib; sourceTree = "<group>"; };
 		328467571E7FF1B200028431 /* TimePlaceTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePlaceTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -907,6 +909,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				326D26081F1D4E6D00B5846F /* PhoneNumberFormatter */,
 				7DF04D171EAF670300E2D98C /* NotificationHelper */,
 				F718C0311E966B01008B3C0B /* ImageLoader */,
 				030764A81E95658800743690 /* AttributedStringHelper */,
@@ -1321,6 +1324,14 @@
 				32424A161EB7DA39002EED9B /* EditableLabelTableViewCell.xib */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		326D26081F1D4E6D00B5846F /* PhoneNumberFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				326D26091F1D4EAA00B5846F /* PhoneNumberFormatter.swift */,
+			);
+			name = PhoneNumberFormatter;
 			sourceTree = "<group>";
 		};
 		3284674E1E7FEF8400028431 /* TimePlaceCell */ = {
@@ -1885,7 +1896,9 @@
 				9F6048961E5B3CCB00C414C3 /* Products */,
 				8A6268271E60742B00D51BEB /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		9F6048961E5B3CCB00C414C3 /* Products */ = {
 			isa = PBXGroup;
@@ -2481,6 +2494,7 @@
 				F718C0351E966B6A008B3C0B /* ImageLoader.swift in Sources */,
 				030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
+				326D260A1F1D4EAA00B5846F /* PhoneNumberFormatter.swift in Sources */,
 				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,

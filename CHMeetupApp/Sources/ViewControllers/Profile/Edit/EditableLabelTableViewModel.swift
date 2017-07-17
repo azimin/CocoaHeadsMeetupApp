@@ -11,8 +11,10 @@ import UIKit
 struct EditableLabelTableViewModel {
   let description: String
   let placeholder: String
+  let validationType: StringValidation.ValidationType?
+
   weak var textFieldDelegate: UITextFieldDelegate?
-  let valueChanged: ((String) -> Void)
+  let valueChanged: (String) -> Void
 }
 
 extension EditableLabelTableViewModel: CellViewModelType {
@@ -20,6 +22,21 @@ extension EditableLabelTableViewModel: CellViewModelType {
     cell.descriptionTextField.text = description
     cell.descriptionTextField.placeholder = placeholder
     cell.descriptionTextField.delegate = textFieldDelegate
-    cell.valueChanged = valueChanged
+
+    if let type = self.validationType {
+      switch type {
+      case .phone:
+        cell.descriptionTextField.keyboardType = .numberPad
+      case .mail:
+        cell.descriptionTextField.keyboardType = .emailAddress
+      default: break
+      }
+    }
+    cell.valueChanged = ({ sender in
+      if let type = self.validationType, type == .phone {
+        sender.text = PhoneNumberFormatter.format(number: sender.text ?? "")
+      }
+      self.valueChanged(sender.text ?? "")
+    })
   }
 }
