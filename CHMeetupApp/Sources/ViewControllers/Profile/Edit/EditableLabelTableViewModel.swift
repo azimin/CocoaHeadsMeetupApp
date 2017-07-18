@@ -33,10 +33,11 @@ extension EditableLabelTableViewModel: CellViewModelType {
       }
     }
     cell.valueChanged = ({ sender in
+      let senderText = sender.text ?? ""
       if let type = self.validationType, type == .phone {
-        sender.text = PhoneNumberFormatter.format(number: sender.text ?? "")
+        sender.text = PhoneNumberFormatter.format(number: senderText)
       }
-      self.valueChanged(sender.text ?? "")
+      self.valueChanged(senderText)
     })
   }
 }

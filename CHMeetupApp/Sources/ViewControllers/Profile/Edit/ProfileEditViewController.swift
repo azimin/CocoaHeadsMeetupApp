@@ -111,10 +111,10 @@ extension ProfileEditViewController {
         let notification = NotificationHelper.viewController(
           title: "Профиль изменён".localized,
           description: "Ваши прекрасные данные успешно обновлены.".localized,
-          emjoi: "📋", completion: {
+          emjoi: "📋",
+          completion: {
             self.navigationController?.popToRootViewController(animated: true)
         })
-
         self.present(viewController: notification)
       }
     }

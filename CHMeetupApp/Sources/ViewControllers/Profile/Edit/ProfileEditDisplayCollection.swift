@@ -18,9 +18,12 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     var isValid: (String) -> Bool
     var save: (String) -> Void
 
-    init(value: String?, title: String,
+    init(value: String?,
+         title: String,
          validationType: StringValidation.ValidationType? = nil,
-         isValid: @escaping (String) -> Bool, save: @escaping (String) -> Void) {
+         isValid: @escaping (String) -> Bool,
+         save: @escaping (String) -> Void) {
+
       self.value = value ?? ""
       self.title = title
       self.validationType = validationType

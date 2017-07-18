@@ -11,20 +11,18 @@ import Foundation
 struct PhoneNumberFormatter {
   static func format(number: String) -> String {
     let cleanPhoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-    var mask = "+X (XXX) XXX XX-XX"
-
     var result = ""
     var index = cleanPhoneNumber.startIndex
-    for ch in mask.characters {
+
+    for character in Constants.TemplateTextMasks.phone.characters {
       if index == cleanPhoneNumber.endIndex { break }
-      if ch == "X" {
+      if character == Constants.TemplateTextMasks.replacementCharacter {
         result.append(cleanPhoneNumber[index])
         index = cleanPhoneNumber.index(after: index)
       } else {
-        result.append(ch)
+        result.append(character)
       }
     }
     return result
   }
-
 }
