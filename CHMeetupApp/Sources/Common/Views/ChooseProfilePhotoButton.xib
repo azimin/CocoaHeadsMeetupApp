@@ -27,11 +27,20 @@
                         <constraint firstAttribute="width" secondItem="7Sa-1h-O7m" secondAttribute="height" multiplier="1:1" id="yAn-FO-Vbn"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_cancel" translatesAutoresizingMaskIntoConstraints="NO" id="q0f-eA-d73">
+                    <rect key="frame" x="31" y="25" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="OB1-V1-fi8"/>
+                        <constraint firstAttribute="width" constant="100" id="Tg2-cg-s24"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="tCg-Hi-BXz" secondAttribute="bottom" id="5Xw-L3-aAg"/>
                 <constraint firstItem="tCg-Hi-BXz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6ex-Gz-W27"/>
+                <constraint firstItem="q0f-eA-d73" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="CPJ-dv-sPO"/>
                 <constraint firstItem="tCg-Hi-BXz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Cer-c1-al3"/>
+                <constraint firstItem="q0f-eA-d73" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="D1E-35-BQd"/>
                 <constraint firstItem="7Sa-1h-O7m" firstAttribute="height" secondItem="tCg-Hi-BXz" secondAttribute="height" multiplier="0.35" id="D9e-GK-InP"/>
                 <constraint firstAttribute="trailing" secondItem="tCg-Hi-BXz" secondAttribute="trailing" id="Fc5-C9-2nO"/>
                 <constraint firstAttribute="trailing" secondItem="7Sa-1h-O7m" secondAttribute="trailing" id="Uxu-Pv-dd3"/>
@@ -40,12 +49,14 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="addImageView" destination="7Sa-1h-O7m" id="Ada-0M-JJu"/>
+                <outlet property="cancelImageView" destination="q0f-eA-d73" id="FEv-Ji-3sZ"/>
                 <outlet property="photoImageView" destination="tCg-Hi-BXz" id="0Js-Hl-5nZ"/>
             </connections>
             <point key="canvasLocation" x="150" y="-144"/>
         </view>
     </objects>
     <resources>
+        <image name="img_cancel" width="256" height="256"/>
         <image name="img_icon_add" width="60" height="60"/>
     </resources>
 </document>

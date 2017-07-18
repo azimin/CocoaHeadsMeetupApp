@@ -102,6 +102,7 @@ class Server {
 
     sessionRequest.httpMethod = request.method.string
     sessionRequest.httpBody = request.params?.httpQuery
+    sessionRequest.timeoutInterval = 20.0
     let loadSession = URLSession.shared.dataTask(with: sessionRequest) { data, _, error in
       guard error == nil else {
         print("Session request error: \(String(describing: error)) for api resourse: \(request)")
@@ -127,5 +128,14 @@ class Server {
     }
 
     loadSession.resume()
+  }
+    
+  //MARK: Cancel Requests
+  func cancelRequests() {
+    URLSession.shared.getTasksWithCompletionHandler { (dataTasks, _, _) in
+        dataTasks.forEach({ (task) in
+            task.cancel()
+        })
+    }
   }
 }
