@@ -8,11 +8,24 @@
 
 import UIKit
 
+enum PhotoState {
+    case `default`
+    case cancel
+}
+
 class ChooseProfilePhotoButton: UIButton {
 
   @IBOutlet var photoImageView: UIImageView!
   @IBOutlet var cancelImageView: UIImageView!
   @IBOutlet private var addImageView: UIImageView!
+
+  var photoButtonState: PhotoState = .default {
+    didSet {
+        if oldValue != photoButtonState {
+            self.swithState(state: photoButtonState)
+        }
+    }
+  }
 
   var borderColor: UIColor!
   private var borderTappedColor: UIColor {
@@ -36,17 +49,18 @@ class ChooseProfilePhotoButton: UIButton {
     borderColor = .white
     cancelImageView.isHidden = true
   }
-    
-  func moveToCancelState() {
-    self.cancelImageView.isHidden = false
-    self.photoImageView.isHidden = true
-    self.addImageView.isHidden = true
-  }
-    
-  func moveToUsualState() {
-    self.cancelImageView.isHidden = true
-    self.photoImageView.isHidden = false
-    self.addImageView.isHidden = false
+
+  private func swithState(state: PhotoState) {
+    switch state {
+    case .default:
+        cancelImageView.isHidden = true
+        photoImageView.isHidden = false
+        addImageView.isHidden = false
+    case .cancel:
+        cancelImageView.isHidden = false
+        photoImageView.isHidden = true
+        addImageView.isHidden = true
+    }
   }
 
   private func buttonTappedState() {

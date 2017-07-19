@@ -119,6 +119,7 @@
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D19A6E51F267AE8003D3300 /* ProfileEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D19A6E41F267AE8003D3300 /* ProfileEditInteractor.swift */; };
 		7D1CB6D01EA27ADC003136FA /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1CB6CF1EA27ADC003136FA /* UIView+Shake.swift */; };
 		7D1CB6D21EA2B8E9003136FA /* UITableView+ShakeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1CB6D11EA2B8E9003136FA /* UITableView+ShakeSection.swift */; };
 		7D1CB6D51EA2D236003136FA /* CreatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1CB6D41EA2D236003136FA /* CreatorsViewController.swift */; };
@@ -400,6 +401,7 @@
 		4D9F0D6F1E79CD2E006443ED /* ActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActionTableViewCell.xib; path = ActionCell/ActionTableViewCell.xib; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
+		7D19A6E41F267AE8003D3300 /* ProfileEditInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditInteractor.swift; sourceTree = "<group>"; };
 		7D1CB6CF1EA27ADC003136FA /* UIView+Shake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
 		7D1CB6D11EA2B8E9003136FA /* UITableView+ShakeSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ShakeSection.swift"; sourceTree = "<group>"; };
 		7D1CB6D41EA2D236003136FA /* CreatorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsViewController.swift; sourceTree = "<group>"; };
@@ -1238,6 +1240,7 @@
 				32424A141EB7D5B1002EED9B /* Cell */,
 				8AAC26621EA56E5D00F8CF58 /* DispayCollection */,
 				22323F751E70C2BE00522E5C /* ProfileEditViewController.swift */,
+				7D19A6E41F267AE8003D3300 /* ProfileEditInteractor.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -2481,6 +2484,7 @@
 				F718C0351E966B6A008B3C0B /* ImageLoader.swift in Sources */,
 				030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
+				7D19A6E51F267AE8003D3300 /* ProfileEditInteractor.swift in Sources */,
 				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,

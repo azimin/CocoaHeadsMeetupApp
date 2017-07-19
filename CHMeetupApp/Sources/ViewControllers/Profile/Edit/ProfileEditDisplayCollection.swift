@@ -24,10 +24,6 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       self.save = save
     }
   }
-    
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
 
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [ChooseProfilePhotoTableViewCellModel.self,
@@ -100,6 +96,8 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     return sections.count
   }
 
+  private let profileEditInteractor = ProfileEditInteractor()
+
   func numberOfRows(in section: Int) -> Int {
     switch sections[section] {
     case .userHeader:
@@ -127,11 +125,11 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       })
     }
   }
-    
+
   func cancelLoadingPhoto() {
-        Server.standard.cancelRequests()
-        self.photoCell.mainButton.moveToUsualState()
-        SVProgressHUD.dismiss()
+    profileEditInteractor.cancelUploadPhoto()
+    photoCell.mainButton.photoButtonState = .default
+    SVProgressHUD.dismiss()
   }
 
 }
@@ -158,17 +156,17 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
   func changeCheckedImage(image: UIImage) {
     NotificationCenter.default.addObserver(self, selector: #selector(ProfileEditDisplayCollection.cancelLoadingPhoto),
                                            name: .SVProgressHUDDidReceiveTouchEvent, object: nil)
-    
+
     let data = UIImagePNGRepresentation(image)
     if let data = data {
       let updateRequest = RequestPlainObject.Requests.updatePhoto(photo: data)
       SVProgressHUD.show()
-      self.photoCell.mainButton.moveToCancelState()
+      photoCell.mainButton.photoButtonState = .cancel
       Server.standard.request(updateRequest) { response, _ in
         if let success = response?.success, success == true {
           let token = (UserPreferencesEntity.value.currentUser?.token)!
           ProfileController.updateUser(withToken: token, completion: { _ in })
-          self.photoCell.mainButton.moveToUsualState()
+          self.photoCell.mainButton.photoButtonState = .default
           self.photoCell.mainButton.photoImageView?.image = image
         }
         SVProgressHUD.dismiss()
@@ -177,7 +175,7 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
       assertionFailure("Image can't be parsed to data")
     }
   }
-    
+
   func headerHeight(for section: Int) -> CGFloat {
     switch sections[section] {
     case .userEditableField:
