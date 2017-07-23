@@ -211,16 +211,16 @@ public class CustomTabBarController: UITabBarController {
 
   public override var selectedIndex: Int {
     didSet {
-      customSetSelectedIndex(selectedIndex)
+      customSetSelectedIndex(selectedIndex, posible: oldValue)
     }
   }
 
-  private func customSetSelectedIndex(_ currentIndex: Int) {
-    if selectedIndex != currentIndex {
+  private func customSetSelectedIndex(_ currentIndex: Int, posible oldIndex: Int? = nil) {
+    if oldIndex ?? selectedIndex != currentIndex {
       let selectedItem: CustomTabBarItem = customItems[currentIndex]
       selectedItem.setSelected(true, animated: true)
 
-      let deselectedItem = customItems[selectedIndex]
+      let deselectedItem = customItems[oldIndex ?? selectedIndex]
       deselectedItem.setSelected(false, animated: true)
 
       selectedIndex = currentIndex

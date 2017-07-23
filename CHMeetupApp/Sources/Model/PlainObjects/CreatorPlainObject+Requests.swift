@@ -25,11 +25,13 @@ extension CreatorPlainObject {
   init?(json: JSONDictionary) {
     guard
       let id = json["id"] as? Int,
-      let name = json["name"] as? String
+      let name = json["name"] as? String,
+      let isActive = json["active"] as? Bool
       else { return nil }
 
     self.id = id
     self.name = name
+    self.isActive = isActive
     photoUrl = json["photo_url"] as? String
     url = json["url"] as? String
     info = json["info"] as? String

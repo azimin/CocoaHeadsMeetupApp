@@ -16,6 +16,7 @@ struct CreatorPlainObjectTranslation: PlainObjectTranslation {
     creator.info = plainObject.info
     creator.photoURL = plainObject.photoUrl
     creator.url = plainObject.url
+    creator.isActive = plainObject.isActive
 
     realmWrite {
       mainRealm.add(creator, update: true)

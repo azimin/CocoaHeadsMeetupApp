@@ -28,8 +28,7 @@ final class PushNotificationsController {
       return
     }
 
-    let request = RequestPlainObject.Requests.registerPush(pushToken: tokenString,
-                                                           userToken: UserPreferencesEntity.value.currentUser?.token)
+    let request = RequestPlainObject.Requests.registerPush(pushToken: tokenString)
     Server.standard.request(request) { answer, _ in
       print("Token register: \(answer?.answer ?? "failed")")
     }

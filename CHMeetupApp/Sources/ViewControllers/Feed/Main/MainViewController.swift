@@ -50,6 +50,14 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     displayCollection.updateActionCellsSection(on: self, with: tableView)
     super.updateUI()
   }
+
+  func updateStateFor(event: Int, status: EventEntity.EventRegistrationStatus) {
+    let event = mainRealm.objects(EventEntity.self).first(where: { $0.id == event })
+    realmWrite {
+      event?.status = status
+    }
+    updateUI()
+  }
 }
 
 extension MainViewController: UITableViewDataSource {
@@ -79,6 +87,7 @@ fileprivate extension MainViewController {
   func fetchEvents() {
     displayCollection.modelCollection.isLoading = true
     EventFetching.fetchElements(request: EventPlainObject.Requests.list, completion: { [weak self] in
+      EventEntity.resetLoadingEntitiesStatus()
       self?.displayCollection.modelCollection.isLoading = false
       self?.tableView.reloadData()
     })

@@ -133,6 +133,8 @@
 		7D3F9DB61EBAEC0700BC6ABD /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F9DB51EBAEC0700BC6ABD /* ProfileController.swift */; };
 		7D3F9DB81EBAFED900BC6ABD /* String+URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F9DB71EBAFED900BC6ABD /* String+URLEncoding.swift */; };
 		7D3F9DD21EBF2CE000BC6ABD /* UITableView+ShakeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F9DD11EBF2CE000BC6ABD /* UITableView+ShakeRow.swift */; };
+		7D95EF061F2130540032DA3D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D95EF041F2130540032DA3D /* Fabric.framework */; };
+		7D95EF071F2130540032DA3D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D95EF051F2130540032DA3D /* Crashlytics.framework */; };
 		7DAC86331EA8168A00437283 /* GiveSpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC86321EA8168A00437283 /* GiveSpeechController.swift */; };
 		7DAC86361EA81F1900437283 /* CreatorsViewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC86351EA81F1900437283 /* CreatorsViewDisplayCollection.swift */; };
 		7DAC863F1EA8220B00437283 /* CreatorsTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC863D1EA8220B00437283 /* CreatorsTableViewCellModel.swift */; };
@@ -144,6 +146,8 @@
 		7DB4F5C21F0B0C8B00068CBF /* CreatorInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4F5BC1F0B0C8B00068CBF /* CreatorInfoTableViewCell.swift */; };
 		7DB4F5C31F0B0C8B00068CBF /* CreatorInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DB4F5BD1F0B0C8B00068CBF /* CreatorInfoTableViewCell.xib */; };
 		7DB4F5C41F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4F5BE1F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift */; };
+		7DBF22531F1D37920048862C /* UniversalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF22521F1D37920048862C /* UniversalRouter.swift */; };
+		7DBF22681F1E32C60048862C /* PushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF22671F1E32C60048862C /* PushHandler.swift */; };
 		7DC09A711E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC09A701E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift */; };
 		7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */; };
 		7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */; };
@@ -418,6 +422,8 @@
 		7D3F9DB51EBAEC0700BC6ABD /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		7D3F9DB71EBAFED900BC6ABD /* String+URLEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+URLEncoding.swift"; sourceTree = "<group>"; };
 		7D3F9DD11EBF2CE000BC6ABD /* UITableView+ShakeRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ShakeRow.swift"; sourceTree = "<group>"; };
+		7D95EF041F2130540032DA3D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		7D95EF051F2130540032DA3D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		7DAC86321EA8168A00437283 /* GiveSpeechController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSpeechController.swift; sourceTree = "<group>"; };
 		7DAC86351EA81F1900437283 /* CreatorsViewDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsViewDisplayCollection.swift; sourceTree = "<group>"; };
 		7DAC863D1EA8220B00437283 /* CreatorsTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -429,6 +435,8 @@
 		7DB4F5BC1F0B0C8B00068CBF /* CreatorInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorInfoTableViewCell.swift; sourceTree = "<group>"; };
 		7DB4F5BD1F0B0C8B00068CBF /* CreatorInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatorInfoTableViewCell.xib; sourceTree = "<group>"; };
 		7DB4F5BE1F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorInfoTableViewCellModel.swift; sourceTree = "<group>"; };
+		7DBF22521F1D37920048862C /* UniversalRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalRouter.swift; sourceTree = "<group>"; };
+		7DBF22671F1E32C60048862C /* PushHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushHandler.swift; sourceTree = "<group>"; };
 		7DC09A701E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollectionDelegate.swift; sourceTree = "<group>"; };
 		7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Locale.swift"; sourceTree = "<group>"; };
 		7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Parameters.swift"; sourceTree = "<group>"; };
@@ -557,8 +565,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A7B878C1EAE818500200A99 /* SVProgressHUD.framework in Frameworks */,
+				7D95EF071F2130540032DA3D /* Crashlytics.framework in Frameworks */,
 				8A7B878F1EAE819900200A99 /* Kingfisher.framework in Frameworks */,
 				8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */,
+				7D95EF061F2130540032DA3D /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1509,8 +1519,8 @@
 		7DAC863C1EA8220B00437283 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7DAC86411EA8223100437283 /* CreatorTableViewCell.xib */,
 				7DAC863D1EA8220B00437283 /* CreatorsTableViewCellModel.swift */,
+				7DAC86411EA8223100437283 /* CreatorTableViewCell.xib */,
 				7DAC863E1EA8220B00437283 /* CreatorTableViewCell.swift */,
 			);
 			name = Cell;
@@ -1535,6 +1545,22 @@
 				7DB4F5BE1F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift */,
 			);
 			path = CreatorInfo;
+			sourceTree = "<group>";
+		};
+		7DBF22511F1D37840048862C /* UniversalRouter */ = {
+			isa = PBXGroup;
+			children = (
+				7DBF22521F1D37920048862C /* UniversalRouter.swift */,
+			);
+			path = UniversalRouter;
+			sourceTree = "<group>";
+		};
+		7DBF22661F1E32C60048862C /* PushHandler */ = {
+			isa = PBXGroup;
+			children = (
+				7DBF22671F1E32C60048862C /* PushHandler.swift */,
+			);
+			path = PushHandler;
 			sourceTree = "<group>";
 		};
 		7DDDB7671E7D15AD002C5ECE /* Bundle */ = {
@@ -1595,6 +1621,8 @@
 		8A6268271E60742B00D51BEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D95EF041F2130540032DA3D /* Fabric.framework */,
+				7D95EF051F2130540032DA3D /* Crashlytics.framework */,
 				8A7B878E1EAE819900200A99 /* Kingfisher.framework */,
 				8A7B878B1EAE818500200A99 /* SVProgressHUD.framework */,
 				8A6268281E60742B00D51BEB /* RealmSwift.framework */,
@@ -2148,6 +2176,7 @@
 				8A62682A1E60744D00D51BEB /* Run Script Carthage */,
 				784EFF961E637EAE00F2E31A /* Embed Frameworks */,
 				7DA466F21F13A814005EAFAB /* ShellScript */,
+				7D95EF031F2130180032DA3D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2191,6 +2220,9 @@
 						DevelopmentTeam = 4PGW4G9V2Y;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -2280,6 +2312,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# По наличию/размеру CHMeetupApp.app в Derived Data определяется \"очищенность проекта\" и необходимость повторно исполнять Natalie. Возвращается Bool - является ли проект очищенным.\nCLEAN_CHECK=$PROJECT_DIR/Scripts/clean_check.sh\nif [ -e $CLEAN_CHECK ]; then\nisClean=\"$(bash $CLEAN_CHECK)\"\necho \"isClean: $isClean\"\nif [ $isClean -eq 0 ]; then # not clean\nexit\nfi\nelse\necho Scripts/clean_check.sh not found\nfi\n# Adjust path to \"natalie\" binary\n# NATALIE_PATH=\"$PROJECT_DIR/natalie\"\nNATALIE_PATH=\"/usr/local/bin/natalie\"\n\nif [ -f $NATALIE_PATH ]; then\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\nOUTPUT_PATH=\"$BASE_PATH/Resources/Storyboards/Storyboards.swift\"\n\nif [ ! -e \"$OUTPUT_PATH\" ] || [ -n \"$(find \"$BASE_PATH\" -type f -name \"*.storyboard\" -newer \"$OUTPUT_PATH\" -print -quit)\" ]; then\necho \"Natalie Generator: Generated Swift is out-of-date; re-generating...\"\n\n/usr/bin/chflags nouchg \"$OUTPUT_PATH\"\n\"$NATALIE_PATH\" \"$BASE_PATH\" > \"$OUTPUT_PATH\"\n/usr/bin/chflags uchg \"$OUTPUT_PATH\"\n\necho \"Natalie Generator: Done.\"\nelse\necho \"Natalie Generator: Generated Swift is up-to-date; skipping re-generation.\"\nfi\nfi";
+		};
+		7D95EF031F2130180032DA3D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 09212245f7a364502b8d6fc7fca856202b867888 b48919d04dbecca598efea286690600792afec6cfc3e8205893a565de18348ac";
 		};
 		7DA466F21F13A814005EAFAB /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2381,6 +2426,7 @@
 				8A6A569B1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift in Sources */,
 				F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
+				7DBF22531F1D37920048862C /* UniversalRouter.swift in Sources */,
 				7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */,
 				3257439E1F249ED5002313E8 /* EmailFormatter.swift in Sources */,
 				324141AD1EB508C5002E98C0 /* CreatorPlainObjectTranslation.swift in Sources */,
@@ -2488,6 +2534,7 @@
 				32AFE5A11EAF5C8E004904FB /* TemplateModelCollection.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
 				7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */,
+				7DBF22681F1E32C60048862C /* PushHandler.swift in Sources */,
 				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
 				4D8851021E9F8FC400A49ADD /* PushNotificationsController.swift in Sources */,
@@ -2680,6 +2727,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"DEBUG_NETWORK_INTERACTION=1",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2699,6 +2752,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

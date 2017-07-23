@@ -14,7 +14,10 @@ class AttributedSentenceHelper {
     case at
 
     var localizedValue: String {
-      return self.rawValue.localized
+      switch self {
+      case .at:
+        return "в".localized
+      }
     }
 
     func concatString(firstPartString: String?, secondPartString: String?)

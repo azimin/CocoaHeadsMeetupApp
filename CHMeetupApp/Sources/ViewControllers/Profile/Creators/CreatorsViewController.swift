@@ -11,7 +11,12 @@ import UIKit
 class CreatorsViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
   @IBOutlet var tableView: UITableView! {
     didSet {
-      tableView.configure(with: .defaultConfiguration)
+      let configuration = TableViewConfiguration(
+        bottomInset: 8,
+        bottomIndicatorInset: 0,
+        estimatedRowHeight: 100)
+      tableView.configure(with: .custom(configuration))
+      tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
 
@@ -29,8 +34,18 @@ class CreatorsViewController: UIViewController, DisplayCollectionWithTableViewDe
 }
 
 // MARK: - UITableViewDataSource
-
 extension CreatorsViewController: UITableViewDataSource {
+
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return displayCollection.headerHeight(for: section)
+  }
+
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let header = tableView.dequeueReusableHeaderFooterView() as DefaultTableHeaderView
+    header.headerLabel.text = displayCollection.headerTitle(for: section)
+    return header
+  }
+
   func numberOfSections(in tableView: UITableView) -> Int {
     return displayCollection.numberOfSections
   }
@@ -47,7 +62,6 @@ extension CreatorsViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-
 extension CreatorsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)

@@ -8,21 +8,28 @@
 
 import UIKit
 import UserNotifications
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
 
+  var pushHandler = PushHandler()
+  var universalRouter: UniversalRouter!
   var window: UIWindow?
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+    Fabric.with([Crashlytics.self])
     RealmController.shared.setup()
     AppearanceController.setupAppearance()
     // Seems that it's the most optimal way to swizzle, without adding Obj-c code into project
     SwizzlingController.swizzleMethods()
 
-    UIApplication.shared.registerForRemoteNotifications()
+    universalRouter = UniversalRouter(with: window)
+
+    application.registerForRemoteNotifications()
+
     return true
   }
 
@@ -45,7 +52,6 @@ extension AppDelegate {
   }
 
   func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
-    // Print notification payload data
-    print("Push notification received: \(data)")
+    pushHandler.handle(data: data, via: universalRouter)
   }
 }

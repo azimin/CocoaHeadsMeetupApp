@@ -57,7 +57,7 @@ class EventPreviewViewController: UIViewController {
       fetchSpeeches(on: event)
       displayCollection.updateActionCellsSection(on: self, with: tableView, event: event)
       bottomButton?.setTitle(event.status.statusText, for: .normal)
-      isRegistrationEnabled = event.isRegistrationOpen && event.status.allowRegister
+      isRegistrationEnabled = event.status.allowRegister
     }
   }
 

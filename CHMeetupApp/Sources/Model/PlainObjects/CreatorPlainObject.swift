@@ -14,4 +14,5 @@ struct CreatorPlainObject {
   let info: String?
   let photoUrl: String?
   let url: String?
+  let isActive: Bool
 }

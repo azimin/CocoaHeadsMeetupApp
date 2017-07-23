@@ -43,6 +43,20 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>09212245f7a364502b8d6fc7fca856202b867888</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbshareextension</string>
@@ -76,6 +90,10 @@
 	<string>Это нужно чтобы поменять аватарку</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>Это поможет нам добавлять встречи в список ваших дел и напоминать вам о них ;)</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
