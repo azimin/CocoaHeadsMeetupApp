@@ -6,13 +6,19 @@
 //  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct PhoneNumberFormatter {
-  static func format(number: String) -> String {
-    let cleanPhoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+class PhoneNumberFormatter: FormatterType {
+  var keyboardType: UIKeyboardType = .phonePad
+
+  func format(_ value: String) -> String {
+    var cleanPhoneNumber = value.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
     var result = ""
     var index = cleanPhoneNumber.startIndex
+
+    if cleanPhoneNumber.characters.first != "7", index != cleanPhoneNumber.endIndex {
+        cleanPhoneNumber.replaceSubrange(index...index, with: "7")
+    }
 
     for character in Constants.TemplateTextMasks.phone.characters {
       if index == cleanPhoneNumber.endIndex { break }

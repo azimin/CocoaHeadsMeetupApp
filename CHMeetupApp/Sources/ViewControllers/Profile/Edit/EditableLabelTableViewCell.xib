@@ -12,15 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditableLabelTableViewCell" rowHeight="236" id="eCt-5h-eAu" customClass="EditableLabelTableViewCell" customModule="CHMeetupApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditableLabelTableViewCell" rowHeight="192" id="eCt-5h-eAu" customClass="EditableLabelTableViewCell" customModule="CHMeetupApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eCt-5h-eAu" id="mcm-LV-d3d">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="114.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Avh-xJ-dM0">
-                        <rect key="frame" x="24" y="16" width="272" height="79"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Avh-xJ-dM0" customClass="FormatableTextField" customModule="CHMeetupApp" customModuleProvider="target">
+                        <rect key="frame" x="24" y="16" width="272" height="34.5"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -39,7 +39,7 @@
             <connections>
                 <outlet property="descriptionTextField" destination="Avh-xJ-dM0" id="axf-T7-u4f"/>
             </connections>
-            <point key="canvasLocation" x="14" y="143.5"/>
+            <point key="canvasLocation" x="15" y="84.5"/>
         </tableViewCell>
     </objects>
 </document>

@@ -92,6 +92,9 @@
 		32424A171EB7DA39002EED9B /* EditableLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32424A151EB7DA39002EED9B /* EditableLabelTableViewCell.swift */; };
 		32424A181EB7DA39002EED9B /* EditableLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32424A161EB7DA39002EED9B /* EditableLabelTableViewCell.xib */; };
 		32424A1A1EB7DDDE002EED9B /* EditableLabelTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32424A191EB7DDDE002EED9B /* EditableLabelTableViewModel.swift */; };
+		325743981F248AE6002313E8 /* FormatableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325743971F248AE6002313E8 /* FormatableTextField.swift */; };
+		3257439B1F248BD1002313E8 /* FormatterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257439A1F248BD1002313E8 /* FormatterType.swift */; };
+		3257439E1F249ED5002313E8 /* EmailFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257439D1F249ED5002313E8 /* EmailFormatter.swift */; };
 		326D260A1F1D4EAA00B5846F /* PhoneNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D26091F1D4EAA00B5846F /* PhoneNumberFormatter.swift */; };
 		328467551E7FF18400028431 /* TimePlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328467531E7FF18400028431 /* TimePlaceTableViewCell.swift */; };
 		328467561E7FF18400028431 /* TimePlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 328467541E7FF18400028431 /* TimePlaceTableViewCell.xib */; };
@@ -375,6 +378,9 @@
 		32424A151EB7DA39002EED9B /* EditableLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableLabelTableViewCell.swift; sourceTree = "<group>"; };
 		32424A161EB7DA39002EED9B /* EditableLabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditableLabelTableViewCell.xib; sourceTree = "<group>"; };
 		32424A191EB7DDDE002EED9B /* EditableLabelTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableLabelTableViewModel.swift; sourceTree = "<group>"; };
+		325743971F248AE6002313E8 /* FormatableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatableTextField.swift; sourceTree = "<group>"; };
+		3257439A1F248BD1002313E8 /* FormatterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatterType.swift; sourceTree = "<group>"; };
+		3257439D1F249ED5002313E8 /* EmailFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailFormatter.swift; sourceTree = "<group>"; };
 		326D26091F1D4EAA00B5846F /* PhoneNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberFormatter.swift; sourceTree = "<group>"; };
 		328467531E7FF18400028431 /* TimePlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePlaceTableViewCell.swift; sourceTree = "<group>"; };
 		328467541E7FF18400028431 /* TimePlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePlaceTableViewCell.xib; sourceTree = "<group>"; };
@@ -909,6 +915,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3257439C1F249EAA002313E8 /* EmailFormatter */,
 				326D26081F1D4E6D00B5846F /* PhoneNumberFormatter */,
 				7DF04D171EAF670300E2D98C /* NotificationHelper */,
 				F718C0311E966B01008B3C0B /* ImageLoader */,
@@ -996,6 +1003,7 @@
 				9F57D62C1E749B85006323FA /* PlateCell */,
 				22323F251E70C0E500522E5C /* TabBarItemView */,
 				22323F281E70C0E500522E5C /* TextViewWithPlaceholder */,
+				325743991F248AFA002313E8 /* FormatableTextField */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1324,6 +1332,22 @@
 				32424A161EB7DA39002EED9B /* EditableLabelTableViewCell.xib */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		325743991F248AFA002313E8 /* FormatableTextField */ = {
+			isa = PBXGroup;
+			children = (
+				325743971F248AE6002313E8 /* FormatableTextField.swift */,
+			);
+			name = FormatableTextField;
+			sourceTree = "<group>";
+		};
+		3257439C1F249EAA002313E8 /* EmailFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				3257439D1F249ED5002313E8 /* EmailFormatter.swift */,
+			);
+			name = EmailFormatter;
 			sourceTree = "<group>";
 		};
 		326D26081F1D4E6D00B5846F /* PhoneNumberFormatter */ = {
@@ -1702,6 +1726,7 @@
 				9FB0FE0E1EA6869700383E1D /* ActiveWindowManager.swift */,
 				32AFE5971EAF5B29004904FB /* TemplateEntity.swift */,
 				32AFE5991EAF5B3D004904FB /* TemplateView.swift */,
+				3257439A1F248BD1002313E8 /* FormatterType.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -2357,6 +2382,7 @@
 				F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
 				7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */,
+				3257439E1F249ED5002313E8 /* EmailFormatter.swift in Sources */,
 				324141AD1EB508C5002E98C0 /* CreatorPlainObjectTranslation.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				9F33670B1E84758400B15792 /* MainViewDisplayCollection.swift in Sources */,
@@ -2418,6 +2444,7 @@
 				320FA57E1E87AF1800DAC7E1 /* ProfilePhotoTableViewCellModel.swift in Sources */,
 				8A6A84441E99AA4400C3A9E7 /* FetchingElementsProtocol.swift in Sources */,
 				8A6A844A1E99AAA200C3A9E7 /* SpeechFetching.swift in Sources */,
+				325743981F248AE6002313E8 /* FormatableTextField.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				22323F8A1E70C2BE00522E5C /* NavigationViewController.swift in Sources */,
 				7DAC86361EA81F1900437283 /* CreatorsViewDisplayCollection.swift in Sources */,
@@ -2509,6 +2536,7 @@
 				9FD5948C1E8716E800BAD1B5 /* SpeechPlainObjectTranslation.swift in Sources */,
 				9F37671A1E7DDE2700CC565B /* TextViewPlateTableViewCellModel.swift in Sources */,
 				22323F951E70C2BE00522E5C /* AuthViewController.swift in Sources */,
+				3257439B1F248BD1002313E8 /* FormatterType.swift in Sources */,
 				9F6E1A241E95B62D0027416B /* MapsActionSheetHelper.swift in Sources */,
 				A1AD7E621F06F3B300977FAE /* CreatorDetailViewController.swift in Sources */,
 				22323F8E1E70C2BE00522E5C /* RegistrationPreviewViewController.swift in Sources */,

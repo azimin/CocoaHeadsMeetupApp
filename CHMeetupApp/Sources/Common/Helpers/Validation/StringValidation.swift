@@ -10,14 +10,14 @@ import Foundation
 
 final class StringValidation {
 
-  public enum ValidationType {
+  public enum `Type` {
     case mail, url, urlWithPath, phone
   }
 
   /// Domains to check for .urlWithPath type
   private static let domainsToCheckPath: Set<String> = Set(["github", "facebook", "vk", "twitter", "linkedin"])
 
-  static func isValid(string: String, type: ValidationType) -> Bool {
+  static func isValid(string: String, type: `Type`) -> Bool {
     switch type {
     case .mail:
       return isMail(string)

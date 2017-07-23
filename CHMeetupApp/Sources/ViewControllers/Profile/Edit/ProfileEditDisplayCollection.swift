@@ -14,19 +14,19 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
   class EditableField {
     var value: String
     var title: String
-    var validationType: StringValidation.ValidationType?
+    var formatter: FormatterType?
     var isValid: (String) -> Bool
     var save: (String) -> Void
 
     init(value: String?,
          title: String,
-         validationType: StringValidation.ValidationType? = nil,
+         formatter: FormatterType? = nil,
          isValid: @escaping (String) -> Bool,
          save: @escaping (String) -> Void) {
 
       self.value = value ?? ""
       self.title = title
-      self.validationType = validationType
+      self.formatter = formatter
       self.isValid = isValid
       self.save = save
     }
@@ -49,8 +49,10 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     didSet {
       var editableFields: [EditableField] = []
 
-      let phone = EditableField(value: user.phone, title: "Телефон".localized,
-                                validationType: .phone, isValid: { phone -> Bool in
+      let phone = EditableField(value: user.phone,
+                                title: "Телефон".localized,
+                                formatter: PhoneNumberFormatter(),
+                                isValid: { phone -> Bool in
         return StringValidation.isValid(string: phone, type: .phone)
       }, save: { [weak self] value in
         realmWrite {
@@ -58,8 +60,10 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
         }
       })
 
-      let email = EditableField(value: user.email, title: "Email".localized,
-                                validationType: .mail, isValid: { email -> Bool in
+      let email = EditableField(value: user.email,
+                                title: "Email".localized,
+                                formatter: EmailFormatter(),
+                                isValid: { email -> Bool in
         return StringValidation.isValid(string: email, type: .mail)
       }, save: { [weak self] value in
         realmWrite {
@@ -123,7 +127,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       let field = editableFields[indexPath.section - firstIndex]
       return EditableLabelTableViewModel(description: field.value,
                                          placeholder: field.title,
-                                         validationType: field.validationType,
+                                         formatter: field.formatter,
                                          textFieldDelegate: self,
                                          valueChanged: { changedValue in
                                           field.value = changedValue
