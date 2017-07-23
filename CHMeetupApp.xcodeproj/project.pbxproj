@@ -927,6 +927,8 @@
 			children = (
 				3257439C1F249EAA002313E8 /* EmailFormatter */,
 				326D26081F1D4E6D00B5846F /* PhoneNumberFormatter */,
+				7DBF22661F1E32C60048862C /* PushHandler */,
+				7DBF22511F1D37840048862C /* UniversalRouter */,
 				7DF04D171EAF670300E2D98C /* NotificationHelper */,
 				F718C0311E966B01008B3C0B /* ImageLoader */,
 				030764A81E95658800743690 /* AttributedStringHelper */,
