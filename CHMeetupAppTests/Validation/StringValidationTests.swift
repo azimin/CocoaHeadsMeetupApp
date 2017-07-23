@@ -159,4 +159,30 @@ final class StringValidationTests: XCTestCase {
     let isURL = StringValidation.isValid(string: url, type: .urlWithPath)
     XCTAssertTrue(isURL)
   }
+
+  // MARK: - Phone number
+
+  func testPhoneWithoutFormatting() {
+    let phone = "79992182808"
+    let isValidPhone = StringValidation.isValid(string: phone, type: .phone)
+    XCTAssertFalse(isValidPhone)
+  }
+
+  func testPhoneWithFormatting() {
+    let phone = "+7 (999) 218 28-08"
+    let isValidPhone = StringValidation.isValid(string: phone, type: .phone)
+    XCTAssertTrue(isValidPhone)
+  }
+
+  func testPhoneWithFormattingAndMoreSimbol() {
+    let phone = "+7 (999) 218 28-080"
+    let isValidPhone = StringValidation.isValid(string: phone, type: .phone)
+    XCTAssertFalse(isValidPhone)
+  }
+
+  func testPhoneWithFormattingAndSameNumbers() {
+    let phone = "+7 (777) 777 77-77"
+    let isValidPhone = StringValidation.isValid(string: phone, type: .phone)
+    XCTAssertTrue(isValidPhone)
+  }
 }
