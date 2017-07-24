@@ -16,6 +16,10 @@ class PhoneNumberFormatter: FormatterType {
     var result = ""
     var index = cleanPhoneNumber.startIndex
 
+    if cleanPhoneNumber.characters.count == 1 && cleanPhoneNumber.characters.first == "9" {
+      cleanPhoneNumber = "79"
+    }
+
     if cleanPhoneNumber.characters.first != "7", index != cleanPhoneNumber.endIndex {
         cleanPhoneNumber.replaceSubrange(index...index, with: "7")
     }
