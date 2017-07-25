@@ -31,9 +31,10 @@ class FormatableTextField: UITextField, UITextFieldDelegate {
 
   override open var text: String? {
     set {
-      if let formatter = formatter, newValue != nil {
-        let formattedNumber = formatter.format(newValue! as String)
-        super.text = formattedNumber
+      if let formatter = formatter,
+        let newValue = newValue,
+        let fromatedString = formatter.format(newValue as String) {
+        super.text = fromatedString
       } else {
         super.text = newValue
       }
@@ -61,9 +62,8 @@ class FormatableTextField: UITextField, UITextFieldDelegate {
     super.delegate = self
   }
 
-  private let nonNumericSet: NSCharacterSet = {
+  private let nonAlphaNumericSet: NSCharacterSet = {
     var mutableSet = NSMutableCharacterSet.alphanumeric().inverted
-    mutableSet.remove(charactersIn: "+＋")
     return mutableSet as NSCharacterSet
   }()
 
@@ -84,7 +84,7 @@ class FormatableTextField: UITextField, UITextFieldDelegate {
     for i in cursorEnd ..< textAsNSString.length {
       let cursorRange = NSRange(location: i, length: 1)
       let candidateNumberAfterCursor: NSString = textAsNSString.substring(with: cursorRange) as NSString
-      if candidateNumberAfterCursor.rangeOfCharacter(from: nonNumericSet as CharacterSet).location == NSNotFound {
+      if candidateNumberAfterCursor.rangeOfCharacter(from: nonAlphaNumericSet as CharacterSet).location == NSNotFound {
         for j in cursorRange.location ..< textAsNSString.length {
           let candidateCharacter = textAsNSString.substring(with: NSRange(location: j, length: 1))
           if candidateCharacter == candidateNumberAfterCursor as String {
@@ -139,7 +139,7 @@ class FormatableTextField: UITextField, UITextFieldDelegate {
 
     let filteredCharacters = modifiedTextField.characters.filter {
       if let textField = textField as? FormatableTextField {
-        return  String($0).rangeOfCharacter(from: textField.nonNumericSet as CharacterSet) == nil
+        return  String($0).rangeOfCharacter(from: textField.nonAlphaNumericSet as CharacterSet) == nil
       }
       return false
     }
@@ -154,8 +154,8 @@ class FormatableTextField: UITextField, UITextFieldDelegate {
     }
     var selectedTextRange: NSRange?
 
-    let nonNumericRange = (changedRange.rangeOfCharacter(from: nonNumericSet as CharacterSet).location != NSNotFound)
-    if range.length == 1 && string.isEmpty && nonNumericRange {
+    let isRange = (changedRange.rangeOfCharacter(from: nonAlphaNumericSet as CharacterSet).location != NSNotFound)
+    if range.length == 1 && string.isEmpty && isRange {
       selectedTextRange = selectionRangeForNumberReplacement(textField: textField, formattedText: modifiedTextField)
       textField.text = modifiedTextField
     } else {
