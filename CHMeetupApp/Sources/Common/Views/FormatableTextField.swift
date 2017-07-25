@@ -62,7 +62,7 @@ class FormatableTextField: UITextField, UITextFieldDelegate {
   }
 
   private let nonNumericSet: NSCharacterSet = {
-    var mutableSet = NSMutableCharacterSet.decimalDigit().inverted
+    var mutableSet = NSMutableCharacterSet.alphanumeric().inverted
     mutableSet.remove(charactersIn: "+＋")
     return mutableSet as NSCharacterSet
   }()
@@ -146,10 +146,11 @@ class FormatableTextField: UITextField, UITextFieldDelegate {
     let rawNumberString = String(filteredCharacters)
 
     let formattedNationalNumber: String
-    if let formatter = formatter {
-      formattedNationalNumber = formatter.format(rawNumberString as String)
+    if let formatter = formatter, let fromatedString = formatter.format(rawNumberString as String) {
+      formattedNationalNumber = fromatedString
     } else {
       formattedNationalNumber = (rawNumberString as String)
+      return true
     }
     var selectedTextRange: NSRange?
 

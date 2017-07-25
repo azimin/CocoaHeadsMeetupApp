@@ -11,7 +11,7 @@ import UIKit
 class PhoneNumberFormatter: FormatterType {
   var keyboardType: UIKeyboardType = .phonePad
 
-  func format(_ value: String) -> String {
+  func format(_ value: String) -> String? {
     var cleanPhoneNumber = value.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
     var result = ""
     var index = cleanPhoneNumber.startIndex

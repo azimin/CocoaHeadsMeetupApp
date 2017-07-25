@@ -10,5 +10,5 @@ import UIKit
 
 protocol FormatterType {
   var keyboardType: UIKeyboardType { get }
-  func format(_ value: String) -> String
+  func format(_ value: String) -> String?
 }

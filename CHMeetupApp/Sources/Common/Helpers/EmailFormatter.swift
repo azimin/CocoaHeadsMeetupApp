@@ -11,7 +11,7 @@ import UIKit
 class EmailFormatter: FormatterType {
   var keyboardType: UIKeyboardType = .emailAddress
 
-  func format(_ value: String) -> String {
-    return value
+  func format(_ value: String) -> String? {
+    return nil
   }
 }
