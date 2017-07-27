@@ -14,6 +14,8 @@ class FormatableTextField: UITextField, UITextFieldDelegate {
     didSet {
       if let formatter = formatter {
         keyboardType = formatter.keyboardType
+      } else {
+        keyboardType = .default
       }
     }
   }
