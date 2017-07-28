@@ -53,7 +53,8 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
                                 title: "Телефон".localized,
                                 formatter: PhoneNumberFormatter(),
                                 isValid: { phone -> Bool in
-        return StringValidation.isValid(string: phone, type: .phone)
+                                  if phone.isEmpty { return true }
+                                  return StringValidation.isValid(string: phone, type: .phone)
       }, save: { [weak self] value in
         realmWrite {
           self?.user.phone = value
@@ -64,7 +65,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
                                 title: "Email".localized,
                                 formatter: EmailFormatter(),
                                 isValid: { email -> Bool in
-        return StringValidation.isValid(string: email, type: .mail)
+                                  return StringValidation.isValid(string: email, type: .mail)
       }, save: { [weak self] value in
         realmWrite {
           self?.user.email = value
