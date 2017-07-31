@@ -113,7 +113,13 @@ class Server {
     sessionRequest.httpMethod = request.method.string
     sessionRequest.httpBody = request.params?.httpQuery
     sessionRequest.timeoutInterval = Constants.Server.baseRequestTimeout
-    let loadSession = URLSession.shared.dataTask(with: sessionRequest) { data, _, error in
+
+    var loadSession: URLSessionDataTask!
+    loadSession = URLSession.shared.dataTask(with: sessionRequest) { [weak self] (data, _, error) in
+      defer {
+        self?.dataTaskContainter?.removeValue(forKey: loadSession.taskIdentifier)
+      }
+
       guard error == nil else {
         print("Session request error: \(String(describing: error)) for api resourse: \(request)")
         return
@@ -138,18 +144,6 @@ class Server {
     }
     dataTaskContainter?[loadSession.taskIdentifier] = loadSession
     loadSession.resume()
-  }
-
-  func obtainDataTaskWithIdentifier(_ identifier: String, completion: @escaping ((URLSessionDataTask) -> Void)) {
-    URLSession.shared.getTasksWithCompletionHandler { dataTasks, _, _ in
-      dataTasks.forEach { task in
-        if let taskURLString = task.currentRequest?.url?.absoluteString {
-          if taskURLString.contains(identifier) {
-            completion(task)
-          }
-        }
-      }
-    }
   }
 
 // MARK: - Cancel Requests
