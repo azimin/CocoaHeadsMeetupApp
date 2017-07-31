@@ -154,16 +154,10 @@ class Server {
 
 // MARK: - Cancel Requests
 
-  func cancelAllRequests() {
-    URLSession.shared.getTasksWithCompletionHandler { dataTasks, _, _ in
-        dataTasks.forEach { task in
-            task.cancel()
-        }
+  func cancelDataTask(with identifier: DataTaskIdentifier) {
+    if let dataTask: URLSessionDataTask = dataTaskContainter?[identifier] {
+      dataTask.cancel()
     }
-  }
-
-  func cancelDataTask(_ dataTask: URLSessionDataTask) {
-    dataTask.cancel()
   }
 
 }

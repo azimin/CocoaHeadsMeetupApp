@@ -11,6 +11,8 @@ import SVProgressHUD
 
 class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
+  fileprivate var photoDataTask: Server.DataTaskIdentifier?
+
   class EditableField {
     var value: String
     var title: String
@@ -96,8 +98,6 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     return sections.count
   }
 
-  private let profileEditInteractor = ProfileEditInteractor()
-
   func numberOfRows(in section: Int) -> Int {
     switch sections[section] {
     case .userHeader:
@@ -127,7 +127,9 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
   }
 
   func cancelLoadingPhoto() {
-    profileEditInteractor.cancelUploadPhoto()
+    if let dataTaskIdentifier = photoDataTask {
+      Server.standard.cancelDataTask(with: dataTaskIdentifier)
+    }
     photoCell.mainButton.photoButtonState = .default
     SVProgressHUD.dismiss()
   }
@@ -154,8 +156,10 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
   }
 
   func changeCheckedImage(image: UIImage) {
-    NotificationCenter.default.addObserver(self, selector: #selector(ProfileEditDisplayCollection.cancelLoadingPhoto),
-                                           name: .SVProgressHUDDidReceiveTouchEvent, object: nil)
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(ProfileEditDisplayCollection.cancelLoadingPhoto),
+                                           name: .SVProgressHUDDidReceiveTouchEvent,
+                                           object: nil)
 
     let data = UIImagePNGRepresentation(image)
     if let data = data {
@@ -171,6 +175,7 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
         }
         SVProgressHUD.dismiss()
       }
+      photoDataTask = Server.standard.lastDataTaskIdentifier
     } else {
       assertionFailure("Image can't be parsed to data")
     }
