@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
 
   var currentUserId: Int? = -1
+  private var userActiveState: Bool = false
 
   @IBOutlet var tableView: UITableView! {
     didSet {
@@ -27,6 +28,7 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     displayCollection.updateActionCellsSection(on: self, with: tableView)
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
+    setCurrentState()
 
     title = "CocoaHeads Russia".localized
     // Do any additional setup after loading the view.
@@ -40,6 +42,14 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
       fetchEvents()
       currentUserId = UserPreferencesEntity.value.currentUser?.remoteId
     }
+
+    if LoginProcessController.isLogin != userActiveState {
+      fetchEvents()
+    }
+  }
+
+  override func viewDidDisappear(_ animated: Bool) {
+    setCurrentState()
   }
 
   override func customTabBarItemContentView() -> CustomTabBarItemView {
@@ -57,6 +67,10 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
       event?.status = status
     }
     updateUI()
+  }
+
+  private func setCurrentState() {
+    userActiveState = LoginProcessController.isLogin
   }
 }
 
