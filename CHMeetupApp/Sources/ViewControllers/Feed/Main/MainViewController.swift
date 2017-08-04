@@ -10,7 +10,6 @@ import UIKit
 
 class MainViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
 
-  var currentUserId: Int? = -1
   private var userActiveState: Bool = false
 
   @IBOutlet var tableView: UITableView! {
@@ -29,7 +28,7 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
     setCurrentState()
-
+    fetchEvents()
     title = "CocoaHeads Russia".localized
     // Do any additional setup after loading the view.
   }
@@ -38,18 +37,10 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     super.viewWillAppear(animated)
     self.tableView.reloadData()
 
-    if currentUserId != UserPreferencesEntity.value.currentUser?.remoteId {
-      fetchEvents()
-      currentUserId = UserPreferencesEntity.value.currentUser?.remoteId
-    }
-
     if LoginProcessController.isLogin != userActiveState {
       fetchEvents()
+      setCurrentState()
     }
-  }
-
-  override func viewDidDisappear(_ animated: Bool) {
-    setCurrentState()
   }
 
   override func customTabBarItemContentView() -> CustomTabBarItemView {
