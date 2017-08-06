@@ -11,6 +11,8 @@ import SVProgressHUD
 
 class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
+  fileprivate var photoDataTask: Server.DataTaskIdentifier?
+
   class EditableField {
     var value: String
     var title: String
@@ -124,6 +126,14 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     }
   }
 
+  func cancelLoadingPhoto() {
+    if let dataTaskIdentifier = photoDataTask {
+      Server.standard.cancelDataTask(with: dataTaskIdentifier)
+    }
+    photoCell.mainButton.photoButtonState = .default
+    SVProgressHUD.dismiss()
+  }
+
 }
 
 extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate {
@@ -146,19 +156,26 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
   }
 
   func changeCheckedImage(image: UIImage) {
-    // TODO: - Give ability to cancel request
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(ProfileEditDisplayCollection.cancelLoadingPhoto),
+                                           name: .SVProgressHUDDidReceiveTouchEvent,
+                                           object: nil)
+
     let data = UIImagePNGRepresentation(image)
     if let data = data {
       let updateRequest = RequestPlainObject.Requests.updatePhoto(photo: data)
       SVProgressHUD.show()
+      photoCell.mainButton.photoButtonState = .cancel
       Server.standard.request(updateRequest) { response, _ in
         if let success = response?.success, success == true {
           let token = (UserPreferencesEntity.value.currentUser?.token)!
           ProfileController.updateUser(withToken: token, completion: { _ in })
+          self.photoCell.mainButton.photoButtonState = .default
           self.photoCell.mainButton.photoImageView?.image = image
         }
         SVProgressHUD.dismiss()
       }
+      photoDataTask = Server.standard.lastDataTaskIdentifier
     } else {
       assertionFailure("Image can't be parsed to data")
     }

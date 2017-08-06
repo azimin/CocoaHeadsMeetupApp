@@ -18,6 +18,7 @@ final class Constants {
   static let supportEmail = "support@cocoaheads.ru"
 
   struct Server {
+    static let baseRequestTimeout: TimeInterval = 20.0
     static var baseParams: [String: String] {
       return ["token": UserPreferencesEntity.value.currentUser?.token ?? ""]
     }

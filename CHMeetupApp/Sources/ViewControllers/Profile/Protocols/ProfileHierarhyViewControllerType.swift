@@ -12,6 +12,10 @@ protocol ProfileHierarhyViewControllerType: class {
   func getViewController() -> UIViewController?
 }
 
+protocol ProfileEditDisplayCollectionDelegate: ProfileHierarhyViewControllerType {
+
+}
+
 extension ProfileHierarhyViewControllerType where Self: UIViewController {
   var profileNavigationController: ProfileNavigationControllerType? {
     return navigationController as? ProfileNavigationControllerType

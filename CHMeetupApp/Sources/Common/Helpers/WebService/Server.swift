@@ -35,6 +35,9 @@ class Server {
     return Server(apiBase: Constants.apiBase)
   }
 
+  typealias DataTaskIdentifier = Int
+  fileprivate var dataTaskContainter: [DataTaskIdentifier: URLSessionDataTask]?
+
   init(apiBase: String) {
     self.apiBase = apiBase
   }
@@ -83,6 +86,13 @@ class Server {
     }
   }
 
+  var lastDataTaskIdentifier: DataTaskIdentifier? {
+    guard let lastIndex = dataTaskContainter?.endIndex else {
+      return nil
+    }
+    return dataTaskContainter?.keys[lastIndex]
+  }
+
   private func loadRequest<T>(_ request: Request<T>, completion: @escaping ((Any?, ServerError?) -> Void)) {
     guard Reachability.isInternetAvailable else {
       completion(nil, .noConnection)
@@ -102,7 +112,14 @@ class Server {
 
     sessionRequest.httpMethod = request.method.string
     sessionRequest.httpBody = request.params?.httpQuery
-    let loadSession = URLSession.shared.dataTask(with: sessionRequest) { data, _, error in
+    sessionRequest.timeoutInterval = Constants.Server.baseRequestTimeout
+
+    var loadSession: URLSessionDataTask!
+    loadSession = URLSession.shared.dataTask(with: sessionRequest) { [weak self] (data, _, error) in
+      defer {
+        self?.dataTaskContainter?.removeValue(forKey: loadSession.taskIdentifier)
+      }
+
       guard error == nil else {
         print("Session request error: \(String(describing: error)) for api resourse: \(request)")
         return
@@ -125,7 +142,16 @@ class Server {
         completion(jsonObject, nil)
       }
     }
-
+    dataTaskContainter?[loadSession.taskIdentifier] = loadSession
     loadSession.resume()
   }
+
+// MARK: - Cancel Requests
+
+  func cancelDataTask(with identifier: DataTaskIdentifier) {
+    if let dataTask: URLSessionDataTask = dataTaskContainter?[identifier] {
+      dataTask.cancel()
+    }
+  }
+
 }
