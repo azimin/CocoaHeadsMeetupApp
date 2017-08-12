@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ProfileEditViewController: UIViewController, ProfileHierarhyViewControllerType {
 
@@ -104,7 +105,7 @@ extension ProfileEditViewController {
       tableView.failedShakeRow(failedFieldIndexPath)
       return
     }
-
+    SVProgressHUD.show()
     displayCollection.update()
     ProfileController.save { success in
       if success {
@@ -116,6 +117,7 @@ extension ProfileEditViewController {
         })
 
         self.present(viewController: notification)
+        SVProgressHUD.dismiss()
       }
     }
   }
