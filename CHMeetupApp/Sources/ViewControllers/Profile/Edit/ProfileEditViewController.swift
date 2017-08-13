@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ProfileEditViewController: UIViewController, ProfileHierarhyViewControllerType {
 
@@ -104,19 +105,30 @@ extension ProfileEditViewController {
       tableView.failedShakeRow(failedFieldIndexPath)
       return
     }
-
+    showProgress()
     displayCollection.update()
-    ProfileController.save { success in
+    ProfileController.save { [weak self] success in
       if success {
         let notification = NotificationHelper.viewController(title: "Профиль изменён".localized,
                                           description: "Ваши прекрасные данные успешно обновлены.".localized,
                                           emjoi: "📋",
                                           completion: {
-                                            self.navigationController?.popToRootViewController(animated: true)
+                                            self?.navigationController?.popToRootViewController(animated: true)
         })
 
-        self.present(viewController: notification)
+        self?.present(viewController: notification)
       }
+      self?.dismissProgress()
     }
+  }
+
+  private func showProgress() {
+    SVProgressHUD.show()
+    self.view.isUserInteractionEnabled = false
+  }
+
+  private func dismissProgress() {
+    SVProgressHUD.dismiss()
+    self.view.isUserInteractionEnabled = true
   }
 }

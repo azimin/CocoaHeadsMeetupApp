@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class RegistrationPreviewViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
 
@@ -105,6 +106,7 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
   }
 
   func registrate() {
+    showProgress()
     RegistrationController.sendFormData(displayCollection.formData, completion: { [weak self] success in
       if success {
         let dataModel = DataModelCollection(type: EventEntity.self)
@@ -114,6 +116,7 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
       } else {
         self?.showMessageAlert(title: "Возникла ошибка".localized)
       }
+      self?.dismissProgress()
     })
   }
 
@@ -122,6 +125,17 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
     confirmViewController.selectedEventId = selectedEventId
     self.push(viewController: confirmViewController)
   }
+
+  private func showProgress() {
+    SVProgressHUD.show()
+    self.view.isUserInteractionEnabled = false
+  }
+
+  private func dismissProgress() {
+    SVProgressHUD.dismiss()
+    self.view.isUserInteractionEnabled = true
+  }
+
 }
 
 // MARK: - UITableViewDataSource
