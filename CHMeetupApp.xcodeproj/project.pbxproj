@@ -110,6 +110,7 @@
 		32DD63021EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD63001EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift */; };
 		32DD63031EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DD63011EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib */; };
 		32DD63051EA8CED0005B565E /* ChooseProfilePhotoTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD63041EA8CED0005B565E /* ChooseProfilePhotoTableViewModel.swift */; };
+		4CA6545D1F41815600D88C06 /* UIViewController+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6545C1F41815600D88C06 /* UIViewController+HUD.swift */; };
 		4D0E6B561E86E11100C44DC0 /* ActionCellConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */; };
 		4D8851021E9F8FC400A49ADD /* PushNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8851011E9F8FC400A49ADD /* PushNotificationsController.swift */; };
 		4D9D24241E7B2FE300FA5E93 /* ActionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */; };
@@ -397,6 +398,7 @@
 		32DD63001EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProfilePhotoTableViewCell.swift; sourceTree = "<group>"; };
 		32DD63011EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseProfilePhotoTableViewCell.xib; sourceTree = "<group>"; };
 		32DD63041EA8CED0005B565E /* ChooseProfilePhotoTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProfilePhotoTableViewModel.swift; sourceTree = "<group>"; };
+		4CA6545C1F41815600D88C06 /* UIViewController+HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+HUD.swift"; sourceTree = "<group>"; };
 		4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionCellConfigurationController.swift; path = ActionCellConfigurationController/ActionCellConfigurationController.swift; sourceTree = "<group>"; };
 		4D8851011E9F8FC400A49ADD /* PushNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushNotificationsController.swift; path = PushNotification/PushNotificationsController.swift; sourceTree = "<group>"; };
 		4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTableViewCellModel.swift; path = ActionCell/ActionTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -901,6 +903,7 @@
 				22323F081E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift */,
 				9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */,
 				8A0244B01E93011D008AFFE6 /* UIViewController+Alert.swift */,
+				4CA6545C1F41815600D88C06 /* UIViewController+HUD.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -2370,6 +2373,7 @@
 				C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */,
 				7DAC86331EA8168A00437283 /* GiveSpeechController.swift in Sources */,
 				22323F551E70C18700522E5C /* PlainObjectType.swift in Sources */,
+				4CA6545D1F41815600D88C06 /* UIViewController+HUD.swift in Sources */,
 				03CA501F1E8327EB00CF9613 /* RegistrationFormDataCollection.swift in Sources */,
 				4D9DEA2B1E9543DC00260264 /* UIImageView+RoundCorners.swift in Sources */,
 				22323F971E70C2BE00522E5C /* GiveSpeechViewController.swift in Sources */,

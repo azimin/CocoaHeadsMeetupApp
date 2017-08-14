@@ -104,19 +104,20 @@ extension ProfileEditViewController {
       tableView.failedShakeRow(failedFieldIndexPath)
       return
     }
-
+    showProgressHUD()
     displayCollection.update()
-    ProfileController.save { success in
+    ProfileController.save { [weak self] success in
       if success {
         let notification = NotificationHelper.viewController(title: "Профиль изменён".localized,
                                           description: "Ваши прекрасные данные успешно обновлены.".localized,
                                           emjoi: "📋",
                                           completion: {
-                                            self.navigationController?.popToRootViewController(animated: true)
+                                            self?.navigationController?.popToRootViewController(animated: true)
         })
 
-        self.present(viewController: notification)
+        self?.present(viewController: notification)
       }
+      self?.dismissProgressHUD()
     }
   }
 }
