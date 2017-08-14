@@ -105,6 +105,7 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
   }
 
   func registrate() {
+    showProgressHUD()
     RegistrationController.sendFormData(displayCollection.formData, completion: { [weak self] success in
       if success {
         let dataModel = DataModelCollection(type: EventEntity.self)
@@ -114,6 +115,7 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
       } else {
         self?.showMessageAlert(title: "Возникла ошибка".localized)
       }
+      self?.dismissProgressHUD()
     })
   }
 

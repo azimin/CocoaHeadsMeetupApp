@@ -1,0 +1,24 @@
+//
+//  UIViewController+HUD.swift
+//  CHMeetupApp
+//
+//  Created by Maria Ionchenkova on 14/08/2017.
+//  Copyright © 2017 CocoaHeads Community. All rights reserved.
+//
+
+import Foundation
+import SVProgressHUD
+
+extension UIViewController {
+
+  func showProgressHUD() {
+    SVProgressHUD.show()
+    self.view.isUserInteractionEnabled = false
+  }
+
+  func dismissProgressHUD() {
+    SVProgressHUD.dismiss()
+    self.view.isUserInteractionEnabled = true
+  }
+
+}
