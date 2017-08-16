@@ -21,7 +21,6 @@ final class UniversalRouter {
     tabBarController = rootController
   }
 
-
   // Tab bar section 
   // By default, enum sets the first case 0
   // So anonses is 0, pastEvents 1, profile 2

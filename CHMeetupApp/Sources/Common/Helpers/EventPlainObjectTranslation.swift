@@ -1,5 +1,5 @@
 //
-//  TranslateEventPlainObject.swift
+//  EventPlainObjectTranslation.swift
 //  CHMeetupApp
 //
 //  Created by Kirill Averyanov on 19/03/2017.
