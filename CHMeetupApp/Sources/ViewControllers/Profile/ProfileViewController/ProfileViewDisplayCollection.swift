@@ -16,7 +16,50 @@ final class ProfileViewDisplayCollection: DisplayCollection {
   }
 
   weak var delegate: DisplayCollectionDelegate?
-  private var userActions: [ActionTableViewCellModel] = []
+  private var userActions: [ActionTableViewCellModel] {
+    var actions = [ActionTableViewCellModel]()
+
+    var status: GiveSpeechEntity.GiveSpeechStatus = .canGiveNew
+    if modelCollection.count > 0 {
+      status = modelCollection[modelCollection.count - 1].status
+    }
+
+    let giveSpeechObject = ActionPlainObject(text: status.statusText, imageName: nil) { [weak delegate] in
+      switch status {
+      case .canGiveNew:
+        let giveSpeech = Storyboards.Profile.instantiateGiveSpeechViewController()
+        delegate?.push(viewController: giveSpeech)
+      case .loading, .unknown:
+        return
+      case .waiting:
+        let giveSpeech = Storyboards.Profile.instantiateGiveSpeechViewController()
+        delegate?.push(viewController: giveSpeech)
+        // TODO: Put data
+      }
+    }
+    let giveSpeechAction = ActionTableViewCellModel(action: giveSpeechObject)
+
+    let creatorsObject = ActionPlainObject(text: "Создатели".localized, imageName: nil) { [weak delegate] in
+      let creators = Storyboards.Profile.instantiateCreatorsViewController()
+      delegate?.push(viewController: creators)
+    }
+    let creatorsAction = ActionTableViewCellModel(action: creatorsObject)
+
+    let askQuestionObject = ActionPlainObject(text: "Задать вопрос".localized, imageName: nil) {
+      if let url = URL(string: "mailto:\(Constants.supportEmail)"), self.canSendMail {
+        UIApplication.shared.open(url)
+      }
+    }
+    let askQuestionAction = ActionTableViewCellModel(action: askQuestionObject)
+
+    actions.append(giveSpeechAction)
+    actions.append(creatorsAction)
+
+    if canSendMail {
+      actions.append(askQuestionAction)
+    }
+    return actions
+  }
 
   enum `Type` {
     case userHeader
@@ -43,32 +86,6 @@ final class ProfileViewDisplayCollection: DisplayCollection {
 
   init(delegate: DisplayCollectionDelegate?) {
     self.delegate = delegate
-
-    let giveSpeechObject = ActionPlainObject(text: "Стать спикером".localized, imageName: nil) { [weak delegate] in
-      let giveSpeech = Storyboards.Profile.instantiateGiveSpeechViewController()
-      delegate?.push(viewController: giveSpeech)
-    }
-    let giveSpeechAction = ActionTableViewCellModel(action: giveSpeechObject)
-
-    let creatorsObject = ActionPlainObject(text: "Создатели".localized, imageName: nil) { [weak delegate] in
-      let creators = Storyboards.Profile.instantiateCreatorsViewController()
-      delegate?.push(viewController: creators)
-    }
-    let creatorsAction = ActionTableViewCellModel(action: creatorsObject)
-
-    let askQuestionObject = ActionPlainObject(text: "Задать вопрос".localized, imageName: nil) {
-      if let url = URL(string: "mailto:\(Constants.supportEmail)"), self.canSendMail {
-        UIApplication.shared.open(url)
-      }
-    }
-    let askQuestionAction = ActionTableViewCellModel(action: askQuestionObject)
-
-    userActions.append(giveSpeechAction)
-    userActions.append(creatorsAction)
-
-    if canSendMail {
-      userActions.append(askQuestionAction)
-    }
   }
 
   private var canSendMail: Bool {
