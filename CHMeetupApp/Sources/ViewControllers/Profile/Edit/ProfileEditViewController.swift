@@ -38,9 +38,32 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     bottomButton.addTarget(self, action: #selector(saveProfile), for: .touchUpInside)
   }
 
+  // MARK: - Helpers
+
+  func saveProfile() {
+    if let failedFieldIndexPath = displayCollection.failedField {
+      tableView.failedShakeRow(failedFieldIndexPath)
+    } else {
+      view.endEditing(true)
+      displayCollection.update()
+      ProfileController.save { success in
+        if success {
+          let notification = NotificationHelper.viewController(
+            title: "Профиль изменён".localized,
+            description: "Ваши прекрасные данные успешно обновлены.".localized,
+            emjoi: "📋",
+            completion: {
+              self.navigationController?.popToRootViewController(animated: true)
+          })
+          self.present(viewController: notification)
+        }
+      }
+    }
+  }
 }
 
 // MARK: - UITableViewDelegate & UITableViewDataSource
+
 extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
     return displayCollection.numberOfSections
@@ -62,6 +85,7 @@ extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 // MARK: - ImagePicker
+
 extension ProfileEditViewController: ImagePickerDelegate {
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
     displayCollection.didReciveMedia(picker, info: info)
@@ -95,28 +119,5 @@ extension ProfileEditViewController: KeyboardHandlerDelegate {
     info.animate ({ [weak self] in
       self?.view.layoutIfNeeded()
     })
-  }
-}
-
-extension ProfileEditViewController {
-  func saveProfile() {
-    if let failedFieldIndexPath = displayCollection.failedField {
-      tableView.failedShakeRow(failedFieldIndexPath)
-      return
-    }
-
-    displayCollection.update()
-    ProfileController.save { success in
-      if success {
-        let notification = NotificationHelper.viewController(title: "Профиль изменён".localized,
-                                          description: "Ваши прекрасные данные успешно обновлены.".localized,
-                                          emjoi: "📋",
-                                          completion: {
-                                            self.navigationController?.popToRootViewController(animated: true)
-        })
-
-        self.present(viewController: notification)
-      }
-    }
   }
 }

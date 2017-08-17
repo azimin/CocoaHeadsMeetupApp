@@ -11,8 +11,10 @@ import UIKit
 struct EditableLabelTableViewModel {
   let description: String
   let placeholder: String
+  let formatter: FormatterType?
+
   weak var textFieldDelegate: UITextFieldDelegate?
-  let valueChanged: ((String) -> Void)
+  let valueChanged: (String) -> Void
 }
 
 extension EditableLabelTableViewModel: CellViewModelType {
@@ -20,6 +22,7 @@ extension EditableLabelTableViewModel: CellViewModelType {
     cell.descriptionTextField.text = description
     cell.descriptionTextField.placeholder = placeholder
     cell.descriptionTextField.delegate = textFieldDelegate
+    cell.descriptionTextField.formatter = formatter
     cell.valueChanged = valueChanged
   }
 }

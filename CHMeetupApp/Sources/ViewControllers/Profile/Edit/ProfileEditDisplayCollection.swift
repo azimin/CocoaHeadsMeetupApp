@@ -14,12 +14,19 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
   class EditableField {
     var value: String
     var title: String
+    var formatter: FormatterType?
     var isValid: (String) -> Bool
     var save: (String) -> Void
 
-    init(value: String?, title: String, isValid: @escaping (String) -> Bool, save: @escaping (String) -> Void) {
+    init(value: String?,
+         title: String,
+         formatter: FormatterType? = nil,
+         isValid: @escaping (String) -> Bool,
+         save: @escaping (String) -> Void) {
+
       self.value = value ?? ""
       self.title = title
+      self.formatter = formatter
       self.isValid = isValid
       self.save = save
     }
@@ -42,19 +49,23 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     didSet {
       var editableFields: [EditableField] = []
 
-      let phone = EditableField(value: user.phone, title: "Телефон".localized, isValid: { phone -> Bool in
-        return true
-        // Right now we don't want to check phone because there are couple of format 
-        // reasons for this (users can copy +7 (926)...)
-        // return StringValidation.isValid(string: phone, type: .phone)
+      let phone = EditableField(value: user.phone,
+                                title: "Телефон".localized,
+                                formatter: PhoneNumberFormatter(),
+                                isValid: { phone -> Bool in
+                                  if phone.isEmpty { return true }
+                                  return StringValidation.isValid(string: phone, type: .phone)
       }, save: { [weak self] value in
         realmWrite {
           self?.user.phone = value
         }
       })
 
-      let email = EditableField(value: user.email, title: "Email".localized, isValid: { email -> Bool in
-        return StringValidation.isValid(string: email, type: .mail)
+      let email = EditableField(value: user.email,
+                                title: "Email".localized,
+                                formatter: EmailFormatter(),
+                                isValid: { email -> Bool in
+                                  return StringValidation.isValid(string: email, type: .mail)
       }, save: { [weak self] value in
         realmWrite {
           self?.user.email = value
@@ -117,6 +128,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       let field = editableFields[indexPath.section - firstIndex]
       return EditableLabelTableViewModel(description: field.value,
                                          placeholder: field.title,
+                                         formatter: field.formatter,
                                          textFieldDelegate: self,
                                          valueChanged: { changedValue in
                                           field.value = changedValue

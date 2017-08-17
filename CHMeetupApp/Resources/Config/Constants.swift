@@ -44,8 +44,13 @@ final class Constants {
   struct SystemSizes {
     static let cornerRadius: CGFloat = 5
     static let textSize: CGFloat = 15
-    //Used for getting border width
+    // Used for getting border width
     static let imageViewBorderWidthPercentage: CGFloat = 0.04
+  }
+
+  struct TemplateTextMasks {
+    static let replacementCharacter: Character = "X"
+    static let phone = "+X (XXX) XXX XX-XX"
   }
 
   struct TemplatesCounts {

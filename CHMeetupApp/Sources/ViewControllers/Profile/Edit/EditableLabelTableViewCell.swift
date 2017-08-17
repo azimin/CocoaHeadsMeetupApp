@@ -10,7 +10,7 @@ import UIKit
 
 class EditableLabelTableViewCell: PlateTableViewCell {
 
-  @IBOutlet var descriptionTextField: UITextField! {
+  @IBOutlet var descriptionTextField: FormatableTextField! {
     didSet {
       descriptionTextField.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
       descriptionTextField.textColor = UIColor(.black)
