@@ -31,6 +31,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
     ProfileController.updateUser(withToken: token, completion: { _ in })
 
     fetch()
+    fetchGiveSpeeches()
   }
 
   // MARK: - Actions
