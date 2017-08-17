@@ -27,6 +27,7 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
   fileprivate(set) var descriptionText = ""
 
   fileprivate(set) var textView: UITextView?
+  weak var delegate: ProfileHierarhyViewControllerType?
 
   var numberOfSections: Int {
     return sections.count
@@ -38,16 +39,32 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     let type = sections[indexPath.section]
+
+    guard let viewController = delegate?.getViewController()
+      as? GiveSpeechViewController else { fatalError("Subscribe to delegate") }
+
+    let isEnabled = viewController.sentGiveSpeechId == nil
+    if !isEnabled { // If we have giveSpeech waiting review
+      let predicate = NSPredicate(format: "id == \(viewController.sentGiveSpeechId ?? 0)")
+      let dataCollection = DataModelCollection(type: GiveSpeechEntity.self).filtered(predicate)
+      if dataCollection.count > 0 { // Guarantee that have minimum 1
+        nameText = dataCollection[0].title
+        descriptionText = dataCollection[0].descriptionText
+      }
+    }
     switch type {
     case .name:
       return TextFieldPlateTableViewCellModel(value: nameText,
                                               placeholder: "Название".localized,
                                               textFieldDelegate: self,
+                                              isEnabled: isEnabled,
                                               valueChanged: { [weak self] value in
                                                 self?.nameText = value
       })
     case .description:
-      return TextViewPlateTableViewCellModel(placeholder: "О чем будет Ваш доклад?".localized,
+      return TextViewPlateTableViewCellModel(value: descriptionText,
+                                             placeholder: "О чем будет Ваш доклад?".localized,
+                                             isEnabled: isEnabled,
                                              textViewDelegate: self,
                                              delegate: self)
     }

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class GiveSpeechViewController: UIViewController, UITableViewDataSource,
+UITableViewDelegate, ProfileHierarhyViewControllerType {
 
   @IBOutlet var tableView: UITableView! {
     didSet {
@@ -20,6 +21,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
 
   var displayCollection: GiveSpeechDisplayCollection!
   var bottomButton: BottomButton!
+  var sentGiveSpeechId: Int?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,11 +31,14 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
 
     displayCollection = GiveSpeechDisplayCollection()
     tableView.registerNibs(from: displayCollection)
+    displayCollection.delegate = self
 
     navigationItem.title = "Стать спикером".localized
 
-    bottomButton = BottomButton(addingOnView: view, title: "Подать заявку".localized)
-    bottomButton.addTarget(self, action: #selector(sendSpeech), for: .touchUpInside)
+    if sentGiveSpeechId == nil {
+      bottomButton = BottomButton(addingOnView: view, title: "Подать заявку".localized)
+      bottomButton.addTarget(self, action: #selector(sendSpeech), for: .touchUpInside)
+    }
   }
 
   func setupGestureRecognizer() {

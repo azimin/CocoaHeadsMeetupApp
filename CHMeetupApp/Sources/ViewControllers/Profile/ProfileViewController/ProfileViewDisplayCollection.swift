@@ -24,17 +24,19 @@ final class ProfileViewDisplayCollection: DisplayCollection {
       status = modelCollection[modelCollection.count - 1].status
     }
 
-    let giveSpeechObject = ActionPlainObject(text: status.statusText, imageName: nil) { [weak delegate] in
+    let giveSpeechObject = ActionPlainObject(text: status.statusText, imageName: nil) { [weak self] in
       switch status {
       case .canGiveNew:
-        let giveSpeech = Storyboards.Profile.instantiateGiveSpeechViewController()
-        delegate?.push(viewController: giveSpeech)
+        let giveSpeechViewController = Storyboards.Profile.instantiateGiveSpeechViewController()
+        self?.delegate?.push(viewController: giveSpeechViewController)
       case .loading, .unknown:
         return
       case .waiting:
-        let giveSpeech = Storyboards.Profile.instantiateGiveSpeechViewController()
-        delegate?.push(viewController: giveSpeech)
-        // TODO: Put data
+        let giveSpeechViewController = Storyboards.Profile.instantiateGiveSpeechViewController()
+        if let modelCollection = self?.modelCollection, modelCollection.count > 0 {
+          giveSpeechViewController.sentGiveSpeechId = modelCollection[modelCollection.count - 1].id
+        }
+        self?.delegate?.push(viewController: giveSpeechViewController)
       }
     }
     let giveSpeechAction = ActionTableViewCellModel(action: giveSpeechObject)

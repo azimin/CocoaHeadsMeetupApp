@@ -12,6 +12,7 @@ struct TextFieldPlateTableViewCellModel {
   let value: String
   let placeholder: String
   weak var textFieldDelegate: UITextFieldDelegate?
+  let isEnabled: Bool
   let valueChanged: ((String) -> Void)
 }
 
@@ -21,5 +22,6 @@ extension TextFieldPlateTableViewCellModel: CellViewModelType {
     cell.textField.delegate = textFieldDelegate
     cell.textField.text = value
     cell.valueChanged = valueChanged
+    cell.textField.isEnabled = isEnabled
   }
 }

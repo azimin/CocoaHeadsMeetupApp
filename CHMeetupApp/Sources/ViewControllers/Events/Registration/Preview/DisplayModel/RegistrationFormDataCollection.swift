@@ -49,6 +49,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
       return TextFieldPlateTableViewCellModel(value: stringAnswer,
                                               placeholder: answerCell.value,
                                               textFieldDelegate: self,
+                                              isEnabled: true,
                                               valueChanged: { [weak answerCell] value in
                                                 answerCell?.answer = .string(value: value)
                                                 self.delegate?.formDisplayRequestTouchGeuster(enable: true)
