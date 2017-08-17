@@ -33,6 +33,10 @@ final class ProfileViewDisplayCollection: DisplayCollection {
     return user
   }
 
+  var modelCollection: DataModelCollection<GiveSpeechEntity> = {
+    return DataModelCollection(type: GiveSpeechEntity.self).sorted(byKeyPath: #keyPath(GiveSpeechEntity.id))
+  }()
+
   var numberOfSections: Int {
     return sections.count
   }

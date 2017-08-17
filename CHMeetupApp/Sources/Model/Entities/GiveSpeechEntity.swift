@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class GiveSpeechEntity: Object {
+final class GiveSpeechEntity: Object {
 
   enum GiveSpeechStatus: String {
     case waiting
@@ -53,6 +53,15 @@ class GiveSpeechEntity: Object {
     set {
       realmWrite {
         statusValue = newValue.rawValue
+      }
+    }
+  }
+
+  static func resetLoadingEntitiesStatus() {
+    realmWrite {
+      for entity in mainRealm.objects(GiveSpeechEntity.self)
+        where entity.status == .loading {
+          entity.status = .unknown
       }
     }
   }
