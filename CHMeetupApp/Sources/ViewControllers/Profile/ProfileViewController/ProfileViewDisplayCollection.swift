@@ -29,14 +29,14 @@ final class ProfileViewDisplayCollection: DisplayCollection {
       case .canGiveNew:
         let giveSpeechViewController = Storyboards.Profile.instantiateGiveSpeechViewController()
         self?.delegate?.push(viewController: giveSpeechViewController)
-      case .loading, .unknown:
-        return
       case .waiting:
         let giveSpeechViewController = Storyboards.Profile.instantiateGiveSpeechViewController()
         if let modelCollection = self?.modelCollection, modelCollection.count > 0 {
           giveSpeechViewController.sentGiveSpeechId = modelCollection[modelCollection.count - 1].id
         }
         self?.delegate?.push(viewController: giveSpeechViewController)
+      case .loading, .unknown:
+        return
       }
     }
     let giveSpeechAction = ActionTableViewCellModel(action: giveSpeechObject)

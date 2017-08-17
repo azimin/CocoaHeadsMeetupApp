@@ -10,7 +10,8 @@ import Foundation
 
 struct GiveSpeechFetching: FetchingElements {
   static func fetchElements(request: Request<[GiveSpeechPlainObject]>,
-                            to parent: GiveSpeechEntity? = nil, completion: (() -> Void)? = nil) {
+                            to parent: GiveSpeechEntity? = nil,
+                            completion: (() -> Void)? = nil) {
     Server.standard.request(request, completion: { list, error in
       defer {
         DispatchQueue.main.async { completion?() }
