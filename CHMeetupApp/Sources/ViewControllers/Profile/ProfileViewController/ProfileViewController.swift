@@ -90,7 +90,8 @@ fileprivate extension ProfileViewController {
     guard let currentUserId = UserPreferencesEntity.value.currentUser?.id else { return }
     let request = GiveSpeechPlainObject.Requests.giveSpeechesOfUser(with: currentUserId)
     GiveSpeechFetching.fetchElements(request: request, completion: { [weak self] in
-      GiveSpeechEntity.resetLoadingEntitiesStatus() // For all loading statuses make unknown
+      // For all loading statuses make unknown
+      GiveSpeechEntity.resetLoadingEntitiesStatus()
       self?.tableView.reloadData()
     })
   }

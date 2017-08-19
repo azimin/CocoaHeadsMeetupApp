@@ -44,11 +44,12 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
       as? GiveSpeechViewController else { fatalError("Subscribe to delegate") }
 
     let isEnabled = viewController.sentGiveSpeechId == nil
-    /// If we have giveSpeech waiting review
+    // If we have giveSpeech waiting review
     if !isEnabled {
       let predicate = NSPredicate(format: "id == \(viewController.sentGiveSpeechId ?? 0)")
       let dataCollection = DataModelCollection(type: GiveSpeechEntity.self).filtered(predicate)
-      if dataCollection.count > 0 { // Guarantee that have minimum 1
+      // Guarantee that have minimum 1
+      if dataCollection.count > 0 {
         nameText = dataCollection[0].title
         descriptionText = dataCollection[0].descriptionText
       }
