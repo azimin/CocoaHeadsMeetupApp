@@ -87,9 +87,8 @@ extension ProfileViewController {
 
 fileprivate extension ProfileViewController {
   func fetchGiveSpeeches() {
-    guard let currentUserId = UserPreferencesEntity.value.currentUser?.id else { return }
-    let request = GiveSpeechPlainObject.Requests.giveSpeechesOfUser(with: currentUserId)
-    GiveSpeechFetching.fetchElements(request: request, completion: { [weak self] in
+    let request = GiveSpeechPlainObject.Requests.giveSpeeches
+    GiveSpeechController.fetchElements(request: request, completion: { [weak self] in
       // For all loading statuses make unknown
       GiveSpeechEntity.resetLoadingEntitiesStatus()
       self?.tableView.reloadData()

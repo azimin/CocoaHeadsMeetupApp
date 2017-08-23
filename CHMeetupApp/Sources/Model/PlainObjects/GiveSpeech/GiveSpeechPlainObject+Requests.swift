@@ -12,10 +12,10 @@ extension GiveSpeechPlainObject: PlainObjectType {
 
   struct Requests {
 
-    /// Returns GiveSpeeches list of concrete user by id
-    static func giveSpeechesOfUser(with id: Int) -> Request<[GiveSpeechPlainObject]> {
-      return Request(query: "giveSpeeches/user/\(id)")
-    }
+    /// Returns GiveSpeeches list of concrete user
+    static var giveSpeeches: Request<[GiveSpeechPlainObject]> = {
+      return Request(query: "giveSpeeches")
+    }()
   }
 
   init?(json: JSONDictionary) {
