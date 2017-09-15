@@ -2147,8 +2147,8 @@
 				8A3B15DB1E5E37BE008DD430 /* Run Script Swiftlint */,
 				8A62682A1E60744D00D51BEB /* Run Script Carthage */,
 				784EFF961E637EAE00F2E31A /* Embed Frameworks */,
-				7DA466F21F13A814005EAFAB /* ShellScript */,
-				7D95EF031F2130180032DA3D /* ShellScript */,
+				7DA466F21F13A814005EAFAB /* Remove Unused Architectures */,
+				7D95EF031F2130180032DA3D /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -2285,26 +2285,28 @@
 			shellPath = /bin/sh;
 			shellScript = "# По наличию/размеру CHMeetupApp.app в Derived Data определяется \"очищенность проекта\" и необходимость повторно исполнять Natalie. Возвращается Bool - является ли проект очищенным.\nCLEAN_CHECK=$PROJECT_DIR/Scripts/clean_check.sh\nif [ -e $CLEAN_CHECK ]; then\nisClean=\"$(bash $CLEAN_CHECK)\"\necho \"isClean: $isClean\"\nif [ $isClean -eq 0 ]; then # not clean\nexit\nfi\nelse\necho Scripts/clean_check.sh not found\nfi\n# Adjust path to \"natalie\" binary\n# NATALIE_PATH=\"$PROJECT_DIR/natalie\"\nNATALIE_PATH=\"/usr/local/bin/natalie\"\n\nif [ -f $NATALIE_PATH ]; then\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\nOUTPUT_PATH=\"$BASE_PATH/Resources/Storyboards/Storyboards.swift\"\n\nif [ ! -e \"$OUTPUT_PATH\" ] || [ -n \"$(find \"$BASE_PATH\" -type f -name \"*.storyboard\" -newer \"$OUTPUT_PATH\" -print -quit)\" ]; then\necho \"Natalie Generator: Generated Swift is out-of-date; re-generating...\"\n\n/usr/bin/chflags nouchg \"$OUTPUT_PATH\"\n\"$NATALIE_PATH\" \"$BASE_PATH\" > \"$OUTPUT_PATH\"\n/usr/bin/chflags uchg \"$OUTPUT_PATH\"\n\necho \"Natalie Generator: Done.\"\nelse\necho \"Natalie Generator: Generated Swift is up-to-date; skipping re-generation.\"\nfi\nfi";
 		};
-		7D95EF031F2130180032DA3D /* ShellScript */ = {
+		7D95EF031F2130180032DA3D /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Fabric;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 09212245f7a364502b8d6fc7fca856202b867888 b48919d04dbecca598efea286690600792afec6cfc3e8205893a565de18348ac";
+			shellScript = "if [ $CONFIGURATION == \"Debug\" ]; then\n  exit 0\nfi\n\n./Fabric.framework/run 09212245f7a364502b8d6fc7fca856202b867888 b48919d04dbecca598efea286690600792afec6cfc3e8205893a565de18348ac";
 		};
-		7DA466F21F13A814005EAFAB /* ShellScript */ = {
+		7DA466F21F13A814005EAFAB /* Remove Unused Architectures */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Remove Unused Architectures";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
