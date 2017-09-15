@@ -40,6 +40,16 @@
 				<string>fb1863830253895861</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>github92ad5bdbcacdd2db8d97</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>github92ad5bdbcacdd2db8d97</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>3</string>

@@ -118,6 +118,7 @@
 		4D9F0D701E79CD2E006443ED /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F0D6E1E79CD2E006443ED /* ActionTableViewCell.swift */; };
 		4D9F0D711E79CD2E006443ED /* ActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9F0D6F1E79CD2E006443ED /* ActionTableViewCell.xib */; };
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
+		704D86261F6A334F001AC18E /* GitHubResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704D86251F6A334F001AC18E /* GitHubResource.swift */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D1CB6D01EA27ADC003136FA /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1CB6CF1EA27ADC003136FA /* UIView+Shake.swift */; };
@@ -406,6 +407,7 @@
 		4D9F0D6E1E79CD2E006443ED /* ActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTableViewCell.swift; path = ActionCell/ActionTableViewCell.swift; sourceTree = "<group>"; };
 		4D9F0D6F1E79CD2E006443ED /* ActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActionTableViewCell.xib; path = ActionCell/ActionTableViewCell.xib; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		704D86251F6A334F001AC18E /* GitHubResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubResource.swift; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
 		7D1CB6CF1EA27ADC003136FA /* UIView+Shake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
 		7D1CB6D11EA2B8E9003136FA /* UITableView+ShakeSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ShakeSection.swift"; sourceTree = "<group>"; };
@@ -1567,6 +1569,7 @@
 				7DE9420C1E867B8C00E7E9E6 /* SocialResource.swift */,
 				7DE9420E1E867BB900E7E9E6 /* VKResource.swift */,
 				7DE942101E869A6F00E7E9E6 /* FBResource.swift */,
+				704D86251F6A334F001AC18E /* GitHubResource.swift */,
 			);
 			name = SocialResource;
 			path = AuthResources;
@@ -2526,6 +2529,7 @@
 				328467551E7FF18400028431 /* TimePlaceTableViewCell.swift in Sources */,
 				7DB4F5BF1F0B0C8B00068CBF /* CreatorHeaderTableViewCell.swift in Sources */,
 				9FAFDACF1EB1FA75001ED7DB /* TemplateObject.swift in Sources */,
+				704D86261F6A334F001AC18E /* GitHubResource.swift in Sources */,
 				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,
 				F73C4AAB1EA11CA000E7943C /* GroupImageLoader.swift in Sources */,
 				4D0E6B561E86E11100C44DC0 /* ActionCellConfigurationController.swift in Sources */,
