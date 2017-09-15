@@ -41,7 +41,6 @@ final class UniversalRouter {
   }
 
   private func viewController(for section: TabBarSection) -> UIViewController? {
-    // swiftlint:disable:next line_length
     let navigationVC = self.tabBarController.viewControllers?[section.hashValue] as? UINavigationController
     return navigationVC?.viewControllers.first
   }
