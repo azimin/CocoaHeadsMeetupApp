@@ -24,10 +24,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbP-cw-RIa">
-                                <rect key="frame" x="24" y="101" width="272" height="366"/>
+                                <rect key="frame" x="24" y="77" width="272" height="414"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s83-FI-OGO">
-                                        <rect key="frame" x="8" y="226" width="256" height="136"/>
+                                        <rect key="frame" x="8" y="226" width="256" height="184"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="fb" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-p0-rbw" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="256" height="40"/>
@@ -55,15 +55,29 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Войти через VK" image="img_auth_vk">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Войти через VK" image="img_auth_vk"/>
                                                 <connections>
                                                     <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="gaN-Zn-Hsf"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tw" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="github" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C54-lA-CsV" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="96" width="256" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="4sR-g8-PFU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Войти через GitHub" image="img_auth_github">
+                                                    <color key="titleColor" red="0.98958333330000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="8lH-XF-v4D"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tw" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="144" width="256" height="40"/>
                                                 <color key="backgroundColor" red="0.30612394213676453" green="0.7424468994140625" blue="0.93023401498794556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -71,6 +85,9 @@
                                                 <state key="normal" title="Войти через Twitter" image="img_auth_twitter">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="WJp-wY-ieK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -112,6 +129,7 @@
                         <outletCollection property="authButtons" destination="a2j-p0-rbw" collectionClass="NSMutableArray" id="yHh-mR-Am8"/>
                         <outletCollection property="authButtons" destination="gl9-SA-VgD" collectionClass="NSMutableArray" id="MYQ-qY-cB5"/>
                         <outletCollection property="authButtons" destination="sxo-Mt-f4Q" collectionClass="NSMutableArray" id="Kl0-HC-pMe"/>
+                        <outletCollection property="authButtons" destination="C54-lA-CsV" collectionClass="NSMutableArray" id="rXi-eY-oNP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwx-63-Jfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -394,6 +412,7 @@
     </scenes>
     <resources>
         <image name="img_auth_fb" width="25" height="25"/>
+        <image name="img_auth_github" width="25" height="25"/>
         <image name="img_auth_twitter" width="25" height="25"/>
         <image name="img_auth_vk" width="25" height="25"/>
         <image name="img_edit_button" width="25" height="25"/>
