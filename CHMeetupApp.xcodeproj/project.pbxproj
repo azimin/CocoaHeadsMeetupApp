@@ -2701,7 +2701,6 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"DEBUG_NETWORK_INTERACTION=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
@@ -2709,6 +2708,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.russia.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEBUG_NETWORK_INTERACTION";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
