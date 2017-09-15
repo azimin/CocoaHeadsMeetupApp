@@ -8,8 +8,6 @@
 
 import Cocoa
 
-// swiftlint:disable force_cast
-
 struct FontsCollection: TemplateModel {
 
   // MARK: - Properties

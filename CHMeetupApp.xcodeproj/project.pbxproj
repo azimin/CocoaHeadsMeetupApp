@@ -118,6 +118,7 @@
 		4D9F0D701E79CD2E006443ED /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F0D6E1E79CD2E006443ED /* ActionTableViewCell.swift */; };
 		4D9F0D711E79CD2E006443ED /* ActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9F0D6F1E79CD2E006443ED /* ActionTableViewCell.xib */; };
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
+		704D86261F6A334F001AC18E /* GitHubResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704D86251F6A334F001AC18E /* GitHubResource.swift */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D1CB6D01EA27ADC003136FA /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1CB6CF1EA27ADC003136FA /* UIView+Shake.swift */; };
@@ -406,6 +407,7 @@
 		4D9F0D6E1E79CD2E006443ED /* ActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTableViewCell.swift; path = ActionCell/ActionTableViewCell.swift; sourceTree = "<group>"; };
 		4D9F0D6F1E79CD2E006443ED /* ActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActionTableViewCell.xib; path = ActionCell/ActionTableViewCell.xib; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		704D86251F6A334F001AC18E /* GitHubResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubResource.swift; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
 		7D1CB6CF1EA27ADC003136FA /* UIView+Shake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
 		7D1CB6D11EA2B8E9003136FA /* UITableView+ShakeSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ShakeSection.swift"; sourceTree = "<group>"; };
@@ -1567,6 +1569,7 @@
 				7DE9420C1E867B8C00E7E9E6 /* SocialResource.swift */,
 				7DE9420E1E867BB900E7E9E6 /* VKResource.swift */,
 				7DE942101E869A6F00E7E9E6 /* FBResource.swift */,
+				704D86251F6A334F001AC18E /* GitHubResource.swift */,
 			);
 			name = SocialResource;
 			path = AuthResources;
@@ -2147,8 +2150,8 @@
 				8A3B15DB1E5E37BE008DD430 /* Run Script Swiftlint */,
 				8A62682A1E60744D00D51BEB /* Run Script Carthage */,
 				784EFF961E637EAE00F2E31A /* Embed Frameworks */,
-				7DA466F21F13A814005EAFAB /* ShellScript */,
-				7D95EF031F2130180032DA3D /* ShellScript */,
+				7DA466F21F13A814005EAFAB /* Remove Unused Architectures */,
+				7D95EF031F2130180032DA3D /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -2285,26 +2288,28 @@
 			shellPath = /bin/sh;
 			shellScript = "# По наличию/размеру CHMeetupApp.app в Derived Data определяется \"очищенность проекта\" и необходимость повторно исполнять Natalie. Возвращается Bool - является ли проект очищенным.\nCLEAN_CHECK=$PROJECT_DIR/Scripts/clean_check.sh\nif [ -e $CLEAN_CHECK ]; then\nisClean=\"$(bash $CLEAN_CHECK)\"\necho \"isClean: $isClean\"\nif [ $isClean -eq 0 ]; then # not clean\nexit\nfi\nelse\necho Scripts/clean_check.sh not found\nfi\n# Adjust path to \"natalie\" binary\n# NATALIE_PATH=\"$PROJECT_DIR/natalie\"\nNATALIE_PATH=\"/usr/local/bin/natalie\"\n\nif [ -f $NATALIE_PATH ]; then\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\nOUTPUT_PATH=\"$BASE_PATH/Resources/Storyboards/Storyboards.swift\"\n\nif [ ! -e \"$OUTPUT_PATH\" ] || [ -n \"$(find \"$BASE_PATH\" -type f -name \"*.storyboard\" -newer \"$OUTPUT_PATH\" -print -quit)\" ]; then\necho \"Natalie Generator: Generated Swift is out-of-date; re-generating...\"\n\n/usr/bin/chflags nouchg \"$OUTPUT_PATH\"\n\"$NATALIE_PATH\" \"$BASE_PATH\" > \"$OUTPUT_PATH\"\n/usr/bin/chflags uchg \"$OUTPUT_PATH\"\n\necho \"Natalie Generator: Done.\"\nelse\necho \"Natalie Generator: Generated Swift is up-to-date; skipping re-generation.\"\nfi\nfi";
 		};
-		7D95EF031F2130180032DA3D /* ShellScript */ = {
+		7D95EF031F2130180032DA3D /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Fabric;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 09212245f7a364502b8d6fc7fca856202b867888 b48919d04dbecca598efea286690600792afec6cfc3e8205893a565de18348ac";
+			shellScript = "if [ $CONFIGURATION == \"Debug\" ]; then\n  exit 0\nfi\n\n./Fabric.framework/run 09212245f7a364502b8d6fc7fca856202b867888 b48919d04dbecca598efea286690600792afec6cfc3e8205893a565de18348ac";
 		};
-		7DA466F21F13A814005EAFAB /* ShellScript */ = {
+		7DA466F21F13A814005EAFAB /* Remove Unused Architectures */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Remove Unused Architectures";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2524,6 +2529,7 @@
 				328467551E7FF18400028431 /* TimePlaceTableViewCell.swift in Sources */,
 				7DB4F5BF1F0B0C8B00068CBF /* CreatorHeaderTableViewCell.swift in Sources */,
 				9FAFDACF1EB1FA75001ED7DB /* TemplateObject.swift in Sources */,
+				704D86261F6A334F001AC18E /* GitHubResource.swift in Sources */,
 				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,
 				F73C4AAB1EA11CA000E7943C /* GroupImageLoader.swift in Sources */,
 				4D0E6B561E86E11100C44DC0 /* ActionCellConfigurationController.swift in Sources */,
@@ -2701,7 +2707,6 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"DEBUG_NETWORK_INTERACTION=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
@@ -2709,6 +2714,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.russia.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEBUG_NETWORK_INTERACTION";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;

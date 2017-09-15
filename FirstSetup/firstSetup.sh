@@ -45,7 +45,7 @@ if [ ! -f "Cartfile" ]; then
   touch Cartfile
   echo Cartfile created
 fi
-carthage update --platform iOS
+carthage bootstrap --platform iOS
 echo carthage updated
 echo "Now you should write necessary libs in Cartfile and run command 'carthage update --platform iOS'"
 

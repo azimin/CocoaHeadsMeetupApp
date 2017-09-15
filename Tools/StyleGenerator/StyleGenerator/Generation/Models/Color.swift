@@ -8,8 +8,6 @@
 
 import Foundation
 
-// swiftlint:disable force_cast
-
 struct ColorsCollection: TemplateModel {
 
   // MARK: - Properties
