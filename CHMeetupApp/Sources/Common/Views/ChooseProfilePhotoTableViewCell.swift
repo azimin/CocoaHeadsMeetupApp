@@ -26,10 +26,6 @@ class ChooseProfilePhotoTableViewCell: UITableViewCell {
      delegate?.chooseProfilePhotoCellDidPressOnPhoto(self)
   }
 
-  override func layoutSubviews() {
-    super.layoutSubviews()
-  }
-
   override func awakeFromNib() {
     super.awakeFromNib()
     contentView.backgroundColor = UIColor(.lightGray)

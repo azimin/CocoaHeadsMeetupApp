@@ -34,7 +34,7 @@ final class UniversalRouter {
     self.tabBarController.selectedIndex = section.hashValue
   }
 
-  func updateAnonseStatus(`for` eventId: Int, status: String) {
+  func updateAnonseStatus(for eventId: Int, status: String) {
     let status = EventEntity.EventRegistrationStatus(rawValue: status)
     let anonses = viewController(for: .anonses) as? MainViewController
     anonses?.updateStateFor(event: eventId, status: status ?? .unknown)
