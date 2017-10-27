@@ -170,8 +170,8 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
       let updateRequest = RequestPlainObject.Requests.updatePhoto(photo: data)
       SVProgressHUD.show()
       Server.standard.request(updateRequest) { response, _ in
-        if let success = response?.success, success == true, let token = (UserPreferencesEntity.value.currentUser?.token) {
-          
+        if let success = response?.success, success == true,
+          let token = UserPreferencesEntity.value.currentUser?.token {
           ProfileController.updateUser(withToken: token, completion: { _ in })
           self.photoCell.mainButton.photoImageView?.image = image
         }
