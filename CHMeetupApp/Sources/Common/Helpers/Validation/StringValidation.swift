@@ -39,8 +39,11 @@ final class StringValidation {
   }
 
   private static func isPhone(_ string: String) -> Bool {
-    // TODO: Add phone checking
-    return true
+    let PHONE_REGEX = "/^(\\s*)?(\\+)?([- _():=+]?\\d[- _():=+]?){10,14}(\\s*)?$/"
+    let phone = Predicate(format: "SELF MATCHES %@", PHONE_REGEX)
+    if let result = phone.evaluate(with: string) {
+      return true
+    }
   }
 
   private static func isURL(_ string: String) -> Bool {
