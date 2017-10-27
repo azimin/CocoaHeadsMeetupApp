@@ -26,7 +26,7 @@ final class StringValidation {
     case .url:
       return isURL(string)
     case .urlWithPath:
-      return isUrlWIthType(string)
+      return isUrlWithType(string)
     }
   }
 
@@ -48,7 +48,7 @@ final class StringValidation {
     return isURL(url)
   }
 
-  private static func isUrlWIthType(_ string: String) -> Bool {
+  private static func isUrlWithType(_ string: String) -> Bool {
     guard let url = url(from: string),
       isURL(url),
       let host = url.host
