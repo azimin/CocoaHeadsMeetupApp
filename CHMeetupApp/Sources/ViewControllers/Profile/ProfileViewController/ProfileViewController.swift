@@ -38,8 +38,9 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    let token = (UserPreferencesEntity.value.currentUser?.token)!
-    ProfileController.updateUser(withToken: token, completion: { _ in })
+    if let token = (UserPreferencesEntity.value.currentUser?.token) {
+      ProfileController.updateUser(withToken: token, completion: { _ in })
+    }
 
     fetch()
   }
