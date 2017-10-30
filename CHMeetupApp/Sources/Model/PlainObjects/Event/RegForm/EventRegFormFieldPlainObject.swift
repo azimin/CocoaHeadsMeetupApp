@@ -32,7 +32,7 @@ enum EventRegFormFieldType: String {
     case .string:
       return (answer as? String) ?? ""
     case .checkbox, .radio:
-      if let result = answer as? Bool, result == true {
+      if let result = answer as? Bool, result {
         return true
       }
       return false

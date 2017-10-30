@@ -20,6 +20,6 @@ extension Date {
   }
 
   var isPassed: Bool {
-    return (self.isLater(then: Date()) == false)
+    return !isLater(then: Date())
   }
 }
