@@ -121,6 +121,7 @@
 		704D86261F6A334F001AC18E /* GitHubResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704D86251F6A334F001AC18E /* GitHubResource.swift */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D1748DC1FA33F96007C0493 /* JailbrakeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1748DB1FA33F96007C0493 /* JailbrakeDetector.swift */; };
 		7D1CB6D01EA27ADC003136FA /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1CB6CF1EA27ADC003136FA /* UIView+Shake.swift */; };
 		7D1CB6D21EA2B8E9003136FA /* UITableView+ShakeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1CB6D11EA2B8E9003136FA /* UITableView+ShakeSection.swift */; };
 		7D1CB6D51EA2D236003136FA /* CreatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1CB6D41EA2D236003136FA /* CreatorsViewController.swift */; };
@@ -409,6 +410,7 @@
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		704D86251F6A334F001AC18E /* GitHubResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubResource.swift; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
+		7D1748DB1FA33F96007C0493 /* JailbrakeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbrakeDetector.swift; sourceTree = "<group>"; };
 		7D1CB6CF1EA27ADC003136FA /* UIView+Shake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
 		7D1CB6D11EA2B8E9003136FA /* UITableView+ShakeSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ShakeSection.swift"; sourceTree = "<group>"; };
 		7D1CB6D41EA2D236003136FA /* CreatorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsViewController.swift; sourceTree = "<group>"; };
@@ -925,6 +927,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7D1748DA1FA33F80007C0493 /* JailbreakDetector */,
 				7DBF22661F1E32C60048862C /* PushHandler */,
 				7DBF22511F1D37840048862C /* UniversalRouter */,
 				7DF04D171EAF670300E2D98C /* NotificationHelper */,
@@ -1438,6 +1441,14 @@
 				4D9F0D6F1E79CD2E006443ED /* ActionTableViewCell.xib */,
 			);
 			name = ActionCell;
+			sourceTree = "<group>";
+		};
+		7D1748DA1FA33F80007C0493 /* JailbreakDetector */ = {
+			isa = PBXGroup;
+			children = (
+				7D1748DB1FA33F96007C0493 /* JailbrakeDetector.swift */,
+			);
+			path = JailbreakDetector;
 			sourceTree = "<group>";
 		};
 		7D1CB6D31EA2D208003136FA /* Creators */ = {
@@ -2404,6 +2415,7 @@
 				F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
 				7DBF22531F1D37920048862C /* UniversalRouter.swift in Sources */,
+				7D1748DC1FA33F96007C0493 /* JailbrakeDetector.swift in Sources */,
 				7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */,
 				324141AD1EB508C5002E98C0 /* CreatorPlainObjectTranslation.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
