@@ -676,8 +676,8 @@
 		221CC3F41E7B24A1004F0695 /* RegForm */ = {
 			isa = PBXGroup;
 			children = (
-				221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */,
 				221CC3F61E7B24A1004F0695 /* EventRegForm.swift */,
+				221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */,
 				221CC3F71E7B24A1004F0695 /* EventRegFormFieldAnswerPlainObject.swift */,
 				221CC3F81E7B24A1004F0695 /* EventRegFormFieldPlainObject.swift */,
 			);
@@ -2192,7 +2192,7 @@
 				TargetAttributes = {
 					9F6048941E5B3CCB00C414C3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 4PGW4G9V2Y;
+						DevelopmentTeam = 67QLNP5VMR;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -2699,7 +2699,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CHMeetupApp/CHMeetupApp.entitlements;
-				DEVELOPMENT_TEAM = 4PGW4G9V2Y;
+				DEVELOPMENT_TEAM = 67QLNP5VMR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -2724,7 +2724,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CHMeetupApp/CHMeetupApp.entitlements;
-				DEVELOPMENT_TEAM = 4PGW4G9V2Y;
+				DEVELOPMENT_TEAM = 67QLNP5VMR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
