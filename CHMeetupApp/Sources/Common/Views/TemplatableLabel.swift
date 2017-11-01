@@ -36,7 +36,7 @@ class TemplatableLabel: UILabel, TempalateView {
 
   var isTemplate: Bool = true {
     didSet {
-      if oldValue == true && isTemplate == false {
+      if oldValue && !isTemplate {
         animationLayers.forEach({ $0.removeFromSuperlayer() })
       }
       setNeedsDisplay()

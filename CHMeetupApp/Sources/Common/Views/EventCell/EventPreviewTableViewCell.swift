@@ -16,7 +16,7 @@ class EventPreviewTableViewCell: PlateTableViewCell, TempalateView {
 
   var isTemplate: Bool = false {
     didSet {
-      if oldValue == false && isTemplate == true {
+      if !oldValue && isTemplate {
         animateWithFade()
       }
     }
@@ -98,7 +98,7 @@ class EventPreviewTableViewCell: PlateTableViewCell, TempalateView {
                                         verticalFittingPriority: UILayoutPriority) -> CGSize {
     var height: CGFloat = 270
 
-    if isEnabledForRegistration == false {
+    if !isEnabledForRegistration {
       height -= goingButtonHeight
     }
 
