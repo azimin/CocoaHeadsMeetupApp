@@ -52,7 +52,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
   // MARK: - Reload with cache engine
 
   func setNeedsReloadData() {
-    guard isReloadDataInProgress == false else {
+    guard !isReloadDataInProgress else {
       return
     }
 
