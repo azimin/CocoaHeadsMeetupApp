@@ -12,7 +12,7 @@ class SpeechPreviewTableViewCell: PlateTableViewCell, TempalateView {
 
   var isTemplate: Bool = false {
     didSet {
-      if oldValue == false && isTemplate == true {
+      if !oldValue && isTemplate {
         animateWithFade()
       }
     }

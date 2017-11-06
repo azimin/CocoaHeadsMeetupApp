@@ -115,7 +115,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
 
     for (index, value) in formData.sections[indexPath.section].fieldAnswers.enumerated() {
       let result = value.answer.parseAnswers().boolValue
-      if result == true, index != indexPath.row {
+      if result, index != indexPath.row {
         deselectIndex = index
         value.answer = .selection(isSelected: false)
       }
@@ -127,7 +127,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
       deselectIndexPaths.append(IndexPath(row: index, section: indexPath.section))
     }
 
-    if value == true {
+    if value {
       selectedIndexPath.append(indexPath)
     } else {
       deselectIndexPaths.append(indexPath)
