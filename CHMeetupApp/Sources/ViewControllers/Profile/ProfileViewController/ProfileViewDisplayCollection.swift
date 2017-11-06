@@ -16,33 +16,28 @@ final class ProfileViewDisplayCollection: DisplayCollection {
   }
 
   weak var delegate: DisplayCollectionDelegate?
-  private var userActions: [ActionTableViewCellModel] = []
+  private var userActions: [ActionTableViewCellModel] {
+    var actions = [ActionTableViewCellModel]()
 
-  enum `Type` {
-    case userHeader
-    case userContacts
-    case userActions
-  }
-
-  var sections: [Type] = [.userHeader, .userContacts, .userActions]
-
-  var user: UserEntity {
-    guard let user = UserPreferencesEntity.value.currentUser else {
-      fatalError("Authorization error")
+    var status: GiveSpeechEntity.GiveSpeechStatus = .canGiveNew
+    if modelCollection.count > 0 {
+      status = modelCollection[modelCollection.count - 1].status
     }
-    return user
-  }
 
-  var numberOfSections: Int {
-    return sections.count
-  }
-
-  init(delegate: DisplayCollectionDelegate?) {
-    self.delegate = delegate
-
-    let giveSpeechObject = ActionPlainObject(text: "Стать спикером".localized, imageName: nil) { [weak delegate] in
-      let giveSpeech = Storyboards.Profile.instantiateGiveSpeechViewController()
-      delegate?.push(viewController: giveSpeech)
+    let giveSpeechObject = ActionPlainObject(text: status.statusText, imageName: nil) { [weak self] in
+      switch status {
+      case .canGiveNew:
+        let giveSpeechViewController = Storyboards.Profile.instantiateGiveSpeechViewController()
+        self?.delegate?.push(viewController: giveSpeechViewController)
+      case .waiting:
+        let giveSpeechViewController = Storyboards.Profile.instantiateGiveSpeechViewController()
+        if let modelCollection = self?.modelCollection, modelCollection.count > 0 {
+          giveSpeechViewController.sentGiveSpeechId = modelCollection[modelCollection.count - 1].id
+        }
+        self?.delegate?.push(viewController: giveSpeechViewController)
+      case .loading, .unknown:
+        return
+      }
     }
     let giveSpeechAction = ActionTableViewCellModel(action: giveSpeechObject)
 
@@ -59,12 +54,40 @@ final class ProfileViewDisplayCollection: DisplayCollection {
     }
     let askQuestionAction = ActionTableViewCellModel(action: askQuestionObject)
 
-    userActions.append(giveSpeechAction)
-    userActions.append(creatorsAction)
+    actions.append(giveSpeechAction)
+    actions.append(creatorsAction)
 
     if canSendMail {
-      userActions.append(askQuestionAction)
+      actions.append(askQuestionAction)
     }
+    return actions
+  }
+
+  enum `Type` {
+    case userHeader
+    case userContacts
+    case userActions
+  }
+
+  var sections: [Type] = [.userHeader, .userContacts, .userActions]
+
+  var user: UserEntity {
+    guard let user = UserPreferencesEntity.value.currentUser else {
+      fatalError("Authorization error")
+    }
+    return user
+  }
+
+  var modelCollection: DataModelCollection<GiveSpeechEntity> = {
+    return DataModelCollection(type: GiveSpeechEntity.self).sorted(byKeyPath: #keyPath(GiveSpeechEntity.id))
+  }()
+
+  var numberOfSections: Int {
+    return sections.count
+  }
+
+  init(delegate: DisplayCollectionDelegate?) {
+    self.delegate = delegate
   }
 
   private var canSendMail: Bool {

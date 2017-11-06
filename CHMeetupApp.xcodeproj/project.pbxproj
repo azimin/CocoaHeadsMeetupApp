@@ -158,6 +158,10 @@
 		7DF04D1A1EAF670300E2D98C /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF04D181EAF670300E2D98C /* NotificationHelper.swift */; };
 		7DF04D1B1EAF670300E2D98C /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF04D191EAF670300E2D98C /* NotificationViewController.swift */; };
 		8A0244B11E93011D008AFFE6 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0244B01E93011D008AFFE6 /* UIViewController+Alert.swift */; };
+		8A115E3B1F4457C000636F3E /* GiveSpeechEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A115E3A1F4457C000636F3E /* GiveSpeechEntity.swift */; };
+		8A115E3E1F445C9200636F3E /* GiveSpeechPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A115E3D1F445C9200636F3E /* GiveSpeechPlainObject.swift */; };
+		8A115E401F445CAB00636F3E /* GiveSpeechPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A115E3F1F445CAB00636F3E /* GiveSpeechPlainObject+Requests.swift */; };
+		8A115E461F4462F800636F3E /* GiveSpeechPlainObjectTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A115E451F4462F800636F3E /* GiveSpeechPlainObjectTranslation.swift */; };
 		8A36998C1E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3699891E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift */; };
 		8A36998D1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A36998A1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib */; };
 		8A36998E1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */; };
@@ -178,7 +182,7 @@
 		8AAC26641EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC26631EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift */; };
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
 		8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */; };
-		8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */; };
+		8ACCB3D11E7EC5CD00D62E5D /* EventPlainObjectTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D01E7EC5CD00D62E5D /* EventPlainObjectTranslation.swift */; };
 		8ADF1EDF1EB28C2900B5E561 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF1EDE1EB28C2900B5E561 /* ImagePickerController.swift */; };
 		8AE5BCB81EB4E885007047CE /* ChooseProfilePhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE5BCB71EB4E885007047CE /* ChooseProfilePhotoButton.swift */; };
 		8AE5BCBB1EB4E98E007047CE /* ChooseProfilePhotoButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE5BCBA1EB4E98E007047CE /* ChooseProfilePhotoButton.xib */; };
@@ -446,6 +450,10 @@
 		7DF04D181EAF670300E2D98C /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		7DF04D191EAF670300E2D98C /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		8A0244B01E93011D008AFFE6 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		8A115E3A1F4457C000636F3E /* GiveSpeechEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSpeechEntity.swift; sourceTree = "<group>"; };
+		8A115E3D1F445C9200636F3E /* GiveSpeechPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiveSpeechPlainObject.swift; path = GiveSpeech/GiveSpeechPlainObject.swift; sourceTree = "<group>"; };
+		8A115E3F1F445CAB00636F3E /* GiveSpeechPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GiveSpeechPlainObject+Requests.swift"; path = "GiveSpeech/GiveSpeechPlainObject+Requests.swift"; sourceTree = "<group>"; };
+		8A115E451F4462F800636F3E /* GiveSpeechPlainObjectTranslation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSpeechPlainObjectTranslation.swift; sourceTree = "<group>"; };
 		8A3699891E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutSpeechTableViewCell.swift; path = AboutSpeechCell/AboutSpeechTableViewCell.swift; sourceTree = "<group>"; };
 		8A36998A1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutSpeechTableViewCell.xib; path = AboutSpeechCell/AboutSpeechTableViewCell.xib; sourceTree = "<group>"; };
 		8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutSpeechTableViewCellModel.swift; path = AboutSpeechCell/AboutSpeechTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -464,7 +472,7 @@
 		8AAC26631EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditDisplayCollection.swift; sourceTree = "<group>"; };
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
 		8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationPlainObjectProtocol.swift; sourceTree = "<group>"; };
-		8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationEventPlainObject.swift; sourceTree = "<group>"; };
+		8ACCB3D01E7EC5CD00D62E5D /* EventPlainObjectTranslation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPlainObjectTranslation.swift; sourceTree = "<group>"; };
 		8ADF1EDE1EB28C2900B5E561 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		8AE5BCB71EB4E885007047CE /* ChooseProfilePhotoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProfilePhotoButton.swift; sourceTree = "<group>"; };
 		8AE5BCBA1EB4E98E007047CE /* ChooseProfilePhotoButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseProfilePhotoButton.xib; sourceTree = "<group>"; };
@@ -798,6 +806,7 @@
 				9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */,
 				9FD42F6A1E95385000EA6EE7 /* StringContainerEntity.swift */,
 				32424A091EB76C95002EED9B /* CreatorEntity.swift */,
+				8A115E3A1F4457C000636F3E /* GiveSpeechEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1075,6 +1084,7 @@
 				7D1E275D1E958C2D0005B861 /* Request */,
 				9FD594911E87188600BAD1B5 /* SpeechContent */,
 				9FD5948E1E87182800BAD1B5 /* Speech */,
+				8A115E3C1F445C5B00636F3E /* GiveSpeech */,
 				9F68E50B1E850D6D00C6C931 /* Action */,
 				22323F461E70C18700522E5C /* Event */,
 				22323F491E70C18700522E5C /* Place */,
@@ -1584,6 +1594,23 @@
 			path = NotificationHelper;
 			sourceTree = "<group>";
 		};
+		8A115E3C1F445C5B00636F3E /* GiveSpeech */ = {
+			isa = PBXGroup;
+			children = (
+				8A115E3D1F445C9200636F3E /* GiveSpeechPlainObject.swift */,
+				8A115E3F1F445CAB00636F3E /* GiveSpeechPlainObject+Requests.swift */,
+			);
+			name = GiveSpeech;
+			sourceTree = "<group>";
+		};
+		8A115E441F4462CB00636F3E /* GiveSpeech */ = {
+			isa = PBXGroup;
+			children = (
+				8A115E451F4462F800636F3E /* GiveSpeechPlainObjectTranslation.swift */,
+			);
+			name = GiveSpeech;
+			sourceTree = "<group>";
+		};
 		8A3699821E8C471800B37528 /* AboutSpeechCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1670,6 +1697,7 @@
 				8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */,
 				9FD594891E87168800BAD1B5 /* Event */,
 				9FD5948A1E8716D800BAD1B5 /* Speech */,
+				8A115E441F4462CB00636F3E /* GiveSpeech */,
 			);
 			name = TranslationPlainObjects;
 			sourceTree = "<group>";
@@ -1984,7 +2012,7 @@
 		9FD594891E87168800BAD1B5 /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */,
+				8ACCB3D01E7EC5CD00D62E5D /* EventPlainObjectTranslation.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -2472,10 +2500,12 @@
 				7DAC86361EA81F1900437283 /* CreatorsViewDisplayCollection.swift in Sources */,
 				9F30FFCA1E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift in Sources */,
 				9FD594931E87189400BAD1B5 /* SpeechContentPlainObject.swift in Sources */,
+				8A115E461F4462F800636F3E /* GiveSpeechPlainObjectTranslation.swift in Sources */,
+				8A115E3E1F445C9200636F3E /* GiveSpeechPlainObject.swift in Sources */,
 				9F3767081E7D53E300CC565B /* GiveSpeechDisplayCollection.swift in Sources */,
 				9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */,
 				4D9F0D701E79CD2E006443ED /* ActionTableViewCell.swift in Sources */,
-				8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */,
+				8ACCB3D11E7EC5CD00D62E5D /* EventPlainObjectTranslation.swift in Sources */,
 				22323F341E70C0E500522E5C /* TabBarItemView.swift in Sources */,
 				9FB0FE0F1EA6869700383E1D /* ActiveWindowManager.swift in Sources */,
 				9FAFF8051E6AD76300B687CB /* UserEntity.swift in Sources */,
@@ -2502,6 +2532,7 @@
 				ADCCA0FE1E936156009DAACE /* LabelTableViewCell.swift in Sources */,
 				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
 				7DB4F5C21F0B0C8B00068CBF /* CreatorInfoTableViewCell.swift in Sources */,
+				8A115E401F445CAB00636F3E /* GiveSpeechPlainObject+Requests.swift in Sources */,
 				03153BD01EAE96940011FF5F /* RegConfirmHeaderTableViewCellModel.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
@@ -2570,6 +2601,7 @@
 				9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */,
 				22323F931E70C2BE00522E5C /* PastEventsDisplayCollection.swift in Sources */,
 				32B031E91EABA62800FC1F89 /* UIImageView+RoundBorder.swift in Sources */,
+				8A115E3B1F4457C000636F3E /* GiveSpeechEntity.swift in Sources */,
 				7D1CB6D21EA2B8E9003136FA /* UITableView+ShakeSection.swift in Sources */,
 				22323F981E70C2BE00522E5C /* ProfileNavigationViewController.swift in Sources */,
 				9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */,

@@ -30,7 +30,6 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     setCurrentState()
     fetchEvents()
     title = "CocoaHeads Russia".localized
-    // Do any additional setup after loading the view.
   }
 
   override func viewWillAppear(_ animated: Bool) {

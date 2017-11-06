@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GiveSpeechController {
+class GiveSpeechController: FetchingElements {
   static func sendRequest(title: String, description: String, completion: @escaping SuccessCompletionBlock) {
     let currentUser = UserPreferencesEntity.value.currentUser
     guard let userId = currentUser?.remoteId,
@@ -26,5 +26,19 @@ class GiveSpeechController {
       let success = answer?.success ?? false
       completion(success)
     }
+  }
+
+  static func fetchElements(request: Request<[GiveSpeechPlainObject]>,
+                            to parent: GiveSpeechEntity? = nil,
+                            completion: (() -> Void)? = nil) {
+    Server.standard.request(request, completion: { list, error in
+      defer {
+        DispatchQueue.main.async { completion?() }
+      }
+
+      guard let list = list,
+        error == nil else { return }
+      GiveSpeechPlainObjectTranslation.translate(of: list, to: parent)
+    })
   }
 }

@@ -42,6 +42,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
     ProfileController.updateUser(withToken: token, completion: { _ in })
 
     fetch()
+    fetchGiveSpeeches()
   }
 
   // MARK: - Actions
@@ -92,5 +93,16 @@ extension ProfileViewController {
     title = displayCollection.user.fullName
     tableView.registerNibs(from: displayCollection)
     tableView.reloadData()
+  }
+}
+
+fileprivate extension ProfileViewController {
+  func fetchGiveSpeeches() {
+    let request = GiveSpeechPlainObject.Requests.giveSpeeches
+    GiveSpeechController.fetchElements(request: request, completion: { [weak self] in
+      // For all loading statuses make unknown
+      GiveSpeechEntity.resetLoadingEntitiesStatus()
+      self?.tableView.reloadData()
+    })
   }
 }
