@@ -54,7 +54,11 @@ final class ProfileViewDisplayCollection: DisplayCollection {
 
     let askQuestionObject = ActionPlainObject(text: "Задать вопрос".localized, imageName: nil) {
       if let url = URL(string: "mailto:\(Constants.supportEmail)"), self.canSendMail {
-        UIApplication.shared.open(url)
+        if #available(iOS 10.0, *) {
+          UIApplication.shared.open(url)
+        } else {
+          UIApplication.shared.openURL(url)
+        }
       }
     }
     let askQuestionAction = ActionTableViewCellModel(action: askQuestionObject)

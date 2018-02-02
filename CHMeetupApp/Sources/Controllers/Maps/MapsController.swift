@@ -18,6 +18,12 @@ struct MapsController {
 
   static func open(map: MapAppType, coordinate: CLLocationCoordinate2D) {
     let schemeURL = map.scheme(with: coordinate)
-    UIApplication.shared.open(schemeURL, options: [:], completionHandler: nil)
+
+    if #available(iOS 10.0, *) {
+      UIApplication.shared.open(schemeURL, options: [:], completionHandler: nil)
+    } else {
+      UIApplication.shared.openURL(schemeURL)
+    }
+
   }
 }

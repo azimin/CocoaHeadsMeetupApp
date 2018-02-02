@@ -63,7 +63,11 @@ final class AuthServiceFacade {
       }
 
       if service.resource.appExists {
-        UIApplication.shared.open(authURL)
+        if #available(iOS 10.0, *) {
+          UIApplication.shared.open(authURL)
+        } else {
+          UIApplication.shared.openURL(authURL)
+        }
       } else {
         showSafari(url: authURL)
       }

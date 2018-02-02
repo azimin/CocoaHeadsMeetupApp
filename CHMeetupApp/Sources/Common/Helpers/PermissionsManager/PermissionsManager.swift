@@ -105,11 +105,16 @@ final class PermissionsManager {
         completion(result)
       }
     case .notifications:
-      UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { result, _ in
-        DispatchQueue.main.async {
-          UIApplication.shared.registerForRemoteNotifications()
+      if #available(iOS 10.0, *) {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { result, _ in
+          DispatchQueue.main.async {
+            UIApplication.shared.registerForRemoteNotifications()
+          }
+          completion(result)
         }
-        completion(result)
+      } else {
+        let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+        UIApplication.shared.registerUserNotificationSettings(settings)
       }
     case .photosLibrary:
       PHPhotoLibrary.requestAuthorization { status in
@@ -143,6 +148,10 @@ final class PermissionsManager {
       UIApplication.shared.canOpenURL(url) else {
       return
     }
-    UIApplication.shared.open(url)
+    if #available(iOS 10.0, *) {
+      UIApplication.shared.open(url)
+    } else {
+      UIApplication.shared.openURL(url)
+    }
   }
 }
