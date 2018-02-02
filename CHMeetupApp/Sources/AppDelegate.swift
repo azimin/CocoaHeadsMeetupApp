@@ -37,6 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
     NotificationCenter.default.post(name: .CloseSafariViewControllerNotification, object: url)
     return true
   }
+
+  func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+    application.registerForRemoteNotifications()
+  }
+
 }
 
 // MARK: - Push notifications
