@@ -134,7 +134,6 @@
 		8BD96D01206EC42300C93990 /* DisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD96CB4206EC42100C93990 /* DisplayCollection.swift */; };
 		8BD96D02206EC42300C93990 /* DisplayCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD96CB5206EC42100C93990 /* DisplayCollectionDelegate.swift */; };
 		8BD96D03206EC42300C93990 /* UniversalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD96CB7206EC42100C93990 /* UniversalRouter.swift */; };
-		8BD96D04206EC42300C93990 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD96CB9206EC42100C93990 /* StringValidation.swift */; };
 		8BD96D05206EC42300C93990 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD96CBB206EC42100C93990 /* NotificationHelper.swift */; };
 		8BD96D06206EC42300C93990 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD96CBC206EC42100C93990 /* NotificationViewController.swift */; };
 		8BD96D07206EC42300C93990 /* TranslationEventPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD96CBF206EC42100C93990 /* TranslationEventPlainObject.swift */; };
@@ -267,6 +266,8 @@
 		8BD96E0D206EC5FD00C93990 /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD96DDC206EC5FD00C93990 /* OptionTableViewCell.swift */; };
 		8BD96E10206EC66B00C93990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BD96E0F206EC66B00C93990 /* LaunchScreen.storyboard */; };
 		8BD96E12206EC6C600C93990 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD96E11206EC6C600C93990 /* AppearanceController.swift */; };
+		8BD96E15206ECA4800C93990 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD96E14206ECA4800C93990 /* StringValidation.swift */; };
+		8BD96E16206ECB4B00C93990 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD96E14206ECA4800C93990 /* StringValidation.swift */; };
 		9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */; };
 		9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2638601E6B83D50081D23B /* DataModelCollection.swift */; };
 		9F33670B1E84758400B15792 /* MainViewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33670A1E84758400B15792 /* MainViewDisplayCollection.swift */; };
@@ -466,7 +467,6 @@
 		8BD96CB4206EC42100C93990 /* DisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollection.swift; sourceTree = "<group>"; };
 		8BD96CB5206EC42100C93990 /* DisplayCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollectionDelegate.swift; sourceTree = "<group>"; };
 		8BD96CB7206EC42100C93990 /* UniversalRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalRouter.swift; sourceTree = "<group>"; };
-		8BD96CB9206EC42100C93990 /* StringValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringValidation.swift; sourceTree = "<group>"; };
 		8BD96CBB206EC42100C93990 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		8BD96CBC206EC42100C93990 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		8BD96CBF206EC42100C93990 /* TranslationEventPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationEventPlainObject.swift; sourceTree = "<group>"; };
@@ -599,6 +599,7 @@
 		8BD96DDC206EC5FD00C93990 /* OptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionTableViewCell.swift; sourceTree = "<group>"; };
 		8BD96E0F206EC66B00C93990 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BD96E11206EC6C600C93990 /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
+		8BD96E14206ECA4800C93990 /* StringValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringValidation.swift; sourceTree = "<group>"; };
 		9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = UserPreferencesEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F2638601E6B83D50081D23B /* DataModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataModelCollection.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F30BC681EB76BC50017D2F5 /* CHMeetupApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = CHMeetupApp.entitlements; path = ../../CHMeetupApp.entitlements; sourceTree = "<group>"; };
@@ -934,7 +935,7 @@
 				8BD96CBD206EC42100C93990 /* TranslationPlainObjects */,
 				8BD96CB6206EC42100C93990 /* UniversalRouter */,
 				8BD96CAF206EC42100C93990 /* Utility */,
-				8BD96CB8206EC42100C93990 /* Validation */,
+				8BD96E13206ECA4800C93990 /* Validation */,
 				8BD96CC5206EC42200C93990 /* WebService */,
 			);
 			path = Helpers;
@@ -1534,14 +1535,6 @@
 				8BD96CB7206EC42100C93990 /* UniversalRouter.swift */,
 			);
 			path = UniversalRouter;
-			sourceTree = "<group>";
-		};
-		8BD96CB8206EC42100C93990 /* Validation */ = {
-			isa = PBXGroup;
-			children = (
-				8BD96CB9206EC42100C93990 /* StringValidation.swift */,
-			);
-			path = Validation;
 			sourceTree = "<group>";
 		};
 		8BD96CBA206EC42100C93990 /* NotificationHelper */ = {
@@ -2162,6 +2155,14 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
+		8BD96E13206ECA4800C93990 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				8BD96E14206ECA4800C93990 /* StringValidation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
 		9F26385B1E6B82F50081D23B /* Single */ = {
 			isa = PBXGroup;
 			children = (
@@ -2660,6 +2661,7 @@
 				8BD96D5B206EC44A00C93990 /* ActionCellConfigurationController.swift in Sources */,
 				8BD96C91206EC27B00C93990 /* Date+ComponentsHelper.swift in Sources */,
 				8BD96D92206EC4BD00C93990 /* UserPlainObject+Requests.swift in Sources */,
+				8BD96E15206ECA4800C93990 /* StringValidation.swift in Sources */,
 				8BD96C54206EC24900C93990 /* UITableView+ShakeRow.swift in Sources */,
 				328E9E6A1E8BDFEF008B409F /* ProfileViewDisplayCollection.swift in Sources */,
 				8BD96D1B206EC42300C93990 /* BeaconUserInfo.swift in Sources */,
@@ -2707,7 +2709,6 @@
 				8BD96D8F206EC4BD00C93990 /* ActionPlainObject.swift in Sources */,
 				B0331344205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift in Sources */,
 				8BD96D29206EC42300C93990 /* Importer.swift in Sources */,
-				8BD96D04206EC42300C93990 /* StringValidation.swift in Sources */,
 				8BD96C99206EC27B00C93990 /* Int+Encryption.swift in Sources */,
 				8BD96D12206EC42300C93990 /* MethodSwizzler.swift in Sources */,
 				8BD96D90206EC4BD00C93990 /* SwitchActionPlainObject.swift in Sources */,
@@ -2851,6 +2852,7 @@
 				B0A1FC11204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift in Sources */,
 				B003C9FB205F5A76004BC58D /* BeaconProcessingOperationTests.swift in Sources */,
 				B003C9F3205F36E9004BC58D /* IBeaconStorageMock.swift in Sources */,
+				8BD96E16206ECB4B00C93990 /* StringValidation.swift in Sources */,
 				B0C0CC29205F6E9C0059995E /* BeaconReportingOperationTests.swift in Sources */,
 				B00775C1205F1DD6007280FA /* BeaconOperationDelegateMock.swift in Sources */,
 				B00775C7205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift in Sources */,
