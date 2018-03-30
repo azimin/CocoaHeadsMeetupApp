@@ -33,7 +33,8 @@ final class BeaconStorageTests: XCTestCase {
   func testBeaconsForConnect() {
     //GIVEN
     let peripheral = IBeaconPeripheralMock()
-    let beacon = Beacon(userInfo: BeaconUserInfo(id: 1, name: "China", photoURL: nil ), proximityUUIDString: UUID().uuidString)!
+    let beacon = Beacon(userInfo: BeaconUserInfo(id: 1, name: "China", photoURL: nil ),
+                        proximityUUIDString: UUID().uuidString)!
     beacon.updatePeripheral(with: peripheral)
     let beacon2 = Beacon(peripheral: mockPeripheral(with: .connecting))
 

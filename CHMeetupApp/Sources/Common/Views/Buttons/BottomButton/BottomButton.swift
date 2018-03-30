@@ -70,7 +70,7 @@ class BottomButton: ActionButton {
            leadingConstant: Constants.leadingConstant,
            trailingConstant: Constants.trailingConstant,
            heightConstant: Constants.height)
-    
+
     self.layer.cornerRadius = Constants.cornerRadius
 
     if #available(iOS 11.0, *) {

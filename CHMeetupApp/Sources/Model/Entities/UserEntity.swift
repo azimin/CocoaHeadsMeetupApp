@@ -17,7 +17,7 @@ final class UserEntity: TemplatableObject, TemplateEntity {
   }
 
   @objc dynamic var id: Int = 0
-  @objc dynamic var remoteId: Int = 0  
+  @objc dynamic var remoteId: Int = 0
   @objc dynamic var name: String = ""
   @objc dynamic var lastName: String = ""
 
