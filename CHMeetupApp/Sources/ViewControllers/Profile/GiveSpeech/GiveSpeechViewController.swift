@@ -54,21 +54,22 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
     }
 
     GiveSpeechController.sendRequest(title: displayCollection.nameText,
-                                     description: displayCollection.descriptionText) { success in
+                                     description: displayCollection.descriptionText) { [weak self] success in
       if success {
-        self.tableView.endEditing(true)
+        self?.tableView.endEditing(true)
         let notification = NotificationHelper.viewController(title: "Прекрасно!".localized,
-                                          description: "Ваша великолепная заявка отправлена.".localized,
-                                          emoji: "📦",
-                                          completion: {
-                                            self.navigationController?.popToRootViewController(animated: true)
+                                                             description: "Ваша великолепная заявка отправлена.".localized,
+                                                             emoji: "📦",
+                                                             completion: {
+                                                              self?.navigationController?.popToRootViewController(animated: true)
         })
-        self.present(viewController: notification)
+        self?.present(viewController: notification)
       } else {
-        self.showMessageAlert(title: "Возникла ошибка".localized)
+        let notification = NotificationHelper.somethingWrongViewController()
+        
+        self?.present(viewController: notification)
       }
     }
-
   }
 
   @objc func dismissKeyboard() {
