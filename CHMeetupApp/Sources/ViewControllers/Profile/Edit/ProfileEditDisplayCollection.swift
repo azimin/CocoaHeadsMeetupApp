@@ -67,10 +67,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       })
 
       let phone = EditableField(value: user.phone, title: "Телефон".localized, isValid: { phone -> Bool in
-        return true
-        // Right now we don't want to check phone because there are couple of format 
-        // reasons for this (users can copy +7 (926)...)
-        // return StringValidation.isValid(string: phone, type: .phone)
+         return StringValidation.isValid(string: phone, type: .phone)
       }, save: { [weak self] value in
         realmWrite {
           self?.user.phone = value
