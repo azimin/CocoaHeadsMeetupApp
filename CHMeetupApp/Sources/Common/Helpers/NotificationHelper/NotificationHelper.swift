@@ -23,3 +23,13 @@ class NotificationHelper {
     return notification
   }
 }
+
+extension NotificationHelper {
+  static func somethingWrongViewController() -> NotificationViewController {
+    let message = "Мы всегда поможем решить вашу проблему, пишите в телеграм канал: @cocoaheads.".localized
+    return NotificationHelper.viewController(title: "Что-то пошло не так".localized,
+                                             description: message,
+                                             emoji: "🔥",
+                                             completion: { })
+  }
+}
