@@ -2469,7 +2469,7 @@
 					};
 					A1DBA4EF1E71ED1200E3F1E5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9F6048941E5B3CCB00C414C3;
 					};
