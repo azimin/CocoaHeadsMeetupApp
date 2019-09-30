@@ -1,4 +1,5 @@
 coverage:
   precision: 2
   round: up
+  ####
   range: "0...100"
